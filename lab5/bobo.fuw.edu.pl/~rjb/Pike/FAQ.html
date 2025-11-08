@@ -1,0 +1,1070 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+  <head>
+    <title>The Unofficial Pike Programming Language FAQ</title>
+    <!-- Changed by: "Robert J. Budzynski", 23-May-2002 -->
+    <style type="text/css">
+      body {
+	background: #fffffa;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 12pt;
+          }
+
+      a { text-decoration: none; color: #0000ee; }
+      h1 { font-size: 14pt; font-variant: small-caps; background: #00eeff; }
+      h2 { font-size: 13pt; font-variant: small-caps; background:
+      #00eeff; }
+      code { font-family: Courier, Courier New, monospace; }
+      strong { text-decoration: underline; font-weight: bold; }
+    </style> 
+  </head>
+
+  <body>
+  <div align="right">
+    <a href="/~rjb/">About me</a><br />
+    Go to <a href="index.html">index of my Pike pages</a></div>
+    <h1>The Unofficial Pike Programming Language FAQ</h1>
+    <div align="center">
+      <img src="pike380x100.gif" alt="Pike logo">
+    </div>
+    <h2>Contents</h2>
+    <ol type="I">
+      <li><a href="#about">About this document</a></li>
+      <li><a href="#general">General questions</a></li>
+      <li><a href="#basics">Basics of Pike programming</a></li>
+      <li><a href="#advanced">Advanced Pike programming</a></li>
+      <li><a href="#library">Pike's module library</a></li>
+      <li><a href="#credits">Credits</a></li>
+    </ol><br>
+    <a name="about"></a>
+    <h2>About this document</h2>
+
+    <p>This document was compiled and is copyright (2001) by <a
+	href="mailto:robert.budzynski@fuw.edu.pl">Robert
+	J. Budzynski</a>. </p> 
+    <p>This is a completely unofficial FAQ list for the Pike
+    programming language, an interpreted (in its current
+    implementation), object-oriented language created by Fredrik
+    Hübinette and made available under the GNU General Public License
+    by Roxen Internet Software (of Sweden), which sponsors its
+    development.  This document is unofficial in the sense that its
+    editor has no relationship, business or other, with Roxen Internet
+    Software (RIS) nor with its staff, it has not been reviewed nor
+    approved by RIS and does not comprise part of Pike nor of
+    documentation authored at and provided by RIS.  While it is my
+    intent to provide accurate and up to date information, there is no
+    warranty: this document is a volunteer effort, and a work in
+    progress, and it may well fall out of sync with the development
+    of Pike due to limitations of time and knowledge on my part.
+    </p>
+    <p>Permission is hereby granted to copy and redistribute this
+    document in whole or in part by any means, provided that its
+    origins are not misrepresented.  
+    </p>
+    <p>
+      <strong>This is a work in progress.  You are viewing a severely
+      incomplete, early version.  When this document becomes a little
+      more complete and (hopefully) useful, the above notice will be
+      made more precise, though it will not change as to intent.  All
+      contributions, new questions as well as new or improved answers,
+      are very much welcome, and will be given due credit. </strong>
+    </p>
+    <p>I will try to keep this information up to date for the current
+      "stable" Pike branch (7.2 at the time of this writing); most of
+      it applies as well to 7.0.x.  With 0.6x (provided with Roxen
+      1.3), you're pretty much on your own, look up the docs
+      appropriate to that version.
+    </p>
+    <a name="general"></a>
+    <h2>General questions</h2>
+
+    <ol>
+      <li><strong>What is Pike?</strong>
+	<p>Pike is an object-oriented, interpreted programming
+	  language with a syntax similar to Java and C, high-level data types,
+	  automatic memory management, highly efficient string
+	  handling, easy to use APIs for network and database
+	  programming, and several years of active development behind
+	  it.  In the current implementation, Pike code is compiled at
+	  runtime to bytecode which is interpreted by a virtual
+	  machine.  Pike's implementation is heavily optimized, and
+	  both the language and its libraries are under continuing
+	  development; its performance compares favorably to all
+	  scripting languages on the market.  </p>
+      </li>
+      <li><strong>What OS's does Pike run on?</strong>
+	<p>
+	  Pike is best supported on Solaris and Linux, but it runs on
+	  a wide variety of Unix or Unix-like operating systems.  With
+	  some limitations (hearsay as far as this author is
+	  concerned) it can also be made to work on Windows NT
+	  (Win32).  Work appears to be under way on supporting Win64
+	  as well.
+	</p>
+      </li>
+      <li><strong>What is Pike good for (pros and cons)?</strong>
+	<p>
+	  Pike is great for mostly any programming task, but is at its
+	  best when you are able to make good use of its high-level
+	  datatypes and good string-processing and network I/O
+	  facilities.  It is probably not optimal for low-level stuff,
+	  especially involving much bit-twiddling and byte-by-byte
+	  processing.  I haven't heard of many device drivers written
+	  in Pike ;-)
+	</p>
+	<p>
+	  A somewhat subjective overview:<br>
+	  <strong>PROS</strong>
+	<ul>
+	  <li>easy to learn and use</li>
+	  <li>well-tested in the implementation of a major application
+	  (Roxen web server), development sponsored by a stable
+	  company, won't go away anytime soon</li>
+	  <li>free (as in GPL)</li>
+	  <li>familiar C-like syntax for expressions and control
+	  statements</li>
+	  <li>automatic memory management</li>
+	  <li>high-level datatypes, including mappings (associative
+	  arrays), classes and objects</li>
+	  <li>clean, no-nonsense OOP model, including multiple
+	  inheritance and operator overloading 
+	   (but you can mostly ignore OOP if you want)</li>
+	  <li>exception handling</li>
+	  <li>no compile/link/run cycle, source code is compiled into
+	  bytecode and interpreted at runtime</li>
+	  <li>dynamic loading of C modules compiled into shared
+	  libs</li>
+	  <li>good and efficient string handling</li>
+	  <li>a well-designed module system that both organizes Pike's
+	    standard library and can be easily used in your own
+	    projects</li>
+	  <li>excellent handling of network I/O, with an easy to use
+	  API</li>
+	  <li>convenient built-in support for event-driven programming
+	  via a native Pike event loop</li>
+	  <li>many useful library modules in the standard
+	  distribution</li>
+	  <li>great performance, beats most other interpreted
+	  languages at most tasks</li>
+	</ul>
+	<strong>CONS</strong>
+	<ul>
+	  <li>Pike is an "implementation-defined" language, lacks a
+	  formal definition or standard</li>
+	  <li>language features and library APIs can and do change in
+	  new releases, without much notice</li>
+	  <li>official documentation is not up to date nor
+	  complete</li>
+	  <li>no native code compilers (yet)</li>
+	  <li>no facilities for storing or distributing byte-compiled
+	  code</li>
+	  <li>no IDE or source-level debugger (you probably won't miss
+	  the former much though, YMMV)</li>
+	  <li>exception system is not complete yet, and not yet as useful
+	  as it might be</li>
+	  <li>not optimized for numeric processing</li>
+	  <li>much smaller user community than (say) Perl or Python's
+	    (the most comparable languages)</li>
+	  <li>commercial backing, while it exists, is not as powerful
+	    as Java's</li>
+	</ul>	    
+      <br>
+	  
+      </li>
+      <li><strong>Does Pike support databases, graphics, GUI
+	  programming, strong crypto, ...</strong>
+	<p>
+	  Yes, and quite a bit more:</p>
+	<ul>
+	  <li>Supported RDBMS's include Mysql, mSQL, Postgres and
+	    Oracle.  There is also an ODBC interface;  </li>	
+	  <li>The <code>Image</code> module supports a wide variety of
+	    operations on raster graphics in all common image
+	    formats;</li>
+	  <li>GUI programming for the X Window System is supported
+	    through an interface to the popular GTK library, including
+	    Gnome extensions; there is also an interface to the OpenGL
+	    API, including GLUT;</li>
+	  <li>Pike's Crypto Toolkit (now fully included in the
+	    standard distribution) supports some of the most popular
+	    block and stream ciphers (DES, IDEA, and CAST128; RC4),
+	    cryptographic hash functions (MD5 and SHA1), and the RSA
+	    public key algorithm;</li>
+	  <li>Decoding and encoding of MIME messages is supported by a
+	    dedicated module;</li>
+	  <li>The <code>Gz</code> module gives you access to zlib data
+	    (de)compression;</li>
+	  <li>The <code>Calendar</code> module provides a
+	    sophisticated set of classes and methods for datetime
+	    calculations;</li>
+	  <li>Several more specialized modules are in
+	    development.</li>
+	</ul>	
+	<br>
+      </li>
+      <li><strong>Who uses Pike and for what?</strong>
+	<p>The major Pike application is Roxen Internet Software's
+	  Roxen Web Server (GPL), and its proprietary extensions
+	  marketed under the name Roxen Platform.  For more info, see
+	  <a href="http://www.roxen.com/">their website</a>.  Roxen is
+	  implemented almost entirely in Pike, and is remarkably
+	  efficient and stable.  It is also highly extensible, via
+	  user-supplied modules written in Pike.  In fact, most of the
+	  Pike programming being done outside of RIS is probably
+	  in-house development of Roxen modules by the webserver's
+	  users. </p>
+	<p>Another major project is <a
+	    href="http://caudium.net/">Caudium</a>,
+	  a fork of Roxen based on a version currently being phased
+	  out by RIS, but with significant new developments.</p>
+	<p>One project I don't know much about is <a
+	    href="http://www.gime.org/">GIME</a>; they state they will
+	  be doing their development in Pike, but no new "What's
+	  New" items seem to have appeared on their website for
+	  quite a while.
+	</p>
+	<p>Pike is, however, as I try to argue here, suitable for much more
+	  than a webserver extension language, and one of the top
+	  purposes of this document is to alert more programmers to
+	  its advantages.</p>
+	<p>Some sample code can be found on the <a
+	    href="http://pike-community.org/">Pike Community</a>
+	  website; beware that many of the "hacks" are quite old and
+	  will not work under current versions of Pike without
+	  modification.  Unfortunately, RIS is phasing out this
+	  website, and it has ceased to be updated for some time now.
+	  Hopefully, whatever is useful of its content will be
+	  incorporated into the <a
+	  href="http://community.roxen.com">Roxen Community</a> site.
+	</p>
+      </li>
+      <li><strong>How do I get Pike?</strong>
+	<p>If you decide you are serious about learning and using
+	  Pike, you most certainly want to get a recent version from
+	  RIS's public CVS repository.  This isn't hard to do at all; if
+	  you don't have a CVS client on your system yet, and you are
+	  running any halfway-decent Linux distribution, just install CVS
+	  from your distribution's packages (they all provide it).  I'm
+	  certain it's just as easy with any of the free BSD's.  Check
+	  on <a
+	    href="http://community.roxen.com/developers/cvs/anoncvs.html">
+	    Roxen Community</a> for how to proceed from there.  
+	  If you have a decent net connection, the whole process won't
+	  take more than a few minutes, plus the time to build Pike
+	  from source (half an hour or so on today's  machines).</p>  
+	<p>Building Pike from source is quite straightforward in most
+	  cases: note that to benefit from most of the modules that
+	  interface with external C code, you need to have installed the
+	  <em>development</em> versions of the corresponding C libs
+	  (such as <code>libmysqlclient</code>, GTK, the Gnome libs,
+	  etc.). </p>
+	<p>The benefits of doing this are that you'll be sure you have
+	  an up to date Pike, including all current bugfixes and feature
+	  enhancements; compiling it from source will allow you to
+	  have support for those C libraries (and their versions) that
+	  are available on <em>your</em> system, which Pike can
+	  support. </p>
+	<p>A possible downside is that, since Pike's development is
+	  proceeding at a rather fast rate, if you stick to the
+	  bleeding edge you will surely sooner or later run into some
+	  incompatibilities that will break code you already wrote.  A
+	  safer compromise may be to stick to the "stable" branch of
+	  Pike (7.2 at the time of this writing), but update it
+	  regularly to benefit from bugfixes.</p>
+	<p>Of course, the branch in current development (7.3 nowadays)
+	  is also available for your perusal, should you feel
+	  adventurous.  </p>
+	<p>A slightly easier alternative is to install Pike from your
+	  Linux distribution.  If you are running Debian Gnu/Linux (as
+	  you should be ;-), Pike and Roxen are available in the main
+	  section (and are only an <code>apt-get</code> away);
+	  however, it may be worthwhile to check out <a
+	  href="http://caudium.net/">Caudium's website</a> for more up
+	  to date Pike packages, including extra modules developed by
+	  the Caudium Group and an apt'able repository of deb's.
+	</p>
+	<p>
+	  <em>From Martin Nilsson:</em><br>
+	  You can download pike for Win32 by downloading Roxen
+	  Webserver for Win32. It does not include GL, GTK and some of
+	  the "heavy" stuff that would add too much to the size of the
+	  WebServer distributions. We have at least once succeded in
+	  compiling pike on all the systems listed on <a
+	  href="http://community.roxen.com/developers/autobuild/pike72.html">
+	  this Roxen Community page</a>. 
+	</p>
+	<p>
+	  <em>UPDATE:</em> the latest stable source tarball of Pike should be
+	  at <a href="ftp://ftp.roxen.com/pub/pike/latest-stable/">
+	  ftp://ftp.roxen.com/pub/pike/latest-stable/</a>, last I looked
+	  this was version 7.2.239, and binary packages for RedHat Linux, Solaris
+	  and NT were there as well.
+	</p>
+      </li>
+
+      <li><strong>Is there an IDE for Pike?</strong>
+	<p>No, currently there is none.  However, Pike is so much
+	  easier and cleaner then many other languages that the only
+	  thing you are likely to miss is a class browser to ease the
+	  exploration of the many available (and somewhat poorly
+	  documented) library modules.  Pike's interactive mode (known
+	  as <code>Hilfe</code>, and launched by invoking pike with no
+	  filename arguments), is very helpful though (see below).</p>
+	<p>For editing Pike code with syntax highlighting you might
+	  use the <code>pike.el</code> module for (X)Emacs, which is
+	    provided in the Pike distribution.</p>
+      </li>
+      <li><strong>Is it or will it be possible to compile Pike to native
+	code?</strong>
+	<p>Not anytime soon.  However, to quote the
+	<code>ANNOUNCE</code> file from the current distribution:
+	<blockquote>
+	   Pike is still under development and the goal is to
+	   incorporate those in future versions. <br>
+	  - No Pike native compiler or debugger available
+	</blockquote>
+	<p>Read whatever you like into this...</p>
+	<p>However, if performance is your concern, you are likely to
+	  find that interpreted Pike performs well enough for most of
+	  your needs.  The overhead of runtime bytecode compilation
+	  usually matters only for medium to large sized programs that
+	  need to be launched often; for short scripts, startup time
+	  is negligible, while for a long-running application (such as
+	  a webserver) it's unimportant, as you don't need to restart
+	  it often.</p>
+      </li>
+      <li>
+	<strong>Where do I find more information?</strong>
+      <p>The <a href="http://pike.roxen.com/">Pike homepage</a> at <a
+	  href="http://www.roxen.com/">RIS</a> is your main starting
+	  point. </p>
+      <p>To get started, an excellent resource on the "Pike way" is
+	the <a href="http://docs.roxen.com/pike/7.0/index.html">Pike
+	7.0 tutorial</a>.  </p>
+      <p>There are several versions of the basic Pike Reference Manual
+	floating around; it is hard to determine which one might be
+	the most up to date at a given time.  Places to check are <a
+	href="http://pike.roxen.com/documentation/">the docs
+	section</a> of the Pike home page, <a
+	href="http://david.hedbor.org/">David Hedbor's</a> page of <a
+	href="http://david.hedbor.org/pikeman/">Pike
+	documentation</a>, and of course <a
+	href="http://fredrik.hubbe.net/">Fredrik Hübinette's</a> <a
+	href="http://fredrik.hubbe.net/pike/">Pike page</a>.</p>
+      <p>You will almost certainly want to <a
+	  href="mailto:pike-request@roxen.com?subject=subscribe">subscribe
+	  to the Pike mailing list</a>, if you plan any serious
+	development in Pike.</p>
+      </li>
+    </ol>
+    <a name="basics"></a>
+    <h2>Basics of Pike programming</h2>
+
+    <ol>
+      <li>
+	<strong>What are Pike's datatypes?</strong>
+	<p>Pike has a powerful and clean type system, which provides
+	  you with a variety of high-level data types, plus the
+	  benefits of compile and run-time type checking.  There are
+	  arrays, mappings (a.k.a. associative arrays or dictionaries
+	  in other languages), classes, objects, and functions are
+	  also a first-class data type.</p>
+	<p>For a start, variables in Pike must be declared, and
+	  <em>some</em> type information must be given in the
+	  declaration, e.g.:</p>
+	<blockquote>
+	  <code>
+	    int counter=1;<br>
+	    object foo;<br>
+	    object(Stdio.File) outfile;<br>
+	    Stdio.FILE infile;<br>
+	    function(int, string|void: mapping(string:string))
+	    fun;<br>
+	    int|float x;<br>
+	    mixed whatever;<br>
+	  </code>
+	</blockquote>
+	<p>are all valid variable declarations in Pike (
+	  <code>object(Classname) foo;</code> and <code>Classname
+	  foo;</code> are equivalent).  Note that 
+	  you can declare a variable as a sort of "union"
+	  (e.g.<code>int|float</code>), specify (optionally) argument and
+	  return types for a function, index and value types for a
+	  mapping; declare an object as an instance of a specific
+	  class, etc.</p>
+	<p>You may also forfeit (most) compile-time type checking by
+	  declaring your variables as <code>mixed</code>, i.e. any type
+	  at all.  This is not usually a good idea (although it
+	  works), except when you want to have a sort of function
+	  overloading: you can define functions that check the type of
+	  their arguments at runtime, and take different actions
+	  accordingly. </p>
+	<p>In more detail: Pike has two sorts of datatypes, the basic
+	  types (<code>int, float, string</code>) and the pointer types
+	  (<code>array, mapping, multiset, function, program,
+	  object</code>).  Variables are passed by value in function
+	  calls, but the semantics of this is slightly different
+	  depending on whether you are dealing with a basic or pointer
+	  type: in the latter case, the "value" is in fact a "pointer"
+	  to the actual data object, which is <em>mutable</em>,
+	  i.e. can be modified "in place".  For the basic types,
+	  although behind the scenes, they are also represented by
+	  references to complex data objects, these objects themselves
+	  are immutable (this includes strings, which are shared).</p>
+	<p><em>This should be explained a little better, and
+	     illustrated with one or two examples.</em></p>
+	<p>You can also declare named constants, as in</p>
+	<blockquote><code>
+	    constant PI = 3.141593;
+	  </code></blockquote>
+	<p>here you do not need to specify a type, since the assigned
+	  value should be available to the interpreter at the time it
+	  compiles your class, meaning it can figure out its type on
+	  its own.  Named constants are class members just like
+	  variables and methods, and are also <code>public</code> by
+	  default.</p>
+      </li>
+      <li>
+	<strong>OOP features in Pike?</strong>
+	  <p>Pike's OO features are quite elegant and user-friendly.
+	    Learn to take advantage them to organize your code, you'll
+	    soon agree that OOP can really make sense, even for rather
+	    small projects. The discussion of Pike OOP in the
+	    reference manual is actually quite good and highly
+	    recommended; anyway, here's a quick recap.</p>
+	  <p>For a start, every file of Pike code you wrote defines a
+	    class.  A class is simply a data object, of type
+	    <code>program</code> to Pike's type system, which you use
+	    as a container for other data objects; these can be
+	    anything at all (that Pike supports), including variables
+	    of both basic and pointer types; other classes too.</p>
+	  <p>Pike actually uses <em>two</em> keywords referring to
+	    classes, in different contexts: the datatype is
+	    <code>program</code>, as already said; and the
+	    <code>class</code> keyword is used when you define a class
+	    inside another one, i.e. you don't have to put each class
+	    definition in a separate file.</p>
+	  <p>In particular, class members can and usually do include
+	    functions, which can directly access variables declared at
+	    top level of the same class (actually, of any enclosing
+	    classes as well), in addition to any arguments that are
+	    passed in the function call.  But no function definitions
+	    (method definitions in OO lingo) are actually required in
+	    a class, you can just as well define classes you will use
+	    as mere containers for data (like structs or record types
+	    in other languages).</p>
+	  <p>Once a class is defined, you can pass it around just like
+	    like any other data type, but you can't yet do anything
+	    useful with the stuff inside it (data members and
+	    methods).  To do some work with it, you must first
+	    <em>clone</em> an object of this class (instantiate, for
+	    the more sophisticated).  Usually this is done by calling
+	    the class as if it were a function, and storing the return
+	    value in a variable of type <code>object</code> (more
+	    specific typing is usually useful, as discussed
+	    elsewhere).  What this does is it initializes all class
+	    variables, and makes the methods available for calling.
+	    You can then access the object's members (up to
+	    limitations imposed by type modifiers, if you cared to use
+	    any), via the <em>indexing</em> operator.</p>
+	  <p>In other words, all member identifiers are by default
+	    <code>public</code>, and are available to any code that
+	    holds a handle to an object cloned from the given class.
+	    In practice, this usually looks somewhat like</p>
+	  <blockquote><code>
+	      Foo bar = Foo(arg1, arg2);<br>
+	      gazonk = bar->gurg(whatever);<br>
+	      bar->crap = zonk();
+	    </code></blockquote>
+	  <p>etc. Here the first line clones an object of class Foo,
+	    passing <code>arg1, arg2</code> to the class constructor
+	    (more about this in a minute), and stores it in a variable
+	    declared as an object of type <code>Foo</code>; the second
+	    line calls a member function of this object (and stores
+	    the result); and the third stores the return value of some
+	    function call in a member variable of
+	    <code>bar</code>.</p>
+	  <p>To have something interesting happen when an object of
+	    your class is cloned, you must define in it a
+	    <em>constructor</em>, called <code>create()</code>.  It
+	    should return <code>void</code>, and can take any
+	    arguments you declare for it; in the function's body, you
+	    can do mostly whatever you please.  Your constructor will
+	    be called automatically whenever an object of your class
+	    is cloned.  Of course, standard library classes come with
+	    their ready-made constructors.</p>
+	  <p>When you're done with an object and want to get rid of
+	    it, you can just destroy it by calling
+	    <code>destruct(foo);</code>.  From there on, all
+	    references to this object (if any) become invalid.  If you
+	    need to do some cleanup when an object is destroyed,
+	    define in your class a <code>void destroy()</code> method
+	    -- this is usually necessary only when the object
+	    manipulates some external resources.</p>
+	<p>
+	  <em>TBC</em>
+	</p>
+	<!-- modifiers: eMBee, mailing list, my Id 2981 -->
+      </li>
+      <li>
+	<strong>The preprocessor -- HOWTO?</strong>
+	<p>Pike's preprocessor works pretty much the same as a C
+	  preprocessor -- allowing you to use directives such as
+	  <code>#if</code>, <code>#ifdef</code>, <code>#define</code>
+	  and <code>#include</code> in the source code for your Pike
+	  programs. <code>#include &lt;file.h&gt;</code> by default
+	  searches for <code>file.h</code> in Pike's systemwide
+	  include directory; you can find out where that is by
+	  executing <code>pike --show-paths</code>.  You will seldom,
+	  if ever, need to use this directive.</p>
+	<p><em>NOTE:</em> do not confuse Pike include files with C
+	  include files that are also installed by Pike, and that are
+	  used when compiling Pike modules written in C.  </p>
+	<p>One thing that makes using the preprocessor in Pike
+	  different is that Pike scripts are compiled at runtime.  A
+	  way to exploit this is by using a file of
+	  <code>#define</code>s <em>in lieu</em> of a runtime
+	  config file for your app.  This may not be very elegant, but
+	  it's a boon for those who (like me) are too lazy to write a
+	  `real' config file parser.</p>
+	<p>Some bonus features of Pike's preprocessor:</p>
+	<ul>
+	  <li><code>#!</code> causes the remainder of the line to be
+	    ignored (for compatibility with Unix <code>#!</code>
+	    script magic)
+	  <li><code>#"Put some string here"</code> extends the string
+	    literal syntax by allowing strings with (real)
+	    newlines</li>
+	  <li><code>#string "file.txt"</code> inserts the contents of
+	    <code>file.txt</code> at the directive's position, as a
+	    (quoted and properly escaped) string literal</li>
+	  <li>You can run the preprocesor on any string value at your
+	    program's runtime by calling <code>cpp()</code>.</li>
+	  <li>There is a preprocessor directive <code>#pike</code>
+	    that defines which version of pike you want to
+	    emulate. This should make 
+	    your scripts invulnerable to pike updates. Example:
+	    <blockquote><code>
+			  #pike 7.0<br>
+			  // Code that should be run as pike 7.0<br>
+			  #pike 7.2<br>
+			  // Here you came back a year later and<br>
+			  // wanted to use<br> 
+			  // a pike 7.2 feature<br>
+			  #pike 7.0<br>
+			  // The rest of the program.<br>
+			</code></blockquote>
+	    (thanks again to Martin Nilsson).</li>
+	  <li>There is a <code>#charset</code> directive that allows
+	    you to specify in what character set the source file is
+	    written; a large number of charsets are supported,
+	    including all the iso8859-*, UTF-8 and Unicode (<em>where
+	    is a list?</em>).</li>
+	</ul> 
+	<p>The following preprocessor symbols are predefined in Pike 7.0:</p>
+<tablify nice>
+macro_name	expansion
+<code>__LINE__</code>	Current line number (starts on 1)
+<code>__FILE__</code>	Current filename
+<code>__DATE__</code>	Current date "MMM dd yyyy"
+<code>__TIME__</code>	Current time "hh:mm:ss"
+<code>__dumpdef(X)</code>	Dump definition of a <code>#define</code> (unreliable)
+<code>__PIKE__</code>	1
+<code>__VERSION__</code>	major.minor
+<code>__MAJOR__</code>	major
+<code>__MINOR__</code>	minor
+<code>__BUILD__</code>	build
+<code>__AUTO_BIGNUM__</code>	1 if bignums are enabled.
+<code>__NT__</code>	1 if WIN32/WIN64.
+<code>__amigaos__</code>	1 if AmigaOS.
+</tablify>
+	<p>In Pike 7.2 and 7.3 the following preprocessor symbols were added/changed:</p>
+<tablify nice>
+macro_name	expansion
+<code>__VERSION__</code>	Current version major.minor (<code>#pike</code>)
+<code>__MAJOR__</code>	Current version major (<code>#pike</code>)
+<code>__MINOR__</code>	Current version minor (<code>#pike</code>)
+<code>__REAL_VERSION__</code>	major.minor
+<code>__REAL_MAJOR__</code>	major
+<code>__REAL_MINOR__</code>	minor
+<code>__REAL_BUILD__</code>	build (Same as <code>__BUILD__</code> for symmetry)
+</tablify>
+	<p><em>Thanks to Henrik Grubbström for the above.</em></p>
+      </li>
+      <li>
+	<strong>How do I make my script directly executable?</strong>
+	<p>On a Unix(-like) system, any Pike script that defines a
+	<code>main()</code> function can be treated as an executable
+	file, provided that the first line of the script starts
+	with</p>
+	<blockquote><code>
+	    #!/usr/local/bin/pike
+	  </code></blockquote>
+	<p>or whatever is the full path to the Pike executable
+	installed on your system.  This works just like for e.g. shell
+	scripts and many other interpreters.  The Pike interpreter
+	will ignore this line.  I've heard of Unix systems that don't
+	obey this convention -- I think you can find them somewhere in
+	the Retrocomputing Museum ;-)</p>
+	<p>One often-used trick is to start a script with a line</p>
+	<blockquote><code>
+	    #!/usr/bin/env pike
+	  </code></blockquote>
+	<p>instead of the one above; this works around the requirement
+	that the exact full path to the Pike executable be given in
+	the "magic" line, by causing the current value of
+	<code>PATH</code> to be searched (see the manpage for
+	<code>env(1)</code>).</p>
+	<p><em>Trivia:</em> a few times I tried by mistake to execute a
+	Pike script that was missing this line.  Funny things
+	happened, like my X display getting strangely messed up.  It
+	turned out that when told to execute an ASCII text file with
+	no <code>#!</code> magic, my Linux system tries to run it as a
+	shell (<code>sh</code>) script (or maybe that's a
+	<code>bash</code> feature).  Well, the first nonempty line in
+	that script was like <code>import "Foo";</code>.  Look up the
+	manpage for <code>import</code> to solve the riddle (it's part
+	of the ImageMagick suite).  Killing the script and typing
+	<code>xrefresh</code> at the prompt gets things back to
+	normal. </p>
+      </li>
+      <li>
+	<strong>Can I (or should I) spread my program across multiple
+	  files?</strong> 
+      </li>
+      <li>
+	<strong>Does Pike have an interactive mode?</strong>
+	<p>Yes, it's called `Hilfe'; according to Martin Nilsson,</p>
+	<blockquote>
+	  Hilfe stands for "Hubbes Incremental Lpc FrontEnd". Help in
+	  Swedish is "Hjälp".
+	</blockquote>
+	<p>
+	  (Hilfe happens to be also German for `help', and Pike is a
+	  descendant of the older LPC language); it is launched when
+	  you invoke Pike with no filename arguments.  Once in Hilfe,
+	  type `help' for a brief summary of available commands.
+	  Other than those, you can type in mostly any Pike expression
+	  or statement, for immediate evaluation.  Input can be
+	  continued across multiple lines, line editing is provided
+	  via the <code>readline</code> library (same as used in
+	  <code>bash</code>), though with a few glitches.</p>
+      </li>
+      <li><strong>I made my script return a negative error code from
+	    main(), and now it won't exit until I kill it?</strong>
+	<p>This is correct: a negative return value from
+	  <code>main()</code> tells Pike's master program that it
+	  should enter asynchronous mode, i.e. the event-processing
+	  loop.  For this to be useful, you should have first set up 
+	  some callouts and/or callbacks.  Callouts are functions to
+	  be called in (approximately) a specified time, while
+	  callbacks will be called in response to some external event
+	  (data becoming available on an input stream, button pressed
+	  on a GUI widget, etc.).  To learn how to do this,
+	  investigate for a start 
+	  <code>Stdio.File.set_nonblocking()</code> and
+	  <code>call_out()</code>. </p>
+	<p>BTW a negative return code is not meaningful in most OS's:
+	  AFAIK the error code returned from a program is
+	  <code>unsigned char</code> (0-255).
+	</p>
+      </li>
+      <li>
+	<strong>What are Pike's file I/O facilities?</strong>
+	  <p>The <code>Stdio</code> module.</p>
+	  <p>Classes <code>Stdio.File</code>,
+	  <code>Stdio.FILE</code>.</p>
+	<p>
+	  <em>TBC</em>
+	</p>
+      </li>
+      <li>
+	<strong>What are Pike's network I/O facilities?</strong>
+	<p>The <code>Stdio.File</code> class has easy to use methods
+	  for handling client socket connections, it's about as simple
+	  as</p>
+	<blockquote><code>
+	    Stdio.File fd = Stdio.File();<br>
+	    fd->connect("pike.roxen.com", 80);<br>
+	    fd->write("GET / HTTP/1.0\r\n\r\n");<br>
+	    string reply = fd->read();<br>
+	  </code></blockquote>
+	<p>up to error checking etc. of course.  To listen on a port,
+	  there's the <code>Stdio.Port</code> class, and there's a
+	  <code>Stdio.UDP</code> for (surprize) UDP communication.
+	  The details are pretty well covered in the documentation.</p>
+      </li>
+      <li>
+	<strong>Does Pike support C++/iostream style I/O?</strong>
+	<p>Not that I know of.  It wouldn't probably be hard to
+	  emulate most of those features in Pike, but it seems nobody
+	  has bothered. </p>
+      </li>
+      <li>
+	<strong>What are the facilities for processing
+	strings?</strong>
+	  <p>Builtin string functions and operators.</p>
+	  <p>The <code>String</code> module.</p>
+	  <p>The <code>Regexp</code> module.</p>
+	<p>
+	  <em>TBC</em>
+	</p>
+      </li>
+      <li>
+	<strong>How do I access OS/Posix facilities?</strong>
+	<p>Interfaces to these are implemented mostly as builtin Pike
+	  functions, look for them in the mapping returned by
+	  <code>all_constants()</code>.  Most of what you may need is
+	  there, e.g. <code>alarm()</code>, <code>chroot()</code>,
+	  <code>getpid()</code>, <code>getpwnam()</code>,
+	  <code>signal()</code>, <code>uname()</code>, ...  Of course
+	  some may be missing if you're running Pike on (say) a
+	  MS Windows system.</p>
+      </li>
+      <li>
+	<strong>Does Pike have multithreading?</strong>
+	<p>Yes, if your OS supports it (well enough).</p>
+	<p><em>TBC.</em></p>
+      </li>
+      <li>
+	<strong>How do I get started with database
+	  programming in Pike?</strong>
+	<p>If by `database programming' you mean working with an RDBMS
+	  (such as Mysql or Oracle), first learn a little about SQL --
+	  that part you won't find here (<em>I might insert a few
+	  links sometime</em>).</p>
+	<p>OK, now that you've done that: Pike has a generic SQL
+	  module, called (appropriately) <code>Sql</code>, which is
+	  the preferred interface.  Most of the real work is done by
+	  methods implemented in RDBMS-specific modules, such as
+	  <code>Oracle</code>, <code>Mysql</code> or
+	  <code>Sybase</code>.  Which ones you will actually have
+	  support for depends on the (DB-vendor-provided) client
+	  libraries you actually have on your system, as mentioned
+	  elsewhere. </p>
+	<p>An easy way to initialize a connection to your database is
+	  by cloning an instance of <code>Sql.sql</code>, via a call
+	  such as</p>
+	<blockquote><code>
+		      object db = Sql.sql("mysql://dbhost", database, user,
+		      password);
+		    </code></blockquote>
+	<p>or even</p>
+	<blockquote><code>
+	    object db = Sql.sql("mysql://user:password@dbhost/database");
+	  </code></blockquote>
+	<p>if you find this more convenient (substitute `oracle' or 
+	  whatever for `mysql' if appropriate), and now you can use
+	  methods in <code>db</code>, like</p> 
+	<blockquote><code>
+		      array(mapping(string:string)) reply =
+		      db->query(query_string);
+		    </code></blockquote>
+	<p>here <code>query_string</code> holds your SQL statement,
+	  and <code>reply</code> will hold the rows of the table
+	  returned by your query, as mappings keyed by column name.</p>
+	<p>If you expect your query might return a huge amount of
+	  data, consider using the <code>big_query()</code> method
+	  instead, and fetching the result rows one by one from the
+	  <code>object(Sql.result)</code> returned by this method.</p>
+	<p>Much of the description of the <code>Mysql</code> module to
+	  be found in the Pike reference carries over to the generic
+	  <code>Sql</code> module.  Yes, it is a long-standing
+	  deficiency of the reference that it describes
+	  <code>Mysql</code> and not the generic interface.  When you
+	  should need DBMS-specific functions not provided by the
+	  generic <code>Sql</code>, they are available as methods of
+	  the object <code>db->master_sql</code>.</p>
+	<p><em>NOTE: </em>
+	  you will almost certainly need to use
+	  <code>db->quote()</code> to build your query strings;
+	  this is used for quoting (rather,
+	  escaping) string literals sent in queries to the DB.  String
+	  quoting rules are, unfortunately, somewhat
+	  database-specific.  Luckily, <code>Sql.sql</code>
+	  automatically picks the version appropriate to your
+	  DBMS.</p>
+	<p>Remember that before you're sure you got it right, you can
+	  always try it in Hilfe and see pretty quickly if anything
+	  goes wrong.</p>
+      </li>
+      <li>
+	<strong>How do I get started with GUI programming?</strong>
+	<p>If you are not already familiar with the GTK toolkit, look
+	  for a GTK tutorial somewhere around <a
+	    href="http://www.gtk.org/">the GTK website</a>.  For a
+	  start, just get acquainted with the basic concepts of GTK's
+	  object and event model and have a look at one or two simple
+	  code examples in C.  GTK maps very nicely to Pike's model of
+	  objects and callbacks, and you should find it quite easy
+	  to redo those examples in Pike, or create your own.  The
+	  basic idea is that you use Pike's own event loop, which is
+	  entered by returning a negative value from
+	  <code>main()</code>. </p>
+	<p>Sometime in the (hopefully) near future I expect to put
+	  here a few commented short sample scripts.  If you can
+	  contribute any of your own, please do.</p>
+      </li>
+      <li>
+	<strong>How do I get started with OpenGL programming?</strong>
+	<p>Check out <a
+	href="http://community.roxen.com/articles/005_opengl/">this
+	article</a> on the <a href="http://community.roxen.com/">Roxen
+	Community</a> site.
+      </li>
+    </ol>
+    <a name="advanced"></a>
+    <h2>Advanced Pike programming</h2>
+
+    <ol>
+    <li>
+      <strong>Does Pike have support for large integers
+      (bignums)?</strong>
+      <p>Yes, as large as will fit in your computer ;-)
+	if it was compiled with support for the Gmp library (Gnu
+	Multiple Precision IIRC).  This happens automatically if a
+	suitable version of this library is detected on your system at
+	the time of building Pike.  Any integer value that is not less
+	than <code>0x80000000</code> (on a 32-bit computer) gets
+	automatically converted to a bignum object.</p>
+      <p>Usage of large integers is mostly transparent to the user.
+	Beware though that the builtin <code>pow()</code> function
+	returns <code>float</code>, even for integer arguments. Use
+	<code>Gmp.pow()</code> instead, or write something like
+	<code>int&nbsp;big&nbsp;=&nbsp;base->pow(exponent);</code></p> 
+      <p>One might say that, if auto bignums are enabled in your
+            Pike, integers actually become bignum objects
+            in disguise, but with optimization for the case when the
+            <code>int</code> value fits in a machine integer.</p>
+      <p>NB. bitwise operators also work with bignum ints.</p>
+      <p>Support for bignum rationals is not provided yet.</p>
+      </li>
+      <li><strong>Is `type' a datatype? What is it for?</strong>
+	<p>Yes, in recent versions of Pike (7.2 for sure) it is a new
+	  basic type.  Values of type <code>type</code> are returned
+	  (at least) by the <code>_typeof()</code> function and the
+	  <code>typeof()</code> "special form".</p>
+	<p>The former allows you to test the actual, runtime type of
+	  an expression.  Like any function, <code>_typeof()</code>
+	  first evaluates its argument; <code>typeof()</code>, on the
+	  contrary, does not
+	  -- it is not actually a function but a keyword that
+	  masquerades as a function, and it returns the Pike
+	  interpreter's current notion of the type of what the given
+	  expression <em>would</em> evaluate to, as a value of type
+	  <code>type</code>.  I.e. fed with the name of a function it
+	  will return <code>function</code>, or possibly
+	  <code>function(int : void)</code> (or whatever) if such
+	  information is available.  Given a function call, it will
+	  return (whatever it knows about) the type of the function's
+	  return value, <em>but the call will not be
+	    performed.</em></p>
+	<p>Note however, that <code>type</code> is not (currently) a
+	  keyword, i.e. you cannot declare a variable as <code>type
+	    foo;</code> say.  You <em>can</em> store type values in named
+	  constants or variables of type <code>mixed</code>, though.</p>
+      </li>
+      <li><strong>Does Pike allow for user-defined datatypes?</strong>
+	<p>Well, obviously any class definition provides a
+	  user-defined (composite) datatype, and this is a most useful
+	  feature; but in addition, new features of Pike's type system
+	  (see preceding question) allow you to play some more subtle
+	  tricks.  A (perhaps silly) example would be (try this code):</p>
+	<blockquote><code>
+	    constant boolean = typeof(0)|typeof(1);<br>
+	    boolean flag = 1;<br>
+	    <br>
+	    int main( int argc, array(string) argv )<br>
+	    {<br>
+	    flag = (argc>1)?(int)argv[1]:flag;<br>
+	    write( "Type of flag is %O\n", typeof(flag) );<br>
+	    write( "Value of flag is %O\n", flag );<br>
+	    return 0;<br>
+	    }<br>
+	  </code></blockquote>
+	<p>A related point is that (since Pike 7.2.26 approx.) you can
+	  use <code>typedef</code> and <code>enum</code> declarations
+	  in Pike.  As far as I can see, their usage and properties
+	  are quite alike those of the corresponding C language
+	  keywords.</p>
+	
+      </li>
+      <li><strong>What about the `more advanced' OO features?</strong>
+	<p>Well, Pike has at least</p>
+	<ul>
+	  <li>multiple inheritance</li>
+	  <li>data hiding</li>
+	  <li>operator overloading</li>
+	  <li>the option to have interface declarations separate from
+	    implementation</li> 
+	  <li>...</li>
+	</ul>
+	<p>One relevant issue to keep in mind (from Henrik
+	  Grubbström):</p>
+	<blockquote>Note that Pike's typing system uses the
+	  "implements"/"looks-like" relation, and not the
+	  "inherits"/"is-a" relation.  The typing system when
+	  comparing objects of different types, compares the 
+	  types for the public (ie not static) symbols in the objects.
+	</blockquote>
+	<p>
+	<em>TBC</em>
+	</p>
+      </li>
+	<!-- CF. "pike function and variable modifiers", mailing list   -->
+      <li><strong>How do I extend Pike, or interface it to some C library?</strong>
+      </li>
+      <li><strong>Are there any other ways to modify Pike's behavior?</strong>
+      </li>
+      <li><strong>Can I use mmap() and friends from Pike?</strong>
+	<p>Not in Pike 7.2.  An interface will be or already is
+	  provided in 7.3, the current development version.  Note that
+	  this can be quite handy: since Pike strings are shared and
+	  cannot be altered "in place", changing a few bytes here and
+	  there in a string will result in multiple copies being
+	  allocated at least temporarily, which may be an issue if
+	  you're dealing with a huge chunk of data.</p>
+      </li>
+      <li><strong>Can Pike use unix sockets for IPC?</strong>
+	<p>Not directly AFAIK.  However, unix sockets are used in an
+	  indirect way by several modules, when the underlying C
+	  libraries use them.  Examples include Mysql (connections to
+	  a locally running Mysql daemon) and GTK (X protocol
+	  connections to a local display).</p>
+      </li>
+    </ol>
+
+    <a name="library"></a>
+    <h2>Pike's module library</h2>
+    <p>These are essentially all the modules you will find standard
+      with Pike 7.2, except for a few I have omitted -- the latter
+      being either modules for interfacing with the various database
+      servers (Mysql, Oracle, etc.) which are normally accessed via
+      <code>Sql</code>, those used internally and not designed for end
+      user access (I presume that this is indicated by a module name
+      that starts with an underscore), and several others that are
+      obviously just stubs.  My aim is to have at least a few words of
+      comments for each, regarding purpose, status and
+      usefulness.  Of course, I do not mean to duplicate the reference
+      documentation (where it exists), only to provide a quick "hint
+      sheet". </p>
+    <p>Readers are invited (read: <em>encouraged</em>) to 
+	<a href="mailto:robert.budzynski@fuw.edu.pl">send in</a> short,
+	self-contained sample scripts illustrating usage of the
+	individual modules.  If appropriate, I will incorporate them
+	into a small repository of 
+	Pike code samples I plan to set up.  To keep me out of trouble,
+	please indicate the origin of the code (if not written by you)
+	and any possible usage restrictions (public domain will be
+	assumed by default).</p>
+    <ol>
+      <li><strong>ADT</strong></li>
+      <li><strong>Array</strong></li>
+      <li><strong>Cache</strong></li>
+      <li><strong>Calendar</strong></li>
+      <li><strong>CommonLog</strong><br />
+	Use the function <code>int CommonLog.read(function(array(int |
+	string), void | int : void ), object | string, void | int
+	)</code> to parse the lines in a www server's logfile, which
+	must be in "common log" format -- such as used by default for
+	the access log by Roxen, Caudium, Apache et al.<br />
+	The first argument is a callback you provide, that will be
+	called for every line in the file that is successfully parsed
+	as a valid log entry.  It will receive as first argument an
+	array containing the broken-down data, as <code>({
+	remote_host, ident_user, auth_user, year, month, day, hours,
+	minutes, seconds, timezone, method, path, protocol,
+	reply_code, bytes })</code>, where the date-time fields, the
+	reply code (i.e. 200, 404, ...) and bytes (sent in reply) are
+	integers and the rest are strings (or zero if unavailable).
+	Method will be one of <code>"GET", "POST", "HEAD"</code> etc.,
+	protocol is <code>"HTTP/1.0", "HTTP/1.1"</code>,...<br />
+	The second (optional) argument to the callback seems to be the
+	number of bytes read from the logfile until the end of the
+	current line.  After the callback you pass the path to the
+	logfile (as string) or perhaps a <code>Stdio.File</code>
+	object corresponding to a file open for reading.  Optionally
+	you may also provide an (int) offset at which you want to
+	start reading the file.<br />
+	The value returned is the number of bytes read from the
+	logfile.  For lines that fail to parse as log entries the
+	callback will not be invoked, but no error is thrown. <br />
+	<code>CommonLog.read</code> is quite fast, being C-code
+	tailor-made to read this specific format.<br />
+	A crude sample usage is given in <a href="Code/logstats">this
+	script</a>. 
+
+      </li>
+      <li><strong>Crypto</strong></li>
+      <li><strong>Debug</strong></li>
+      <li><strong>Filesystem</strong></li>
+      <li><strong>GDK</strong></li>
+      <li><strong>GL</strong></li>
+      <li><strong>GLU</strong></li>
+      <li><strong>GLUT</strong></li>
+      <li><strong>GTK</strong></li>
+      <li><strong>GDBM</strong></li>
+      <li><strong>Geography</strong></li>
+      <li><strong>Getopt</strong></li>
+      <li><strong>Gettext</strong></li>
+      <li><strong>Gmp</strong></li>
+      <li><strong>Gnome</strong></li>
+      <li><strong>Graphics</strong></li>
+      <li><strong>Gz</strong></li>
+      <li><strong>HTTPLoop</strong></li>
+      <li><strong>Image</strong></li>
+      <li><strong>Java</strong></li>
+      <li><strong>LR</strong></li>
+      <li><strong>Languages</strong></li>
+      <li><strong>Locale</strong></li>
+      <li><strong>MIME</strong></li>
+      <li><strong>Math</strong></li>
+      <li><strong>Mird</strong></li>
+      <li><strong>PDF</strong></li>
+      <li><strong>Parser</strong></li>
+      <li><strong>Perl</strong></li>
+      <li><strong>Pipe</strong></li>
+      <li><strong>Process</strong></li>
+      <li><strong>Protocols</strong></li>
+      <li><strong>Regexp</strong></li>
+      <li><strong>Remote</strong></li>
+      <li><strong>SANE</strong></li>
+      <li><strong>Sql</strong></li>
+      <li><strong>Ssleay</strong></li>
+      <li><strong>Standards</strong></li>
+      <li><strong>Stdio</strong></li>
+      <li><strong>String</strong></li>
+      <li><strong>Thread</strong></li>
+      <li><strong>Tools</strong></li>
+      <li><strong>Yabu</strong></li>
+      <li><strong>Yp</strong></li>
+      <li><strong>spider</strong></li>
+    </ol>
+    <a name="credits"></a>
+    <h2>Credits</h2>
+
+    <p>
+      In addition to information gathered from the Pike mailing list
+      (thanks to everybody) and misc. other sources,
+      the following people have contributed corrections and/or
+      additional information:</p>
+    <ul>
+      <li>Francesco Chemolli</li>
+      <li>Martin Nilsson</li>
+      <li>Henrik Grubbström</li>
+      <li>Sten Eriksson</li>
+    </ul>
+    <br>
+    <hr>
+    <p>Accessed: by&nbsp;<accessed type=number> since <accessed
+	  since>.</p>  
+    <address><a href="mailto:Robert.Budzynski@fuw.edu.pl">Robert J. Budzynski</a></address>
+    <!-- Created: Mon Feb 19 21:59:46 CET 2001 -->
+      <p>Last modified:
+      <modified date type="iso">
+      </p>
+  </body>
+</html>

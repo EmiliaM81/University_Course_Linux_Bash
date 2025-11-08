@@ -1,0 +1,5 @@
+-rw-r--r-- 1 ewao staff 4.6K Oct 12  2022 /home/staff/ewao/UNIX/CFG/main.c
+-rw-r--r-- 1 ewao staff 6.5K Oct 15  2020 /home/staff/ewao/UNIX/Fonts/45-latin.conf
+-rw-r--r-- 1 ewao staff 6.1K Oct 15  2020 /home/staff/ewao/UNIX/Obj/main2.o
+-rw-r--r-- 1 ewao staff 3.9K Nov 28  2023 /home/staff/ewao/UNIX/pliki/arch2.tar.gz
+-rw-r--r-- 1 ewao staff 4.6K Nov 20  2023 /home/staff/ewao/UNIX/pliki/main.c

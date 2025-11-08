@@ -1,0 +1,111 @@
+<html><head><title>rjb's pike code: cal</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#!/usr/local/bin/pike
+</font><font color="darkblue">#pragma strict_types
+</font>
+<font color="darkred"><b>typedef</b></font> <font color="darkred"><b>int</b></font><font color="black">(</font>1..12<font color="black">)</font> Month;
+<font color="darkred"><b>typedef</b></font> <font color="darkred"><b>int</b></font><font color="black">(</font>1..31<font color="black">)</font> Day;
+<font color="darkred"><b>typedef</b></font> <font color="darkred"><b>int</b></font><font color="black">(</font>1..<font color="black">)</font> Year;
+
+<font color="darkred"><b>constant</b></font> weekdays = <font color="black">(</font><font color="black">{</font> <font color="green">"Sunday"</font>, <font color="green">"Monday"</font>, <font color="green">"Tuesday"</font>, <font color="green">"Wednesday"</font>, <font color="green">"Thursday"</font>, <font color="green">"Friday"</font>, <font color="green">"Saturday"</font> <font color="black">}</font><font color="black">)</font>;
+
+<font color="darkred"><b>string</b></font> month_name<font color="black">(</font> Month month <font color="black">)</font>
+<font color="black">{</font>
+	<font color="darkblue">return</font> <font color="black">(</font><font color="black">{</font> <font color="green">"January"</font>, <font color="green">"February"</font>, <font color="green">"March"</font>, <font color="green">"April"</font>, <font color="green">"May"</font>, <font color="green">"June"</font>,
+            <font color="green">"July"</font>, <font color="green">"August"</font>, <font color="green">"September"</font>, <font color="green">"October"</font>, <font color="green">"November"</font>, <font color="green">"December"</font> <font color="black">}</font><font color="black">)</font><font color="black">[</font>month-1<font color="black">]</font>;
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font><font color="black">(</font>28..31<font color="black">)</font> month_length<font color="black">(</font> Month month, Year year <font color="black">)</font>
+<font color="black">{</font>
+    <font color="darkblue">switch</font> <font color="black">(</font>month<font color="black">)</font>
+    <font color="black">{</font>
+        <font color="darkblue">case</font> 1: <font color="darkblue">case</font> 3: <font color="darkblue">case</font> 5: <font color="darkblue">case</font> 7: <font color="darkblue">case</font> 8: <font color="darkblue">case</font> 10: <font color="darkblue">case</font> 12:
+            <font color="darkblue">return</font> 31;
+        <font color="darkblue">case</font> 4: <font color="darkblue">case</font> 6: <font color="darkblue">case</font> 9: <font color="darkblue">case</font> 11:
+            <font color="darkblue">return</font> 30;
+        <font color="darkblue">case</font> 2:
+            <font color="darkblue">if</font><font color="black">(</font> <font color="black">(</font>year % 4<font color="black">)</font> || <font color="black">(</font>!<font color="black">(</font>year % 100<font color="black">)</font> &amp;&amp; <font color="black">(</font><font color="black">(</font>year/100<font color="black">)</font> % 4<font color="black">)</font><font color="black">)</font> <font color="black">)</font>
+                <font color="darkblue">return</font> 28;
+            <font color="darkblue">else</font>
+                <font color="darkblue">return</font> 29;
+    <font color="black">}</font>
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font><font color="black">(</font>0..6<font color="black">)</font> weekday<font color="black">(</font> Day day, Month month, Year year <font color="black">)</font>
+<font color="black">{</font>
+    <font color="darkred"><b>int</b></font> days = 365 * <font color="black">(</font> year - 1 <font color="black">)</font> + <font color="black">(</font> year - 1 <font color="black">)</font> / 4 - <font color="black">(</font> year - 1 <font color="black">)</font> / 100  + <font color="black">(</font> year - 1 <font color="black">)</font> / 400;  <font color="#5555AA"><i>// from full years</i></font>
+    <font color="darkblue">for</font> <font color="black">(</font> Month m = 1; m &lt; month; m++ <font color="black">)</font> <font color="#5555AA"><i>// complete months of current year</i></font>
+        days += month_length<font color="black">(</font> m, year <font color="black">)</font>;
+    days += day;
+    <font color="darkblue">return</font>  <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">(</font>0..6<font color="black">)</font><font color="black">]</font><font color="black">(</font>days % 7<font color="black">)</font>;
+<font color="black">}</font>
+
+<font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font>Day<font color="black">)</font><font color="black">)</font> cal_month<font color="black">(</font> Month month, Year year <font color="black">)</font>
+<font color="black">{</font>
+    <font color="darkred"><b>int</b></font><font color="black">(</font>0..6<font color="black">)</font> k = weekday<font color="black">(</font> 1, month, year <font color="black">)</font>;
+    <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font>Day<font color="black">)</font><font color="black">)</font> cal_table;
+    <font color="darkred"><b>array</b></font><font color="black">(</font>Day<font color="black">)</font> cal_row = <font color="black">[</font><font color="darkred"><b>array</b></font><font color="black">(</font>Day<font color="black">)</font><font color="black">]</font><font color="black">(</font> <font color="black">(</font><font color="black">{</font> 0 <font color="black">}</font><font color="black">)</font> * k +
+                                enumerate<font color="black">(</font> month_length<font color="black">(</font> month, year <font color="black">)</font>, 1, 1 <font color="black">)</font> <font color="black">)</font>;
+    cal_table = cal_row / 7.0;
+    <font color="darkblue">if</font> <font color="black">(</font> sizeof<font color="black">(</font> cal_table<font color="black">[</font>-1<font color="black">]</font> <font color="black">)</font> != 7 <font color="black">)</font>
+        cal_table<font color="black">[</font>-1<font color="black">]</font> += <font color="black">(</font> <font color="black">(</font><font color="black">{</font> 0 <font color="black">}</font><font color="black">)</font> * <font color="black">(</font> 7 - <font color="black">(</font>sizeof<font color="black">(</font> cal_row <font color="black">)</font> % 7 <font color="black">)</font> <font color="black">)</font> <font color="black">)</font>;
+    <font color="darkblue">return</font> cal_table;
+<font color="black">}</font>
+
+<font color="darkred"><b>string</b></font> cal_txt<font color="black">(</font> Month month, Year year <font color="black">)</font>
+<font color="black">{</font>
+    <font color="darkred"><b>string</b></font> res = sprintf <font color="black">(</font> <font color="green">"%|21s\n"</font>, month_name<font color="black">(</font> month <font color="black">)</font> + <font color="green">" "</font> + <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font>year <font color="black">)</font> +
+        sprintf<font color="black">(</font><font color="green">"%{%-!2s %}\n"</font>, weekdays<font color="black">)</font>;
+    <font color="darkblue">foreach</font> <font color="black">(</font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">)</font><font color="black">)</font>cal_month<font color="black">(</font> month, year<font color="black">)</font>, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> row<font color="black">)</font>
+    <font color="black">{</font>
+        row = <font color="black">[</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">]</font>map<font color="black">(</font> row, <font color="darkblue">lambda</font><font color="black">(</font> <font color="darkred"><b>string</b></font> s <font color="black">)</font><font color="black">{</font> <font color="darkblue">return</font> <font color="black">(</font>s==<font color="green">"0"</font><font color="black">)</font> ? <font color="green">""</font> : s; <font color="black">}</font> <font color="black">)</font>;
+        res += sprintf<font color="black">(</font><font color="green">"%{%2s %}\n"</font>, row<font color="black">)</font>;
+    <font color="black">}</font>
+
+    <font color="darkblue">return</font> res;
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font> <font color="darkred"><b>int</b></font> ac, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> av <font color="black">)</font>
+<font color="black">{</font>
+    Month month;
+    Year year;
+
+    <font color="darkblue">switch</font><font color="black">(</font>ac-1<font color="black">)</font>
+    <font color="black">{</font>
+    <font color="darkblue">case</font> 0:
+        <font color="darkred"><b>mapping</b></font> m = localtime<font color="black">(</font> time<font color="black">(</font><font color="black">)</font> <font color="black">)</font>;
+        month = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">(</font>1..12<font color="black">)</font><font color="black">]</font><font color="black">(</font>m-&gt;mon + 1<font color="black">)</font>;
+        year = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">(</font>1..<font color="black">)</font><font color="black">]</font><font color="black">(</font>m-&gt;year + 1900<font color="black">)</font>;
+        <font color="darkblue">break</font>;
+    <font color="darkblue">case</font> 1:
+        <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> a;
+        <font color="darkblue">for</font> <font color="black">(</font> <font color="darkred"><b>int</b></font> k = 1; k &lt;= 12 ; k++ <font color="black">)</font>
+        <font color="black">{</font>
+            a = av<font color="black">[</font>0..0<font color="black">]</font> + <font color="black">(</font><font color="black">{</font> <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font>k <font color="black">}</font><font color="black">)</font> + av<font color="black">[</font>1..1<font color="black">]</font>;
+            <font color="darkred"><b>int</b></font> r = main<font color="black">(</font> 3, a <font color="black">)</font>;
+            <font color="darkblue">if</font> <font color="black">(</font> r <font color="black">)</font>
+            <font color="darkblue">return</font> r;
+        <font color="black">}</font>
+            <font color="darkblue">return</font> 0;
+    <font color="darkblue">case</font> 2:
+        month = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">(</font>1..12<font color="black">)</font><font color="black">]</font><font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">)</font><font color="black">(</font>av<font color="black">[</font>1<font color="black">]</font><font color="black">)</font>;
+        year = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">(</font>1..<font color="black">)</font><font color="black">]</font><font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">)</font><font color="black">(</font>av<font color="black">[</font>2<font color="black">]</font><font color="black">)</font>;
+        <font color="darkblue">break</font>;
+    <font color="darkblue">default</font>:
+        werror<font color="black">(</font> <font color="green">"%s: wrong number of arguments (should be 1 or 2: [month] year)\n"</font>,
+                basename<font color="black">(</font>av<font color="black">[</font>0<font color="black">]</font><font color="black">)</font><font color="black">)</font>;
+        <font color="darkblue">return</font> 1;
+    <font color="black">}</font>
+
+    <font color="darkblue">if</font> <font color="black">(</font> <font color="black">(</font> month &lt; 1 <font color="black">)</font> || <font color="black">(</font> month &gt; 12 <font color="black">)</font> || <font color="black">(</font> year &lt; 1 <font color="black">)</font> <font color="black">)</font>
+    <font color="black">{</font>
+        werror<font color="black">(</font> <font color="green">"%s: unsupported arguments: month = %d, year = %d\n"</font>,
+            basename<font color="black">(</font>av<font color="black">[</font>0<font color="black">]</font><font color="black">)</font>, month, year <font color="black">)</font>;
+        <font color="darkblue">return</font> 1;
+    <font color="black">}</font>
+
+    write<font color="black">(</font> cal_txt<font color="black">(</font> month, year <font color="black">)</font> <font color="black">)</font>;
+    <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+
+</pre></body></html>

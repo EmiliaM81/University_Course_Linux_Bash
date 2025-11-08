@@ -1,0 +1,30 @@
+.
+├── grep-1a.txt
+├── grep-1b.txt
+├── grep-1c.txt
+├── grep-2a.txt
+├── grep-2b.txt
+├── grep-2c.txt
+├── grep-3.txt
+├── grep-4b.txt
+├── grep-4.txt
+├── grep-5a.txt
+├── grep-5b.txt
+├── grep-6.txt
+├── history.txt
+├── plik1
+├── plik1.txt
+├── plik2
+├── plik2.txt
+├── tree7.txt
+├── zad1.txt
+├── zad2.txt
+├── zad3.txt
+├── zad4.txt
+├── zad5.txt
+├── zad6.txt
+├── zad7.txt
+├── zad8.txt
+└── zad9.txt
+
+1 directory, 27 files

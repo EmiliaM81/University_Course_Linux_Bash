@@ -1,0 +1,90 @@
+<html><head><title>rjb's pike code: stopwatch</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#! /usr/bin/env pike
+</font><font color="darkblue">#pragma strict_types
+</font><font color="darkred"><b>constant</b></font> stopwstyle =
+<font color="darkblue">#"style \"stopwstyle\"
+{fg[NORMAL]={1.0,1.0,0.0}
+ bg[NORMAL]={0.0,0.0,0.5}
+ font=\"-*-*-bold-r-normal-*-24-*-*-*-m-*-iso8859-*\"}
+widget \"*timelabel\" style \"stopwstyle\""</font>;
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="darkred"><b>int</b></font> argc, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> argv<font color="black">)</font>
+<font color="black">{</font>
+<font color="darkblue">#if constant(Gnome.init)
+</font>	Gnome.init<font color="black">(</font><font color="green">"PiGTK Stopwatch"</font>, <font color="green">"0.001"</font>, argv<font color="black">)</font>;
+<font color="darkblue">#else
+</font>	GTK.setup_gtk<font color="black">(</font>argv<font color="black">)</font>;
+<font color="darkblue">#endif
+</font>	GTK.parse_rc<font color="black">(</font>stopwstyle<font color="black">)</font>;
+	Stopwatch stopwatch = Stopwatch<font color="black">(</font><font color="black">)</font>;
+	GTK.Window mainwindow = GTK.Window<font color="black">(</font>GTK.WindowToplevel<font color="black">)</font>
+		-&gt; set_policy<font color="black">(</font>0,0,1<font color="black">)</font>;
+	mainwindow-&gt; signal_connect<font color="black">(</font><font color="green">"destroy"</font>, exit, 0<font color="black">)</font>;
+	mainwindow-&gt; set_title<font color="black">(</font><font color="green">"Stopwatch"</font><font color="black">)</font>
+		-&gt; add<font color="black">(</font>stopwatch<font color="black">)</font>
+		-&gt; show_all<font color="black">(</font><font color="black">)</font>;
+	<font color="darkblue">return</font> -1;
+<font color="black">}</font>
+
+<font color="darkblue">class</font> Stopwatch
+<font color="black">{</font>
+	<font color="darkblue">inherit</font> GTK.Vbox;
+	<font color="darkgreen">static</font>
+	<font color="black">{</font>
+		GTK.Clock timelabel;
+		GTK.Hbox buttonpad;
+		GTK.Button startstopb;
+		GTK.Button resetb;
+		<font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> running = 0;
+	<font color="black">}</font>
+
+	<font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> is_running<font color="black">(</font><font color="black">)</font> <font color="black">{</font> <font color="darkblue">return</font> running; <font color="black">}</font>
+
+	<font color="darkred"><b>void</b></font> create<font color="black">(</font><font color="black">)</font>
+	<font color="black">{</font>
+		timelabel = GTK.Clock<font color="black">(</font>GTK.ClockIncreasing<font color="black">)</font>
+			-&gt;set_justify<font color="black">(</font>GTK.JustifyCenter<font color="black">)</font>
+			-&gt;set_padding<font color="black">(</font>5,5<font color="black">)</font>
+			-&gt;set_name<font color="black">(</font><font color="green">"timelabel"</font><font color="black">)</font>;
+		startstopb = GTK.Button<font color="black">(</font><font color="black">)</font>-&gt;add<font color="black">(</font>GTK.Label<font color="black">(</font><font color="green">"Start"</font><font color="black">)</font><font color="black">)</font>;
+		startstopb-&gt;signal_connect<font color="black">(</font><font color="green">"clicked"</font>, startstop<font color="black">)</font>;
+		resetb = GTK.Button<font color="black">(</font><font color="green">"Reset"</font><font color="black">)</font>;
+		resetb-&gt;signal_connect<font color="black">(</font><font color="green">"clicked"</font>, reset<font color="black">)</font>;
+		buttonpad = GTK.Hbox<font color="black">(</font>1,0<font color="black">)</font>
+			-&gt;add<font color="black">(</font>startstopb<font color="black">)</font>
+			-&gt;add<font color="black">(</font>resetb<font color="black">)</font>
+			<font color="#5555AA"><i>/*-&gt;set_layout(GTK.BUTTONBOX_EDGE)
+			-&gt;set_border_width(5)*/</i></font>;
+		::create<font color="black">(</font>0,0<font color="black">)</font>;
+		add<font color="black">(</font>GTK.Frame<font color="black">(</font><font color="black">)</font>-&gt;add<font color="black">(</font>GTK.EventBox<font color="black">(</font><font color="black">)</font>-&gt;set_name<font color="black">(</font><font color="green">"timelabel"</font><font color="black">)</font>-&gt;add<font color="black">(</font>timelabel<font color="black">)</font><font color="black">)</font><font color="black">)</font>;
+		add<font color="black">(</font>buttonpad<font color="black">)</font>;
+	<font color="black">}</font>
+
+	<font color="darkred"><b>void</b></font> startstop<font color="black">(</font><font color="black">)</font>
+	<font color="black">{</font>
+		<font color="darkblue">if</font><font color="black">(</font>running<font color="black">)</font>
+		<font color="black">{</font>
+			timelabel-&gt;stop<font color="black">(</font><font color="black">)</font>-&gt;set_cursor<font color="black">(</font>GDK.LeftPtr<font color="black">)</font>;
+			startstopb-&gt;child<font color="black">(</font><font color="black">)</font>-&gt;set_text<font color="black">(</font><font color="green">"Start"</font><font color="black">)</font>;
+			running = 0;
+		<font color="black">}</font>
+		<font color="darkblue">else</font>
+		<font color="black">{</font>
+			timelabel-&gt;start<font color="black">(</font><font color="black">)</font>-&gt;set_cursor<font color="black">(</font>GDK.Watch<font color="black">)</font>;
+			startstopb-&gt;child<font color="black">(</font><font color="black">)</font>-&gt;set_text<font color="black">(</font><font color="green">"Stop"</font><font color="black">)</font>;
+			running = 1;
+		<font color="black">}</font>
+	<font color="black">}</font>
+
+	<font color="darkred"><b>void</b></font> reset<font color="black">(</font><font color="black">)</font>
+	<font color="black">{</font>
+		<font color="darkblue">if</font><font color="black">(</font>running<font color="black">)</font>
+			startstop<font color="black">(</font><font color="black">)</font>;
+		timelabel-&gt;set_seconds<font color="black">(</font>0<font color="black">)</font>;
+	<font color="black">}</font>
+
+<font color="black">}</font>
+
+
+
+</pre></body></html>

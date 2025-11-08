@@ -1,0 +1,541 @@
+<html>
+
+<head>
+<title>Pliki i systemy plików</title>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="userguide.css" type="text/css" />
+
+</head>
+
+<body>
+
+  <div class="nav">
+  <table class="nav">
+  <tr>
+  <td><a href="index.html">Wstęp</a></td>
+  <td><a href="Hasla.html">Konta i hasła</a></td>
+  <td>Pliki i systemy plików</td>
+  <td><a href="Procesy.html">Programy i procesy</a></td>
+  <td><a href="Siec.html">Sieć i praca zdalna</a></td>
+  <td><a href="Linki.html">Zobacz też...</a></td>
+  </tr>
+  </table>
+  </div> <!-- nav -->
+
+<div class="section">
+
+<h2>Pliki i systemy plików</h2>
+
+<div class="subsection">
+<p>
+Plik (ang. <em>file</em>) jest podstawową jednostką przechowywania danych
+w komputerach, a dokładniej: na tzw. urządzeniach pamięci masowej
+ wykorzystywanych
+przez komputery.  W praktyce, urządzenia te to najczęściej:
+</p>
+<ul>
+<li>
+	twarde dyski magnetyczne
+</li>
+<li>
+	dyskietki magnetyczne
+</li>
+<li>
+	płyty CD z zapisem optycznym
+</li>
+<li>
+	taśmy magnetyczne.
+</li>
+</ul>
+<p>
+System plików (ang. <em>filesystem</em>) to z kolei warstwa systemu operacyjnego
+pośrednicząca w dostępie do informacji zapisanej na pamięci masowej, a więc do
+plików właśnie.  Dzięki systemowi plików użytkownik (czy raczej wykorzystywane
+przez niego programy) nie potrzebuje troszczyć się np. o to, gdzie fizycznie na
+dysku zapisana jest potrzebna informacja; zamiast tego, system plików udostępnia
+użytkownikowi pewną strukturę logiczną (drzewo katalogów), o wiele wygodniejszą
+jako forma organizacji zapisu danych niż byłoby np. bezpośrednie lokalizowanie
+ pliku
+przez jego adresy na dysku (numery sektorów lub t.p.).  Ponadto system plików
+zarządza pewnymi meta-danymi o plikach i udostępnia je programom, realizując
+zarazem np. mechanizmy kontroli dostępu do plików.
+</p>
+</div>  <!--subsection//-->
+
+<h3>Drzewo katalogów</h3>
+<div class="subsection">
+<p>
+Podstawową strukturą w unixowych systemach plików jest wspomniane już drzewo
+katalogów: katalogi (ang. <em>directory</em>) to też rodzaj plików, lecz o
+ specjalnym
+charakterze -- służą one nie bezpośrednio do przechowywania danych, lecz do
+przechowywania informacji o innych plikach.  Drzewowy charakter struktury
+polega na tym, że każdy katalog posiada swój (jedyny) katalog nadrzędny (odwołać
+się do niego można przez specjalną nazwę "<em>..</em>"), natomiast sam może
+,,zawierać'' na równych prawach zarówno inne katalogi, jak i pliki
+ ,,zwyczajne'';
+te ostatnie stanowią ,,liście'' drzewa katalogów.  Wyjątkiem jest katalog
+ główny,
+stanowiący ,,korzeń'' tego drzewa; jako jedyny nie posiada on katalogu
+ nadrzędnego,
+natomiast wszystkie katalogi (i pliki) dostępne w danej chwili są osiągalne
+przez podanie tzw. pełnej ścieżki dostępu, specyfikującej cały łańcuch kolejnych
+podkatalogów przez które należy przejść, aby odnaleźć pozycję katalogową
+odnoszącą się do danego pliku.  Nazwy kolejnych podkatalogów w ścieżce dostępu
+oddziela się znakiem "<code>/</code>".  Przykładowo:</p>
+<ul>
+<li>
+<code>/</code> oznacza sam katalog główny
+</li>
+<li>
+<code>/vmlinuz</code> oznacza plik o nazwie <code>vmlinuz</code> umieszczony
+w katalogu głównym
+</li>
+<li>
+<code>/usr/bin/pico</code> oznacza plik o nazwie <code>pico</code> umieszczony
+w katalogu <code>bin</code>, będącym podkatalogiem katalogu <code>usr</code>,
+który jest z kolei podkatalogiem katalogu głównego
+</li>
+</ul>
+itd.
+<p>
+Należy pamiętać, że drzewo katalogów jest pewną abstrakcją, ,,lokalizacja''
+danego pliku w obrębie drzewa katalogów nie ma <em>a priori</em> wiele wspólnego
+z lokalizacją odpowiednich danych na urządzeniu (lub urządzeniach) fizycznych
+(tj. dyskach).  W szczególności, jednolite drzewo katalogów jest na ogół
+ ,,zszyte''
+z kawałków odpowiadających różnym urządzeniom: partycjom dysków bezpośrednio
+podłączonych do danego komputera, dyskom udostępnianym przez serwery sieciowe,
+itp.
+</p>
+<div class="term">
+<div class="titlebar">Komendy: przykłady</div>
+<pre>
+% pwd
+/home/staff/rjb
+% cd tmp ; pwd
+/home/staff/rjb/tmp
+% cd /tmp ; pwd
+/tmp
+% cd ; pwd
+/home/staff/rjb
+% mkdir kuku ; ls -al kuku
+total 16
+drwxr-sr-x    2 rjb      rjb          4096 Nov  4 02:36 .
+drwxr-sr-x   74 rjb      rjb         12288 Nov  4 02:36 ..
+% rmdir kuku ; ls -al kuku
+ls: kuku: No such file or directory
+% cd .. ; pwd
+/home/staff
+% _
+</pre>
+</div> <!-- term -->
+</div> <!-- subsection -->
+
+<h3>Nazwy plików</h3>
+<div class="subsection">
+<p>
+Jak widać, każdy plik (a więc i katalog) posiada swoją nazwę, przy czym nazwa ta
+musi być unikalna ale jedynie w ramach określonego katalogu, tj. wystąpienia tej
+samej nazwy w różnych katalogach nie mają ze sobą <em>a priori</em> nic
+ wspólnego
+-- odnoszą się do w zasadzie różnych plików.  Jeśli chodzi o reguły tworzenia
+nazw plików, to zasada jest dość prosta: nazwy te są (niemal) całkowicie
+ dowolne,
+mogą składać się z dowolnych znaków (właściwie bajtów), z wyjątkiem jedynie
+ znaku
+"<code>/</code>" oraz bajtu zerowego; ponadto zastrzeżone są nazwy
+ "<code>.</code>"
+oraz "<code>..</code>", które pojawiają się automatycznie w każdym nowo
+ utworzonym
+katalogu i odnoszą się odpowiednio do samego danego katalogu (pojedyncza kropka)
+i jego katalogu nadrzędnego (dwie kropki).  Poza tym np. kropka jako element
+ nazwy
+nie jest w żaden sposób wyróżniona, a małe i wielkie litery są rozróżnianie (i
+ równie
+dozwolone) w nazwach plików.  Z drugiej jednak strony, wiele programów
+ użytkowych
+stosuje się do pewnych konwencji dotyczących nazw plików, a szczególnie co do
+ tzw.
+końcówki nazwy -- ciągu znaków po ostatniej kropce.  Np. o pliku o nazwie
+ <code>nazwa.c</code>
+zakłada się, że zawiera kod źródłowy w języku C, podobnie <code>nazwa.C</code>
+ lub
+<code>nazwa.cpp</code> powinien na mocy umowy zawierać kod źródłowy w C++
+ (konwencje
+stosowane przez kompilatory), <code>nazwa.html</code> zawierać powinien tekst
+strony WWW w języku HTML (konwencja serwera WWW), itp.  Podkreślić należy
+ jednak,
+że są to konwencje które nie mają wpływu na sposób traktowania tych nazw przez
+ sam system
+plików.
+</p>
+<p>
+Ważnym przypadkiem takie konwencji są nazwy zaczynające się od kropki (np.
+ <code>.login</code>
+czy <code>.profile</code>).  Pliki o takich nazwach to tzw. pliki ukryte; nie są
+one np. domyślnie uwzględniane w spisie zawartości katalogu wypisywanym przez
+komendę <code>ls</code>.  Są one najczęściej wykorzystywane do zapisu osobistych
+ustawień użytkownika dotyczących poszczególnych używanych przez niego programów,
+i często są tworzone automatycznie przez te programy, a ,,ukrywane'' są po
+ prostu
+dla wygody: ponieważ rzadko potrzebujemy korzystać z nich bezpośrednio,
+ uwzględnianie
+ich w spisach zawartości katalogów tworzyłoby jedynie zbędny ,,szum
+ informacyjny''.
+Znowu jednak sam system nie traktuje ich w żaden szczególny sposób, i w razie
+potrzeby możemy mieć do nich bezpośredni dostęp na ogólnych zasadach.
+</p>
+<p>
+Długość nazwy pliku (liczba znaków z której się składa) nie jest oczywiście
+ nieograniczona,
+konkretna wartość tej granicy zależy od systemu: np. typowo w Linuxie maksymalna
+długość nazwy pliku to 255 znaków, a maksymalna długość pełnej ścieżki dostępu
+do pliku to 4095 znaków (patrz <code>/usr/include/linux/limits.h</code>).
+</p>
+<p>
+W praktyce, dobierając nazwy dla tworzonych przez nas plików, warto przestrzegać
+wspomnianych konwencji nazewniczych oraz mimo wszystko unikać stosowania w
+ nazwach
+znaków ,,specjalnych'', takich jak posiadające szczególne znaczenie dla shella
+(interpretera komend): takimi są np. <code>*,?,!,&lt;,&gt;,|,\,$</code> oraz
+ spacja.
+,,Bezpieczne'' są nazwy składające się ze znaków alfanumerycznych oraz
+ niektórych
+znaków przestankowych, takich jak kropka, <code>-</code> (minus), <code>_</code>
+(znak podkreślenia).  Wprawdzie stosowanie innych znaków nie jest zakazane, lecz
+nazwy je zawierające mogą sprawiać kłopoty ze względu na konieczność pamiętania
+o tym, by ,,chronić'' je odpowiednio przed interpretacją przez shell oraz z
+ powodu
+ograniczeń występujących w niektórych, nie całkiem ,,porządnie'' napisanych
+programach, które mogą nie traktować ich poprawnie.
+</p>
+</div> <!-- subsection -->
+
+<h3>Dowiązania ,,twarde'' i ,,miękkie'' (symboliczne)</h3>
+<div class="subsection">
+<p>
+W rzeczywistości, katalogi nie tyle ,,zawierają'' same pliki, co pewne meta-dane
+opisujące te pliki (i umożliwiające dostęp do danych zapisanych w tych plikach).
+Fakt ten ma istotną konsekwencję praktyczną: jednemu i temu samemu plikowi (jako
+zbiorowi danych) może odpowiadać więcej niż jeden wpis, w tym samym lub w
+ różnych
+katalogach, i sytuacja taka jest całkowicie legalna.  Mówimy wtedy o ,,twardych
+dowiązaniach'' (ang. <em>hard links</em>).  Wszystkie takie dowiązania, tj.
+ różne
+pozycje katalogowe wskazujące na te same zbiory danych, są równoprawne;
+ usunięcie
+jednego z nich nie spowoduje utraty dostępu do odpowiadających mu danych (tj.
+ich ,,skasowania''), dopóki nie zostanie usunięte ostatnie takie dowiązanie.
+ Dopiero
+wtedy miejsce na dysku zajmowane przez te dane zostanie dołączone do ,,mapy
+wolnej przestrzeni'' utrzymywanej przez system, i (w trudnym do przewidzenia
+ czasie)
+zostanie ponownie wykorzystane na zapis kolejnych danych.
+</p>
+<p>
+Nie ma prostego sposobu, by ustalić jakie konkretnie twarde dowiązania do danego
+pliku istnieją w określonej chwili.  Łatwo dostępna jest jedynie informacja o
+<em>liczbie</em> istniejących twardych dowiązań.  Istnienie twardych dowiązań
+podlega ponadto pewnym ograniczeniom: większość systemów unixowych nie pozwala
+na tworzenie twardych dowiązań do katalogów (w odróżnieniu do plików
+ ,,zwyczajnych'', a
+to ze względu na możliwość wytworzenia ,,pętli'' dowiązań); co ważniejsze
+ jednak,
+wszystkie twarde dowiązania do danego pliku muszą znajdować się w poddrzewie
+ drzewa
+katalogów odpowiadającym temu samemu fizycznemu urządzeniu (np. partycji
+ dyskowej).
+</p>
+<p>
+To ostatnie ograniczenie nie obowiązuje w przypadku dowiązań ,,miękkich'',
+ zwanych
+też symbolicznymi (ang. <em>soft links, symbolic links</em>).  W odróżnieniu od
+dowiązania twardego, dowiązanie symboliczne nie jest równoprawnym wpisem
+ katalogowym
+wskazującym na dany plik, lecz specjalnym typem  pliku, zawierającym jedynie
+ informację
+o innym wpisie katalogowym na który wskazuje (zamiast wskazywać ,,bezpośrednio''
+na plik).  Usunięcie dowiązania symbolicznego w żadnym przypadku nie stanowi
+,,skasowania'' odpowiednich danych, za to możliwa jest sytuacja, gdy dowiązanie
+symboliczne wskazuje ,,w próżnię'', tj. na nieistniejącą pozycję katalogową.  Z
+ tymi
+zastrzeżeniami, z dowiązania symbolicznego można korzystać tak samo jak z
+ ,,prawdziwej''
+pozycji katalogowej wskazującej na plik.  W tym przypadku nie obowiązuje również
+zakaz tworzenia dowiązań wskazujących na katalogi.  Tworzenie ,,łańcucha''
+ kolejnych
+dowiązań symbolicznych również jest legalne, lecz długość (liczba ,,ogniw'')
+ takiego
+łańcucha podlega ograniczeniom.
+</p>
+<div class="term">
+<div class="titlebar">
+Operacje na linkach
+</div> <!-- titlebar -->
+<pre>
+$ echo Hello, World > hello ; ls -l
+total 4
+-rw-r--r--    1 rjb      rjb            13 Nov  5 23:08 hello
+$ ln hello hi ; ls -l
+total 8
+-rw-r--r--    2 rjb      rjb            13 Nov  5 23:08 hello
+-rw-r--r--    2 rjb      rjb            13 Nov  5 23:08 hi
+$ cat hi
+Hello, World
+$ echo It\'s a beautiful day >> hi ; cat hello
+Hello, World
+It's a beautiful day
+$ rm hello ; ls -l
+total 4
+-rw-r--r--    1 rjb      rjb            34 Nov  5 23:13 hi
+$ ln -s hi hello ; ls -l
+total 4
+lrwxrwxrwx    1 rjb      rjb             2 Nov  5 23:15 hello -> hi
+-rw-r--r--    1 rjb      rjb            34 Nov  5 23:13 hi
+$ echo Good night > hello ; cat hi
+Good night
+$ rm hi ; ls -l
+total 0
+lrwxrwxrwx    1 rjb      rjb             2 Nov  5 23:15 hello -> hi
+$ cat hello
+cat: hello: No such file or directory
+$ _
+</pre>
+</div> <!-- term -->
+</div> <!-- subsection -->
+
+<h3>Kontrola dostępu</h3>
+<div class="subsection">
+<p>
+Komputer unixowy z założenia ma umożliwiać pracę wielu użytkownikom (i to
+ równocześnie),
+stąd też bierze się konieczność istnienia mechanizmów kontroli dostępu do danych
+zapisanych na pamięciach masowych (dyskach).  Mechanizm taki w standardowej
+ wersji,
+realizowanej we wszystkich unixowych systemach plików, jest dość prosty:
+</p>
+<ul>
+<li>
+	każdy plik jest ,,własnością'' któregoś z użytkowników, oraz jest przypisany
+	do którejś z grup użytkowników
+</li>
+<li>
+	prawa do działań na pliku przysługujące użytkownikowi są zróżnicowane,
+	w zależności od przynależności użytkownika do trzech kategorii
+	(w stosunku do danego pliku); otóż określa się prawa dostępu przysługujące
+	<ol>
+	<li>
+		właścicielowi danego pliku (<code>u</code> jak <em>user</em>)
+	</li>
+	<li>
+		członkom grupy do której przypisany jest plik (<code>g</code> jak
+		<em>group</em>)
+	</li>
+	<li>
+		i wreszcie wszystkim użytkownikom systemu (<code>o</code> jak
+		<em>other</em>)
+	</li>
+	</ol>
+	(wydawać by się mogło przesadą ograniczanie praw właściciela do jego
+	własnych plików, daje to jednak pewną ochronę przed skutkami własnych
+	błędów; naturalnie, właściciel pliku może sobie w każde chwili przyznać
+	dowolne prawa dostępu do swoich własnych plików)
+</li>
+<li>
+	w ramach każdej z powyższych kategorii może być przyznane lub nie
+	każde z trzech rodzajów uprawnień dostępu do pliku:
+	<ol>
+	<li>
+		prawo do odczytu informacji zapisanej w pliku (<code>r</code>
+		jak <em>read</em>)
+	</li>
+	<li>
+		prawo do zapisu, a więc do jakiejkolwiek modyfikacji zawartości
+		pliku (<code>w</code> jak <em>write</em>)
+	</li>
+	<li>
+		prawo do uruchamiania pliku jako programu (co oczywiście nie
+		uda się i tak jeżeli nie umożliwia tego zawartość pliku...
+		<code>x</code> jak <em>e<strong>x</strong>ecute</em>)
+	</li>
+	</ol>
+</li>
+</ul>
+<p>
+Jako że są trzy rodzaje uprawnień i trzy kategorie użytkowników, daje to w sumie
+dziewięć pozycji, które przyjęto reprezentować jako dziewięć bitów (bit
+ ,,ustawiony''
+czyli równy jeden oznacza oczywiście przyznanie danego prawa, a wartość zerowa
+odmowę), co jest równoważne trzem cyfrom układu ósemkowego.  Oznaczają one
+ kolejno:
+prawa właściciela (<code>u</code>), prawa grupy (<code>g</code>) oraz prawa
+ ogólne
+(<code>o</code>), a wartość każdej z nich powstaje przez dodanie liczby cztery
+ (jeżeli
+przysługuje prawo odczytu) do liczby dwa (jeżeli przysługuje prawo zapisu) i do
+ liczby
+jeden (jeżeli przysługuje prawo uruchamiania); jak widać, otrzymuje się wartość
+między 0 a 7, gdzie 0 reprezentuje brak jakichkolwiek uprawnień a 7 -- pełne
+ prawa.
+</p>
+<p>
+Pewnej uwagi wymaga interpretacja praw dostępu w zastosowaniu do katalogów.
+Z katalogami związany jest taki sam zestaw bitów uprawnień jak ze ,,zwykłymi''
+plikami, przy czym brak prawa <code>x</code> (uruchamiania) ma znaczenie
+zakazu jakiegokolwiek dostępu do zawartości danego katalogu (oraz jego
+ podkatalogów).
+Należy też mieć na uwadze, że operacje utworzenia pliku czy też jego skasowania
+(usunięcia z katalogu) <strong>nie</strong> są operacjami na zawartości pliku,
+ lecz
+na zawartości odpowiedniego katalogu, możliwość ich wykonania uwarunkowana jest
+więc prawami dostępu danego użytkownika nie do samego pliku, a do katalogu w
+którym się on znajduje.
+</p>
+<p>
+Z dowiązaniami symbolicznymi nie są natomiast związane <strong>żadne</strong>
+ prawa
+dostępu; ponieważ dowiązanie takie jest jedynie wskazaniem na jakąś inną pozycję
+katalogową, to obowiązują prawa dostępu określone dla pliku na który dowiązanie
+ wskazuje.
+Natomiast (jak wspomniano powyżej) operacje utworzenia czy usunięcia dowiązania
+są operacjami dotyczącymi katalogu w którym ono się znajduje.
+</p>
+<div class="term">
+<div class="titlebar">Prawa dostępu: przykłady</div>
+<pre>
+$ echo Hello, World > hello ; ls -l
+total 4
+-rw-r--r--    1 rjb      rjb            13 Nov  7 23:36 hello
+[ standardowe prawa: odczytu i zapisu dla właściciela,
+tylko odczytu dla grupy i reszty ]
+$ chmod u-w hello ; ls -l
+total 4
+-r--r--r--    1 rjb      rjb            13 Nov  7 23:36 hello
+[ odebrałem sobie prawo do zapisu, czyli modyfikacji ]
+$ chmod 400 hello ; ls -l
+total 4
+-r--------    1 rjb      rjb            13 Nov  7 23:36 hello
+[ teraz tylko ja mam prawo odczytu ]
+$ chmod 666 hello ; ls -l
+total 4
+-rw-rw-rw-    1 rjb      rjb            13 Nov  7 23:36 hello
+[ prawo odczytu i zapisu dla wszystkich ]
+$ chmod go-w hello ; ls -l
+total 4
+-rw-r--r--    1 rjb      rjb            13 Nov  7 23:36 hello
+[ przywróciłem stan początkowy ]
+$ echo '#!/bin/sh' > hello ; echo 'echo Hello, World' >> hello ; cat hello
+#!/bin/sh
+echo Hello, World
+[ stworzyłem najprostszy skrypt shellowy ]
+[ a teraz zrobię z niego program wykonywalny ]
+$ chmod +x hello ; ls -l
+total 4
+-rwxr-xr-x    1 rjb      rjb            28 Nov  7 23:47 hello
+$ ./hello
+Hello, World
+[ i rzeczywiście, działa ! ]
+</pre>
+</div> <!-- term -->
+<p>
+Jak widać na powyższych przykładach, komenda <code>chmod</code>, służąca do
+zmiany praw dostępu, akceptuje instrukcje zarówno w postaci symbolicznej,
+określającej czy dane uprawnienie (<code>r, w, x</code>) należy przyznać
+(<code>+</code>) czy odebrać (<code>-</code>) i komu (<code>u, g, o</code>), jak
+i w postaci bezwzględnej, polegającej na podaniu kodu ósemkowego docelowej
+postaci żądanych praw dostępu do pliku.
+</p>
+<p><em>Uwaga:</em> prawa dostępu dotyczą samego pliku,
+a nie danej pozycji katalogowej. Oznacza to tyle, że w sytuacji istnienia wielu
+twardych dowiązań do jednego pliku prawa dostępu nie będą się dla nich różniły.
+</p> </div> <!-- subsection -->
+<h3>Limit miejsca czyli <em>quota</em></h3>
+<div class="subsection">
+<p>
+Limitowanie przestrzeni dyskowej nie tylko zapobiega ,,antyspołecznym''
+zachowaniom użytkowników; jest ono również zabezpieczeniem przed sytuacją, gdy
+błędnie zachowujący się program zapełnia całe dostępne miejsce na dysku
+bezużytecznymi wynikami lub komunikatami o błędach.  Trzeba jednak przyznać, że
+stosowanie (dość niskich) limitów przestrzeni dyskowej na użytkownika wynika
+zazwyczaj głównie z braku środków na zakup większych dysków.
+</p>
+<p>
+Limity zapisu czyli <em>quota</em> dotyczą każdego urządzenia pamięci masowej
+(partycji dyskowej) osobno, i zazwyczaj stosowane są przede wszystkim do
+partycji będącej nośnikiem poddrzewa <code>/home</code>, zawierającego katalogi
+własne użytkowników.  Zresztą zazwyczaj ,,szeregowemu'' użytkownikowi prawo do
+zapisu plików przysługuje jedynie w obrębie jego katalogu własnego oraz
+katalogów takich, jak <code>/tmp</code> czy <code>/var/tmp</code>,
+przeznaczonych do zapisu plików tymczasowych.
+</p>
+<p>
+Limity zapisu są dwojakiego rodzaju: tzw. miękki limit (ang. <em>quota</em>),
+którego ,,miękkość'' polega na tym, że może on być przekroczony, choć jedynie
+przez ograniczony czas (zazwyczaj tydzień).  Po przekroczeniu tego czasu dalsze
+operacje zapisu zlecane przez danego użytkownika zostają zablokowane, dopóki nie
+zmniejszy on wykorzystania przestrzeni dyskowej poniżej wartości quoty.  Limit
+,,twardy'' (ang. <em>limit</em>) z kolei nie może zostać przekroczony: system od
+razu odmawia wykonania operacji zapisu powodującej przekroczenie limitu.
+</p>
+<p>
+Ponadto zarówno <em>quota</em> jak i <em>limit</em> mogą dotyczyć dwóch
+różnych wielkości: ilości zajętego miejsca na dysku (liczonej np. w kB),
+oraz liczby zajętych inodów (w uproszczeniu, chodzi o liczbę plików
+wytworzonych przez użytkownika, niezależnie od ich wielkości).  Zazwyczaj
+praktyczne znaczenie ma ograniczenie w kilobajtach, przekroczenie granicy
+liczby inodów jest w praktyce mało prawdopodobne.
+</p>
+<p>
+Aktualnie w OKWF <em>quota</em> dla kont studenckich wynosi standardowo 20 MB,
+natomiast <em>limit</em> -- 25 Mb.
+</p>
+<p>
+Do ustalenia stanu wykorzystania swojej <em>quoty</em> służy komenda
+<code>quota</code>.  Wywołana bez opcji wypisze informację jedynie jeżeli
+<em>quota</em> jest aktualnie przekroczona, natomiast w postaci
+<code>quota -v</code> poinformuje użytkownika o stanie wykorzystania jego
+,,przydziału'' w każdym przypadku.
+</p>
+<p>
+Najczęstsze przyczyny <strong>bezwiednego</strong> przekroczenia limitów
+dyskowych to: <ul>
+<li>
+pliki <code>core</code> zawierające zrzut zawartości pamięci programu,
+który ,,zginął tragicznie'' w trakcie wykonywania, tj. wykonał
+niedozwoloną operację i został zakończony przez system, co zwykle jest
+skutkiem błędów w danym programie.  Pliki <code>core</code> przydają się,
+jeżeli mamy zamiar analizować błędny program który je produkuje w celu
+naprawy jego usterek; jeżeli nie mamy takiego zamiaru, plik o nazwie
+<code>core</code> można bez wahania usunąć.
+</li>
+<li>
+działalność programu <em>Netscape</em>, zapisującego znaczne ilości plików
+tymczasowych w katalogu <code>~/.netscape/cache</code>.  W wypadku natrafienia
+na ten problem, należy sprawdzić w ustawieniach <em>Netscape</em> wielkość
+limitu miejsca przeznaczonego na cache dyskowy przez ten program, i
+ewentualnie limit ten zmniejszyć.  Zawartość katalogu
+<code>~/.netscape/cache</code> można w razie potrzeby bezkarnie usunąć
+(program <em>Netscape</em> nie powinien być w tym momencie włączony).
+</li>
+</ul>
+</p>
+<p>
+Jedną z przykrych konsekwencji przekroczenia limitu dyskowego jest niemożliwość
+otwarcia sesji użytkownika na terminalu graficznym (<em>X Window System</em>).
+Zainicjowanie sesji wiąże się bowiem z zapisaniem paru plików w katalogu
+użytkownika (co nie ma miejsca w przypadku otwierania sesji na terminalu
+znakowym). Rozwiązanie polega więc na otwarciu sesji na terminalu znakowym
+i usunięciu plików powodujących przekroczenie limitu.  Na PC linuxowych
+dostęp do trybu terminala znakowego uzyskuje się zazwyczaj przez
+kombinację klawiszy <code>Ctrl-Alt-F[1-6]</code>, tj. należy wcisnąć
+równocześnie klawisze <code>Ctrl</code>, <code>Alt</code> (lewy) oraz
+jeden z klawiszy oznaczonych <code>F1, F2, ...F6</code>.  Powrót do trybu
+graficznego następuje przez naciśnięcie <code>Alt-F7</code>.
+</p>
+</div> <!-- subsection -->
+<blockquote>Czytane <accessed type="number"/> razy.</blockquote>
+</div> <!-- section --> </body>
+
+</html>
+

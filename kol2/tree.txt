@@ -1,0 +1,41 @@
+.
+├── ala
+├── a.txt
+├── b.txt
+├── c
+├── d
+├── D
+│   └── d.txt
+├── dane.txt
+├── error.log
+├── files-maker.sh
+├── fmerge.sh
+├── merged.txt
+├── stud.awk
+├── students.txt
+├── tabcd.tar
+├── tree.txt
+├── wynik.txt
+├── z2
+├── Zadanie1
+│   ├── lab1.cpp
+│   ├── lab1.h
+│   └── main.cpp
+├── Zadanie2
+│   ├── lab2.cpp
+│   ├── lab2.h
+│   └── main.cpp
+├── Zadanie3
+│   ├── lab3.cpp
+│   ├── lab3.h
+│   └── main.cpp
+├── Zadanie4
+│   ├── lab4.cpp
+│   ├── lab4.h
+│   └── main.cpp
+└── Zadanie5
+    ├── lab5.cpp
+    ├── lab5.h
+    └── main.cpp
+
+7 directories, 32 files

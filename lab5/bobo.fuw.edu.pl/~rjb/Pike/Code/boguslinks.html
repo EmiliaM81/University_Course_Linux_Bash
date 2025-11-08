@@ -1,0 +1,72 @@
+<html><head><title>rjb's pike code: boguslinks</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#! /usr/local/bin/pike
+</font><font color="#5555AA"><i>// -*- pike -*-</i></font>
+<font color="#5555AA"><i>// Written in 2000 by Robert J. Budzynski &lt;Robert@Budzynski.ddns.org&gt;</i></font>
+<font color="#5555AA"><i>// Current address: &lt;Robert.Budzynski@fuw.edu.pl&gt;</i></font>
+<font color="#5555AA"><i>// do whatever you like with it, but I'll take no blame</i></font>
+
+<font color="darkblue">#if !constant(readlink)
+</font><font color="darkblue">#error Sorry, symbolic links not supported here
+</font><font color="darkblue">#endif
+</font><font color="darkblue">#pragma strict_types
+</font>
+<font color="darkred"><b>void</b></font>
+reportboguslinks<font color="black">(</font> <font color="darkred"><b>string</b></font> prefix <font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> names;
+  <font color="darkred"><b>string</b></font> target;
+  <font color="darkred"><b>object</b></font> fstat;
+
+  sort<font color="black">(</font> names = get_dir<font color="black">(</font> <font color="green">"."</font> <font color="black">)</font> <font color="black">)</font>;
+
+  <font color="darkblue">foreach</font><font color="black">(</font> names, <font color="darkred"><b>string</b></font> name <font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkblue">if</font> <font color="black">(</font> !<font color="black">(</font>fstat = file_stat<font color="black">(</font> name, 1 <font color="black">)</font><font color="black">)</font> <font color="black">)</font>
+	<font color="black">{</font>
+	  werror<font color="black">(</font> prefix + name + <font color="green">": can't stat file\n"</font> <font color="black">)</font>;
+	  <font color="darkblue">continue</font>;
+	<font color="black">}</font>
+      <font color="darkblue">switch</font> <font color="black">(</font> fstat-&gt;type <font color="black">)</font>
+	<font color="black">{</font>
+      <font color="darkblue">case</font> <font color="green">"lnk"</font>:   <font color="#5555AA"><i>// symlink</i></font>
+	<font color="darkblue">if</font> <font color="black">(</font> ! file_stat<font color="black">(</font> name <font color="black">)</font>  <font color="black">)</font>
+	  write<font color="black">(</font> prefix + name + <font color="green">" -&gt; "</font> + readlink<font color="black">(</font> name <font color="black">)</font> + <font color="green">"\n"</font> <font color="black">)</font>;
+	<font color="darkblue">break</font>;
+      <font color="darkblue">case</font> <font color="green">"dir"</font>:   <font color="#5555AA"><i>// dir</i></font>
+	<font color="darkblue">if</font> <font color="black">(</font> cd<font color="black">(</font> name <font color="black">)</font> <font color="black">)</font>
+	  <font color="black">{</font>
+	    reportboguslinks<font color="black">(</font> prefix + name + <font color="green">"/"</font> <font color="black">)</font>;
+	    cd<font color="black">(</font> <font color="green">".."</font> <font color="black">)</font>;
+	  <font color="black">}</font>
+	<font color="darkblue">else</font>
+	  <font color="black">{</font>
+	    write<font color="black">(</font> prefix + name + <font color="green">": can't cd\n"</font> <font color="black">)</font>;
+	  <font color="black">}</font>
+	<font color="darkblue">break</font>;
+      <font color="darkblue">default</font>:
+	<font color="darkblue">continue</font>;
+	<font color="black">}</font>
+    <font color="black">}</font>
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font>
+main<font color="black">(</font> <font color="darkred"><b>int</b></font> argc, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> argv <font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>string</b></font> prefix;
+
+  prefix = <font color="black">(</font>argc &gt; 1 <font color="black">)</font> ? argv<font color="black">[</font>1<font color="black">]</font> : <font color="green">""</font>;
+  <font color="darkblue">if</font> <font color="black">(</font>strlen<font color="black">(</font> prefix <font color="black">)</font> <font color="black">)</font>
+    <font color="black">{</font>
+      cd<font color="black">(</font> prefix <font color="black">)</font> || error<font color="black">(</font> <font color="green">"%s\: invalid argument (can't cd)\n"</font>, prefix<font color="black">)</font>;
+      <font color="black">(</font> prefix<font color="black">[</font>-1<font color="black">]</font> == '/' <font color="black">)</font> || <font color="black">(</font> prefix += <font color="green">"/"</font> <font color="black">)</font>;
+      reportboguslinks<font color="black">(</font> prefix <font color="black">)</font>;
+    <font color="black">}</font>
+  <font color="darkblue">else</font>
+    <font color="black">{</font>
+      reportboguslinks<font color="black">(</font> <font color="green">""</font> <font color="black">)</font>;
+    <font color="black">}</font>
+  <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+
+</pre></body></html>

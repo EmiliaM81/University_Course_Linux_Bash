@@ -1,0 +1,59 @@
+.:
+total 16K
+drwx--x--x 2 4wojtowicze stud2024  4 Nov  3 15:06 K1
+drwx------ 3 4wojtowicze stud2024  3 Nov  3 15:04 K2
+lrwxrwxrwx 1 4wojtowicze stud2024  2 Nov  3 15:07 Ka2 -> K2
+-rw-r--r-- 1 4wojtowicze stud2024  0 Nov  3 15:26 L3_Wojtowicz.txt
+drwx------ 2 4wojtowicze stud2024 13 Nov  3 15:25 LN
+-r--r----- 1 4wojtowicze stud2024  0 Nov  2 23:52 uneditable
+
+./K1:
+total 7.5K
+-rw-r--r-- 1 4wojtowicze stud2024  0 Nov  3 15:06 a
+-rwxr----- 1 4wojtowicze stud2024 16 Nov  2 23:40 aa
+
+./K2:
+total 512
+drwxr-xr-x 2 4wojtowicze stud2024 3 Nov  3 15:05 K22
+
+./K2/K22:
+total 512
+-rw-r--r-- 1 4wojtowicze stud2024 0 Nov  3 15:05 a
+
+./LN:
+total 38K
+-rwxr-----  1 4wojtowicze stud2024   16 Nov  3 00:14 a_cp
+-rwxr-----  2 4wojtowicze stud2024   30 Nov  3 00:23 a_hrd
+-rwxr-----  2 4wojtowicze stud2024   30 Nov  3 00:23 a_hrd2
+lrwxrwxrwx  1 4wojtowicze stud2024    8 Nov  3 14:59 a_lnk -> K1/K22/a
+lrwxrwxrwx  1 4wojtowicze stud2024    4 Nov  3 00:29 a_lnk2 -> K2/a
+lrwxrwxrwx  1 4wojtowicze stud2024   35 Nov  3 15:06 a_lnk3 -> /home/stud2024/4wojtowicze/K1/K22/a
+-rw-r--r--  1 4wojtowicze stud2024 1.1K Nov  3 15:17 kotek.txt
+-rw-rw-rw- 13 ewao        staff     158 Nov  3 15:20 lista_hrd
+lrwxrwxrwx  1 4wojtowicze stud2024   38 Nov  3 15:11 mykotek2.lnk -> /home/staff/ewao/Linux-lab4/kotek2.lnk
+lrwxrwxrwx  1 4wojtowicze stud2024   37 Nov  3 15:11 mykotek.lnk -> /home/staff/ewao/Linux-lab4/kotek.lnk
+lrwxrwxrwx  1 4wojtowicze stud2024    9 Nov  3 15:25 zcat -> /bin/zcat
+.
+├── K1
+│   ├── a
+│   └── aa
+├── K2
+│   └── K22
+│       └── a
+├── Ka2 -> K2
+├── L3_Wojtowicz.txt
+├── LN
+│   ├── a_cp
+│   ├── a_hrd
+│   ├── a_hrd2
+│   ├── a_lnk -> K1/K22/a
+│   ├── a_lnk2 -> K2/a
+│   ├── a_lnk3 -> /home/stud2024/4wojtowicze/K1/K22/a
+│   ├── kotek.txt
+│   ├── lista_hrd
+│   ├── mykotek2.lnk -> /home/staff/ewao/Linux-lab4/kotek2.lnk
+│   ├── mykotek.lnk -> /home/staff/ewao/Linux-lab4/kotek.lnk
+│   └── zcat -> /bin/zcat
+└── uneditable
+
+5 directories, 16 files

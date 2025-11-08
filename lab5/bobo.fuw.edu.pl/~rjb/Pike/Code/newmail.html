@@ -1,0 +1,195 @@
+<html><head><title>rjb's pike code: newmail</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#!/usr/local/bin/pike -w
+</font><font color="darkblue">#pragma strict_types
+</font>
+<font color="darkblue">class</font> Mbox_iterator
+<font color="black">{</font>
+  <font color="darkgreen">static</font>
+  <font color="black">{</font>
+    <font color="darkred"><b>constant</b></font> BSIZE = 8192;
+    Stdio.Stream f;
+    <font color="darkred"><b>int</b></font> which;
+    <font color="darkred"><b>string</b></font> current;
+    <font color="darkred"><b>string</b></font> buf = <font color="green">""</font>; <font color="#5555AA"><i>// read-ahead into the stream</i></font>
+  <font color="black">}</font>
+
+  <font color="darkgreen">static</font> <font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> find_next<font color="black">(</font><font color="black">)</font>
+  <font color="black">{</font>
+    <font color="darkred"><b>int</b></font> offset;
+
+    <font color="#5555AA"><i>/* find the beginning, usually we're already there.. */</i></font>
+    <font color="darkblue">while</font><font color="black">(</font><font color="black">(</font>offset=search<font color="black">(</font>buf, <font color="green">"\n\nFrom "</font><font color="black">)</font><font color="black">)</font>==-1<font color="black">)</font>
+      <font color="black">{</font>
+	<font color="darkred"><b>string</b></font> tmp = f-&gt;read<font color="black">(</font>BSIZE<font color="black">)</font>;
+	<font color="darkblue">if</font><font color="black">(</font>!sizeof<font color="black">(</font>tmp<font color="black">)</font><font color="black">)</font>
+	  <font color="black">{</font>
+	    current = <font color="green">""</font>;
+	    <font color="darkblue">return</font> 0;
+	  <font color="black">}</font>
+	buf += tmp;
+      <font color="black">}</font>
+
+    buf = buf<font color="black">[</font>offset..<font color="black">]</font>;
+
+    <font color="#5555AA"><i>/* ..then the end */</i></font>
+    <font color="darkblue">while</font><font color="black">(</font><font color="black">(</font>offset=search<font color="black">(</font>buf, <font color="green">"\n\nFrom "</font>, 7<font color="black">)</font><font color="black">)</font>==-1<font color="black">)</font>
+      <font color="black">{</font>
+	<font color="darkred"><b>string</b></font> tmp = f-&gt;read<font color="black">(</font>BSIZE<font color="black">)</font>;
+	<font color="darkblue">if</font><font color="black">(</font>!sizeof<font color="black">(</font>tmp<font color="black">)</font><font color="black">)</font>
+	  <font color="black">{</font>
+	    current = buf<font color="black">[</font>2..<font color="black">]</font>; <font color="#5555AA"><i>// snip leading newlines</i></font>
+	    buf = <font color="green">""</font>;
+	    <font color="darkblue">return</font> 1;
+	  <font color="black">}</font>
+	<font color="darkblue">else</font>
+	  <font color="black">{</font>
+	    buf += tmp;
+	  <font color="black">}</font>
+      <font color="black">}</font>
+
+    current = buf<font color="black">[</font>2..offset-1<font color="black">]</font>; <font color="#5555AA"><i>// snip leading newlines</i></font>
+    buf = buf<font color="black">[</font>offset..<font color="black">]</font>;
+    <font color="darkblue">return</font> 1;
+  <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font> index<font color="black">(</font><font color="black">)</font>
+  <font color="black">{</font>
+    <font color="darkblue">return</font> which;
+  <font color="black">}</font>
+
+  <font color="darkred"><b>string</b></font> value<font color="black">(</font><font color="black">)</font>
+  <font color="black">{</font>
+    <font color="darkblue">return</font> current;
+  <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> `!<font color="black">(</font><font color="black">)</font>  <font color="#5555AA"><i>// return 1 if the iterator is 'done'</i></font>
+  <font color="black">{</font>
+    <font color="darkblue">return</font> !sizeof<font color="black">(</font>current<font color="black">)</font>;
+  <font color="black">}</font>
+
+<font color="darkblue">#if 0
+</font>  Mbox_iterator `+<font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">(</font>0..<font color="black">)</font> nsteps<font color="black">)</font>
+  <font color="black">{</font>
+    error<font color="black">(</font><font color="green">"Mbox_iterator.`+(): not implemented.\n"</font><font color="black">)</font>;
+  <font color="black">}</font>
+<font color="darkblue">#endif
+</font>
+  Mbox_iterator `+=<font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">(</font>0..<font color="black">)</font> nsteps<font color="black">)</font>
+  <font color="black">{</font>
+    <font color="darkblue">while</font><font color="black">(</font>nsteps--<font color="black">)</font>
+      next<font color="black">(</font><font color="black">)</font>;
+    <font color="darkblue">return</font> this_object<font color="black">(</font><font color="black">)</font>;
+  <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> next<font color="black">(</font><font color="black">)</font>  <font color="#5555AA"><i>// like `+=(1), but return 0 if the iterator is finished</i></font>
+  <font color="black">{</font>
+    <font color="darkblue">return</font> find_next<font color="black">(</font><font color="black">)</font> ? <font color="black">(</font>++which, 1<font color="black">)</font> : 0;
+  <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font><font color="black">(</font>0..1<font color="black">)</font> first<font color="black">(</font><font color="black">)</font>  <font color="#5555AA"><i>// restart, return 0 if it fails</i></font>
+  <font color="black">{</font>
+    <font color="darkblue">return</font> 0;
+  <font color="black">}</font>
+
+  <font color="darkgreen">static</font> <font color="darkred"><b>void</b></font> create<font color="black">(</font>Stdio.Stream _f<font color="black">)</font>
+  <font color="black">{</font>
+    f = _f;
+    buf = f-&gt;read<font color="black">(</font>BSIZE<font color="black">)</font>;
+    <font color="darkblue">if</font><font color="black">(</font>buf<font color="black">[</font>..4<font color="black">]</font>!=<font color="green">"From "</font><font color="black">)</font>
+      <font color="black">{</font>
+	find_next<font color="black">(</font><font color="black">)</font>;
+	<font color="darkblue">return</font>;
+      <font color="black">}</font>
+    <font color="darkblue">else</font> <font color="#5555AA"><i>// beginning is OK, find end</i></font>
+      <font color="black">{</font>
+	<font color="darkred"><b>int</b></font> offset;
+
+	<font color="darkblue">while</font><font color="black">(</font><font color="black">(</font>offset=search<font color="black">(</font>buf,<font color="green">"\n\nFrom "</font>, 5<font color="black">)</font><font color="black">)</font>==-1<font color="black">)</font>
+	  <font color="black">{</font>
+	    <font color="darkred"><b>string</b></font> tmp = f-&gt;read<font color="black">(</font>BSIZE<font color="black">)</font>;
+	    <font color="darkblue">if</font><font color="black">(</font>!sizeof<font color="black">(</font>tmp<font color="black">)</font><font color="black">)</font>
+	      <font color="black">{</font>
+		current = buf; <font color="#5555AA"><i>// no leading newlines here</i></font>
+		buf = <font color="green">""</font>;
+		<font color="darkblue">return</font>;
+	      <font color="black">}</font>
+	    <font color="darkblue">else</font>
+	      <font color="black">{</font>
+		buf += tmp;
+	      <font color="black">}</font>
+	  <font color="black">}</font>
+
+	current = buf<font color="black">[</font>..offset-1<font color="black">]</font>; <font color="#5555AA"><i>// no leading newlines here</i></font>
+	buf = buf<font color="black">[</font>offset..<font color="black">]</font>;
+	<font color="darkblue">return</font>;
+      <font color="black">}</font>
+  <font color="black">}</font>
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="darkred"><b>int</b></font> ac, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> av<font color="black">)</font>
+<font color="black">{</font>
+  Stdio.Stream mbox;
+  <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">)</font> header_data = <font color="black">(</font><font color="black">{</font><font color="black">}</font><font color="black">)</font>;
+
+  <font color="darkblue">if</font><font color="black">(</font>ac&gt;1<font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkblue">if</font><font color="black">(</font>av<font color="black">[</font>1<font color="black">]</font>==<font color="green">"-"</font><font color="black">)</font>
+	mbox = Stdio.stdin;
+      <font color="darkblue">else</font>
+	mbox = Stdio.File<font color="black">(</font>av<font color="black">[</font>1<font color="black">]</font>, <font color="green">"r"</font><font color="black">)</font>;
+    <font color="black">}</font>
+  <font color="darkblue">else</font>
+    <font color="black">{</font>
+      <font color="darkred"><b>string</b></font> mpath = <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">(</font>getenv<font color="black">(</font><font color="green">"MAIL"</font><font color="black">)</font> || 
+			      <font color="black">(</font><font color="green">"/var/mail/"</font> + <font color="black">(</font> getenv<font color="black">(</font><font color="green">"USER"</font><font color="black">)</font> || getenv<font color="black">(</font><font color="green">"LOGNAME"</font><font color="black">)</font><font color="black">)</font><font color="black">)</font><font color="black">)</font>;
+      mbox = Stdio.File<font color="black">(</font>mpath, <font color="green">"r"</font><font color="black">)</font>;
+    <font color="black">}</font>
+
+  Mbox_iterator it = Mbox_iterator<font color="black">(</font>mbox<font color="black">)</font>;
+  
+  <font color="darkblue">while</font><font color="black">(</font>!!it<font color="black">)</font>
+    <font color="black">{</font>
+      header_data += <font color="black">(</font><font color="black">{</font> <font color="black">(</font><font color="black">{</font> <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">(</font>it-&gt;index<font color="black">(</font><font color="black">)</font>+1<font color="black">)</font> <font color="black">}</font><font color="black">)</font> + headers<font color="black">(</font>it-&gt;value<font color="black">(</font><font color="black">)</font><font color="black">)</font> <font color="black">}</font><font color="black">)</font>;
+      it-&gt;next<font color="black">(</font><font color="black">)</font>;
+    <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font> cols = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">]</font><font color="black">(</font>Stdio.stderr-&gt;tcgetattr<font color="black">(</font><font color="black">)</font>-&gt;columns<font color="black">)</font> || 80;
+  <font color="darkred"><b>string</b></font> format = <font color="green">"%{%-3s %!-"</font>+<font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">(</font><font color="black">(</font>cols-6<font color="black">)</font>*2/5<font color="black">)</font>+<font color="green">"s  %!-"</font>+<font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">(</font><font color="black">(</font>cols-6<font color="black">)</font>*3/5<font color="black">)</font>+
+    <font color="green">"s\n%}"</font>;
+
+  write<font color="black">(</font>format, header_data<font color="black">)</font>;
+  <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+<font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> headers<font color="black">(</font><font color="darkred"><b>string</b></font> current<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> res = <font color="black">(</font><font color="black">{</font><font color="green">""</font>,<font color="green">""</font><font color="black">}</font><font color="black">)</font>;
+  
+  <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> tmp = current/<font color="green">"\n\n"</font>;
+  <font color="darkblue">if</font><font color="black">(</font>tmp<font color="black">[</font>0<font color="black">]</font> == <font color="green">""</font><font color="black">)</font>
+    <font color="black">{</font>
+      current=tmp<font color="black">[</font>1<font color="black">]</font>;
+    <font color="black">}</font>
+  <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font>tmp<font color="black">[</font>0<font color="black">]</font><font color="black">[</font>..4<font color="black">]</font>==<font color="green">"From "</font><font color="black">)</font>
+    <font color="black">{</font>
+      current = tmp<font color="black">[</font>0<font color="black">]</font>;
+    <font color="black">}</font>
+  <font color="darkblue">else</font>
+    error<font color="black">(</font><font color="green">"headers(): unexpected malformed argument."</font><font color="black">)</font>;
+
+  <font color="darkblue">foreach</font><font color="black">(</font>current/<font color="green">"\n"</font>, <font color="darkred"><b>string</b></font> line<font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkblue">if</font><font color="black">(</font>lower_case<font color="black">(</font>line<font color="black">[</font>..4<font color="black">]</font><font color="black">)</font>==<font color="green">"from:"</font><font color="black">)</font>
+	<font color="black">{</font>
+	  res<font color="black">[</font>0<font color="black">]</font> = line<font color="black">[</font>5..<font color="black">]</font>;
+	<font color="black">}</font>
+      <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font>lower_case<font color="black">(</font>line<font color="black">[</font>..7<font color="black">]</font><font color="black">)</font>==<font color="green">"subject:"</font><font color="black">)</font>
+	<font color="black">{</font>
+	  res<font color="black">[</font>1<font color="black">]</font> = line<font color="black">[</font>8..<font color="black">]</font>;
+	<font color="black">}</font>
+    <font color="black">}</font>
+  <font color="darkblue">return</font> res;
+<font color="black">}</font>
+
+
+</pre></body></html>

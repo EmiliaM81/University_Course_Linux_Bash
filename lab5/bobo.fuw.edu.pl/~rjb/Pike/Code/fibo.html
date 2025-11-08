@@ -1,0 +1,29 @@
+<html><head><title>rjb's pike code: fibo</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#!/usr/local/bin/pike
+</font><font color="#5555AA"><i>// -*- mode: pike -*-</i></font>
+<font color="#5555AA"><i>// $Id: fibo.pike,v 1.2 2000/12/24 19:10:50 doug Exp $</i></font>
+<font color="#5555AA"><i>// http://www.bagley.org/~doug/shootout/</i></font>
+<font color="#5555AA"><i>//#pragma strict_types</i></font>
+<font color="#5555AA"><i>// "memoized" by rjb@bobo.fuw.edu.pl --&gt; speedup by factor ~100 (!)</i></font>
+
+<font color="darkred"><b>object</b></font> fib = <font color="darkblue">class</font>
+<font color="black">{</font>
+    <font color="darkgreen">static</font> <font color="darkred"><b>mapping</b></font><font color="black">(</font><font color="darkred"><b>int</b></font>:<font color="darkred"><b>int</b></font><font color="black">)</font> cache = <font color="black">(</font><font color="black">[</font>0:1,1:1<font color="black">]</font><font color="black">)</font>;
+    <font color="darkgreen">static</font> <font color="darkred"><b>int</b></font> `()<font color="black">(</font><font color="darkred"><b>int</b></font> n<font color="black">)</font>
+    <font color="black">{</font>
+        <font color="darkblue">return</font> cache<font color="black">[</font>n<font color="black">]</font> || <font color="black">(</font>cache<font color="black">[</font>n<font color="black">]</font>=fib<font color="black">(</font>n-2<font color="black">)</font>+fib<font color="black">(</font>n-1<font color="black">)</font><font color="black">)</font>;
+    <font color="black">}</font>
+<font color="black">}</font><font color="black">(</font><font color="black">)</font>;
+
+<font color="darkred"><b>void</b></font>
+main<font color="black">(</font><font color="darkred"><b>int</b></font> argc, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> argv<font color="black">)</font> <font color="black">{</font>
+    <font color="darkred"><b>int</b></font> n = max<font color="black">(</font><font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">)</font>argv<font color="black">[</font>-1<font color="black">]</font>, 1<font color="black">)</font>;
+    <font color="darkred"><b>int</b></font> steps = n/9000;
+    <font color="darkblue">for</font> <font color="black">(</font><font color="darkred"><b>int</b></font> k=1; k&lt;=steps;k++<font color="black">)</font>
+        fib<font color="black">(</font>9000*k<font color="black">)</font>;
+    write<font color="black">(</font><font color="green">"%d\n"</font>, fib<font color="black">(</font>n<font color="black">)</font><font color="black">)</font>;
+<font color="black">}</font>
+
+
+
+</pre></body></html>

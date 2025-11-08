@@ -1,0 +1,5 @@
+plik1.txt:10 	dziesięć 
+plik1.txt:31 	trzydzieści jeden 
+plik2.txt:12 Twelve
+plik2.txt:11 Eleven 
+plik2.txt:88 Eighty eight

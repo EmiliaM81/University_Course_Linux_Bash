@@ -1,0 +1,74 @@
+#!/usr/local/bin/pike -w
+#pragma strict_types
+
+typedef function(array(int | string), void | int : void) 
+  CLcallback;                         // just to show off ;-)
+
+int main(int ac, array(string) av)
+{
+  Report rep = Report();
+  array(string) args;
+  CLcallback line_cb; 
+  function(string : void) output;
+
+  if(  equal(args = av - ({ "-d", "--debug" }), av ) )
+    {
+      line_cb = rep->add;
+      output = rep->output;
+    }
+  else
+    {
+      line_cb = debug_cb;
+      output = lambda(string s) { write("DEBUG: logfile = %s\n", s); };
+    }
+
+  if(sizeof(args)<2)
+    {
+      werror("Usage: %s [ --debug ] logfile1 [ logfile2 ... ]\n", basename(args[0]));
+      return 1;
+    }
+  int ret = 0;
+  foreach(args[1..], string fname)
+    {
+      rep->clear();
+      if(CommonLog.read(line_cb, fname) )
+	output(fname);
+      else
+	(werror("Failed to read logfile %s\n", fname), ret = 2);
+    }
+  return ret;
+}
+
+void debug_cb(array(int | string) data, void | int offset)
+{
+  write("data = %O\noffset = %d\n======================\n", data, offset);
+}
+
+class Report
+{
+  mapping(int:int) codes = ([]), four_o_fours = ([]);
+  void clear() { codes = ([]), four_o_fours = ([]); }
+  void add(array(int | string) data, void | int offset)
+  {
+    codes[data[13]]++;
+    if(data[13]==404)
+      four_o_fours[data[11]]++;
+  }
+  void output(string file)
+  {
+    int total = (int)`+(@values(codes));
+    write("Reply status code frequencies in logfile %s :\n"+
+	  "CODE\tHOWMANY\tPERCENTAGE\n"+"="*60+"\n", file);
+    foreach(sort(indices(codes)), int code)
+      write("%d :\t%d\t%f %%\n", code, codes[code], (((float)codes[code])/total)*100.0);
+    write("TOTAL:\t%d\n\n", total);
+    write("Top-10 \"404\" requests:\nTimes\tPath\n"+"="*60+"\n");
+    array paths, tallies;
+    [ paths, tallies ] = ({ indices(four_o_fours), values(four_o_fours) });
+    sort(tallies, paths);
+    [ paths, tallies ] = map( ({ paths, tallies }), reverse );
+    for(int i=0;i<min(10,sizeof(tallies));i++)
+	write("%d\t%s\n", tallies[i], paths[i]);
+    write("="*60+"\nFile %s : report complete\n\n", file);
+  }
+}

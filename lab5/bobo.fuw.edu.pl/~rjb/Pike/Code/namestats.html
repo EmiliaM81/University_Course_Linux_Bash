@@ -1,0 +1,38 @@
+<html><head><title>rjb's pike code: namestats</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#! /usr/bin/env pike
+</font>
+<font color="darkred"><b>string</b></font> name<font color="black">(</font><font color="darkred"><b>array</b></font> pwrec<font color="black">)</font>
+<font color="black">{</font>
+	<font color="darkblue">if</font><font color="black">(</font>stringp<font color="black">(</font>pwrec<font color="black">[</font>4<font color="black">]</font><font color="black">)</font><font color="black">)</font>
+	<font color="black">{</font>
+		<font color="darkred"><b>string</b></font> name = <font color="black">(</font>pwrec<font color="black">[</font>4<font color="black">]</font>/<font color="green">" "</font><font color="black">)</font><font color="black">[</font>0<font color="black">]</font>;
+		<font color="darkblue">if</font><font color="black">(</font>sizeof<font color="black">(</font>name<font color="black">)</font>&amp;&amp;name<font color="black">[</font>0<font color="black">]</font>&gt;='A'&amp;&amp;name<font color="black">[</font>0<font color="black">]</font>&lt;='Z'<font color="black">)</font>
+			<font color="darkblue">return</font> name;
+	<font color="black">}</font>
+	<font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="darkred"><b>int</b></font> argc, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> argv<font color="black">)</font>
+<font color="black">{</font>
+	<font color="darkred"><b>mapping</b></font><font color="black">(</font><font color="darkred"><b>string</b></font>:<font color="darkred"><b>int</b></font><font color="black">)</font> stats = <font color="black">(</font><font color="black">[</font><font color="black">]</font><font color="black">)</font>;
+	<font color="darkred"><b>int</b></font> count, countall;
+
+	<font color="darkblue">while</font><font color="black">(</font><font color="darkred"><b>array</b></font> tmp=getpwent<font color="black">(</font><font color="black">)</font><font color="black">)</font>
+	<font color="black">{</font>
+		countall++;
+		<font color="darkred"><b>string</b></font> s = name<font color="black">(</font>tmp<font color="black">)</font>;
+		s &amp;&amp; count++;
+		stats<font color="black">[</font>s<font color="black">]</font>++;
+	<font color="black">}</font>
+	<font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> sorted_names = sort<font color="black">(</font>indices<font color="black">(</font>stats<font color="black">)</font><font color="black">)</font> - <font color="black">(</font><font color="black">{</font>0<font color="black">}</font><font color="black">)</font>;
+	<font color="darkblue">foreach</font><font color="black">(</font>sorted_names, <font color="darkred"><b>string</b></font> name<font color="black">)</font>
+	<font color="black">{</font>
+		write<font color="black">(</font><font color="green">"%s\:\t%d\n"</font>, name, stats<font color="black">[</font>name<font color="black">]</font><font color="black">)</font>;
+	<font color="black">}</font>
+	write<font color="black">(</font><font color="green">"%d records processed, %d had (possible) names, %d unique\n"</font>,
+		countall, count, sizeof<font color="black">(</font>sorted_names<font color="black">)</font><font color="black">)</font>;
+	<font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+
+</pre></body></html>

@@ -1,0 +1,86 @@
+#! /usr/bin/env pike
+#pragma strict_types
+constant stopwstyle =
+#"style \"stopwstyle\"
+{fg[NORMAL]={1.0,1.0,0.0}
+ bg[NORMAL]={0.0,0.0,0.5}
+ font=\"-*-*-bold-r-normal-*-24-*-*-*-m-*-iso8859-*\"}
+widget \"*timelabel\" style \"stopwstyle\"";
+
+int main(int argc, array(string) argv)
+{
+#if constant(Gnome.init)
+	Gnome.init("PiGTK Stopwatch", "0.001", argv);
+#else
+	GTK.setup_gtk(argv);
+#endif
+	GTK.parse_rc(stopwstyle);
+	Stopwatch stopwatch = Stopwatch();
+	GTK.Window mainwindow = GTK.Window(GTK.WindowToplevel)
+		-> set_policy(0,0,1);
+	mainwindow-> signal_connect("destroy", exit, 0);
+	mainwindow-> set_title("Stopwatch")
+		-> add(stopwatch)
+		-> show_all();
+	return -1;
+}
+
+class Stopwatch
+{
+	inherit GTK.Vbox;
+	static
+	{
+		GTK.Clock timelabel;
+		GTK.Hbox buttonpad;
+		GTK.Button startstopb;
+		GTK.Button resetb;
+		int(0..1) running = 0;
+	}
+
+	int(0..1) is_running() { return running; }
+
+	void create()
+	{
+		timelabel = GTK.Clock(GTK.ClockIncreasing)
+			->set_justify(GTK.JustifyCenter)
+			->set_padding(5,5)
+			->set_name("timelabel");
+		startstopb = GTK.Button()->add(GTK.Label("Start"));
+		startstopb->signal_connect("clicked", startstop);
+		resetb = GTK.Button("Reset");
+		resetb->signal_connect("clicked", reset);
+		buttonpad = GTK.Hbox(1,0)
+			->add(startstopb)
+			->add(resetb)
+			/*->set_layout(GTK.BUTTONBOX_EDGE)
+			->set_border_width(5)*/;
+		::create(0,0);
+		add(GTK.Frame()->add(GTK.EventBox()->set_name("timelabel")->add(timelabel)));
+		add(buttonpad);
+	}
+
+	void startstop()
+	{
+		if(running)
+		{
+			timelabel->stop()->set_cursor(GDK.LeftPtr);
+			startstopb->child()->set_text("Start");
+			running = 0;
+		}
+		else
+		{
+			timelabel->start()->set_cursor(GDK.Watch);
+			startstopb->child()->set_text("Stop");
+			running = 1;
+		}
+	}
+
+	void reset()
+	{
+		if(running)
+			startstop();
+		timelabel->set_seconds(0);
+	}
+
+}
+

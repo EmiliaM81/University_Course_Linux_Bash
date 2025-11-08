@@ -1,0 +1,2040 @@
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 Apr05 ?        02:38:34 /lib/systemd/systemd --system --deserialize 40
+root           2       0  0 Apr05 ?        00:00:58 [kthreadd]
+root           3       2  0 Apr05 ?        00:00:00 [rcu_gp]
+root           4       2  0 Apr05 ?        00:00:00 [rcu_par_gp]
+root           6       2  0 Apr05 ?        00:00:00 [kworker/0:0H-events_highpri]
+root           8       2  0 Apr05 ?        00:00:00 [mm_percpu_wq]
+root           9       2  0 Apr05 ?        00:00:00 [rcu_tasks_rude_]
+root          10       2  0 Apr05 ?        00:00:00 [rcu_tasks_trace]
+root          11       2  0 Apr05 ?        00:20:07 [ksoftirqd/0]
+root          12       2  0 Apr05 ?        05:34:19 [rcu_sched]
+root          13       2  0 Apr05 ?        00:02:54 [migration/0]
+root          15       2  0 Apr05 ?        00:00:00 [cpuhp/0]
+root          16       2  0 Apr05 ?        00:00:00 [cpuhp/1]
+root          17       2  0 Apr05 ?        00:02:46 [migration/1]
+root          18       2  0 Apr05 ?        00:23:50 [ksoftirqd/1]
+root          20       2  0 Apr05 ?        00:00:00 [kworker/1:0H-kblockd]
+root          21       2  0 Apr05 ?        00:00:00 [cpuhp/2]
+root          22       2  0 Apr05 ?        00:02:44 [migration/2]
+root          23       2  0 Apr05 ?        00:22:47 [ksoftirqd/2]
+root          25       2  0 Apr05 ?        00:00:00 [kworker/2:0H-events_highpri]
+root          26       2  0 Apr05 ?        00:00:00 [cpuhp/3]
+root          27       2  0 Apr05 ?        00:02:45 [migration/3]
+root          28       2  0 Apr05 ?        00:35:41 [ksoftirqd/3]
+root          31       2  0 Apr05 ?        00:00:00 [cpuhp/4]
+root          32       2  0 Apr05 ?        00:02:46 [migration/4]
+root          33       2  0 Apr05 ?        00:20:29 [ksoftirqd/4]
+root          35       2  0 Apr05 ?        00:00:00 [kworker/4:0H-kblockd]
+root          36       2  0 Apr05 ?        00:00:00 [cpuhp/5]
+root          37       2  0 Apr05 ?        00:02:50 [migration/5]
+root          38       2  0 Apr05 ?        00:19:45 [ksoftirqd/5]
+root          40       2  0 Apr05 ?        00:00:00 [kworker/5:0H-kblockd]
+root          41       2  0 Apr05 ?        00:00:00 [cpuhp/6]
+root          42       2  0 Apr05 ?        00:02:48 [migration/6]
+root          43       2  0 Apr05 ?        00:19:30 [ksoftirqd/6]
+root          46       2  0 Apr05 ?        00:00:00 [cpuhp/7]
+root          47       2  0 Apr05 ?        00:02:52 [migration/7]
+root          48       2  0 Apr05 ?        01:41:40 [ksoftirqd/7]
+root          50       2  0 Apr05 ?        00:00:00 [kworker/7:0H-events_highpri]
+root          59       2  0 Apr05 ?        00:00:00 [kdevtmpfs]
+root          60       2  0 Apr05 ?        00:00:00 [netns]
+root          61       2  0 Apr05 ?        00:00:00 [kauditd]
+root          62       2  0 Apr05 ?        00:00:41 [khungtaskd]
+root          63       2  0 Apr05 ?        00:00:00 [oom_reaper]
+root          64       2  0 Apr05 ?        00:00:00 [writeback]
+root          65       2  0 Apr05 ?        05:15:54 [kcompactd0]
+root          66       2  0 Apr05 ?        00:00:00 [ksmd]
+root          67       2  0 Apr05 ?        00:27:40 [khugepaged]
+root          88       2  0 Apr05 ?        00:00:00 [kintegrityd]
+root          89       2  0 Apr05 ?        00:00:00 [kblockd]
+root          90       2  0 Apr05 ?        00:00:00 [blkcg_punt_bio]
+root          91       2  0 Apr05 ?        00:00:00 [edac-poller]
+root          92       2  0 Apr05 ?        00:00:00 [devfreq_wq]
+root          94       2  0 Apr05 ?        00:12:09 [kworker/0:1H-kblockd]
+root          97       2  0 Apr05 ?        00:38:56 [kswapd0]
+root          98       2  0 Apr05 ?        00:00:00 [kthrotld]
+root          99       2  0 Apr05 ?        00:00:00 [acpi_thermal_pm]
+root         100       2  0 Apr05 ?        00:00:00 [ipv6_addrconf]
+root         109       2  0 Apr05 ?        00:00:00 [kstrp]
+root         112       2  0 Apr05 ?        00:00:00 [zswap-shrink]
+root         136       2  0 Apr05 ?        00:12:14 [kworker/3:1H-kblockd]
+root         171       2  0 Apr05 ?        00:14:03 [kworker/7:1H-kblockd]
+root         172       2  0 Apr05 ?        00:00:00 [scsi_eh_0]
+root         173       2  0 Apr05 ?        00:00:00 [scsi_tmf_0]
+root         174       2  0 Apr05 ?        00:00:00 [ata_sff]
+root         175       2  0 Apr05 ?        00:12:37 [kworker/6:1H-kblockd]
+root         177       2  0 Apr05 ?        00:00:00 [scsi_eh_1]
+root         178       2  0 Apr05 ?        00:00:00 [scsi_tmf_1]
+root         179       2  0 Apr05 ?        00:00:00 [scsi_eh_2]
+root         180       2  0 Apr05 ?        00:00:00 [scsi_tmf_2]
+root         181       2  0 Apr05 ?        00:00:00 [scsi_eh_3]
+root         182       2  0 Apr05 ?        00:00:00 [scsi_tmf_3]
+root         183       2  0 Apr05 ?        00:00:00 [scsi_eh_4]
+root         184       2  0 Apr05 ?        00:00:00 [scsi_tmf_4]
+root         185       2  0 Apr05 ?        00:00:00 [scsi_eh_5]
+root         186       2  0 Apr05 ?        00:00:00 [scsi_tmf_5]
+root         187       2  0 Apr05 ?        00:00:00 [scsi_eh_6]
+root         188       2  0 Apr05 ?        00:00:00 [scsi_tmf_6]
+root         189       2  0 Apr05 ?        00:00:00 [scsi_eh_7]
+root         190       2  0 Apr05 ?        00:00:00 [scsi_tmf_7]
+root         191       2  0 Apr05 ?        00:00:00 [scsi_eh_8]
+root         192       2  0 Apr05 ?        00:00:00 [scsi_tmf_8]
+root         198       2  0 Apr05 ?        00:12:50 [kworker/1:1H-kblockd]
+root         199       2  0 Apr05 ?        00:11:02 [kworker/5:1H-kblockd]
+root         203       2  0 Apr05 ?        00:12:35 [kworker/4:1H-kblockd]
+root         204       2  0 Apr05 ?        00:12:44 [kworker/2:1H-kblockd]
+root         244       2  0 Apr05 ?        00:34:29 [jbd2/sdb-8]
+root         245       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         259       2  0 Apr05 ?        00:00:25 [jbd2/sda-8]
+root         260       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         313       2  0 Apr05 ?        00:00:00 [rpciod]
+root         314       2  0 Apr05 ?        00:00:00 [xprtiod]
+root         388       2  0 Apr05 ?        00:00:00 [jbd2/vdb-8]
+root         389       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         463       2  0 Apr05 ?        00:08:26 [jbd2/sdc-8]
+root         464       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         473       2  0 Apr05 ?        00:00:00 [jbd2/vdc1-8]
+root         474       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+_rpc         560       1  0 Apr05 ?        00:00:34 /sbin/rpcbind -f -w
+root         562       1  0 Apr05 ?        00:00:00 /usr/sbin/acpid
+root         570       1  0 Apr05 ?        00:21:07 /usr/sbin/irqbalance --foreground
+prometh+     573       1  0 Apr05 ?        00:00:30 /usr/bin/prometheus-node-exporter
+root         574       1  0 Apr05 ?        01:20:53 /usr/sbin/rsyslogd -n -iNONE
+root        1486       1  0 Apr05 ?        00:00:00 /usr/bin/python3 /usr/bin/salt-minion
+Debian-+    1490       1  0 Apr05 ?        03:49:06 /usr/sbin/snmpd -LOw -u Debian-snmp -g Debian-snmp -I -smux mteTrigger mteTriggerConf -f -p /run/snmpd.pid
+ntp         1508       1  0 Apr05 ?        01:31:35 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 132:140
+root        1516       1  0 Apr05 ?        00:02:36 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        1531       1  0 Apr05 ?        00:22:33 /usr/sbin/inetd
+root        1544       2  0 Apr05 ?        00:00:00 [nfsiod]
+root        1561       2  0 Apr05 ?        00:00:54 [NFSv4 callback]
+statd       1582       1  0 Apr05 ?        00:00:00 /sbin/rpc.statd --no-notify
+root        1607       2  0 Apr05 ?        00:00:00 [lockd]
+root        1686       1  0 Apr05 ?        12:16:01 /usr/sbin/and
+rootd       1989       1  0 Apr05 ?        00:00:00 /usr/bin/rootd
+root        2197    1486  0 Apr05 ?        08:37:21 /usr/bin/python3 /usr/bin/salt-minion KeepAlive MultiMinionProcessManager MinionProcessManager
+root        2203       1  0 Apr05 ?        00:11:54 /usr/sbin/cron -f
+daemon      2206       1  0 Apr05 ?        00:00:01 /usr/sbin/atd -f
+root        2215       1  0 Apr05 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root        2217       1  0 Apr05 ?        00:00:00 /usr/sbin/automount --pid-file /var/run/autofs.pid
+root        2362    2197  0 Apr05 ?        00:00:00 /usr/bin/python3 /usr/bin/salt-minion KeepAlive MultiprocessingLoggingQueue
+root        2782       2  0 Apr05 ?        00:00:00 [cfg80211]
+2grusze+   64129       1  0 Apr30 ?        00:00:00 ssh-agent -s
+1vynohr+  120046       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 1aa164c3bc31
+3shupli+  158480       1  0 May12 pts/83   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+brachwal  181122       1  0 Nov08 ?        00:00:10 /lib/systemd/systemd --user
+brachwal  181123  181122  0 Nov08 ?        00:00:00 (sd-pam)
+brachwal  181140  181122  0 Nov08 ?        00:00:00 /usr/bin/pipewire
+brachwal  181143  181122  0 Nov08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+brachwal  181149  181140  0 Nov08 ?        00:00:08 /usr/bin/pipewire-media-session
+brachwal  183675       1  0 Nov08 ?        00:00:00 ssh-agent -s
+4juszcz+  193551       1  0 Oct17 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+  195158       1  0 Oct17 ?        00:00:00 /usr/bin/ssh-agent -s
+3shupli+  197983       1  0 Apr05 pts/16   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root      267227       1  0 Oct18 ?        00:02:39 /usr/sbin/apache2 -k start
+3shupli+  282338       1  0 Jun14 pts/189  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+4starzak  446393       1  0 Oct29 ?        00:00:29 /lib/systemd/systemd --user
+4starzak  446394  446393  0 Oct29 ?        00:00:00 (sd-pam)
+4starzak  446408  446393  0 Oct29 ?        00:00:00 /usr/bin/pipewire
+4starzak  446412  446393  0 Oct29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4starzak  446417  446408  0 Oct29 ?        00:00:18 /usr/bin/pipewire-media-session
+4starzak  455722       1  0 Oct29 ?        00:00:00 ssh-agent -s
+0koziol   566725       1  0 Apr19 ?        00:00:00 ssh-agent
+0koziol   568530       1  0 Apr19 ?        00:00:00 ssh-agent
+root      697350       2  0 May02 ?        00:00:00 [ib-comp-wq]
+root      697351       2  0 May02 ?        00:00:00 [ib-comp-unb-wq]
+root      697354       2  0 May02 ?        00:00:00 [ib_mcast]
+root      697356       2  0 May02 ?        00:00:00 [ib_nl_sa_wq]
+3shupli+  813107       1  0 May25 pts/74   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root      823770    1516  0 Oct30 ?        00:00:00 sshd: lach [priv]
+lach      823777  823770  0 Oct30 ?        00:00:02 sshd: lach
+Debian-+  854482       1  0 Oct06 ?        00:00:01 /usr/sbin/exim4 -bd -q30m
+root      856063       1  0 Oct06 ?        00:00:08 /lib/systemd/systemd-udevd
+message+  860774       1  4 Oct06 ?        1-18:52:28 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      860782       1  2 Oct06 ?        22:11:58 /lib/systemd/systemd-logind
+root      862177       1  0 Oct06 ?        00:01:28 /usr/libexec/packagekitd
+root      862181       1  0 Oct06 ?        00:02:27 /usr/libexec/polkitd --no-debug
+0modrze+  862775       1  0 Oct30 ?        00:00:26 /lib/systemd/systemd --user
+0modrze+  862776  862775  0 Oct30 ?        00:00:00 (sd-pam)
+0modrze+  862791  862775  0 Oct30 ?        00:00:00 /usr/bin/pipewire
+0modrze+  862796  862775  0 Oct30 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0modrze+  862801  862791  0 Oct30 ?        00:00:17 /usr/bin/pipewire-media-session
+0modrze+  866883       1  0 Oct30 ?        00:00:02 tmux
+0modrze+  866888  866883  0 Oct30 pts/296  00:00:00 -bash
+root      882185       1  0 Oct06 ?        00:00:21 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+3balski   924377 3710843  0 Oct30 pts/267  00:00:01 /usr/bin/zsh
+3balski   924661 3710843  0 Oct30 pts/283  00:00:03 -zsh
+3shupli+  951869       1  0 Jun05 pts/148  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+  952123       1  0 Nov10 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-e8653663e8840adaf45af01eab5c627a5af81807 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token c3c232ac0ec3
+3shupli+  972188       1  0 May25 pts/95   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol   991281       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   992241       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   993590       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   993703       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   996389       1  0 May04 ?        00:00:00 ssh-agent
+1vynohr+ 1014765       1  0 Oct31 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-912bb683695358a54ae0c670461738984cbb5b95 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 9b4146997336
+1vynohr+ 1016185       1  0 Oct31 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-912bb683695358a54ae0c670461738984cbb5b95 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 02b4646b0fc2
+1vynohr+ 1114116       1  0 Oct21 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 00639f3c5de3
+0koziol  1114299       1  0 Apr21 ?        00:00:00 ssh-agent
+3shupli+ 1119639       1  0 Apr21 pts/53   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1125767       1  0 Apr21 ?        00:00:00 ssh-agent
+3shupli+ 1129673       1  0 Jun16 pts/194  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1141661       1  0 Aug31 ?        00:00:00 ssh-agent
+3shupli+ 1147844       1  0 May26 pts/102  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1150240       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1153747       1  0 May26 ?        00:00:00 ssh-agent
+0koziol  1154166       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1166473       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1166941       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1191958       1  0 Apr09 ?        00:00:00 ssh-agent
+2starzyk 1205736       1  0 Nov11 ?        00:00:08 /lib/systemd/systemd --user
+2starzyk 1205737 1205736  0 Nov11 ?        00:00:00 (sd-pam)
+2starzyk 1205751 1205736  0 Nov11 ?        00:00:00 /usr/bin/pipewire
+2starzyk 1205754 1205736  0 Nov11 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2starzyk 1205760 1205751  0 Nov11 ?        00:00:05 /usr/bin/pipewire-media-session
+2starzyk 1212717       1  0 Nov11 ?        00:00:00 ssh-agent -s
+2starzyk 1215131 1205736  0 Nov11 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+2starzyk 1215343 1205736  0 Nov11 ?        00:00:00 /usr/libexec/xdg-document-portal
+2starzyk 1215348 1205736  0 Nov11 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     1215353 1215343  0 Nov11 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2022178/doc
+3shupli+ 1218673       1  0 Jun06 pts/139  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1219157       1  0 Jun16 pts/218  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+2mueller 1232240 3313548  0 Oct21 pts/242  00:00:00 -bash
+2mueller 1232282 3313548  0 Oct21 pts/274  00:00:00 -bash
+2mueller 1233142 1232282  0 Oct21 pts/274  00:00:00 vim notatki_wazne.log
+2mueller 1234318 1232240  0 Oct21 pts/242  00:00:00 vim notatki.log
+1vynohr+ 1303588 3144655  0 Nov12 ?        00:00:00 /usr/libexec/gvfsd
+1vynohr+ 1318927       1  0 Oct21 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token a736322b4d2b
+4piwowar 1325692       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4piwowar 1325693 1325692  0 Oct07 ?        00:00:00 (sd-pam)
+4piwowar 1325711 1325692  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4piwowar 1325715 1325692  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4piwowar 1325721 1325711  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4borkow+ 1325798       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4borkow+ 1325799 1325798  0 Oct07 ?        00:00:00 (sd-pam)
+4borkow+ 1325813 1325798  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4borkow+ 1325816 1325798  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4borkow+ 1325822 1325813  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4witkow+ 1326076       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4witkow+ 1326077 1326076  0 Oct07 ?        00:00:00 (sd-pam)
+4witkow+ 1326091 1326076  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4witkow+ 1326094 1326076  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4witkow+ 1326100 1326091  0 Oct07 ?        00:00:41 /usr/bin/pipewire-media-session
+4rzemin+ 1326213       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4rzemin+ 1326214 1326213  0 Oct07 ?        00:00:00 (sd-pam)
+4rzemin+ 1326228 1326213  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4rzemin+ 1326231 1326213  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4rzemin+ 1326236 1326228  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4wolczy+ 1327140       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4wolczy+ 1327141 1327140  0 Oct07 ?        00:00:00 (sd-pam)
+4wolczy+ 1327155 1327140  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4wolczy+ 1327159 1327140  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4wolczy+ 1327164 1327155  0 Oct07 ?        00:00:36 /usr/bin/pipewire-media-session
+4blaszc+ 1327348       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4blaszc+ 1327349 1327348  0 Oct07 ?        00:00:00 (sd-pam)
+4blaszc+ 1327364 1327348  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4blaszc+ 1327367 1327348  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4blaszc+ 1327373 1327364  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4gladysz 1327409       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4gladysz 1327410 1327409  0 Oct07 ?        00:00:00 (sd-pam)
+4gladysz 1327424 1327409  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4gladysz 1327427 1327409  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4gladysz 1327433 1327424  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4piwowar 1329145       1  0 Oct07 ?        00:00:00 SCREEN -l
+4piwowar 1329146 1329145  0 Oct07 pts/201  00:00:00 /bin/bash
+4dronski 1329186       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4dronski 1329187 1329186  0 Oct07 ?        00:00:00 (sd-pam)
+4dronski 1329205 1329186  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4dronski 1329209 1329186  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4dronski 1329214 1329205  0 Oct07 ?        00:00:50 /usr/bin/pipewire-media-session
+4trybus  1329382       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4trybus  1329383 1329382  0 Oct07 ?        00:00:00 (sd-pam)
+4trybus  1329397 1329382  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4trybus  1329401 1329382  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4trybus  1329406 1329397  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4janusz  1329650       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4janusz  1329651 1329650  0 Oct07 ?        00:00:00 (sd-pam)
+4janusz  1329666 1329650  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4janusz  1329671 1329650  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4janusz  1329676 1329666  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4jarosz  1329788       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4jarosz  1329789 1329788  0 Oct07 ?        00:00:00 (sd-pam)
+4jarosz  1329805 1329788  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4jarosz  1329808 1329788  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4jarosz  1329814 1329805  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4zagala  1329858       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4zagala  1329859 1329858  0 Oct07 ?        00:00:00 (sd-pam)
+4zagala  1329873 1329858  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4zagala  1329876 1329858  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4zagala  1329882 1329873  0 Oct07 ?        00:00:45 /usr/bin/pipewire-media-session
+4piwowar 1330001 1329145  0 Oct07 pts/208  00:00:00 /bin/bash
+4jarosz  1330045       1  0 Oct07 ?        00:00:00 SCREEN
+4jarosz  1330046 1330045  0 Oct07 pts/210  00:00:00 /bin/bash
+4wolczy+ 1330051       1  0 Oct07 ?        00:00:00 SCREEN
+4wolczy+ 1330052 1330051  0 Oct07 pts/211  00:00:00 /bin/bash
+4blaszc+ 1330057       1  0 Oct07 ?        00:00:00 SCREEN
+4janusz  1330063       1  0 Oct07 ?        00:00:00 SCREEN
+4janusz  1330064 1330063  0 Oct07 pts/213  00:00:00 /bin/bash
+4trybus  1330098       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1330099 1330098  0 Oct07 pts/219  00:00:00 /bin/bash
+4gladysz 1330155       1  0 Oct07 ?        00:00:00 SCREEN
+4gladysz 1330156 1330155  0 Oct07 pts/220  00:00:00 /bin/bash
+4dronski 1330163       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1330164 1330163  0 Oct07 pts/221  00:00:00 /bin/bash
+4borkow+ 1330234       1  0 Oct07 ?        00:00:00 SCREEN
+4borkow+ 1330235 1330234  0 Oct07 pts/225  00:00:00 /bin/bash
+4piwowar 1330250 1329145  0 Oct07 pts/227  00:00:00 /bin/bash
+4zagala  1330290       1  0 Oct07 ?        00:00:00 SCREEN
+4zagala  1330291 1330290  0 Oct07 pts/229  00:00:00 /bin/bash
+4borkow+ 1330446 1330235  0 Oct07 pts/225  00:00:00 nano plik
+4gladysz 1330448 1330156  0 Oct07 pts/220  00:00:00 nano
+4wolczy+ 1330449 1330052  0 Oct07 pts/211  00:00:00 nano
+4janusz  1330450 1330064  0 Oct07 pts/213  00:00:00 nano
+4dronski 1330452 1330164  0 Oct07 pts/221  00:00:00 nano
+4trybus  1330453 1330099  0 Oct07 pts/219  00:00:00 nano
+4zagala  1330454 1330291  0 Oct07 pts/229  00:00:00 nano
+0zienta+ 1332094       1  0 Apr09 ?        00:00:32 lf -server
+4dronski 1332863       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1332864 1332863  0 Oct07 pts/203  00:00:00 /bin/bash
+4wolczy+ 1333463       1  0 Oct07 ?        00:00:00 SCREEN
+4wolczy+ 1333464 1333463  0 Oct07 pts/224  00:00:00 /bin/bash
+4wolczy+ 1333473 1333464  0 Oct07 pts/224  00:00:00 nano
+4dronski 1333476       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1333477 1333476  0 Oct07 pts/230  00:00:00 /bin/bash
+4dronski 1333484 1333477  0 Oct07 pts/230  00:00:00 nano
+4trybus  1333609       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1333610 1333609  0 Oct07 pts/235  00:00:00 /bin/bash
+4trybus  1333620 1333610  0 Oct07 pts/235  00:00:00 nano
+4witkow+ 1333636       1  0 Oct07 ?        00:00:00 SCREEN
+4witkow+ 1333637 1333636  0 Oct07 pts/236  00:00:00 /bin/bash
+4borkow+ 1333648       1  0 Oct07 ?        00:00:00 SCREEN
+4borkow+ 1333649 1333648  0 Oct07 pts/237  00:00:00 /bin/bash
+4dronski 1333663       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1333664 1333663  0 Oct07 pts/239  00:00:00 /bin/bash
+4borkow+ 1333671 1333648  0 Oct07 pts/240  00:00:00 /bin/bash
+4witkow+ 1333676 1333636  0 Oct07 pts/241  00:00:00 /bin/bash
+4dronski 1333688 1333664  0 Oct07 pts/239  00:00:00 nano
+4janusz  1333735 1330063  0 Oct07 pts/198  00:00:00 /bin/bash
+4dronski 1333742 1333663  0 Oct07 pts/238  00:00:00 /bin/bash
+4jarosz  1333774 1330045  0 Oct07 pts/243  00:00:00 /bin/bash
+4rzemin+ 1333785       1  0 Oct07 ?        00:00:00 SCREEN
+4rzemin+ 1333786 1333785  0 Oct07 pts/244  00:00:00 /bin/bash
+4witkow+ 1333791 1333636  0 Oct07 pts/245  00:00:00 /bin/bash
+4jarosz  1333796 1330045  0 Oct07 pts/246  00:00:00 /bin/bash
+4witkow+ 1333806 1333636  0 Oct07 pts/247  00:00:00 /bin/bash
+4janusz  1333816 1330063  0 Oct07 pts/248  00:00:00 /bin/bash
+4rzemin+ 1333824 1333786  0 Oct07 pts/244  00:00:00 nano
+4gladysz 1333827       1  0 Oct07 ?        00:00:00 SCREEN
+4gladysz 1333828 1333827  0 Oct07 pts/249  00:00:00 /bin/bash
+4jarosz  1333835 1330045  0 Oct07 pts/200  00:00:00 /bin/bash
+4strozek 1333876       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4strozek 1333877 1333876  0 Oct07 ?        00:00:00 (sd-pam)
+4strozek 1333892 1333876  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4strozek 1333895 1333876  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4strozek 1333901 1333892  0 Oct07 ?        00:00:36 /usr/bin/pipewire-media-session
+4trybus  1333931       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1333932 1333931  0 Oct07 pts/251  00:00:00 /bin/bash
+4strozek 1333949       1  0 Oct07 ?        00:00:00 SCREEN
+4strozek 1333950 1333949  0 Oct07 pts/253  00:00:00 /bin/bash
+4rzemin+ 1333964       1  0 Oct07 ?        00:00:00 SCREEN
+4rzemin+ 1333965 1333964  0 Oct07 pts/254  00:00:00 /bin/bash
+4wolczy+ 1333971       1  0 Oct07 ?        00:00:00 SCREEN -l
+4wolczy+ 1333972 1333971  0 Oct07 pts/255  00:00:00 /bin/bash
+4rzemin+ 1333979 1333965  0 Oct07 pts/254  00:00:00 nano
+4strozek 1334056 1333950  0 Oct07 pts/253  00:00:00 nano
+4dronski 1334058 1333742  0 Oct07 pts/238  00:00:00 nano
+4trybus  1334059 1333932  0 Oct07 pts/251  00:00:00 nano
+4witkow+ 1334104 1333806  0 Oct07 pts/247  00:00:00 nano
+4borkow+ 1334133 1333671  0 Oct07 pts/240  00:00:00 nano
+4janusz  1334159 1330063  0 Oct07 pts/257  00:00:00 /bin/bash
+4borkow+ 1334186 1333648  0 Oct07 pts/259  00:00:00 /bin/bash
+4dronski 1334190 1333663  0 Oct07 pts/260  00:00:00 /bin/bash
+4witkow+ 1334202 1333636  0 Oct07 pts/256  00:00:00 /bin/bash
+4rzemin+ 1334207 1333964  0 Oct07 pts/261  00:00:00 /bin/bash
+4trybus  1334213 1333931  0 Oct07 pts/262  00:00:00 /bin/bash
+4gladysz 1334217 1333827  0 Oct07 pts/263  00:00:00 /bin/bash
+4piwowar 1334221 1330250  0 Oct07 pts/227  00:00:00 nano 123
+4piwowar 1334224 1329145  0 Oct07 pts/264  00:00:00 /bin/bash
+4gladysz 1334247 1334217  0 Oct07 pts/263  00:00:00 nano
+4gladysz 1334251 1333827  0 Oct07 pts/265  00:00:00 /bin/bash
+4blaszc+ 1334255 1330057  0 Oct07 pts/266  00:00:00 /bin/bash
+4gladysz 1334285 1334251  0 Oct07 pts/265  00:00:00 man screen
+4gladysz 1334294 1334285  0 Oct07 pts/265  00:00:00 man screen
+4gladysz 1334295 1334285  0 Oct07 pts/265  00:00:00 pager
+4witkow+ 1334319 1334202  0 Oct07 pts/256  00:00:00 man screen
+4witkow+ 1334328 1334319  0 Oct07 pts/256  00:00:00 man screen
+4witkow+ 1334329 1334319  0 Oct07 pts/256  00:00:00 pager
+4dronski 1334336 1334190  0 Oct07 pts/260  00:00:00 man screen
+4dronski 1334345 1334336  0 Oct07 pts/260  00:00:00 man screen
+4dronski 1334346 1334336  0 Oct07 pts/260  00:00:00 pager
+4trybus  1334353 1334213  0 Oct07 pts/262  00:00:00 man screen
+4trybus  1334362 1334353  0 Oct07 pts/262  00:00:00 man screen
+4trybus  1334363 1334353  0 Oct07 pts/262  00:00:00 pager
+4rzemin+ 1334371 1334207  0 Oct07 pts/261  00:00:00 man screen
+4rzemin+ 1334380 1334371  0 Oct07 pts/261  00:00:00 man screen
+4rzemin+ 1334381 1334371  0 Oct07 pts/261  00:00:00 pager
+4blaszc+ 1334485 1330057  0 Oct07 pts/268  00:00:00 /bin/bash
+4jarosz  1334515       1  0 Oct07 ?        00:00:00 SCREEN
+4jarosz  1334516 1334515  0 Oct07 pts/269  00:00:00 /bin/bash
+4strozek 1334525 1333949  0 Oct07 pts/270  00:00:00 /bin/bash
+4jarosz  1334534 1334515  0 Oct07 pts/271  00:00:00 /bin/bash
+4jarosz  1334543 1334534  0 Oct07 pts/271  00:00:16 screen -r
+4jarosz  1334556 1330045  0 Oct07 pts/272  00:00:00 /bin/bash
+4strozek 1334562 1334525  0 Oct07 pts/270  00:00:00 man touch
+4strozek 1334573 1334562  0 Oct07 pts/270  00:00:00 pager
+4jarosz  1335092 1334515  0 Oct07 pts/149  00:00:00 /bin/bash
+4jarosz  1335097 1334515  0 Oct07 pts/191  00:00:00 /bin/bash
+0koziol  1380549       1  0 Sep01 ?        00:00:00 ssh-agent
+0koziol  1381390       1  0 Sep01 ?        00:00:00 ssh-agent
+0guzek   1413194       1  0 May05 ?        00:01:28 /usr/bin/python3 -m ipykernel_launcher --f=/home/stud2020/0guzek/.local/share/jupyter/runtime/kernel-v2-1403438kxaSCvjZLXId.json
+0koziol  1416714       1  0 Jul13 ?        00:00:00 ssh-agent
+0koziol  1416919       1  0 Jul13 ?        00:00:00 ssh-agent
+3shupli+ 1450428       1  0 Apr22 pts/24   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1452289       1  0 Jun16 pts/169  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root     1485046       1  0 Nov12 ?        00:30:48 /lib/systemd/systemd-journald
+4horzela 1507696       1  0 Oct08 ?        00:00:55 /lib/systemd/systemd --user
+4horzela 1507697 1507696  0 Oct08 ?        00:00:00 (sd-pam)
+4horzela 1507727 1507696  0 Oct08 ?        00:00:00 /usr/bin/pipewire
+4horzela 1507730 1507696  0 Oct08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4horzela 1507736 1507727  0 Oct08 ?        00:00:41 /usr/bin/pipewire-media-session
+4malecki 1507930       1  0 Oct08 ?        00:00:55 /lib/systemd/systemd --user
+4malecki 1507931 1507930  0 Oct08 ?        00:00:00 (sd-pam)
+4malecki 1507945 1507930  0 Oct08 ?        00:00:00 /usr/bin/pipewire
+4malecki 1507948 1507930  0 Oct08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4malecki 1507954 1507945  0 Oct08 ?        00:00:38 /usr/bin/pipewire-media-session
+4malecki 1511688       1  0 Oct08 ?        00:00:00 script
+4malecki 1511689 1511688  0 Oct08 pts/223  00:00:00 bash -i
+4malecki 1511816 1511689  0 Oct08 pts/223  00:00:00 tac
+4malecki 1512158 1511689  0 Oct08 pts/223  00:00:00 tac
+4horzela 1512303       1  0 Oct08 ?        00:00:00 script
+4horzela 1512304 1512303  0 Oct08 pts/252  00:00:00 bash -i
+4malecki 1514088 1511689  0 Oct08 pts/223  00:00:00 less typescript
+4horzela 1514261 1512304  0 Oct08 pts/252  00:00:00 nano
+3shupli+ 1522404       1  0 Apr22 pts/87   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1553836       1  0 May27 pts/32   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1554995 1553836  0 May27 pts/32   00:00:00 ./2.out
+0koziol  1569480       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569625       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569814       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569997       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1570258       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1570310       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1605225       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1644203       1  0 Jul14 ?        00:00:00 ssh-agent
+0koziol  1645884       1  0 Jul14 ?        00:00:00 ssh-agent
+0koziol  1646077       1  0 Jul14 ?        00:00:00 ssh-agent
+1vynohr+ 1648431       1  0 Nov13 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-e8653663e8840adaf45af01eab5c627a5af81807 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token e21da278b003
+2mueller 1701318 3313548  0 Oct22 pts/287  00:00:00 -bash
+2mueller 1701353 3313548  0 Oct22 pts/295  00:00:00 -bash
+0kowalc+ 1703653       1  0 Oct22 ?        00:00:39 /lib/systemd/systemd --user
+0kowalc+ 1703654 1703653  0 Oct22 ?        00:00:00 (sd-pam)
+0kowalc+ 1703676 1703653  0 Oct22 ?        00:00:00 /usr/bin/pipewire
+0kowalc+ 1703679 1703653  0 Oct22 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0kowalc+ 1703684 1703676  0 Oct22 ?        00:00:25 /usr/bin/pipewire-media-session
+0kowalc+ 1752177       1  0 Oct22 ?        00:00:10 SCREEN
+0kowalc+ 1752178 1752177  0 Oct22 pts/309  00:00:00 /bin/bash
+0kowalc+ 1752200 1752177  0 Oct22 pts/310  00:00:00 /bin/bash
+0koziol  1763690       1  0 Nov02 ?        00:00:00 ssh-agent
+3shupli+ 1789261       1  0 Jun17 pts/151  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1823391       1  0 Nov13 ?        00:00:00 ssh-agent
+0koziol  1827744       1  0 Jul15 ?        00:00:00 ssh-agent
+3shupli+ 1854970       1  0 May28 pts/107  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+lach     1874932       1  0 Oct09 ?        00:00:53 /lib/systemd/systemd --user
+lach     1874933 1874932  0 Oct09 ?        00:00:00 (sd-pam)
+lach     1874948 1874932  0 Oct09 ?        00:00:00 /usr/bin/pipewire
+lach     1874949 1874932  0 Oct09 ?        00:00:16 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+lach     1874951 1874932  0 Oct09 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+lach     1874957 1874948  0 Oct09 ?        00:00:37 /usr/bin/pipewire-media-session
+3shupli+ 2000344       1  0 Jun08 pts/156  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+2cisek   2035392       1  0 Jul31 ?        00:00:14 tmux
+2cisek   2035393 2035392  0 Jul31 pts/143  00:00:00 -bash
+1vynohr+ 2036452       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 34082ed0e9e3
+1vynohr+ 2036724       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 54eaa63e376e
+3kwidzi+ 2044435       1  0 Oct23 ?        00:00:38 /lib/systemd/systemd --user
+3kwidzi+ 2044440 2044435  0 Oct23 ?        00:00:00 (sd-pam)
+3kwidzi+ 2044462 2044435  0 Oct23 ?        00:00:00 /usr/bin/pipewire
+3kwidzi+ 2044465 2044435  0 Oct23 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3kwidzi+ 2044471 2044462  0 Oct23 ?        00:00:24 /usr/bin/pipewire-media-session
+3kwidzi+ 2046058       1  0 Oct23 ?        00:07:08 /home/stud2023/3kwidzinski/.vscode-server/extensions/ms-vscode.cpptools-1.22.10-linux-x64/bin/cpptools
+root     2072304       2  0 May07 ?        00:00:00 [xfsalloc]
+root     2072305       2  0 May07 ?        00:00:00 [xfs_mru_cache]
+root     2072309       2  0 May07 ?        00:00:00 [jfsIO]
+root     2072310       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072311       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072312       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072313       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072314       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072315       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072316       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072317       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072318       2  0 May07 ?        00:00:00 [jfsSync]
+root     2112709       1  0 Apr11 ?        00:04:56 /usr/local/Wolfram/MathLM_2024/mathlm -logfile /var/log/mathlm.log
+0lewand+ 2134944       1  0 Nov03 ?        00:00:21 /lib/systemd/systemd --user
+0lewand+ 2134945 2134944  0 Nov03 ?        00:00:00 (sd-pam)
+0lewand+ 2134960 2134944  0 Nov03 ?        00:00:00 /usr/bin/pipewire
+0lewand+ 2134963 2134944  0 Nov03 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0lewand+ 2134970 2134960  0 Nov03 ?        00:00:15 /usr/bin/pipewire-media-session
+0lewand+ 2138141       1  0 Nov03 ?        00:00:00 ./monitor lista.txt
+3shupli+ 2163594       1  0 Jun08 pts/142  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 2177406       1  0 Oct10 ?        00:00:52 /lib/systemd/systemd --user
+3shupli+ 2177407 2177406  0 Oct10 ?        00:00:00 (sd-pam)
+3shupli+ 2177421 2177406  0 Oct10 ?        00:00:00 /usr/bin/pipewire
+3shupli+ 2177425 2177406  0 Oct10 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3shupli+ 2177430 2177421  0 Oct10 ?        00:00:34 /usr/bin/pipewire-media-session
+3shupli+ 2193267       1  0 Oct10 pts/195  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 2212083       1  0 Apr24 pts/43   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2272131       1  0 Oct23 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d61c1d98c74b
+1vynohr+ 2272592       1  0 Oct23 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 57615e5b6db4
+3shupli+ 2297065       1  0 Apr25 pts/45   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2385070       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token b754a0d42cd6
+1vynohr+ 2385363       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token abcba0ae6756
+3shupli+ 2396524       1  0 Apr25 pts/65   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2413528       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token bfcc200c4968
+3balski  2502734 3710843  0 Oct24 pts/197  00:00:00 /usr/bin/zsh
+1vynohr+ 2508377       1  0 Oct24 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token c024fd00363b
+2wojcik+ 2582118       1  0 May30 ?        00:18:27 /usr/bin/python3 -m ipykernel_launcher --f=/home/stud2022/2wojcikst/.local/share/jupyter/runtime/kernel-v2-2581873ObDXo1nUHdi5.json
+2cisek   2587544 2035392  0 Nov14 pts/212  00:00:00 -bash
+2cisek   2590162 2035392  0 Nov14 pts/196  00:00:00 -bash
+0koziol  2632949       1  0 Aug20 ?        00:00:00 ssh-agent
+1vynohr+ 2645311       1  0 Oct24 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 53d83d40a830
+0koziol  2647651       1  0 May30 ?        00:00:00 ssh-agent
+3kwidzi+ 2732322       1  0 Jun19 ?        00:00:20 tmux
+3kwidzi+ 2732500 2732322  0 Jun19 pts/113  00:00:00 -bash
+0buczek  2754349       1  0 Nov04 ?        00:00:19 /lib/systemd/systemd --user
+0buczek  2754357 2754349  0 Nov04 ?        00:00:00 (sd-pam)
+0buczek  2754378 2754349  0 Nov04 ?        00:00:00 /usr/bin/pipewire
+0buczek  2754382 2754349  0 Nov04 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0buczek  2754388 2754378  0 Nov04 ?        00:00:11 /usr/bin/pipewire-media-session
+0buczek  2755162       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755163       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755165       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755166       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755167       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755168       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755169       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755170       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755171       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755347       1  0 Nov04 ?        00:00:10 ./a.out list.txt 0
+0buczek  2755348       1  0 Nov04 ?        00:00:03 ./a.out list.txt 0
+0buczek  2755350       1  0 Nov04 ?        00:00:01 ./a.out list.txt 0
+0buczek  2755351       1  0 Nov04 ?        00:00:00 ./a.out list.txt 0
+0buczek  2755352       1  0 Nov04 ?        00:00:01 ./a.out list.txt 0
+0buczek  2755353       1  0 Nov04 ?        00:00:05 ./a.out list.txt 0
+0buczek  2755354       1  0 Nov04 ?        00:00:03 ./a.out list.txt 0
+0buczek  2755355       1  0 Nov04 ?        00:00:16 ./a.out list.txt 0
+0buczek  2755356       1  0 Nov04 ?        00:00:05 ./a.out list.txt 0
+0buczek  2755471       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755472       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755474       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755475       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755476       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755477       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755478       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755479       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755480       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755493       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755494       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755496       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755497       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755498       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755499       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755500       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755501       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755502       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755523       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755524       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755526       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755527       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755528       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755529       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755530       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755531       1  0 Nov04 ?        00:00:15 ./a.out list.txt 1
+0buczek  2755532       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756030       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2756031       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756032       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2756033       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2756034       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756210       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2756211       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2756212       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2756213       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2756214       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2756230       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2756231       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2756232       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2756233       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2756234       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2757360       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757361       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757362       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757363       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2757364       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757473       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757474       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757475       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757476       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2757477       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757512       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757513       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757514       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757515       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759206       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759207       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759208       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759209       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759210       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759358       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759359       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759360       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759361       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759362       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759516       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759517       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759518       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759519       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2759520       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759880       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759881       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759882       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759883       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759884       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760438       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2760439       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760440       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2760441       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2760442       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2760482       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2760483       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760484       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2760485       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2760486       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2761854       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2761855       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2761856       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2761857       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2761858       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762001       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2762002       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762003       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2762004       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2762005       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2762176       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2762177       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762178       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2762179       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2762425       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762426       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762427       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762428       1  0 Nov04 ?        00:00:15 ./monitor list.txt 1
+0buczek  2762662       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762663       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762665       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762666       1  0 Nov04 ?        00:00:15 ./monitor list.txt 1
+0buczek  2762968       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762969       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762970       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762971       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2763963       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2763964       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2763965       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2763966       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2764139       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764140       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764141       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764142       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2764387       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764388       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764389       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764390       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2764638       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764639       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764640       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764641       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2766781       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2766782       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2766783       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2766784       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2767134       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2767135       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2767136       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2767137       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+4witkow+ 2790484       1  0 Nov04 ?        00:00:00 SCREEN
+4witkow+ 2790485 2790484  0 Nov04 pts/312  00:00:00 /bin/bash
+4witkow+ 2790515 2790484  0 Nov04 pts/313  00:00:00 /bin/bash
+2mueller 2818381 3313548  0 Oct24 pts/280  00:00:00 -bash
+2mueller 2818392 3313548  0 Oct24 pts/281  00:00:00 -bash
+2mueller 2818428 2818381  0 Oct24 pts/280  00:00:00 vim LoadMaze.java
+2mueller 2818607 2818392  0 Oct24 pts/281  00:00:11 vim SolveMaze.java
+www-data 2893107  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893108  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893109  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893110  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893111  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893158  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+1vynohr+ 2905091       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d11256737106
+1vynohr+ 2905421       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 376917a795c0
+1vynohr+ 2905670       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d4e74115ac18
+1ozog    2911820       1  0 02:00 ?        00:00:00 /lib/systemd/systemd --user
+1ozog    2911821 2911820  0 02:00 ?        00:00:00 (sd-pam)
+1ozog    2911836 2911820  0 02:00 ?        00:00:00 /usr/bin/pipewire
+1ozog    2911842 2911820  0 02:00 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1ozog    2911847 2911836  0 02:00 ?        00:00:00 /usr/bin/pipewire-media-session
+1ozog    2912034       1  0 02:01 ?        00:00:00 sh /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/bin/code-server --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/code-ddc75fdf-5813-4d18-a74f-b4f7b8ce4e7d
+1ozog    2912038 2912034  0 02:01 ?        00:02:15 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/server-main.js --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/code-ddc75fdf-5813-4d18-a74f-b4f7b8ce4e7d
+1ozog    2912076 2912038  0 02:01 ?        00:01:07 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=ptyHost --logsPath /home/stud2021/1ozog/.vscode-server/data/logs/20241116T020108
+1ozog    2912335 2912076  0 02:01 pts/234  00:00:00 /bin/bash --init-file /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+1ozog    2914089 2912076  0 02:05 pts/250  00:00:00 /bin/bash --init-file /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+root     2936035    1516  0 04:20 ?        00:00:00 sshd: mkopec [priv]
+mkopec   2936042 2936035  0 04:20 ?        00:00:00 sshd: mkopec
+www-data 2938369  267227  0 04:36 ?        00:00:03 /usr/sbin/apache2 -k start
+www-data 2938375  267227  0 04:36 ?        00:00:03 /usr/sbin/apache2 -k start
+arabas   2938961 3724059  0 Nov05 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+2dendys  2940312       1  0 Oct25 ?        00:00:35 /lib/systemd/systemd --user
+2dendys  2940313 2940312  0 Oct25 ?        00:00:00 (sd-pam)
+2dendys  2940327 2940312  0 Oct25 ?        00:00:00 /usr/bin/pipewire
+2dendys  2940330 2940312  0 Oct25 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2dendys  2940336 2940327  0 Oct25 ?        00:00:22 /usr/bin/pipewire-media-session
+2dendys  2940894 2940312  0 Oct25 ?        00:00:00 /usr/libexec/gvfsd
+1ozog    2954479 2912038  0 06:19 ?        00:02:21 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node --dns-result-order=ipv4first /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+1ozog    2954490 2912038  0 06:19 ?        00:00:39 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=fileWatcher
+2mueller 2955983 3313548  0 Oct25 pts/273  00:00:00 -bash
+2dendys  2957670 2940312  0 Oct25 ?        00:00:09 /usr/libexec/xdg-document-portal
+2dendys  2957673 2940312  0 Oct25 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     2957678 2957670  0 Oct25 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2022106/doc
+2dendys  2957837 2940312  0 Oct25 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+netdata  2967093       1  5 07:36 ?        00:25:22 /opt/netdata/bin/srv/netdata -P /run/netdata/netdata.pid -D
+netdata  2967095 2967093  0 07:36 ?        00:00:02 spawn-plugins                                              
+netdata  2967376 2967095 10 07:36 ?        00:48:55 /opt/netdata/usr/libexec/netdata/plugins.d/apps.plugin 1
+root     2967385 2967095  0 07:36 ?        00:00:11 /opt/netdata/usr/libexec/netdata/plugins.d/network-viewer.plugin 1
+netdata  2967389 2967095  8 07:36 ?        00:38:12 /opt/netdata/usr/libexec/netdata/plugins.d/go.d.plugin 1
+netdata  2967390 2967095  0 07:36 ?        00:00:03 /opt/netdata/usr/libexec/netdata/plugins.d/debugfs.plugin 1
+root     2967393 2967385  0 07:36 ?        00:00:02 spawn-setns                                                       
+root     2967409 2967095  0 07:36 ?        00:00:18 /opt/netdata/usr/libexec/netdata/plugins.d/ebpf.plugin 1
+root     2967411 2967095  0 07:36 ?        00:00:04 /opt/netdata/usr/libexec/netdata/plugins.d/nfacct.plugin 1
+netdata  2967415 2967095  0 07:36 ?        00:00:21 /usr/bin/python3 /opt/netdata/usr/libexec/netdata/plugins.d/python.d.plugin 1
+1ozog    2980268 2954479  2 08:53 ?        00:08:32 /home/stud2021/1ozog/.vscode-server/extensions/ms-vscode.cpptools-1.22.11-linux-x64/bin/cpptools
+4juszcz+ 3000048       1  0 Oct13 ?        00:00:50 /lib/systemd/systemd --user
+4juszcz+ 3000049 3000048  0 Oct13 ?        00:00:00 (sd-pam)
+4juszcz+ 3000064 3000048  0 Oct13 ?        00:00:00 /usr/bin/pipewire
+4juszcz+ 3000068 3000048  0 Oct13 ?        00:00:03 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4juszcz+ 3000073 3000064  0 Oct13 ?        00:00:33 /usr/bin/pipewire-media-session
+4juszcz+ 3001895 3000048  0 Oct13 ?        00:00:01 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+4juszcz+ 3001904       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3001918 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd
+root     3001928       1  0 Oct13 ?        00:00:19 /usr/libexec/upowerd
+4juszcz+ 3002048 3000048  0 Oct13 ?        00:00:00 /usr/libexec/dconf-service
+colord   3002054       1  0 Oct13 ?        00:00:01 /usr/libexec/colord
+4juszcz+ 3002055 3000048  0 Oct13 ?        00:04:02 /usr/libexec/gvfs-udisks2-volume-monitor
+root     3002058       1  0 Oct13 ?        00:01:12 /usr/libexec/udisks2/udisksd
+4juszcz+ 3002163 3000048  0 Oct13 ?        00:00:00 /usr/libexec/bluetooth/obexd
+4juszcz+ 3002182 3000048  0 Oct13 ?        00:02:24 /usr/libexec/gvfs-afc-volume-monitor
+4juszcz+ 3002187 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+4juszcz+ 3002191 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+4juszcz+ 3002195 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+4juszcz+ 3002208 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-metadata
+4juszcz+ 3002211 3001918  0 Oct13 ?        00:00:25 /usr/libexec/gvfsd-trash --spawner :1.9 /org/gtk/gvfs/exec_spaw/0
+root     3002242       1  0 Oct13 ?        00:12:19 /usr/libexec/accounts-daemon
+4juszcz+ 3002361       1  0 Oct13 ?        00:00:00 /usr/libexec/geoclue-2.0/demos/agent
+root     3005414    1516  0 11:26 ?        00:00:00 sshd: hottowy [priv]
+hottowy  3005418       1  0 11:26 ?        00:00:00 /lib/systemd/systemd --user
+hottowy  3005419 3005418  0 11:26 ?        00:00:00 (sd-pam)
+hottowy  3005434 3005418  0 11:26 ?        00:00:00 /usr/bin/pipewire
+hottowy  3005435 3005418  0 11:26 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+hottowy  3005440 3005418  0 11:26 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+hottowy  3005443 3005434  0 11:26 ?        00:00:00 /usr/bin/pipewire-media-session
+hottowy  3005444 3005414  0 11:26 ?        00:00:13 sshd: hottowy
+9kidaws+ 3017083       1  0 12:33 ?        00:00:00 /lib/systemd/systemd --user
+9kidaws+ 3017085 3017083  0 12:33 ?        00:00:00 (sd-pam)
+9kidaws+ 3017100 3017083  0 12:33 ?        00:00:00 /usr/bin/pipewire
+9kidaws+ 3017101 3017083  0 12:33 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+9kidaws+ 3017103 3017083  0 12:33 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+9kidaws+ 3017109 3017100  0 12:33 ?        00:00:00 /usr/bin/pipewire-media-session
+root     3025435    1516  0 13:21 ?        00:00:00 sshd: 1witkowski [priv]
+root     3025437    1516  0 13:21 ?        00:00:00 sshd: 1witkowski [priv]
+1witkow+ 3025441       1  0 13:21 ?        00:00:00 /lib/systemd/systemd --user
+1witkow+ 3025442 3025441  0 13:21 ?        00:00:00 (sd-pam)
+1witkow+ 3025456 3025441  0 13:21 ?        00:00:00 /usr/bin/pipewire
+1witkow+ 3025457 3025441  0 13:21 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+1witkow+ 3025459 3025441  0 13:21 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1witkow+ 3025463 3025456  0 13:21 ?        00:00:00 /usr/bin/pipewire-media-session
+1witkow+ 3025468 3025435  0 13:21 ?        00:00:03 sshd: 1witkowski@pts/284
+1witkow+ 3025469 3025468  0 13:21 pts/284  00:00:00 -bash
+1witkow+ 3025493 3025469  0 13:21 pts/284  00:00:03 ssh -X 172.30.254.137
+1witkow+ 3025507 3025437  0 13:22 ?        00:00:05 sshd: 1witkowski
+0horode+ 3026221       1  0 13:29 ?        00:00:00 /lib/systemd/systemd --user
+0horode+ 3026222 3026221  0 13:29 ?        00:00:00 (sd-pam)
+0horode+ 3026237 3026221  0 13:29 ?        00:00:00 /usr/bin/pipewire
+0horode+ 3026238 3026221  0 13:29 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0horode+ 3026240 3026221  0 13:29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0horode+ 3026246 3026237  0 13:29 ?        00:00:00 /usr/bin/pipewire-media-session
+root     3026251    1516  0 13:29 ?        00:00:00 sshd: 0horodenski [priv]
+0horode+ 3026258 3026251  0 13:29 ?        00:00:00 sshd: 0horodenski
+root     3029986    1516  0 13:48 ?        00:00:00 sshd: 0kosmider [priv]
+root     3029988    1516  0 13:48 ?        00:00:00 sshd: 0kosmider [priv]
+0kosmid+ 3029990       1  0 13:48 ?        00:00:00 /lib/systemd/systemd --user
+0kosmid+ 3029992 3029990  0 13:48 ?        00:00:00 (sd-pam)
+0kosmid+ 3030008 3029990  0 13:48 ?        00:00:00 /usr/bin/pipewire
+0kosmid+ 3030009 3029990  0 13:48 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0kosmid+ 3030011 3029990  0 13:48 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0kosmid+ 3030015 3030008  0 13:48 ?        00:00:00 /usr/bin/pipewire-media-session
+0kosmid+ 3030019 3029986  0 13:48 ?        00:00:00 sshd: 0kosmider@pts/171
+0kosmid+ 3030025 3029988  0 13:48 ?        00:00:00 sshd: 0kosmider@notty
+0kosmid+ 3030027 3030025  0 13:48 ?        00:00:00 /usr/lib/openssh/sftp-server
+0kosmid+ 3030045 3030019  0 13:48 pts/171  00:00:00 -bash
+root     3030179       2  0 13:49 ?        00:00:01 [kworker/0:2-events]
+root     3030396    1516  0 13:51 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3030403 3030396  0 13:51 ?        00:00:00 sshd: 9kidawska@notty
+9kidaws+ 3030406 3030403  0 13:51 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     3031254    1516  0 13:58 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3031261       1  0 13:58 ?        00:00:00 /lib/systemd/systemd --user
+4szyman+ 3031262 3031261  0 13:58 ?        00:00:00 (sd-pam)
+4szyman+ 3031276 3031261  0 13:58 ?        00:00:00 /usr/bin/pipewire
+4szyman+ 3031277 3031261  0 13:58 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4szyman+ 3031284 3031261  0 13:58 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4szyman+ 3031285 3031254  0 13:58 ?        00:00:00 sshd: 4szymanczyk@pts/282
+4szyman+ 3031286 3031276  0 13:58 ?        00:00:00 /usr/bin/pipewire-media-session
+4szyman+ 3031288 3031285  0 13:58 pts/282  00:00:00 -bash
+0kosmid+ 3033164 3030045  0 14:03 pts/171  00:00:00 ssh -X kosmider@172.30.0.191
+root     3033248       2  0 14:04 ?        00:00:04 [kworker/5:1-events]
+4szyman+ 3033899 3031288  0 14:09 pts/282  00:00:00 /bin/bash ./hop
+4szyman+ 3033920 3033899  0 14:09 pts/282  00:00:00 sleep 4
+4szyman+ 3034004 3031288  0 14:10 pts/282  00:00:00 /bin/bash ./hop
+root     3034094    1516  0 14:11 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3034110 3034094  0 14:11 ?        00:00:00 sshd: 4szymanczyk@pts/226
+4szyman+ 3034111 3034110  0 14:11 pts/226  00:00:00 -bash
+4szyman+ 3034441 3034004  0 14:13 pts/282  00:00:00 sleep 4
+4szyman+ 3034535 3031288  0 14:14 pts/282  00:00:00 /bin/bash ./hop
+4szyman+ 3034777 3034535  0 14:15 pts/282  00:00:00 sleep 4
+4szyman+ 3034897 3031288  0 14:16 pts/282  00:00:00 nano hop
+root     3035027       2  0 14:17 ?        00:00:01 [kworker/3:0-events]
+root     3036019       2  0 14:18 ?        00:00:04 [kworker/u16:39-rpciod]
+root     3037095    1516  0 14:22 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3037159 3037095  0 14:23 ?        00:00:00 sshd: 9kidawska@pts/285
+root     3037160    1516  0 14:23 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3037167 3037160  0 14:23 ?        00:00:01 sshd: 9kidawska@notty
+9kidaws+ 3037168 3037167  0 14:23 ?        00:00:02 /usr/lib/openssh/sftp-server
+9kidaws+ 3037171 3037159  0 14:23 pts/285  00:00:00 -bash
+root     3038082    1516  0 14:30 ?        00:00:00 sshd: 1rudy [priv]
+root     3038110    1516  0 14:31 ?        00:00:00 sshd: 1rudy [priv]
+1rudy    3038121       1  0 14:31 ?        00:00:00 /lib/systemd/systemd --user
+1rudy    3038123 3038121  0 14:31 ?        00:00:00 (sd-pam)
+root     3038126       2  0 14:31 ?        00:00:00 [kworker/6:0-cgroup_destroy]
+1rudy    3038149 3038121  0 14:31 ?        00:00:00 /usr/bin/pipewire
+1rudy    3038150 3038121  0 14:31 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+1rudy    3038153 3038121  0 14:31 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1rudy    3038160 3038149  0 14:31 ?        00:00:00 /usr/bin/pipewire-media-session
+1rudy    3038165 3038082  0 14:31 ?        00:00:01 sshd: 1rudy@pts/286
+1rudy    3038166 3038110  0 14:31 ?        00:00:00 sshd: 1rudy@notty
+1rudy    3038167 3038165  0 14:31 pts/286  00:00:01 -bash
+1rudy    3038173 3038166  0 14:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     3039441    1516  0 14:34 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3039506 3039441  0 14:35 ?        00:00:00 sshd: 4szymanczyk@pts/288
+4szyman+ 3039507 3039506  0 14:35 pts/288  00:00:00 -bash
+root     3039531    1516  0 14:35 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3039538 3039531  0 14:35 ?        00:00:20 sshd: 9kidawska@notty
+9kidaws+ 3039539 3039538  0 14:35 ?        00:00:07 /usr/lib/openssh/sftp-server
+netdata  3039713 2967095  0 14:36 ?        00:00:04 bash /opt/netdata/usr/libexec/netdata/plugins.d/tc-qos-helper.sh 1
+4szyman+ 3039847 3039507  0 14:37 pts/288  00:00:00 nano hop
+root     3042685       2  0 14:54 ?        00:00:00 [kworker/5:2-events]
+root     3042770       2  0 14:54 ?        00:00:01 [kworker/u16:0-rpciod]
+root     3043162       2  0 14:57 ?        00:00:00 [kworker/1:1-events]
+4piela   3043217       1  0 14:58 ?        00:00:00 /lib/systemd/systemd --user
+4piela   3043218 3043217  0 14:58 ?        00:00:00 (sd-pam)
+4piela   3043234 3043217  0 14:58 ?        00:00:00 /usr/bin/pipewire
+4piela   3043238 3043217  0 14:58 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4piela   3043243 3043234  0 14:58 ?        00:00:00 /usr/bin/pipewire-media-session
+4piela   3043652       1  0 15:00 ?        00:00:00 /bin/bash ./hop
+4piela   3043681       1  0 15:00 ?        00:00:00 /bin/bash ./hop
+root     3044872       2  0 15:02 ?        00:00:00 [kworker/4:1-events]
+root     3044979       2  0 15:03 ?        00:00:01 [kworker/u16:6-nfsiod]
+root     3045178       2  0 15:04 ?        00:00:00 [kworker/6:1-events]
+root     3045179       2  0 15:04 ?        00:00:00 [kworker/0:1-cgroup_destroy]
+4juszcz+ 3045423 3000048  0 Oct13 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+4juszcz+ 3045428 3045423  0 Oct13 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+4juszcz+ 3045432 3000048  0 Oct13 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+4juszcz+ 3045440       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3045679 3000048  0 Oct13 ?        00:00:00 /usr/libexec/xdg-document-portal
+4juszcz+ 3045682 3000048  0 Oct13 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     3045687 3045679  0 Oct13 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2024029/doc
+4juszcz+ 3045701 3000048  0 Oct13 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+root     3045938       2  0 15:08 ?        00:00:00 [kworker/2:2-events]
+root     3046044       2  0 15:09 ?        00:00:00 [kworker/7:0-events]
+root     3046045       2  0 15:09 ?        00:00:00 [kworker/u16:2-rpciod]
+root     3046112    1516  0 15:09 ?        00:00:00 sshd: 4piela [priv]
+4piela   3046174 3046112  0 15:10 ?        00:00:00 sshd: 4piela@pts/277
+4piela   3046175 3046174  0 15:10 pts/277  00:00:00 -bash
+root     3046524       2  0 15:12 ?        00:00:00 [kworker/u17:2-xprtiod]
+4juszcz+ 3046665 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-network --spawner :1.9 /org/gtk/gvfs/exec_spaw/1
+4juszcz+ 3046685 3001918  0 Oct13 ?        00:00:32 /usr/libexec/gvfsd-dnssd --spawner :1.9 /org/gtk/gvfs/exec_spaw/3
+4juszcz+ 3046695 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-smb-browse --spawner :1.9 /org/gtk/gvfs/exec_spaw/4
+root     3046720    1516  0 15:13 ?        00:00:00 sshd: 4wojtowicze [priv]
+root     3046723    1516  0 15:13 ?        00:00:00 sshd: 0rutkowski [priv]
+4wojtow+ 3046735       1  0 15:13 ?        00:00:00 /lib/systemd/systemd --user
+4wojtow+ 3046736 3046735  0 15:13 ?        00:00:00 (sd-pam)
+4wojtow+ 3046750 3046735  0 15:13 ?        00:00:00 /usr/bin/pipewire
+4wojtow+ 3046751 3046735  0 15:13 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4wojtow+ 3046753 3046735  0 15:13 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4wojtow+ 3046759 3046720  0 15:13 ?        00:00:00 sshd: 4wojtowicze@pts/291
+4wojtow+ 3046760 3046750  0 15:13 ?        00:00:00 /usr/bin/pipewire-media-session
+4wojtow+ 3046763 3046759  0 15:13 pts/291  00:00:00 -bash
+0rutkow+ 3046776       1  0 15:13 ?        00:00:00 /lib/systemd/systemd --user
+0rutkow+ 3046777 3046776  0 15:13 ?        00:00:00 (sd-pam)
+0rutkow+ 3046792 3046776  0 15:13 ?        00:00:00 /usr/bin/pipewire
+0rutkow+ 3046793 3046776  0 15:13 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0rutkow+ 3046795 3046776  0 15:13 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0rutkow+ 3046801 3046792  0 15:13 ?        00:00:00 /usr/bin/pipewire-media-session
+0rutkow+ 3046804 3046723  0 15:13 ?        00:00:00 sshd: 0rutkowski
+4juszcz+ 3046861 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-computer --spawner :1.9 /org/gtk/gvfs/exec_spaw/5
+root     3047208    1516  0 15:15 ?        00:00:00 sshd: 2fryska [priv]
+root     3047211       2  0 15:15 ?        00:00:00 [kworker/u16:3-rpciod]
+2fryska  3047220       1  0 15:15 ?        00:00:00 /lib/systemd/systemd --user
+2fryska  3047221 3047220  0 15:15 ?        00:00:00 (sd-pam)
+2fryska  3047236 3047220  0 15:15 ?        00:00:00 /usr/bin/pipewire
+2fryska  3047237 3047220  0 15:15 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+2fryska  3047239 3047220  0 15:15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2fryska  3047245 3047236  0 15:15 ?        00:00:00 /usr/bin/pipewire-media-session
+2fryska  3047246 3047208  0 15:15 ?        00:00:00 sshd: 2fryska@pts/275
+2fryska  3047249 3047246  0 15:15 pts/275  00:00:00 -bash
+root     3047631       2  0 15:17 ?        00:00:00 [kworker/u17:1-xprtiod]
+root     3048818       2  0 15:19 ?        00:00:00 [kworker/3:2-ata_sff]
+root     3048921       2  0 15:20 ?        00:00:00 [kworker/7:2-events]
+root     3048968       2  0 15:20 ?        00:00:00 [kworker/2:1-events]
+root     3049076       2  0 15:21 ?        00:00:00 [kworker/4:0-events]
+root     3049089       2  0 15:21 ?        00:00:00 [kworker/1:0]
+4wojtow+ 3049284 3046763  0 15:22 pts/291  00:00:00 /bin/bash ./hop
+root     3049570       2  0 15:24 ?        00:00:00 [kworker/u16:1-rpciod]
+root     3049571       2  0 15:24 ?        00:00:00 [kworker/u16:4-rpciod]
+root     3049572       2  0 15:24 ?        00:00:00 [kworker/u17:0-xprtiod]
+root     3049573       2  0 15:24 ?        00:00:00 [kworker/u16:5-rpciod]
+root     3049574       2  0 15:24 ?        00:00:00 [kworker/u17:3-xprtiod]
+root     3049592       2  0 15:24 ?        00:00:00 [kworker/3:1-ata_sff]
+root     3049697       2  0 15:25 ?        00:00:00 [kworker/0:0]
+root     3049708       2  0 15:25 ?        00:00:00 [kworker/7:1-events]
+4wojtow+ 3049714 3046763  0 15:25 pts/291  00:00:00 nano hop
+root     3049737    1516  0 15:25 ?        00:00:00 sshd: 4wojtowicze [priv]
+root     3049739    1516  0 15:25 ?        00:00:00 sshd: 4bedkowski [priv]
+4wojtow+ 3049786 3049737  0 15:26 ?        00:00:00 sshd: 4wojtowicze@pts/279
+4wojtow+ 3049792 3049786  0 15:26 pts/279  00:00:00 -bash
+4bedkow+ 3049836       1  0 15:26 ?        00:00:00 /lib/systemd/systemd --user
+4bedkow+ 3049837 3049836  0 15:26 ?        00:00:00 (sd-pam)
+4juszcz+ 3049840       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4bedkow+ 3049852 3049836  0 15:26 ?        00:00:00 /usr/bin/pipewire
+4bedkow+ 3049853 3049836  0 15:26 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4bedkow+ 3049856 3049836  0 15:26 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4bedkow+ 3049861 3049852  0 15:26 ?        00:00:00 /usr/bin/pipewire-media-session
+4bedkow+ 3049862 3049739  0 15:26 ?        00:00:00 sshd: 4bedkowski@notty
+4bedkow+ 3049865 3049862  0 15:26 ?        00:00:00 /usr/lib/openssh/sftp-server
+4wojtow+ 3049925 3049284  0 15:26 pts/291  00:00:00 sleep 4
+4piela   3049927 3043652  0 15:26 ?        00:00:00 sleep 4
+4piela   3049928 3043681  0 15:26 ?        00:00:00 sleep 4
+4wojtow+ 3049933 3049792  0 15:26 pts/279  00:00:00 ps -ef
+4juszcz+ 3049957       1  0 Oct13 ?        00:00:00 /usr/libexec/geoclue-2.0/demos/agent
+2020163  3051513       1  0 Apr27 ?        00:29:54 /home/stud2020/0zarebski/.vscode-server/extensions/ms-vscode.cpptools-1.19.9-linux-x64/bin/cpptools
+2020163  3053284       1  0 Apr27 ?        00:45:53 /home/stud2020/0zarebski/.vscode-server/extensions/ms-vscode.cpptools-1.19.9-linux-x64/bin/cpptools-srv 3051513 {199C120C-DCC2-47F1-BA6A-F3451CB6E8A8}
+4juszcz+ 3055274       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3055785       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3056422       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+3shupli+ 3131241       1  0 May09 pts/70   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root     3131802       2  0 Nov05 ?        00:00:00 [kworker/6:2H-kblockd]
+root     3131803       2  0 Nov05 ?        00:00:00 [kworker/3:2H-kblockd]
+1vynohr+ 3144655       1  0 Oct14 ?        00:00:50 /lib/systemd/systemd --user
+1vynohr+ 3144656 3144655  0 Oct14 ?        00:00:00 (sd-pam)
+1vynohr+ 3144670 3144655  0 Oct14 ?        00:00:00 /usr/bin/pipewire
+1vynohr+ 3144674 3144655  0 Oct14 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1vynohr+ 3144679 3144670  0 Oct14 ?        00:00:33 /usr/bin/pipewire-media-session
+1vynohr+ 3145178       1  0 Oct14 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 8ce70781481e
+1vynohr+ 3145548       1  0 Oct14 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 86361a6ebd8e
+uuidd    3259268       1  0 Nov05 ?        00:00:00 /usr/sbin/uuidd --socket-activation
+2mueller 3311160       1  0 Oct14 ?        00:00:48 /lib/systemd/systemd --user
+2mueller 3311162 3311160  0 Oct14 ?        00:00:00 (sd-pam)
+2mueller 3311176 3311160  0 Oct14 ?        00:00:00 /usr/bin/pipewire
+2mueller 3311180 3311160  0 Oct14 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2mueller 3311185 3311176  0 Oct14 ?        00:00:32 /usr/bin/pipewire-media-session
+2mueller 3313548       1  0 Oct14 ?        00:00:45 tmux
+2mueller 3313549 3313548  0 Oct14 pts/204  00:00:00 -bash
+2mueller 3313563 3313548  0 Oct14 pts/207  00:00:00 -bash
+0antkow+ 3319888       1  0 May09 ?        00:00:00 ssh-agent -s
+mkopec   3350624       1  0 Sep29 ?        00:01:04 /lib/systemd/systemd --user
+mkopec   3350625 3350624  0 Sep29 ?        00:00:00 (sd-pam)
+mkopec   3350640 3350624  0 Sep29 ?        00:00:00 /usr/bin/pipewire
+mkopec   3350641 3350624  0 Sep29 ?        00:00:20 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+mkopec   3350644 3350624  0 Sep29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+mkopec   3350649 3350640  0 Sep29 ?        00:00:47 /usr/bin/pipewire-media-session
+2mueller 3390616 3313548  0 Oct14 pts/209  00:00:00 -bash
+2mueller 3390645 3313548  0 Oct14 pts/222  00:00:00 -bash
+2mueller 3390722 3390645  0 Oct14 pts/222  00:00:00 vim notatki_wazne.log
+2mueller 3395227 3390616  0 Oct14 pts/209  00:00:00 vim notatki.log
+3shupli+ 3490028       1  0 Jun12 pts/178  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3balski  3710774       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+3balski  3710775 3710774  0 Oct15 ?        00:00:00 (sd-pam)
+3balski  3710801 3710774  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+3balski  3710805 3710774  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3balski  3710809 3710801  0 Oct15 ?        00:00:31 /usr/bin/pipewire-media-session
+3balski  3710843       1  0 Oct15 ?        00:00:36 tmux new-session /usr/bin/zsh ; set default-shell /usr/bin/zsh
+3balski  3710909 3710843  0 Oct15 pts/258  00:00:01 /usr/bin/zsh
+arabas   3724059       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+arabas   3724060 3724059  0 Oct15 ?        00:00:00 (sd-pam)
+arabas   3724074 3724059  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+arabas   3724077 3724059  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+arabas   3724083 3724074  0 Oct15 ?        00:00:31 /usr/bin/pipewire-media-session
+arabas   3724214       1  0 Oct15 ?        00:00:26 SCREEN
+arabas   3724215 3724214  0 Oct15 pts/278  00:00:00 /bin/bash
+arabas   3727237 3724214  0 Oct15 pts/202  00:00:00 /bin/bash
+4juszcz+ 3753230       1  0 Oct27 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3753236 3000048  0 Oct27 ?        00:00:00 /usr/bin/gpg-agent --supervised
+0koziol  3764375       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+0koziol  3764376 3764375  0 Oct15 ?        00:00:00 (sd-pam)
+0koziol  3764390 3764375  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+0koziol  3764398 3764375  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0koziol  3764400 3764390  0 Oct15 ?        00:00:30 /usr/bin/pipewire-media-session
+0koziol  3764414       1  0 Oct15 ?        00:00:00 ssh-agent
+0koziol  3764741       1  0 Oct15 ?        00:00:00 ssh-agent
+3siedle+ 3784681       1  0 May10 ?        00:00:27 tmux
+3siedle+ 3784682 3784681  0 May10 pts/31   00:00:00 -bash
+1vynohr+ 3819793       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 229501d219bd
+1vynohr+ 3820119       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 3417ca51dad3
+0koziol  3856406       1  0 Oct01 ?        00:00:00 ssh-agent
+1vynohr+ 3859591       1  0 Nov07 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-65edc4939843c90c34d61f4ce11704f09d3e5cb6 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 1017cbb3c70b
+adamczyk 3955215       1  0 May22 ?        00:00:06 /home/staff/brachwal/public/conda/miniconda3/envs/root-6.28.4/bin/python3.11 /home/staff/brachwal/public/conda/miniconda3/envs/root-6.28.4/bin/jupyter-notebook --port=8888 --NotebookApp.port_retries=0 --no-browse
+root     3975190       1  0 Oct02 ?        00:02:32 /lib/systemd/systemd-journald netdata
+3waszak  3984310       1  0 Oct16 ?        00:00:46 /lib/systemd/systemd --user
+3waszak  3984311 3984310  0 Oct16 ?        00:00:00 (sd-pam)
+3waszak  3984326 3984310  0 Oct16 ?        00:00:00 /usr/bin/pipewire
+3waszak  3984329 3984310  0 Oct16 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3waszak  3984332 3984326  0 Oct16 ?        00:00:30 /usr/bin/pipewire-media-session
+3waszak  3984771       1  0 Oct16 ?        00:00:03 tmux
+3waszak  3984772 3984771  0 Oct16 pts/276  00:00:00 -bash
+0koziol  4004861       1  0 Aug25 ?        00:00:00 ssh-agent
+0koziol  4024337       1  0 Aug25 ?        00:00:00 ssh-agent
+root     4024355       1  0 Jul23 ?        00:01:10 /usr/sbin/sssd -i --logger=files
+root     4024356 4024355  0 Jul23 ?        05:44:45 /usr/libexec/sssd/sssd_be --domain fis.agh.edu.pl --uid 0 --gid 0 --logger=files
+root     4024357 4024355  0 Jul23 ?        01:52:16 /usr/libexec/sssd/sssd_nss --uid 0 --gid 0 --logger=files
+root     4024358 4024355  0 Jul23 ?        03:28:56 /usr/libexec/sssd/sssd_pam --uid 0 --gid 0 --logger=files
+0koziol  4026901       1  0 Aug25 ?        00:00:00 ssh-agent
+1vynohr+ 4042530       1  0 Nov07 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-65edc4939843c90c34d61f4ce11704f09d3e5cb6 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 2f3e0c194723
+3shupli+ 4066971       1  0 May22 pts/106  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 4069157       1  0 May22 pts/88   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  4147994       1  0 Jul24 ?        00:00:00 ssh-agent
+1vynohr+ 4150943       1  0 Oct17 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 4ee988ad007a
+1vynohr+ 4151291       1  0 Oct17 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 7928d6708fd6
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 Apr05 ?        02:38:34 /lib/systemd/systemd --system --deserialize 40
+root           2       0  0 Apr05 ?        00:00:58 [kthreadd]
+root           3       2  0 Apr05 ?        00:00:00 [rcu_gp]
+root           4       2  0 Apr05 ?        00:00:00 [rcu_par_gp]
+root           6       2  0 Apr05 ?        00:00:00 [kworker/0:0H-events_highpri]
+root           8       2  0 Apr05 ?        00:00:00 [mm_percpu_wq]
+root           9       2  0 Apr05 ?        00:00:00 [rcu_tasks_rude_]
+root          10       2  0 Apr05 ?        00:00:00 [rcu_tasks_trace]
+root          11       2  0 Apr05 ?        00:20:07 [ksoftirqd/0]
+root          12       2  0 Apr05 ?        05:34:19 [rcu_sched]
+root          13       2  0 Apr05 ?        00:02:54 [migration/0]
+root          15       2  0 Apr05 ?        00:00:00 [cpuhp/0]
+root          16       2  0 Apr05 ?        00:00:00 [cpuhp/1]
+root          17       2  0 Apr05 ?        00:02:46 [migration/1]
+root          18       2  0 Apr05 ?        00:23:50 [ksoftirqd/1]
+root          20       2  0 Apr05 ?        00:00:00 [kworker/1:0H-kblockd]
+root          21       2  0 Apr05 ?        00:00:00 [cpuhp/2]
+root          22       2  0 Apr05 ?        00:02:44 [migration/2]
+root          23       2  0 Apr05 ?        00:22:47 [ksoftirqd/2]
+root          25       2  0 Apr05 ?        00:00:00 [kworker/2:0H-events_highpri]
+root          26       2  0 Apr05 ?        00:00:00 [cpuhp/3]
+root          27       2  0 Apr05 ?        00:02:45 [migration/3]
+root          28       2  0 Apr05 ?        00:35:41 [ksoftirqd/3]
+root          31       2  0 Apr05 ?        00:00:00 [cpuhp/4]
+root          32       2  0 Apr05 ?        00:02:46 [migration/4]
+root          33       2  0 Apr05 ?        00:20:29 [ksoftirqd/4]
+root          35       2  0 Apr05 ?        00:00:00 [kworker/4:0H-kblockd]
+root          36       2  0 Apr05 ?        00:00:00 [cpuhp/5]
+root          37       2  0 Apr05 ?        00:02:50 [migration/5]
+root          38       2  0 Apr05 ?        00:19:45 [ksoftirqd/5]
+root          40       2  0 Apr05 ?        00:00:00 [kworker/5:0H-kblockd]
+root          41       2  0 Apr05 ?        00:00:00 [cpuhp/6]
+root          42       2  0 Apr05 ?        00:02:48 [migration/6]
+root          43       2  0 Apr05 ?        00:19:30 [ksoftirqd/6]
+root          46       2  0 Apr05 ?        00:00:00 [cpuhp/7]
+root          47       2  0 Apr05 ?        00:02:52 [migration/7]
+root          48       2  0 Apr05 ?        01:41:40 [ksoftirqd/7]
+root          50       2  0 Apr05 ?        00:00:00 [kworker/7:0H-events_highpri]
+root          59       2  0 Apr05 ?        00:00:00 [kdevtmpfs]
+root          60       2  0 Apr05 ?        00:00:00 [netns]
+root          61       2  0 Apr05 ?        00:00:00 [kauditd]
+root          62       2  0 Apr05 ?        00:00:41 [khungtaskd]
+root          63       2  0 Apr05 ?        00:00:00 [oom_reaper]
+root          64       2  0 Apr05 ?        00:00:00 [writeback]
+root          65       2  0 Apr05 ?        05:15:54 [kcompactd0]
+root          66       2  0 Apr05 ?        00:00:00 [ksmd]
+root          67       2  0 Apr05 ?        00:27:40 [khugepaged]
+root          88       2  0 Apr05 ?        00:00:00 [kintegrityd]
+root          89       2  0 Apr05 ?        00:00:00 [kblockd]
+root          90       2  0 Apr05 ?        00:00:00 [blkcg_punt_bio]
+root          91       2  0 Apr05 ?        00:00:00 [edac-poller]
+root          92       2  0 Apr05 ?        00:00:00 [devfreq_wq]
+root          94       2  0 Apr05 ?        00:12:09 [kworker/0:1H-kblockd]
+root          97       2  0 Apr05 ?        00:38:56 [kswapd0]
+root          98       2  0 Apr05 ?        00:00:00 [kthrotld]
+root          99       2  0 Apr05 ?        00:00:00 [acpi_thermal_pm]
+root         100       2  0 Apr05 ?        00:00:00 [ipv6_addrconf]
+root         109       2  0 Apr05 ?        00:00:00 [kstrp]
+root         112       2  0 Apr05 ?        00:00:00 [zswap-shrink]
+root         136       2  0 Apr05 ?        00:12:14 [kworker/3:1H-kblockd]
+root         171       2  0 Apr05 ?        00:14:03 [kworker/7:1H-kblockd]
+root         172       2  0 Apr05 ?        00:00:00 [scsi_eh_0]
+root         173       2  0 Apr05 ?        00:00:00 [scsi_tmf_0]
+root         174       2  0 Apr05 ?        00:00:00 [ata_sff]
+root         175       2  0 Apr05 ?        00:12:37 [kworker/6:1H-kblockd]
+root         177       2  0 Apr05 ?        00:00:00 [scsi_eh_1]
+root         178       2  0 Apr05 ?        00:00:00 [scsi_tmf_1]
+root         179       2  0 Apr05 ?        00:00:00 [scsi_eh_2]
+root         180       2  0 Apr05 ?        00:00:00 [scsi_tmf_2]
+root         181       2  0 Apr05 ?        00:00:00 [scsi_eh_3]
+root         182       2  0 Apr05 ?        00:00:00 [scsi_tmf_3]
+root         183       2  0 Apr05 ?        00:00:00 [scsi_eh_4]
+root         184       2  0 Apr05 ?        00:00:00 [scsi_tmf_4]
+root         185       2  0 Apr05 ?        00:00:00 [scsi_eh_5]
+root         186       2  0 Apr05 ?        00:00:00 [scsi_tmf_5]
+root         187       2  0 Apr05 ?        00:00:00 [scsi_eh_6]
+root         188       2  0 Apr05 ?        00:00:00 [scsi_tmf_6]
+root         189       2  0 Apr05 ?        00:00:00 [scsi_eh_7]
+root         190       2  0 Apr05 ?        00:00:00 [scsi_tmf_7]
+root         191       2  0 Apr05 ?        00:00:00 [scsi_eh_8]
+root         192       2  0 Apr05 ?        00:00:00 [scsi_tmf_8]
+root         198       2  0 Apr05 ?        00:12:50 [kworker/1:1H-kblockd]
+root         199       2  0 Apr05 ?        00:11:02 [kworker/5:1H-kblockd]
+root         203       2  0 Apr05 ?        00:12:35 [kworker/4:1H-kblockd]
+root         204       2  0 Apr05 ?        00:12:44 [kworker/2:1H-kblockd]
+root         244       2  0 Apr05 ?        00:34:29 [jbd2/sdb-8]
+root         245       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         259       2  0 Apr05 ?        00:00:25 [jbd2/sda-8]
+root         260       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         313       2  0 Apr05 ?        00:00:00 [rpciod]
+root         314       2  0 Apr05 ?        00:00:00 [xprtiod]
+root         388       2  0 Apr05 ?        00:00:00 [jbd2/vdb-8]
+root         389       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         463       2  0 Apr05 ?        00:08:26 [jbd2/sdc-8]
+root         464       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+root         473       2  0 Apr05 ?        00:00:00 [jbd2/vdc1-8]
+root         474       2  0 Apr05 ?        00:00:00 [ext4-rsv-conver]
+_rpc         560       1  0 Apr05 ?        00:00:34 /sbin/rpcbind -f -w
+root         562       1  0 Apr05 ?        00:00:00 /usr/sbin/acpid
+root         570       1  0 Apr05 ?        00:21:07 /usr/sbin/irqbalance --foreground
+prometh+     573       1  0 Apr05 ?        00:00:30 /usr/bin/prometheus-node-exporter
+root         574       1  0 Apr05 ?        01:20:53 /usr/sbin/rsyslogd -n -iNONE
+root        1486       1  0 Apr05 ?        00:00:00 /usr/bin/python3 /usr/bin/salt-minion
+Debian-+    1490       1  0 Apr05 ?        03:49:06 /usr/sbin/snmpd -LOw -u Debian-snmp -g Debian-snmp -I -smux mteTrigger mteTriggerConf -f -p /run/snmpd.pid
+ntp         1508       1  0 Apr05 ?        01:31:35 /usr/sbin/ntpd -p /var/run/ntpd.pid -g -u 132:140
+root        1516       1  0 Apr05 ?        00:02:36 sshd: /usr/sbin/sshd -D [listener] 0 of 10-100 startups
+root        1531       1  0 Apr05 ?        00:22:33 /usr/sbin/inetd
+root        1544       2  0 Apr05 ?        00:00:00 [nfsiod]
+root        1561       2  0 Apr05 ?        00:00:54 [NFSv4 callback]
+statd       1582       1  0 Apr05 ?        00:00:00 /sbin/rpc.statd --no-notify
+root        1607       2  0 Apr05 ?        00:00:00 [lockd]
+root        1686       1  0 Apr05 ?        12:16:01 /usr/sbin/and
+rootd       1989       1  0 Apr05 ?        00:00:00 /usr/bin/rootd
+root        2197    1486  0 Apr05 ?        08:37:21 /usr/bin/python3 /usr/bin/salt-minion KeepAlive MultiMinionProcessManager MinionProcessManager
+root        2203       1  0 Apr05 ?        00:11:54 /usr/sbin/cron -f
+daemon      2206       1  0 Apr05 ?        00:00:01 /usr/sbin/atd -f
+root        2215       1  0 Apr05 tty1     00:00:00 /sbin/agetty -o -p -- \u --noclear tty1 linux
+root        2217       1  0 Apr05 ?        00:00:00 /usr/sbin/automount --pid-file /var/run/autofs.pid
+root        2362    2197  0 Apr05 ?        00:00:00 /usr/bin/python3 /usr/bin/salt-minion KeepAlive MultiprocessingLoggingQueue
+root        2782       2  0 Apr05 ?        00:00:00 [cfg80211]
+2grusze+   64129       1  0 Apr30 ?        00:00:00 ssh-agent -s
+1vynohr+  120046       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 1aa164c3bc31
+3shupli+  158480       1  0 May12 pts/83   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+brachwal  181122       1  0 Nov08 ?        00:00:10 /lib/systemd/systemd --user
+brachwal  181123  181122  0 Nov08 ?        00:00:00 (sd-pam)
+brachwal  181140  181122  0 Nov08 ?        00:00:00 /usr/bin/pipewire
+brachwal  181143  181122  0 Nov08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+brachwal  181149  181140  0 Nov08 ?        00:00:08 /usr/bin/pipewire-media-session
+brachwal  183675       1  0 Nov08 ?        00:00:00 ssh-agent -s
+4juszcz+  193551       1  0 Oct17 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+  195158       1  0 Oct17 ?        00:00:00 /usr/bin/ssh-agent -s
+3shupli+  197983       1  0 Apr05 pts/16   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root      267227       1  0 Oct18 ?        00:02:39 /usr/sbin/apache2 -k start
+3shupli+  282338       1  0 Jun14 pts/189  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+4starzak  446393       1  0 Oct29 ?        00:00:29 /lib/systemd/systemd --user
+4starzak  446394  446393  0 Oct29 ?        00:00:00 (sd-pam)
+4starzak  446408  446393  0 Oct29 ?        00:00:00 /usr/bin/pipewire
+4starzak  446412  446393  0 Oct29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4starzak  446417  446408  0 Oct29 ?        00:00:18 /usr/bin/pipewire-media-session
+4starzak  455722       1  0 Oct29 ?        00:00:00 ssh-agent -s
+0koziol   566725       1  0 Apr19 ?        00:00:00 ssh-agent
+0koziol   568530       1  0 Apr19 ?        00:00:00 ssh-agent
+root      697350       2  0 May02 ?        00:00:00 [ib-comp-wq]
+root      697351       2  0 May02 ?        00:00:00 [ib-comp-unb-wq]
+root      697354       2  0 May02 ?        00:00:00 [ib_mcast]
+root      697356       2  0 May02 ?        00:00:00 [ib_nl_sa_wq]
+3shupli+  813107       1  0 May25 pts/74   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root      823770    1516  0 Oct30 ?        00:00:00 sshd: lach [priv]
+lach      823777  823770  0 Oct30 ?        00:00:02 sshd: lach
+Debian-+  854482       1  0 Oct06 ?        00:00:01 /usr/sbin/exim4 -bd -q30m
+root      856063       1  0 Oct06 ?        00:00:08 /lib/systemd/systemd-udevd
+message+  860774       1  4 Oct06 ?        1-18:52:29 /usr/bin/dbus-daemon --system --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+root      860782       1  2 Oct06 ?        22:11:58 /lib/systemd/systemd-logind
+root      862177       1  0 Oct06 ?        00:01:28 /usr/libexec/packagekitd
+root      862181       1  0 Oct06 ?        00:02:27 /usr/libexec/polkitd --no-debug
+0modrze+  862775       1  0 Oct30 ?        00:00:26 /lib/systemd/systemd --user
+0modrze+  862776  862775  0 Oct30 ?        00:00:00 (sd-pam)
+0modrze+  862791  862775  0 Oct30 ?        00:00:00 /usr/bin/pipewire
+0modrze+  862796  862775  0 Oct30 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0modrze+  862801  862791  0 Oct30 ?        00:00:17 /usr/bin/pipewire-media-session
+0modrze+  866883       1  0 Oct30 ?        00:00:02 tmux
+0modrze+  866888  866883  0 Oct30 pts/296  00:00:00 -bash
+root      882185       1  0 Oct06 ?        00:00:21 /sbin/wpa_supplicant -u -s -O /run/wpa_supplicant
+3balski   924377 3710843  0 Oct30 pts/267  00:00:01 /usr/bin/zsh
+3balski   924661 3710843  0 Oct30 pts/283  00:00:03 -zsh
+3shupli+  951869       1  0 Jun05 pts/148  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+  952123       1  0 Nov10 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-e8653663e8840adaf45af01eab5c627a5af81807 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token c3c232ac0ec3
+3shupli+  972188       1  0 May25 pts/95   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol   991281       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   992241       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   993590       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   993703       1  0 Aug31 ?        00:00:00 ssh-agent
+0koziol   996389       1  0 May04 ?        00:00:00 ssh-agent
+1vynohr+ 1014765       1  0 Oct31 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-912bb683695358a54ae0c670461738984cbb5b95 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 9b4146997336
+1vynohr+ 1016185       1  0 Oct31 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-912bb683695358a54ae0c670461738984cbb5b95 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 02b4646b0fc2
+1vynohr+ 1114116       1  0 Oct21 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 00639f3c5de3
+0koziol  1114299       1  0 Apr21 ?        00:00:00 ssh-agent
+3shupli+ 1119639       1  0 Apr21 pts/53   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1125767       1  0 Apr21 ?        00:00:00 ssh-agent
+3shupli+ 1129673       1  0 Jun16 pts/194  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1141661       1  0 Aug31 ?        00:00:00 ssh-agent
+3shupli+ 1147844       1  0 May26 pts/102  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1150240       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1153747       1  0 May26 ?        00:00:00 ssh-agent
+0koziol  1154166       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1166473       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1166941       1  0 May04 ?        00:00:00 ssh-agent
+0koziol  1191958       1  0 Apr09 ?        00:00:00 ssh-agent
+2starzyk 1205736       1  0 Nov11 ?        00:00:08 /lib/systemd/systemd --user
+2starzyk 1205737 1205736  0 Nov11 ?        00:00:00 (sd-pam)
+2starzyk 1205751 1205736  0 Nov11 ?        00:00:00 /usr/bin/pipewire
+2starzyk 1205754 1205736  0 Nov11 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2starzyk 1205760 1205751  0 Nov11 ?        00:00:05 /usr/bin/pipewire-media-session
+2starzyk 1212717       1  0 Nov11 ?        00:00:00 ssh-agent -s
+2starzyk 1215131 1205736  0 Nov11 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+2starzyk 1215343 1205736  0 Nov11 ?        00:00:00 /usr/libexec/xdg-document-portal
+2starzyk 1215348 1205736  0 Nov11 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     1215353 1215343  0 Nov11 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2022178/doc
+3shupli+ 1218673       1  0 Jun06 pts/139  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1219157       1  0 Jun16 pts/218  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+2mueller 1232240 3313548  0 Oct21 pts/242  00:00:00 -bash
+2mueller 1232282 3313548  0 Oct21 pts/274  00:00:00 -bash
+2mueller 1233142 1232282  0 Oct21 pts/274  00:00:00 vim notatki_wazne.log
+2mueller 1234318 1232240  0 Oct21 pts/242  00:00:00 vim notatki.log
+1vynohr+ 1303588 3144655  0 Nov12 ?        00:00:00 /usr/libexec/gvfsd
+1vynohr+ 1318927       1  0 Oct21 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token a736322b4d2b
+4piwowar 1325692       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4piwowar 1325693 1325692  0 Oct07 ?        00:00:00 (sd-pam)
+4piwowar 1325711 1325692  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4piwowar 1325715 1325692  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4piwowar 1325721 1325711  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4borkow+ 1325798       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4borkow+ 1325799 1325798  0 Oct07 ?        00:00:00 (sd-pam)
+4borkow+ 1325813 1325798  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4borkow+ 1325816 1325798  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4borkow+ 1325822 1325813  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4witkow+ 1326076       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4witkow+ 1326077 1326076  0 Oct07 ?        00:00:00 (sd-pam)
+4witkow+ 1326091 1326076  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4witkow+ 1326094 1326076  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4witkow+ 1326100 1326091  0 Oct07 ?        00:00:41 /usr/bin/pipewire-media-session
+4rzemin+ 1326213       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4rzemin+ 1326214 1326213  0 Oct07 ?        00:00:00 (sd-pam)
+4rzemin+ 1326228 1326213  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4rzemin+ 1326231 1326213  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4rzemin+ 1326236 1326228  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4wolczy+ 1327140       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4wolczy+ 1327141 1327140  0 Oct07 ?        00:00:00 (sd-pam)
+4wolczy+ 1327155 1327140  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4wolczy+ 1327159 1327140  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4wolczy+ 1327164 1327155  0 Oct07 ?        00:00:36 /usr/bin/pipewire-media-session
+4blaszc+ 1327348       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4blaszc+ 1327349 1327348  0 Oct07 ?        00:00:00 (sd-pam)
+4blaszc+ 1327364 1327348  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4blaszc+ 1327367 1327348  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4blaszc+ 1327373 1327364  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4gladysz 1327409       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4gladysz 1327410 1327409  0 Oct07 ?        00:00:00 (sd-pam)
+4gladysz 1327424 1327409  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4gladysz 1327427 1327409  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4gladysz 1327433 1327424  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4piwowar 1329145       1  0 Oct07 ?        00:00:00 SCREEN -l
+4piwowar 1329146 1329145  0 Oct07 pts/201  00:00:00 /bin/bash
+4dronski 1329186       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4dronski 1329187 1329186  0 Oct07 ?        00:00:00 (sd-pam)
+4dronski 1329205 1329186  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4dronski 1329209 1329186  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4dronski 1329214 1329205  0 Oct07 ?        00:00:50 /usr/bin/pipewire-media-session
+4trybus  1329382       1  0 Oct07 ?        00:00:55 /lib/systemd/systemd --user
+4trybus  1329383 1329382  0 Oct07 ?        00:00:00 (sd-pam)
+4trybus  1329397 1329382  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4trybus  1329401 1329382  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4trybus  1329406 1329397  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4janusz  1329650       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4janusz  1329651 1329650  0 Oct07 ?        00:00:00 (sd-pam)
+4janusz  1329666 1329650  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4janusz  1329671 1329650  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4janusz  1329676 1329666  0 Oct07 ?        00:00:38 /usr/bin/pipewire-media-session
+4jarosz  1329788       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4jarosz  1329789 1329788  0 Oct07 ?        00:00:00 (sd-pam)
+4jarosz  1329805 1329788  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4jarosz  1329808 1329788  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4jarosz  1329814 1329805  0 Oct07 ?        00:00:39 /usr/bin/pipewire-media-session
+4zagala  1329858       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4zagala  1329859 1329858  0 Oct07 ?        00:00:00 (sd-pam)
+4zagala  1329873 1329858  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4zagala  1329876 1329858  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4zagala  1329882 1329873  0 Oct07 ?        00:00:45 /usr/bin/pipewire-media-session
+4piwowar 1330001 1329145  0 Oct07 pts/208  00:00:00 /bin/bash
+4jarosz  1330045       1  0 Oct07 ?        00:00:00 SCREEN
+4jarosz  1330046 1330045  0 Oct07 pts/210  00:00:00 /bin/bash
+4wolczy+ 1330051       1  0 Oct07 ?        00:00:00 SCREEN
+4wolczy+ 1330052 1330051  0 Oct07 pts/211  00:00:00 /bin/bash
+4blaszc+ 1330057       1  0 Oct07 ?        00:00:00 SCREEN
+4janusz  1330063       1  0 Oct07 ?        00:00:00 SCREEN
+4janusz  1330064 1330063  0 Oct07 pts/213  00:00:00 /bin/bash
+4trybus  1330098       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1330099 1330098  0 Oct07 pts/219  00:00:00 /bin/bash
+4gladysz 1330155       1  0 Oct07 ?        00:00:00 SCREEN
+4gladysz 1330156 1330155  0 Oct07 pts/220  00:00:00 /bin/bash
+4dronski 1330163       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1330164 1330163  0 Oct07 pts/221  00:00:00 /bin/bash
+4borkow+ 1330234       1  0 Oct07 ?        00:00:00 SCREEN
+4borkow+ 1330235 1330234  0 Oct07 pts/225  00:00:00 /bin/bash
+4piwowar 1330250 1329145  0 Oct07 pts/227  00:00:00 /bin/bash
+4zagala  1330290       1  0 Oct07 ?        00:00:00 SCREEN
+4zagala  1330291 1330290  0 Oct07 pts/229  00:00:00 /bin/bash
+4borkow+ 1330446 1330235  0 Oct07 pts/225  00:00:00 nano plik
+4gladysz 1330448 1330156  0 Oct07 pts/220  00:00:00 nano
+4wolczy+ 1330449 1330052  0 Oct07 pts/211  00:00:00 nano
+4janusz  1330450 1330064  0 Oct07 pts/213  00:00:00 nano
+4dronski 1330452 1330164  0 Oct07 pts/221  00:00:00 nano
+4trybus  1330453 1330099  0 Oct07 pts/219  00:00:00 nano
+4zagala  1330454 1330291  0 Oct07 pts/229  00:00:00 nano
+0zienta+ 1332094       1  0 Apr09 ?        00:00:32 lf -server
+4dronski 1332863       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1332864 1332863  0 Oct07 pts/203  00:00:00 /bin/bash
+4wolczy+ 1333463       1  0 Oct07 ?        00:00:00 SCREEN
+4wolczy+ 1333464 1333463  0 Oct07 pts/224  00:00:00 /bin/bash
+4wolczy+ 1333473 1333464  0 Oct07 pts/224  00:00:00 nano
+4dronski 1333476       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1333477 1333476  0 Oct07 pts/230  00:00:00 /bin/bash
+4dronski 1333484 1333477  0 Oct07 pts/230  00:00:00 nano
+4trybus  1333609       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1333610 1333609  0 Oct07 pts/235  00:00:00 /bin/bash
+4trybus  1333620 1333610  0 Oct07 pts/235  00:00:00 nano
+4witkow+ 1333636       1  0 Oct07 ?        00:00:00 SCREEN
+4witkow+ 1333637 1333636  0 Oct07 pts/236  00:00:00 /bin/bash
+4borkow+ 1333648       1  0 Oct07 ?        00:00:00 SCREEN
+4borkow+ 1333649 1333648  0 Oct07 pts/237  00:00:00 /bin/bash
+4dronski 1333663       1  0 Oct07 ?        00:00:00 SCREEN
+4dronski 1333664 1333663  0 Oct07 pts/239  00:00:00 /bin/bash
+4borkow+ 1333671 1333648  0 Oct07 pts/240  00:00:00 /bin/bash
+4witkow+ 1333676 1333636  0 Oct07 pts/241  00:00:00 /bin/bash
+4dronski 1333688 1333664  0 Oct07 pts/239  00:00:00 nano
+4janusz  1333735 1330063  0 Oct07 pts/198  00:00:00 /bin/bash
+4dronski 1333742 1333663  0 Oct07 pts/238  00:00:00 /bin/bash
+4jarosz  1333774 1330045  0 Oct07 pts/243  00:00:00 /bin/bash
+4rzemin+ 1333785       1  0 Oct07 ?        00:00:00 SCREEN
+4rzemin+ 1333786 1333785  0 Oct07 pts/244  00:00:00 /bin/bash
+4witkow+ 1333791 1333636  0 Oct07 pts/245  00:00:00 /bin/bash
+4jarosz  1333796 1330045  0 Oct07 pts/246  00:00:00 /bin/bash
+4witkow+ 1333806 1333636  0 Oct07 pts/247  00:00:00 /bin/bash
+4janusz  1333816 1330063  0 Oct07 pts/248  00:00:00 /bin/bash
+4rzemin+ 1333824 1333786  0 Oct07 pts/244  00:00:00 nano
+4gladysz 1333827       1  0 Oct07 ?        00:00:00 SCREEN
+4gladysz 1333828 1333827  0 Oct07 pts/249  00:00:00 /bin/bash
+4jarosz  1333835 1330045  0 Oct07 pts/200  00:00:00 /bin/bash
+4strozek 1333876       1  0 Oct07 ?        00:00:56 /lib/systemd/systemd --user
+4strozek 1333877 1333876  0 Oct07 ?        00:00:00 (sd-pam)
+4strozek 1333892 1333876  0 Oct07 ?        00:00:00 /usr/bin/pipewire
+4strozek 1333895 1333876  0 Oct07 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4strozek 1333901 1333892  0 Oct07 ?        00:00:36 /usr/bin/pipewire-media-session
+4trybus  1333931       1  0 Oct07 ?        00:00:00 SCREEN
+4trybus  1333932 1333931  0 Oct07 pts/251  00:00:00 /bin/bash
+4strozek 1333949       1  0 Oct07 ?        00:00:00 SCREEN
+4strozek 1333950 1333949  0 Oct07 pts/253  00:00:00 /bin/bash
+4rzemin+ 1333964       1  0 Oct07 ?        00:00:00 SCREEN
+4rzemin+ 1333965 1333964  0 Oct07 pts/254  00:00:00 /bin/bash
+4wolczy+ 1333971       1  0 Oct07 ?        00:00:00 SCREEN -l
+4wolczy+ 1333972 1333971  0 Oct07 pts/255  00:00:00 /bin/bash
+4rzemin+ 1333979 1333965  0 Oct07 pts/254  00:00:00 nano
+4strozek 1334056 1333950  0 Oct07 pts/253  00:00:00 nano
+4dronski 1334058 1333742  0 Oct07 pts/238  00:00:00 nano
+4trybus  1334059 1333932  0 Oct07 pts/251  00:00:00 nano
+4witkow+ 1334104 1333806  0 Oct07 pts/247  00:00:00 nano
+4borkow+ 1334133 1333671  0 Oct07 pts/240  00:00:00 nano
+4janusz  1334159 1330063  0 Oct07 pts/257  00:00:00 /bin/bash
+4borkow+ 1334186 1333648  0 Oct07 pts/259  00:00:00 /bin/bash
+4dronski 1334190 1333663  0 Oct07 pts/260  00:00:00 /bin/bash
+4witkow+ 1334202 1333636  0 Oct07 pts/256  00:00:00 /bin/bash
+4rzemin+ 1334207 1333964  0 Oct07 pts/261  00:00:00 /bin/bash
+4trybus  1334213 1333931  0 Oct07 pts/262  00:00:00 /bin/bash
+4gladysz 1334217 1333827  0 Oct07 pts/263  00:00:00 /bin/bash
+4piwowar 1334221 1330250  0 Oct07 pts/227  00:00:00 nano 123
+4piwowar 1334224 1329145  0 Oct07 pts/264  00:00:00 /bin/bash
+4gladysz 1334247 1334217  0 Oct07 pts/263  00:00:00 nano
+4gladysz 1334251 1333827  0 Oct07 pts/265  00:00:00 /bin/bash
+4blaszc+ 1334255 1330057  0 Oct07 pts/266  00:00:00 /bin/bash
+4gladysz 1334285 1334251  0 Oct07 pts/265  00:00:00 man screen
+4gladysz 1334294 1334285  0 Oct07 pts/265  00:00:00 man screen
+4gladysz 1334295 1334285  0 Oct07 pts/265  00:00:00 pager
+4witkow+ 1334319 1334202  0 Oct07 pts/256  00:00:00 man screen
+4witkow+ 1334328 1334319  0 Oct07 pts/256  00:00:00 man screen
+4witkow+ 1334329 1334319  0 Oct07 pts/256  00:00:00 pager
+4dronski 1334336 1334190  0 Oct07 pts/260  00:00:00 man screen
+4dronski 1334345 1334336  0 Oct07 pts/260  00:00:00 man screen
+4dronski 1334346 1334336  0 Oct07 pts/260  00:00:00 pager
+4trybus  1334353 1334213  0 Oct07 pts/262  00:00:00 man screen
+4trybus  1334362 1334353  0 Oct07 pts/262  00:00:00 man screen
+4trybus  1334363 1334353  0 Oct07 pts/262  00:00:00 pager
+4rzemin+ 1334371 1334207  0 Oct07 pts/261  00:00:00 man screen
+4rzemin+ 1334380 1334371  0 Oct07 pts/261  00:00:00 man screen
+4rzemin+ 1334381 1334371  0 Oct07 pts/261  00:00:00 pager
+4blaszc+ 1334485 1330057  0 Oct07 pts/268  00:00:00 /bin/bash
+4jarosz  1334515       1  0 Oct07 ?        00:00:00 SCREEN
+4jarosz  1334516 1334515  0 Oct07 pts/269  00:00:00 /bin/bash
+4strozek 1334525 1333949  0 Oct07 pts/270  00:00:00 /bin/bash
+4jarosz  1334534 1334515  0 Oct07 pts/271  00:00:00 /bin/bash
+4jarosz  1334543 1334534  0 Oct07 pts/271  00:00:16 screen -r
+4jarosz  1334556 1330045  0 Oct07 pts/272  00:00:00 /bin/bash
+4strozek 1334562 1334525  0 Oct07 pts/270  00:00:00 man touch
+4strozek 1334573 1334562  0 Oct07 pts/270  00:00:00 pager
+4jarosz  1335092 1334515  0 Oct07 pts/149  00:00:00 /bin/bash
+4jarosz  1335097 1334515  0 Oct07 pts/191  00:00:00 /bin/bash
+0koziol  1380549       1  0 Sep01 ?        00:00:00 ssh-agent
+0koziol  1381390       1  0 Sep01 ?        00:00:00 ssh-agent
+0guzek   1413194       1  0 May05 ?        00:01:28 /usr/bin/python3 -m ipykernel_launcher --f=/home/stud2020/0guzek/.local/share/jupyter/runtime/kernel-v2-1403438kxaSCvjZLXId.json
+0koziol  1416714       1  0 Jul13 ?        00:00:00 ssh-agent
+0koziol  1416919       1  0 Jul13 ?        00:00:00 ssh-agent
+3shupli+ 1450428       1  0 Apr22 pts/24   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1452289       1  0 Jun16 pts/169  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root     1485046       1  0 Nov12 ?        00:30:48 /lib/systemd/systemd-journald
+4horzela 1507696       1  0 Oct08 ?        00:00:55 /lib/systemd/systemd --user
+4horzela 1507697 1507696  0 Oct08 ?        00:00:00 (sd-pam)
+4horzela 1507727 1507696  0 Oct08 ?        00:00:00 /usr/bin/pipewire
+4horzela 1507730 1507696  0 Oct08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4horzela 1507736 1507727  0 Oct08 ?        00:00:41 /usr/bin/pipewire-media-session
+4malecki 1507930       1  0 Oct08 ?        00:00:55 /lib/systemd/systemd --user
+4malecki 1507931 1507930  0 Oct08 ?        00:00:00 (sd-pam)
+4malecki 1507945 1507930  0 Oct08 ?        00:00:00 /usr/bin/pipewire
+4malecki 1507948 1507930  0 Oct08 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4malecki 1507954 1507945  0 Oct08 ?        00:00:38 /usr/bin/pipewire-media-session
+4malecki 1511688       1  0 Oct08 ?        00:00:00 script
+4malecki 1511689 1511688  0 Oct08 pts/223  00:00:00 bash -i
+4malecki 1511816 1511689  0 Oct08 pts/223  00:00:00 tac
+4malecki 1512158 1511689  0 Oct08 pts/223  00:00:00 tac
+4horzela 1512303       1  0 Oct08 ?        00:00:00 script
+4horzela 1512304 1512303  0 Oct08 pts/252  00:00:00 bash -i
+4malecki 1514088 1511689  0 Oct08 pts/223  00:00:00 less typescript
+4horzela 1514261 1512304  0 Oct08 pts/252  00:00:00 nano
+3shupli+ 1522404       1  0 Apr22 pts/87   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1553836       1  0 May27 pts/32   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 1554995 1553836  0 May27 pts/32   00:00:00 ./2.out
+0koziol  1569480       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569625       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569814       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1569997       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1570258       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1570310       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1605225       1  0 Sep02 ?        00:00:00 ssh-agent
+0koziol  1644203       1  0 Jul14 ?        00:00:00 ssh-agent
+0koziol  1645884       1  0 Jul14 ?        00:00:00 ssh-agent
+0koziol  1646077       1  0 Jul14 ?        00:00:00 ssh-agent
+1vynohr+ 1648431       1  0 Nov13 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-e8653663e8840adaf45af01eab5c627a5af81807 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token e21da278b003
+2mueller 1701318 3313548  0 Oct22 pts/287  00:00:00 -bash
+2mueller 1701353 3313548  0 Oct22 pts/295  00:00:00 -bash
+0kowalc+ 1703653       1  0 Oct22 ?        00:00:39 /lib/systemd/systemd --user
+0kowalc+ 1703654 1703653  0 Oct22 ?        00:00:00 (sd-pam)
+0kowalc+ 1703676 1703653  0 Oct22 ?        00:00:00 /usr/bin/pipewire
+0kowalc+ 1703679 1703653  0 Oct22 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0kowalc+ 1703684 1703676  0 Oct22 ?        00:00:25 /usr/bin/pipewire-media-session
+0kowalc+ 1752177       1  0 Oct22 ?        00:00:10 SCREEN
+0kowalc+ 1752178 1752177  0 Oct22 pts/309  00:00:00 /bin/bash
+0kowalc+ 1752200 1752177  0 Oct22 pts/310  00:00:00 /bin/bash
+0koziol  1763690       1  0 Nov02 ?        00:00:00 ssh-agent
+3shupli+ 1789261       1  0 Jun17 pts/151  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  1823391       1  0 Nov13 ?        00:00:00 ssh-agent
+0koziol  1827744       1  0 Jul15 ?        00:00:00 ssh-agent
+3shupli+ 1854970       1  0 May28 pts/107  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+lach     1874932       1  0 Oct09 ?        00:00:53 /lib/systemd/systemd --user
+lach     1874933 1874932  0 Oct09 ?        00:00:00 (sd-pam)
+lach     1874948 1874932  0 Oct09 ?        00:00:00 /usr/bin/pipewire
+lach     1874949 1874932  0 Oct09 ?        00:00:16 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+lach     1874951 1874932  0 Oct09 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+lach     1874957 1874948  0 Oct09 ?        00:00:37 /usr/bin/pipewire-media-session
+3shupli+ 2000344       1  0 Jun08 pts/156  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+2cisek   2035392       1  0 Jul31 ?        00:00:14 tmux
+2cisek   2035393 2035392  0 Jul31 pts/143  00:00:00 -bash
+1vynohr+ 2036452       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 34082ed0e9e3
+1vynohr+ 2036724       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 54eaa63e376e
+3kwidzi+ 2044435       1  0 Oct23 ?        00:00:38 /lib/systemd/systemd --user
+3kwidzi+ 2044440 2044435  0 Oct23 ?        00:00:00 (sd-pam)
+3kwidzi+ 2044462 2044435  0 Oct23 ?        00:00:00 /usr/bin/pipewire
+3kwidzi+ 2044465 2044435  0 Oct23 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3kwidzi+ 2044471 2044462  0 Oct23 ?        00:00:24 /usr/bin/pipewire-media-session
+3kwidzi+ 2046058       1  0 Oct23 ?        00:07:08 /home/stud2023/3kwidzinski/.vscode-server/extensions/ms-vscode.cpptools-1.22.10-linux-x64/bin/cpptools
+root     2072304       2  0 May07 ?        00:00:00 [xfsalloc]
+root     2072305       2  0 May07 ?        00:00:00 [xfs_mru_cache]
+root     2072309       2  0 May07 ?        00:00:00 [jfsIO]
+root     2072310       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072311       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072312       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072313       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072314       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072315       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072316       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072317       2  0 May07 ?        00:00:00 [jfsCommit]
+root     2072318       2  0 May07 ?        00:00:00 [jfsSync]
+root     2112709       1  0 Apr11 ?        00:04:56 /usr/local/Wolfram/MathLM_2024/mathlm -logfile /var/log/mathlm.log
+0lewand+ 2134944       1  0 Nov03 ?        00:00:21 /lib/systemd/systemd --user
+0lewand+ 2134945 2134944  0 Nov03 ?        00:00:00 (sd-pam)
+0lewand+ 2134960 2134944  0 Nov03 ?        00:00:00 /usr/bin/pipewire
+0lewand+ 2134963 2134944  0 Nov03 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0lewand+ 2134970 2134960  0 Nov03 ?        00:00:15 /usr/bin/pipewire-media-session
+0lewand+ 2138141       1  0 Nov03 ?        00:00:00 ./monitor lista.txt
+3shupli+ 2163594       1  0 Jun08 pts/142  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 2177406       1  0 Oct10 ?        00:00:52 /lib/systemd/systemd --user
+3shupli+ 2177407 2177406  0 Oct10 ?        00:00:00 (sd-pam)
+3shupli+ 2177421 2177406  0 Oct10 ?        00:00:00 /usr/bin/pipewire
+3shupli+ 2177425 2177406  0 Oct10 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3shupli+ 2177430 2177421  0 Oct10 ?        00:00:34 /usr/bin/pipewire-media-session
+3shupli+ 2193267       1  0 Oct10 pts/195  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 2212083       1  0 Apr24 pts/43   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2272131       1  0 Oct23 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d61c1d98c74b
+1vynohr+ 2272592       1  0 Oct23 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 57615e5b6db4
+3shupli+ 2297065       1  0 Apr25 pts/45   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2385070       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token b754a0d42cd6
+1vynohr+ 2385363       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token abcba0ae6756
+3shupli+ 2396524       1  0 Apr25 pts/65   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+1vynohr+ 2413528       1  0 Jun18 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token bfcc200c4968
+3balski  2502734 3710843  0 Oct24 pts/197  00:00:00 /usr/bin/zsh
+1vynohr+ 2508377       1  0 Oct24 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token c024fd00363b
+2wojcik+ 2582118       1  0 May30 ?        00:18:27 /usr/bin/python3 -m ipykernel_launcher --f=/home/stud2022/2wojcikst/.local/share/jupyter/runtime/kernel-v2-2581873ObDXo1nUHdi5.json
+2cisek   2587544 2035392  0 Nov14 pts/212  00:00:00 -bash
+2cisek   2590162 2035392  0 Nov14 pts/196  00:00:00 -bash
+0koziol  2632949       1  0 Aug20 ?        00:00:00 ssh-agent
+1vynohr+ 2645311       1  0 Oct24 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 53d83d40a830
+0koziol  2647651       1  0 May30 ?        00:00:00 ssh-agent
+3kwidzi+ 2732322       1  0 Jun19 ?        00:00:20 tmux
+3kwidzi+ 2732500 2732322  0 Jun19 pts/113  00:00:00 -bash
+0buczek  2754349       1  0 Nov04 ?        00:00:19 /lib/systemd/systemd --user
+0buczek  2754357 2754349  0 Nov04 ?        00:00:00 (sd-pam)
+0buczek  2754378 2754349  0 Nov04 ?        00:00:00 /usr/bin/pipewire
+0buczek  2754382 2754349  0 Nov04 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0buczek  2754388 2754378  0 Nov04 ?        00:00:11 /usr/bin/pipewire-media-session
+0buczek  2755162       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755163       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755165       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755166       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755167       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755168       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755169       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755170       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755171       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755347       1  0 Nov04 ?        00:00:10 ./a.out list.txt 0
+0buczek  2755348       1  0 Nov04 ?        00:00:03 ./a.out list.txt 0
+0buczek  2755350       1  0 Nov04 ?        00:00:01 ./a.out list.txt 0
+0buczek  2755351       1  0 Nov04 ?        00:00:00 ./a.out list.txt 0
+0buczek  2755352       1  0 Nov04 ?        00:00:01 ./a.out list.txt 0
+0buczek  2755353       1  0 Nov04 ?        00:00:05 ./a.out list.txt 0
+0buczek  2755354       1  0 Nov04 ?        00:00:03 ./a.out list.txt 0
+0buczek  2755355       1  0 Nov04 ?        00:00:16 ./a.out list.txt 0
+0buczek  2755356       1  0 Nov04 ?        00:00:05 ./a.out list.txt 0
+0buczek  2755471       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755472       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755474       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755475       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755476       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755477       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755478       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755479       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755480       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755493       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755494       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755496       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755497       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755498       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755499       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755500       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755501       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2755502       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755523       1  0 Nov04 ?        00:00:10 ./a.out list.txt 1
+0buczek  2755524       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755526       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755527       1  0 Nov04 ?        00:00:00 ./a.out list.txt 1
+0buczek  2755528       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2755529       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2755530       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2755531       1  0 Nov04 ?        00:00:15 ./a.out list.txt 1
+0buczek  2755532       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756030       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2756031       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756032       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2756033       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2756034       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2756210       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2756211       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2756212       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2756213       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2756214       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2756230       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2756231       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2756232       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2756233       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2756234       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2757360       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757361       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757362       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757363       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2757364       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757473       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757474       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757475       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757476       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2757477       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757512       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2757513       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2757514       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2757515       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759206       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759207       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759208       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759209       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759210       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759358       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759359       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759360       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759361       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759362       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759516       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759517       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759518       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759519       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2759520       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759880       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2759881       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2759882       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2759883       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2759884       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760438       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2760439       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760440       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2760441       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2760442       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2760482       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2760483       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2760484       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2760485       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2760486       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2761854       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2761855       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2761856       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2761857       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2761858       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762001       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2762002       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762003       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2762004       1  0 Nov04 ?        00:00:15 ./monitor list.txt 2
+0buczek  2762005       1  0 Nov04 ?        00:00:06 ./monitor list.txt 2
+0buczek  2762176       1  0 Nov04 ?        00:00:01 ./monitor list.txt 2
+0buczek  2762177       1  0 Nov04 ?        00:00:05 ./monitor list.txt 2
+0buczek  2762178       1  0 Nov04 ?        00:00:03 ./monitor list.txt 2
+0buczek  2762179       1  0 Nov04 ?        00:00:16 ./monitor list.txt 2
+0buczek  2762425       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762426       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762427       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762428       1  0 Nov04 ?        00:00:15 ./monitor list.txt 1
+0buczek  2762662       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762663       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762665       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762666       1  0 Nov04 ?        00:00:15 ./monitor list.txt 1
+0buczek  2762968       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2762969       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2762970       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2762971       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2763963       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2763964       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2763965       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2763966       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2764139       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764140       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764141       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764142       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2764387       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764388       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764389       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764390       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2764638       1  0 Nov04 ?        00:00:01 ./a.out list.txt 1
+0buczek  2764639       1  0 Nov04 ?        00:00:05 ./a.out list.txt 1
+0buczek  2764640       1  0 Nov04 ?        00:00:03 ./a.out list.txt 1
+0buczek  2764641       1  0 Nov04 ?        00:00:16 ./a.out list.txt 1
+0buczek  2766781       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2766782       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2766783       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2766784       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+0buczek  2767134       1  0 Nov04 ?        00:00:01 ./monitor list.txt 1
+0buczek  2767135       1  0 Nov04 ?        00:00:05 ./monitor list.txt 1
+0buczek  2767136       1  0 Nov04 ?        00:00:03 ./monitor list.txt 1
+0buczek  2767137       1  0 Nov04 ?        00:00:16 ./monitor list.txt 1
+4witkow+ 2790484       1  0 Nov04 ?        00:00:00 SCREEN
+4witkow+ 2790485 2790484  0 Nov04 pts/312  00:00:00 /bin/bash
+4witkow+ 2790515 2790484  0 Nov04 pts/313  00:00:00 /bin/bash
+2mueller 2818381 3313548  0 Oct24 pts/280  00:00:00 -bash
+2mueller 2818392 3313548  0 Oct24 pts/281  00:00:00 -bash
+2mueller 2818428 2818381  0 Oct24 pts/280  00:00:00 vim LoadMaze.java
+2mueller 2818607 2818392  0 Oct24 pts/281  00:00:11 vim SolveMaze.java
+www-data 2893107  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893108  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893109  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893110  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893111  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+www-data 2893158  267227  0 00:00 ?        00:00:05 /usr/sbin/apache2 -k start
+1vynohr+ 2905091       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d11256737106
+1vynohr+ 2905421       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 376917a795c0
+1vynohr+ 2905670       1  0 Jun19 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-611f9bfce64f25108829dd295f54a6894e87339d command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token d4e74115ac18
+1ozog    2911820       1  0 02:00 ?        00:00:00 /lib/systemd/systemd --user
+1ozog    2911821 2911820  0 02:00 ?        00:00:00 (sd-pam)
+1ozog    2911836 2911820  0 02:00 ?        00:00:00 /usr/bin/pipewire
+1ozog    2911842 2911820  0 02:00 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1ozog    2911847 2911836  0 02:00 ?        00:00:00 /usr/bin/pipewire-media-session
+1ozog    2912034       1  0 02:01 ?        00:00:00 sh /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/bin/code-server --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/code-ddc75fdf-5813-4d18-a74f-b4f7b8ce4e7d
+1ozog    2912038 2912034  0 02:01 ?        00:02:15 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/server-main.js --connection-token=remotessh --accept-server-license-terms --start-server --enable-remote-auto-shutdown --socket-path=/tmp/code-ddc75fdf-5813-4d18-a74f-b4f7b8ce4e7d
+1ozog    2912076 2912038  0 02:01 ?        00:01:07 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=ptyHost --logsPath /home/stud2021/1ozog/.vscode-server/data/logs/20241116T020108
+1ozog    2912335 2912076  0 02:01 pts/234  00:00:00 /bin/bash --init-file /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+1ozog    2914089 2912076  0 02:05 pts/250  00:00:00 /bin/bash --init-file /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/vs/workbench/contrib/terminal/common/scripts/shellIntegration-bash.sh
+root     2936035    1516  0 04:20 ?        00:00:00 sshd: mkopec [priv]
+mkopec   2936042 2936035  0 04:20 ?        00:00:00 sshd: mkopec
+www-data 2938369  267227  0 04:36 ?        00:00:03 /usr/sbin/apache2 -k start
+www-data 2938375  267227  0 04:36 ?        00:00:03 /usr/sbin/apache2 -k start
+arabas   2938961 3724059  0 Nov05 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+2dendys  2940312       1  0 Oct25 ?        00:00:35 /lib/systemd/systemd --user
+2dendys  2940313 2940312  0 Oct25 ?        00:00:00 (sd-pam)
+2dendys  2940327 2940312  0 Oct25 ?        00:00:00 /usr/bin/pipewire
+2dendys  2940330 2940312  0 Oct25 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2dendys  2940336 2940327  0 Oct25 ?        00:00:22 /usr/bin/pipewire-media-session
+2dendys  2940894 2940312  0 Oct25 ?        00:00:00 /usr/libexec/gvfsd
+1ozog    2954479 2912038  0 06:19 ?        00:02:21 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node --dns-result-order=ipv4first /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=extensionHost --transformURIs --useHostProxy=false
+1ozog    2954490 2912038  0 06:19 ?        00:00:39 /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/node /home/stud2021/1ozog/.vscode-server/cli/servers/Stable-e8653663e8840adaf45af01eab5c627a5af81807/server/out/bootstrap-fork --type=fileWatcher
+2mueller 2955983 3313548  0 Oct25 pts/273  00:00:00 -bash
+2dendys  2957670 2940312  0 Oct25 ?        00:00:09 /usr/libexec/xdg-document-portal
+2dendys  2957673 2940312  0 Oct25 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     2957678 2957670  0 Oct25 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2022106/doc
+2dendys  2957837 2940312  0 Oct25 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+netdata  2967093       1  5 07:36 ?        00:25:23 /opt/netdata/bin/srv/netdata -P /run/netdata/netdata.pid -D
+netdata  2967095 2967093  0 07:36 ?        00:00:02 spawn-plugins                                              
+netdata  2967376 2967095 10 07:36 ?        00:48:57 /opt/netdata/usr/libexec/netdata/plugins.d/apps.plugin 1
+root     2967385 2967095  0 07:36 ?        00:00:11 /opt/netdata/usr/libexec/netdata/plugins.d/network-viewer.plugin 1
+netdata  2967389 2967095  8 07:36 ?        00:38:13 /opt/netdata/usr/libexec/netdata/plugins.d/go.d.plugin 1
+netdata  2967390 2967095  0 07:36 ?        00:00:03 /opt/netdata/usr/libexec/netdata/plugins.d/debugfs.plugin 1
+root     2967393 2967385  0 07:36 ?        00:00:02 spawn-setns                                                       
+root     2967409 2967095  0 07:36 ?        00:00:18 /opt/netdata/usr/libexec/netdata/plugins.d/ebpf.plugin 1
+root     2967411 2967095  0 07:36 ?        00:00:04 /opt/netdata/usr/libexec/netdata/plugins.d/nfacct.plugin 1
+netdata  2967415 2967095  0 07:36 ?        00:00:21 /usr/bin/python3 /opt/netdata/usr/libexec/netdata/plugins.d/python.d.plugin 1
+1ozog    2980268 2954479  2 08:53 ?        00:08:32 /home/stud2021/1ozog/.vscode-server/extensions/ms-vscode.cpptools-1.22.11-linux-x64/bin/cpptools
+4juszcz+ 3000048       1  0 Oct13 ?        00:00:50 /lib/systemd/systemd --user
+4juszcz+ 3000049 3000048  0 Oct13 ?        00:00:00 (sd-pam)
+4juszcz+ 3000064 3000048  0 Oct13 ?        00:00:00 /usr/bin/pipewire
+4juszcz+ 3000068 3000048  0 Oct13 ?        00:00:03 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4juszcz+ 3000073 3000064  0 Oct13 ?        00:00:33 /usr/bin/pipewire-media-session
+4juszcz+ 3001895 3000048  0 Oct13 ?        00:00:01 /usr/lib/x86_64-linux-gnu/xfce4/xfconf/xfconfd
+4juszcz+ 3001904       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3001918 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd
+root     3001928       1  0 Oct13 ?        00:00:19 /usr/libexec/upowerd
+4juszcz+ 3002048 3000048  0 Oct13 ?        00:00:00 /usr/libexec/dconf-service
+colord   3002054       1  0 Oct13 ?        00:00:01 /usr/libexec/colord
+4juszcz+ 3002055 3000048  0 Oct13 ?        00:04:02 /usr/libexec/gvfs-udisks2-volume-monitor
+root     3002058       1  0 Oct13 ?        00:01:12 /usr/libexec/udisks2/udisksd
+4juszcz+ 3002163 3000048  0 Oct13 ?        00:00:00 /usr/libexec/bluetooth/obexd
+4juszcz+ 3002182 3000048  0 Oct13 ?        00:02:24 /usr/libexec/gvfs-afc-volume-monitor
+4juszcz+ 3002187 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-mtp-volume-monitor
+4juszcz+ 3002191 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-goa-volume-monitor
+4juszcz+ 3002195 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfs-gphoto2-volume-monitor
+4juszcz+ 3002208 3000048  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-metadata
+4juszcz+ 3002211 3001918  0 Oct13 ?        00:00:25 /usr/libexec/gvfsd-trash --spawner :1.9 /org/gtk/gvfs/exec_spaw/0
+root     3002242       1  0 Oct13 ?        00:12:19 /usr/libexec/accounts-daemon
+4juszcz+ 3002361       1  0 Oct13 ?        00:00:00 /usr/libexec/geoclue-2.0/demos/agent
+root     3005414    1516  0 11:26 ?        00:00:00 sshd: hottowy [priv]
+hottowy  3005418       1  0 11:26 ?        00:00:00 /lib/systemd/systemd --user
+hottowy  3005419 3005418  0 11:26 ?        00:00:00 (sd-pam)
+hottowy  3005434 3005418  0 11:26 ?        00:00:00 /usr/bin/pipewire
+hottowy  3005435 3005418  0 11:26 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+hottowy  3005440 3005418  0 11:26 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+hottowy  3005443 3005434  0 11:26 ?        00:00:00 /usr/bin/pipewire-media-session
+hottowy  3005444 3005414  0 11:26 ?        00:00:13 sshd: hottowy
+9kidaws+ 3017083       1  0 12:33 ?        00:00:00 /lib/systemd/systemd --user
+9kidaws+ 3017085 3017083  0 12:33 ?        00:00:00 (sd-pam)
+9kidaws+ 3017100 3017083  0 12:33 ?        00:00:00 /usr/bin/pipewire
+9kidaws+ 3017101 3017083  0 12:33 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+9kidaws+ 3017103 3017083  0 12:33 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+9kidaws+ 3017109 3017100  0 12:33 ?        00:00:00 /usr/bin/pipewire-media-session
+root     3025435    1516  0 13:21 ?        00:00:00 sshd: 1witkowski [priv]
+root     3025437    1516  0 13:21 ?        00:00:00 sshd: 1witkowski [priv]
+1witkow+ 3025441       1  0 13:21 ?        00:00:00 /lib/systemd/systemd --user
+1witkow+ 3025442 3025441  0 13:21 ?        00:00:00 (sd-pam)
+1witkow+ 3025456 3025441  0 13:21 ?        00:00:00 /usr/bin/pipewire
+1witkow+ 3025457 3025441  0 13:21 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+1witkow+ 3025459 3025441  0 13:21 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1witkow+ 3025463 3025456  0 13:21 ?        00:00:00 /usr/bin/pipewire-media-session
+1witkow+ 3025468 3025435  0 13:21 ?        00:00:03 sshd: 1witkowski@pts/284
+1witkow+ 3025469 3025468  0 13:21 pts/284  00:00:00 -bash
+1witkow+ 3025493 3025469  0 13:21 pts/284  00:00:03 ssh -X 172.30.254.137
+1witkow+ 3025507 3025437  0 13:22 ?        00:00:05 sshd: 1witkowski
+0horode+ 3026221       1  0 13:29 ?        00:00:00 /lib/systemd/systemd --user
+0horode+ 3026222 3026221  0 13:29 ?        00:00:00 (sd-pam)
+0horode+ 3026237 3026221  0 13:29 ?        00:00:00 /usr/bin/pipewire
+0horode+ 3026238 3026221  0 13:29 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0horode+ 3026240 3026221  0 13:29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0horode+ 3026246 3026237  0 13:29 ?        00:00:00 /usr/bin/pipewire-media-session
+root     3026251    1516  0 13:29 ?        00:00:00 sshd: 0horodenski [priv]
+0horode+ 3026258 3026251  0 13:29 ?        00:00:00 sshd: 0horodenski
+root     3029986    1516  0 13:48 ?        00:00:00 sshd: 0kosmider [priv]
+root     3029988    1516  0 13:48 ?        00:00:00 sshd: 0kosmider [priv]
+0kosmid+ 3029990       1  0 13:48 ?        00:00:00 /lib/systemd/systemd --user
+0kosmid+ 3029992 3029990  0 13:48 ?        00:00:00 (sd-pam)
+0kosmid+ 3030008 3029990  0 13:48 ?        00:00:00 /usr/bin/pipewire
+0kosmid+ 3030009 3029990  0 13:48 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0kosmid+ 3030011 3029990  0 13:48 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0kosmid+ 3030015 3030008  0 13:48 ?        00:00:00 /usr/bin/pipewire-media-session
+0kosmid+ 3030019 3029986  0 13:48 ?        00:00:00 sshd: 0kosmider@pts/171
+0kosmid+ 3030025 3029988  0 13:48 ?        00:00:00 sshd: 0kosmider@notty
+0kosmid+ 3030027 3030025  0 13:48 ?        00:00:00 /usr/lib/openssh/sftp-server
+0kosmid+ 3030045 3030019  0 13:48 pts/171  00:00:00 -bash
+root     3030179       2  0 13:49 ?        00:00:01 [kworker/0:2-events]
+root     3030396    1516  0 13:51 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3030403 3030396  0 13:51 ?        00:00:00 sshd: 9kidawska@notty
+9kidaws+ 3030406 3030403  0 13:51 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     3031254    1516  0 13:58 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3031261       1  0 13:58 ?        00:00:00 /lib/systemd/systemd --user
+4szyman+ 3031262 3031261  0 13:58 ?        00:00:00 (sd-pam)
+4szyman+ 3031276 3031261  0 13:58 ?        00:00:00 /usr/bin/pipewire
+4szyman+ 3031277 3031261  0 13:58 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4szyman+ 3031284 3031261  0 13:58 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4szyman+ 3031285 3031254  0 13:58 ?        00:00:00 sshd: 4szymanczyk@pts/282
+4szyman+ 3031286 3031276  0 13:58 ?        00:00:00 /usr/bin/pipewire-media-session
+4szyman+ 3031288 3031285  0 13:58 pts/282  00:00:00 -bash
+0kosmid+ 3033164 3030045  0 14:03 pts/171  00:00:00 ssh -X kosmider@172.30.0.191
+root     3033248       2  0 14:04 ?        00:00:04 [kworker/5:1-events]
+4szyman+ 3033899 3031288  0 14:09 pts/282  00:00:00 /bin/bash ./hop
+4szyman+ 3033920 3033899  0 14:09 pts/282  00:00:00 sleep 4
+4szyman+ 3034004 3031288  0 14:10 pts/282  00:00:00 /bin/bash ./hop
+root     3034094    1516  0 14:11 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3034110 3034094  0 14:11 ?        00:00:00 sshd: 4szymanczyk@pts/226
+4szyman+ 3034111 3034110  0 14:11 pts/226  00:00:00 -bash
+4szyman+ 3034441 3034004  0 14:13 pts/282  00:00:00 sleep 4
+4szyman+ 3034535 3031288  0 14:14 pts/282  00:00:00 /bin/bash ./hop
+4szyman+ 3034777 3034535  0 14:15 pts/282  00:00:00 sleep 4
+4szyman+ 3034897 3031288  0 14:16 pts/282  00:00:00 nano hop
+root     3035027       2  0 14:17 ?        00:00:01 [kworker/3:0-events]
+root     3036019       2  0 14:18 ?        00:00:04 [kworker/u16:39-rpciod]
+root     3037095    1516  0 14:22 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3037159 3037095  0 14:23 ?        00:00:00 sshd: 9kidawska@pts/285
+root     3037160    1516  0 14:23 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3037167 3037160  0 14:23 ?        00:00:01 sshd: 9kidawska@notty
+9kidaws+ 3037168 3037167  0 14:23 ?        00:00:02 /usr/lib/openssh/sftp-server
+9kidaws+ 3037171 3037159  0 14:23 pts/285  00:00:00 -bash
+root     3038082    1516  0 14:30 ?        00:00:00 sshd: 1rudy [priv]
+root     3038110    1516  0 14:31 ?        00:00:00 sshd: 1rudy [priv]
+1rudy    3038121       1  0 14:31 ?        00:00:00 /lib/systemd/systemd --user
+1rudy    3038123 3038121  0 14:31 ?        00:00:00 (sd-pam)
+root     3038126       2  0 14:31 ?        00:00:00 [kworker/6:0-cgroup_destroy]
+1rudy    3038149 3038121  0 14:31 ?        00:00:00 /usr/bin/pipewire
+1rudy    3038150 3038121  0 14:31 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+1rudy    3038153 3038121  0 14:31 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1rudy    3038160 3038149  0 14:31 ?        00:00:00 /usr/bin/pipewire-media-session
+1rudy    3038165 3038082  0 14:31 ?        00:00:01 sshd: 1rudy@pts/286
+1rudy    3038166 3038110  0 14:31 ?        00:00:00 sshd: 1rudy@notty
+1rudy    3038167 3038165  0 14:31 pts/286  00:00:01 -bash
+1rudy    3038173 3038166  0 14:31 ?        00:00:00 /usr/lib/openssh/sftp-server
+root     3039441    1516  0 14:34 ?        00:00:00 sshd: 4szymanczyk [priv]
+4szyman+ 3039506 3039441  0 14:35 ?        00:00:00 sshd: 4szymanczyk@pts/288
+4szyman+ 3039507 3039506  0 14:35 pts/288  00:00:00 -bash
+root     3039531    1516  0 14:35 ?        00:00:00 sshd: 9kidawska [priv]
+9kidaws+ 3039538 3039531  0 14:35 ?        00:00:20 sshd: 9kidawska@notty
+9kidaws+ 3039539 3039538  0 14:35 ?        00:00:07 /usr/lib/openssh/sftp-server
+netdata  3039713 2967095  0 14:36 ?        00:00:04 bash /opt/netdata/usr/libexec/netdata/plugins.d/tc-qos-helper.sh 1
+4szyman+ 3039847 3039507  0 14:37 pts/288  00:00:00 nano hop
+root     3042685       2  0 14:54 ?        00:00:00 [kworker/5:2-events]
+root     3042770       2  0 14:54 ?        00:00:01 [kworker/u16:0-nfsiod]
+root     3043162       2  0 14:57 ?        00:00:00 [kworker/1:1-events]
+4piela   3043217       1  0 14:58 ?        00:00:00 /lib/systemd/systemd --user
+4piela   3043218 3043217  0 14:58 ?        00:00:00 (sd-pam)
+4piela   3043234 3043217  0 14:58 ?        00:00:00 /usr/bin/pipewire
+4piela   3043238 3043217  0 14:58 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4piela   3043243 3043234  0 14:58 ?        00:00:00 /usr/bin/pipewire-media-session
+4piela   3043652       1  0 15:00 ?        00:00:00 /bin/bash ./hop
+4piela   3043681       1  0 15:00 ?        00:00:00 /bin/bash ./hop
+root     3044872       2  0 15:02 ?        00:00:00 [kworker/4:1-events]
+root     3044979       2  0 15:03 ?        00:00:01 [kworker/u16:6+flush-8:16]
+root     3045178       2  0 15:04 ?        00:00:00 [kworker/6:1-events]
+root     3045179       2  0 15:04 ?        00:00:00 [kworker/0:1-cgroup_destroy]
+4juszcz+ 3045423 3000048  0 Oct13 ?        00:00:00 /usr/libexec/at-spi-bus-launcher
+4juszcz+ 3045428 3045423  0 Oct13 ?        00:00:00 /usr/bin/dbus-daemon --config-file=/usr/share/defaults/at-spi2/accessibility.conf --nofork --print-address 3
+4juszcz+ 3045432 3000048  0 Oct13 ?        00:00:00 /usr/libexec/at-spi2-registryd --use-gnome-session
+4juszcz+ 3045440       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3045679 3000048  0 Oct13 ?        00:00:00 /usr/libexec/xdg-document-portal
+4juszcz+ 3045682 3000048  0 Oct13 ?        00:00:00 /usr/libexec/xdg-permission-store
+root     3045687 3045679  0 Oct13 ?        00:00:00 fusermount -o rw,nosuid,nodev,fsname=portal,auto_unmount,subtype=portal -- /run/user/2024029/doc
+4juszcz+ 3045701 3000048  0 Oct13 ?        00:00:00 /usr/bin/gnome-keyring-daemon --start --foreground --components=secrets
+root     3045938       2  0 15:08 ?        00:00:00 [kworker/2:2-events]
+root     3046044       2  0 15:09 ?        00:00:00 [kworker/7:0-events]
+root     3046045       2  0 15:09 ?        00:00:00 [kworker/u16:2-rpciod]
+root     3046112    1516  0 15:09 ?        00:00:00 sshd: 4piela [priv]
+4piela   3046174 3046112  0 15:10 ?        00:00:00 sshd: 4piela@pts/277
+4piela   3046175 3046174  0 15:10 pts/277  00:00:00 -bash
+root     3046524       2  0 15:12 ?        00:00:00 [kworker/u17:2-xprtiod]
+4juszcz+ 3046665 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-network --spawner :1.9 /org/gtk/gvfs/exec_spaw/1
+4juszcz+ 3046685 3001918  0 Oct13 ?        00:00:32 /usr/libexec/gvfsd-dnssd --spawner :1.9 /org/gtk/gvfs/exec_spaw/3
+4juszcz+ 3046695 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-smb-browse --spawner :1.9 /org/gtk/gvfs/exec_spaw/4
+root     3046720    1516  0 15:13 ?        00:00:00 sshd: 4wojtowicze [priv]
+root     3046723    1516  0 15:13 ?        00:00:00 sshd: 0rutkowski [priv]
+4wojtow+ 3046735       1  0 15:13 ?        00:00:00 /lib/systemd/systemd --user
+4wojtow+ 3046736 3046735  0 15:13 ?        00:00:00 (sd-pam)
+4wojtow+ 3046750 3046735  0 15:13 ?        00:00:00 /usr/bin/pipewire
+4wojtow+ 3046751 3046735  0 15:13 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4wojtow+ 3046753 3046735  0 15:13 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4wojtow+ 3046759 3046720  0 15:13 ?        00:00:00 sshd: 4wojtowicze@pts/291
+4wojtow+ 3046760 3046750  0 15:13 ?        00:00:00 /usr/bin/pipewire-media-session
+4wojtow+ 3046763 3046759  0 15:13 pts/291  00:00:00 -bash
+0rutkow+ 3046776       1  0 15:13 ?        00:00:00 /lib/systemd/systemd --user
+0rutkow+ 3046777 3046776  0 15:13 ?        00:00:00 (sd-pam)
+0rutkow+ 3046792 3046776  0 15:13 ?        00:00:00 /usr/bin/pipewire
+0rutkow+ 3046793 3046776  0 15:13 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+0rutkow+ 3046795 3046776  0 15:13 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0rutkow+ 3046801 3046792  0 15:13 ?        00:00:00 /usr/bin/pipewire-media-session
+0rutkow+ 3046804 3046723  0 15:13 ?        00:00:00 sshd: 0rutkowski
+4juszcz+ 3046861 3001918  0 Oct13 ?        00:00:00 /usr/libexec/gvfsd-computer --spawner :1.9 /org/gtk/gvfs/exec_spaw/5
+root     3047208    1516  0 15:15 ?        00:00:00 sshd: 2fryska [priv]
+root     3047211       2  0 15:15 ?        00:00:00 [kworker/u16:3-rpciod]
+2fryska  3047220       1  0 15:15 ?        00:00:00 /lib/systemd/systemd --user
+2fryska  3047221 3047220  0 15:15 ?        00:00:00 (sd-pam)
+2fryska  3047236 3047220  0 15:15 ?        00:00:00 /usr/bin/pipewire
+2fryska  3047237 3047220  0 15:15 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+2fryska  3047239 3047220  0 15:15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2fryska  3047245 3047236  0 15:15 ?        00:00:00 /usr/bin/pipewire-media-session
+2fryska  3047246 3047208  0 15:15 ?        00:00:00 sshd: 2fryska@pts/275
+2fryska  3047249 3047246  0 15:15 pts/275  00:00:00 -bash
+root     3047631       2  0 15:17 ?        00:00:00 [kworker/u17:1-xprtiod]
+root     3048818       2  0 15:19 ?        00:00:00 [kworker/3:2-ata_sff]
+root     3048921       2  0 15:20 ?        00:00:00 [kworker/7:2-events]
+root     3048968       2  0 15:20 ?        00:00:00 [kworker/2:1-events]
+root     3049076       2  0 15:21 ?        00:00:00 [kworker/4:0-events]
+root     3049089       2  0 15:21 ?        00:00:00 [kworker/1:0]
+4wojtow+ 3049284 3046763  0 15:22 pts/291  00:00:00 /bin/bash ./hop
+root     3049570       2  0 15:24 ?        00:00:00 [kworker/u16:1-rpciod]
+root     3049571       2  0 15:24 ?        00:00:00 [kworker/u16:4-rpciod]
+root     3049572       2  0 15:24 ?        00:00:00 [kworker/u17:0-xprtiod]
+root     3049573       2  0 15:24 ?        00:00:00 [kworker/u16:5-rpciod]
+root     3049574       2  0 15:24 ?        00:00:00 [kworker/u17:3-xprtiod]
+root     3049592       2  0 15:24 ?        00:00:00 [kworker/3:1-ata_sff]
+root     3049697       2  0 15:25 ?        00:00:00 [kworker/0:0]
+root     3049708       2  0 15:25 ?        00:00:00 [kworker/7:1-events]
+4wojtow+ 3049714 3046763  0 15:25 pts/291  00:00:00 nano hop
+root     3049737    1516  0 15:25 ?        00:00:00 sshd: 4wojtowicze [priv]
+root     3049739    1516  0 15:25 ?        00:00:00 sshd: 4bedkowski [priv]
+4wojtow+ 3049786 3049737  0 15:26 ?        00:00:00 sshd: 4wojtowicze@pts/279
+4wojtow+ 3049792 3049786  0 15:26 pts/279  00:00:00 -bash
+4bedkow+ 3049836       1  0 15:26 ?        00:00:00 /lib/systemd/systemd --user
+4bedkow+ 3049837 3049836  0 15:26 ?        00:00:00 (sd-pam)
+4juszcz+ 3049840       1  0 Oct13 ?        00:00:00 /usr/bin/ssh-agent -s
+4bedkow+ 3049852 3049836  0 15:26 ?        00:00:00 /usr/bin/pipewire
+4bedkow+ 3049853 3049836  0 15:26 ?        00:00:00 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+4bedkow+ 3049856 3049836  0 15:26 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+4bedkow+ 3049861 3049852  0 15:26 ?        00:00:00 /usr/bin/pipewire-media-session
+4bedkow+ 3049862 3049739  0 15:26 ?        00:00:00 sshd: 4bedkowski@notty
+4bedkow+ 3049865 3049862  0 15:26 ?        00:00:00 /usr/lib/openssh/sftp-server
+4juszcz+ 3049957       1  0 Oct13 ?        00:00:00 /usr/libexec/geoclue-2.0/demos/agent
+4piela   3049996 3046175  0 15:27 pts/277  00:00:00 nano history2
+4wojtow+ 3049997 3049284  0 15:27 pts/291  00:00:00 sleep 4
+4piela   3049998 3043652  0 15:27 ?        00:00:00 sleep 4
+4wojtow+ 3049999 3046763  0 15:27 pts/291  00:00:00 ps -ef
+2020163  3051513       1  0 Apr27 ?        00:29:54 /home/stud2020/0zarebski/.vscode-server/extensions/ms-vscode.cpptools-1.19.9-linux-x64/bin/cpptools
+2020163  3053284       1  0 Apr27 ?        00:45:53 /home/stud2020/0zarebski/.vscode-server/extensions/ms-vscode.cpptools-1.19.9-linux-x64/bin/cpptools-srv 3051513 {199C120C-DCC2-47F1-BA6A-F3451CB6E8A8}
+4juszcz+ 3055274       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3055785       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3056422       1  0 Oct14 ?        00:00:00 /usr/bin/ssh-agent -s
+3shupli+ 3131241       1  0 May09 pts/70   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+root     3131802       2  0 Nov05 ?        00:00:00 [kworker/6:2H-kblockd]
+root     3131803       2  0 Nov05 ?        00:00:00 [kworker/3:2H-kblockd]
+1vynohr+ 3144655       1  0 Oct14 ?        00:00:50 /lib/systemd/systemd --user
+1vynohr+ 3144656 3144655  0 Oct14 ?        00:00:00 (sd-pam)
+1vynohr+ 3144670 3144655  0 Oct14 ?        00:00:00 /usr/bin/pipewire
+1vynohr+ 3144674 3144655  0 Oct14 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+1vynohr+ 3144679 3144670  0 Oct14 ?        00:00:33 /usr/bin/pipewire-media-session
+1vynohr+ 3145178       1  0 Oct14 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 8ce70781481e
+1vynohr+ 3145548       1  0 Oct14 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 86361a6ebd8e
+uuidd    3259268       1  0 Nov05 ?        00:00:00 /usr/sbin/uuidd --socket-activation
+2mueller 3311160       1  0 Oct14 ?        00:00:48 /lib/systemd/systemd --user
+2mueller 3311162 3311160  0 Oct14 ?        00:00:00 (sd-pam)
+2mueller 3311176 3311160  0 Oct14 ?        00:00:00 /usr/bin/pipewire
+2mueller 3311180 3311160  0 Oct14 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+2mueller 3311185 3311176  0 Oct14 ?        00:00:32 /usr/bin/pipewire-media-session
+2mueller 3313548       1  0 Oct14 ?        00:00:45 tmux
+2mueller 3313549 3313548  0 Oct14 pts/204  00:00:00 -bash
+2mueller 3313563 3313548  0 Oct14 pts/207  00:00:00 -bash
+0antkow+ 3319888       1  0 May09 ?        00:00:00 ssh-agent -s
+mkopec   3350624       1  0 Sep29 ?        00:01:04 /lib/systemd/systemd --user
+mkopec   3350625 3350624  0 Sep29 ?        00:00:00 (sd-pam)
+mkopec   3350640 3350624  0 Sep29 ?        00:00:00 /usr/bin/pipewire
+mkopec   3350641 3350624  0 Sep29 ?        00:00:20 /usr/bin/pulseaudio --daemonize=no --log-target=journal
+mkopec   3350644 3350624  0 Sep29 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+mkopec   3350649 3350640  0 Sep29 ?        00:00:47 /usr/bin/pipewire-media-session
+2mueller 3390616 3313548  0 Oct14 pts/209  00:00:00 -bash
+2mueller 3390645 3313548  0 Oct14 pts/222  00:00:00 -bash
+2mueller 3390722 3390645  0 Oct14 pts/222  00:00:00 vim notatki_wazne.log
+2mueller 3395227 3390616  0 Oct14 pts/209  00:00:00 vim notatki.log
+3shupli+ 3490028       1  0 Jun12 pts/178  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3balski  3710774       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+3balski  3710775 3710774  0 Oct15 ?        00:00:00 (sd-pam)
+3balski  3710801 3710774  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+3balski  3710805 3710774  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3balski  3710809 3710801  0 Oct15 ?        00:00:31 /usr/bin/pipewire-media-session
+3balski  3710843       1  0 Oct15 ?        00:00:36 tmux new-session /usr/bin/zsh ; set default-shell /usr/bin/zsh
+3balski  3710909 3710843  0 Oct15 pts/258  00:00:01 /usr/bin/zsh
+arabas   3724059       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+arabas   3724060 3724059  0 Oct15 ?        00:00:00 (sd-pam)
+arabas   3724074 3724059  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+arabas   3724077 3724059  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+arabas   3724083 3724074  0 Oct15 ?        00:00:31 /usr/bin/pipewire-media-session
+arabas   3724214       1  0 Oct15 ?        00:00:26 SCREEN
+arabas   3724215 3724214  0 Oct15 pts/278  00:00:00 /bin/bash
+arabas   3727237 3724214  0 Oct15 pts/202  00:00:00 /bin/bash
+4juszcz+ 3753230       1  0 Oct27 ?        00:00:00 /usr/bin/ssh-agent -s
+4juszcz+ 3753236 3000048  0 Oct27 ?        00:00:00 /usr/bin/gpg-agent --supervised
+0koziol  3764375       1  0 Oct15 ?        00:00:47 /lib/systemd/systemd --user
+0koziol  3764376 3764375  0 Oct15 ?        00:00:00 (sd-pam)
+0koziol  3764390 3764375  0 Oct15 ?        00:00:00 /usr/bin/pipewire
+0koziol  3764398 3764375  0 Oct15 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+0koziol  3764400 3764390  0 Oct15 ?        00:00:30 /usr/bin/pipewire-media-session
+0koziol  3764414       1  0 Oct15 ?        00:00:00 ssh-agent
+0koziol  3764741       1  0 Oct15 ?        00:00:00 ssh-agent
+3siedle+ 3784681       1  0 May10 ?        00:00:27 tmux
+3siedle+ 3784682 3784681  0 May10 pts/31   00:00:00 -bash
+1vynohr+ 3819793       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 229501d219bd
+1vynohr+ 3820119       1  0 Oct28 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 3417ca51dad3
+0koziol  3856406       1  0 Oct01 ?        00:00:00 ssh-agent
+1vynohr+ 3859591       1  0 Nov07 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-65edc4939843c90c34d61f4ce11704f09d3e5cb6 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 1017cbb3c70b
+adamczyk 3955215       1  0 May22 ?        00:00:06 /home/staff/brachwal/public/conda/miniconda3/envs/root-6.28.4/bin/python3.11 /home/staff/brachwal/public/conda/miniconda3/envs/root-6.28.4/bin/jupyter-notebook --port=8888 --NotebookApp.port_retries=0 --no-browse
+root     3975190       1  0 Oct02 ?        00:02:32 /lib/systemd/systemd-journald netdata
+3waszak  3984310       1  0 Oct16 ?        00:00:46 /lib/systemd/systemd --user
+3waszak  3984311 3984310  0 Oct16 ?        00:00:00 (sd-pam)
+3waszak  3984326 3984310  0 Oct16 ?        00:00:00 /usr/bin/pipewire
+3waszak  3984329 3984310  0 Oct16 ?        00:00:00 /usr/bin/dbus-daemon --session --address=systemd: --nofork --nopidfile --systemd-activation --syslog-only
+3waszak  3984332 3984326  0 Oct16 ?        00:00:30 /usr/bin/pipewire-media-session
+3waszak  3984771       1  0 Oct16 ?        00:00:03 tmux
+3waszak  3984772 3984771  0 Oct16 pts/276  00:00:00 -bash
+0koziol  4004861       1  0 Aug25 ?        00:00:00 ssh-agent
+0koziol  4024337       1  0 Aug25 ?        00:00:00 ssh-agent
+root     4024355       1  0 Jul23 ?        00:01:10 /usr/sbin/sssd -i --logger=files
+root     4024356 4024355  0 Jul23 ?        05:44:45 /usr/libexec/sssd/sssd_be --domain fis.agh.edu.pl --uid 0 --gid 0 --logger=files
+root     4024357 4024355  0 Jul23 ?        01:52:16 /usr/libexec/sssd/sssd_nss --uid 0 --gid 0 --logger=files
+root     4024358 4024355  0 Jul23 ?        03:28:56 /usr/libexec/sssd/sssd_pam --uid 0 --gid 0 --logger=files
+0koziol  4026901       1  0 Aug25 ?        00:00:00 ssh-agent
+1vynohr+ 4042530       1  0 Nov07 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-65edc4939843c90c34d61f4ce11704f09d3e5cb6 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 2f3e0c194723
+3shupli+ 4066971       1  0 May22 pts/106  00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+3shupli+ 4069157       1  0 May22 pts/88   00:00:00 /bin/bash --init-file /home/stud2023/3shupliakou/.vscode-server/bin/ee2b180d582a7f601fa6ecfdad8d9fd269ab1884/out/vs/workbench/contrib/terminal/browser/media/shellIntegration-bash.sh
+0koziol  4147994       1  0 Jul24 ?        00:00:00 ssh-agent
+1vynohr+ 4150943       1  0 Oct17 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 4ee988ad007a
+1vynohr+ 4151291       1  0 Oct17 ?        00:00:00 /home/stud2021/1vynohradov/.vscode-server/code-384ff7382de624fb94dbaf6da11977bba1ecd427 command-shell --cli-data-dir /home/stud2021/1vynohradov/.vscode-server/cli --on-port --require-token 7928d6708fd6

@@ -1,0 +1,1 @@
+104334 /usr/share/dict/words

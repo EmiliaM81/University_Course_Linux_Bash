@@ -1,0 +1,264 @@
+<html>
+  <head>
+    <title>Programy i procesy</title>
+    <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+    <link rel="stylesheet" href="userguide.css" type="text/css" />
+
+  </head>
+
+  <body>
+  <div class="nav">
+  <table class="nav">
+  <tr>
+  <td><a href="index.html">Wstęp</a></td>
+  <td><a href="Hasla.html">Konta i hasła</a></td>
+  <td><a href="Pliki.html">Pliki i systemy plików</a></td>
+  <td>Programy i procesy</td>
+  <td><a href="Siec.html">Sieć i praca zdalna</a></td>
+  <td><a href="Linki.html">Zobacz też...</a></td>
+  </tr>
+  </table>
+  </div> <!-- nav -->
+  <div class="section">
+  <h2>Programy i procesy</h2>
+  <div class="subsection">
+  <p>
+  Uruchamianie programów jest podstawową czynnością wykonywaną przez użytkownika komputera; warto więc
+  od początku zrozumieć parę pojęć z tym związanych.
+  </p>
+  <p>
+  <strong>Program</strong> rozumiemy tu jako <em>plik wykonywalny</em>, a więc taki, który system potrafi
+  <em>uruchomić</em>, np. w reakcji na działanie użytkownika.  Działaniem tym może być np. wypisanie nazwy
+  tego pliku w linii komend <em>shella</em> (interpretera komend) lub (w środowisku okienkowym) kliknięcie
+  na ikonę powiązaną z danym programem.
+  </p>
+  <p>
+  <strong>Procesem</strong> z kolei jest instancja działającego programu, która powstała w wyniku jego
+  uruchomienia.  W danej chwili może istnieć i działać wiele różnych procesów, będących wynikiem
+  uruchomienia tak tego samego, jak i różnych programów, przez wielu różnych użytkowników.  Dlatego
+  m. in. należy rozróżniać pomiędzy procesem a programem.  Każdy proces posiada przydzielony przez
+  system, jednoznaczny (w danej chwili czasu) numeryczny identyfikator (<em>PID</em>) i wykonuje się
+  w zasadzie niezależnie od innych procesów, działających na tym samym komputerze; może się jednak
+  z nimi komunikować, za pośrednictwem całego szeregu mechanizmów <em>komunikacji międzyprocesowej</em>
+  zapewnionych przez system operacyjny.
+  </p>
+  </div> <!-- subsection -->
+  <h3>Programy</h3>
+  <div class="subsection">
+  <p>
+  Aby plik mógł być uruchomiony jako program, muszą być spełnione dwa warunki:
+  </p>
+  <ul>
+  <li>
+  Użytkownikowi uruchamiającemu program musi przysługiwać prawo do uruchamiania danego pliku
+  </li>
+  <li>
+  Zawartość pliku musi być odpowiednia.
+  </li>
+  </ul>
+  <p>
+  Pierwszy warunek został omówiony w <a href="Pliki.html">rozdziale o plikach</a>; drugi warunek jest
+  spełniony, gdy plik programu powstał w wyniku <em>kompilacji</em> i <em>linkowania</em> kodu źródłowego
+  (napisanego w jakimś języku programowania, takim jak C, Fortran, Pascal, ...) przez odpowiedni
+  kompilator (mówimy wówczas o programie binarnym).  Jest on spełniony również, jeżeli plik zawiera
+  tekst instrukcji w języku interpretowanym (takim jak język shella <code>sh</code>, Perl, Python, ...),
+  program interpretujący ten język jest właściwie zainstalowany na systemie, a treść pierwszej linijki
+  pliku zbudowana jest według wzoru
+  <blockquote><code>
+  	#! /bin/sh
+  </code></blockquote>
+  </p><p>
+  tj. zawiera jako dokładnie dwa pierwsze znaki sekwencję <code>#!</code>, a po nich następuje
+  <em>pełna ścieżka dostępu</em> do programu interpretującego.  Taki program nazywa się często
+  <em>skryptem</em>.
+  </p>
+  <p>
+  Programy binarne przeznaczone do wspólnego użytku zainstalowane są w katalogach ogólnosystemowych,
+  takich jak <code>/bin</code> (programy niezbędne do uruchomienia systemu), <code>/usr/bin</code>
+  (większość narzędzi przeznaczonych dla użytkowników), <code>/usr/local/bin</code> (programy spoza
+  ,,oficjalnej" zawartości systemu operacyjnego), <code>/usr/X11R6/bin</code> (programy związane
+  ze środowiskiem okienkowym <em>X Window System</em>), <code>/usr/dt/bin</code> (programy związane
+  ze środowiskiem graficznym <em>CDE</em> stosowanym w systemie Sun Solaris).  Każdy plik spełniający
+  warunki opisane powyżej może być jednak uruchomiony (niezależnie od jego lokalizacji) poprzez podanie
+  w linii komend specyfikacji ścieżki dostępu (zamiast tylko nazwy pliku); np. uruchomienie programu
+  o nazwie np. <code>mojprog</code> znajdującego się w katalogu aktualnym (nie będącym jednym z
+  katalogów systemowych) wymaga na ogół podania komendy w postaci
+  <blockquote><code>
+  ./mojprog
+  </code></blockquote>
+  </p>
+  <p>
+  Nazwa uruchamianego pliku jest generalnie bez znaczenia, w szczególności Unix nie przywiązuje wagi
+  do tzw. końcówki nazwy programu (nie spotyka się programów zapisanych w plikach o nazwach kończących
+  się na <code>.EXE</code>, <code>.BAT</code> czy <code>.COM</code>).
+  </p>
+  </div> <!-- subsection -->
+  <h3>Procesy i interpreter komend</h3>
+  <div class="subsection">
+  <p>
+  Najprostszym sposobem stworzenia procesu przez użytkownika jest uruchomienie (legalnego) pliku
+  wykonywalnego, przez podanie jego nazwy (lokalizacji) w linii komend.  W wielu przypadkach,
+  w zależności od uruchamianego programu można też (lub należy) podać opcje dla programu oraz
+  argumenty -- będące często (choć nie zawsze) nazwami plików które mają być przetworzone. Dla większości
+  programów obowiązuje zasada, że bezpośrednio po nazwie (lokalizacji) programu podajemy ew. opcje
+  uruchomienia; mają one najczęściej postać skrótów jednoliterowych poprzedzonych znakiem <code>-</code>
+  (minus), np. <code>ls -l</code>, przy czym w wypadku podawania kilku opcji jednocześnie można
+  je grupować: np. zamiast <code>ls -l -A</code> można równoważnie napisać <code>ls -lA</code>.
+  Ewentualne argumenty podawane są po opcjach, np. <code>ls -Al /tmp</code>.
+  </p>
+  <p>
+  Należy wiedzieć, że zawartość linii komend podlega pewnej interpretacji i ,,obróbce'' przez shell
+  (interpreter komend) zanim opcje i argumenty zostaną przekazane uruchomionemu programowi.  W dużym
+  uproszczeniu: treść linii komend jest dzielona na ,,słowa'' (sekwencje znaków oddzielone ciągami
+  spacji), i każde ,,słowo'' będzie potraktowane jako oddzielny argument (lub grupa opcji); po czym
+  następuje interpretacja pewnych znaków specjalnych (metaznaków).  Przytoczę tu jedynie najprostsze
+  (i najczęściej przydatne) przykłady zastosowania rozwinięć metaznaków:
+  <ul>
+     <li>znaki <code>*</code>, <code>?</code> oraz sekwencje postaci <code>[...]</code> stosowane są
+     do tworzenia <em>wzorców nazw plików</em>; w takim wzorcu, <code>*</code> zastępuje <em>dowolny
+     ciąg (zera lub więcej) znaków</em>, <code>?</code> <em>dowolny (ale dokładnie jeden) znak</em>,
+     np. <code>[bpdt]</code> <em>dowolny pojedynczy znak spośród wymienionych</em> (a więc tu: b, p, d lub t),
+     np. <code>[b-k]</code> <em>dowolny pojedynczy znak z podanego zakresu</em> (tu: od b do k).  Zakres znaków
+     wyznaczony jest tu przez zakres wartości ich kodów ASCII; warto więc wiedzieć, że w kodowaniu
+     ASCII wszystkie cyfry występują w porządku (0-9), poprzedzając wszystkie wielkie litery (A-Z),
+     występujące w porządku alfabetycznym, które z kolei poprzedzają wszystkie małe litery (a-z),
+     również występujące w porządku alfabetycznym.  Bezpośrednio po znaku <code>[</code>, znak <code>^</code>
+     ma znaczenie dopełnienia (podanego zbioru lub zakresu znaków), tak np. <code>[^a-z]</code>
+     oznacza dowolny znak <em>nie</em> bedący małą literą.<br />
+     Interpretacja tak utworzonych wzorców polega na ich zastąpieniu przez listę nazw istniejących plików,
+     pasujących do podanego wzorca.  Znak separatora katalogów (<code>/</code>) nie jest nigdy
+     wynikiem rozwinięcia, tzn. wynikiem interpretacji wzorca nie zawierającego znaku <code>/</code>
+     mogą być wyłącznie nazwy plików z katalogu aktualnego.  Można jednak tworzyć również wzorce
+     zawierające <code>/</code>; będą one interpretowane zgodnie z ogólnymi regułami specyfikowania lokalizacji
+     plików (p. <a href="Pliki.html">Pliki i systemy plików</a>).
+     </li>
+     <li>,,Słowa'' zaczynające się od znaku tyldy (<code>~</code>) interpretowane są jako katalog
+     ,,domowy'' aktualnego użytkownika (sam znak <code>~</code> lub sekwencja <code>~/</code>), lub
+     jako katalog ,,domowy'' użytkownika o nazwie (loginie) która następuje po <code>~</code>, np.
+     <code>~rjb</code>: ścieżka do katalogu domowego użytkownika <code>rjb</code>. Znak <code>~</code>
+     występujący w pozycji innej niż na początku słowa nie podlega specjalnej interpretacji.
+     </li>
+     <li>
+     Sekwencja rozpoczynająca się od znaku <code>$</code> zastępowana jest przez wartość zmiennej shella,
+     której nazwa następuje po <code>$</code>; np. polecenie <code>echo $PATH</code> wypisuje aktualną
+     wartość zmiennej <code>PATH</code> (a nie napis <code>$PATH</code>).
+     </li>
+     <li>
+     Znaki <code>"</code>, <code>'</code> (cudzysłów i apostrof) oraz <code>\</code> służą do ,,ochrony''
+     innych metaznaków przed interpretacją przez shell, w przypadku gdy powinny one być przekazane
+     do uruchamianego programu w postaci dosłownej. Znak <code>\</code> ,,chroni'' znak po nim następujący;
+     para apostrofów <code>'...'</code> zapobiega interpretacji wszelkich metaznaków (z wyjątkiem samego apostrofu);
+     para cudzysłowów <code>"..."</code> ,,chroni'' spacje i metaznaki tworzące wzorce nazw plików,
+     natomiast nie zapobiega interpretacji znaku <code>$</code>.
+     </li>
+  </ul>
+  <p>
+    Inny użyteczny trik to <code>komenda1 `komenda2`</code>, działa on następująco: jako pierwsza zostanie wykonana
+    <code>komenda2</code> (może ona oczywiście zawierać również argumenty), wynik jej wykonania -- to, co normalnie
+    pojawiłoby się na ekranie, tj. zawartość standardowego strumienia wyjściowego -- zostanie umieszczony
+    w linii komend wywołującej <code>komenda1</code>, która następnie zostanie wykonana (z zastosowaniem
+    pozostałych reguł rozwijania).
+  </p>
+  <p>
+    Shell umożliwia również edycję linii komend, oraz odwoływanie się do komend wpisanych uprzednio (klawisz
+    ,,strzałka w górę''), z możliwością ich edycji (modyfikacji) przed ponownym wykonaniem. Wśród innych
+    udogodnień ułatwiających pracę interakcyjną warto wymienić tzw. autouzupełnianie (nazw komend i argumentów);
+    w szczegółach jego działanie różni się w zależności od używanej wersji shella i opcji konfiguracyjnych,
+    ale zazwyczaj pozwala ono na użycie klawisza ,,Tab'' po wpisaniu części nazwy komendy, lub nazwy pliku
+    mającej być argumentem, czego wynikiem jest uzupełnienie tej nazwy o dalsze znaki na tyle, na ile jest
+    to jednoznacznie możliwe (tj. jeżeli do początkowych kilku znaków pasuje nazwa tylko jednego faktycznie
+    istniejącego pliku, to pojawi się ona na linii komend w całości).
+  </p>
+  <p>
+    W istocie shell jest interpreterem dość zaawansowanego języka programowania, potrafiącym wykonywać programy
+    bezpośrednio z plików tekstowych, zwanych skryptami shella.  Język ten zawiera w zasadzie wszystkie
+    elementy przydatne do tworzenia nawet dość rozbudowanych programów (zmienne, pętle, instrukcje warunkowe,
+    możliwość definicji funkcji ...); bardziej szczegółowe jego omówienie wykracza jednak poza zakres
+    niniejszych notatek.  Wspomnę jedynie, że składnia języka shella różni się dość istotnie w zależności
+    od typu shella; używany jako domyślny do pracy interakcyjnej w naszej sieci <code>tcsh</code> nie jest
+    szczególnie godny polecenia (w dość powszechnej opinii) do tworzenia bardziej rozbudowanych skryptów;
+    do tego celu zazwyczaj używa się bardziej standardowego <code>sh</code>, lub będącego domyślnym
+    w większości instalacji Linuxa shella <code>bash</code>.
+  </p>
+  <p>
+    Z bardziej zaawansowanych właściwości shella omówię tu pobieżnie jedynie dwie: kontrolę zadań, oraz
+    przekierowania i potoki.  Kontrola zadań stwarza możliwość uruchamiania procesów ,,w tle'', tj. z natychmiastowym
+    powrotem do shella i możliwością wydawania kolejnych poleceń bez czekania na zakończenie uruchomionego
+    właśnie procesu, ,,zawieszania'' wykonania aktualnie działającego procesu oraz żonglowania na rozmaite
+    sposoby grupą zadań uruchomionych z aktualnej instancji shella.  Jest to szczególnie przydatne
+    w przypadku uruchamiania długotrwałych procesów, które wykonują się bez potrzeby interakcji z użytkownikiem,
+    oraz przy uruchamianiu programów które np. tworzą własne okna graficzne i poprzez nie komunikują się
+    interakcyjnie z użytkownikiem.  Uruchomienie procesu w tle dokonuje się przez zakończenie linii komend
+    znakiem <code>&</code>, postawionym po wszystkich argumentach do polecenia i ew. przekierowaniach
+    (p. poniżej).  Do ,,zawieszenia'' procesu aktualnie działającego ,,w pierwszym planie'' służy zazwyczaj
+    sekwencja klawiszy <code>Ctrl-z</code>; w odróżnieniu od procesu uruchomionego ,,w tle'', proces
+    zawieszony wstrzymuje działanie i czeka na ewentualne ,,odwieszenie''.  Listę zadań związanych z aktualnym
+    shellem (zawieszonych i uruchomionych w tle) można obejrzeć komendą <code>jobs</code>; każde zadanie
+    z tej listy będzie opatrzone numerem identyfikacyjnym, z którego można skorzystać do wydawania poleceń
+    zmieniających stan danego zadania.  Polecenie <code>fg %n</code> (gdzie <code>n</code> jest tym numerem
+    identyfikacyjnym) przenosi dane zadanie do ,,pierwszego planu'', zarazem je wznawiając (o ile było ono
+    zatrzymane); natomiast <code>bg %n</code> wznawia wykonywanie zadania zawieszonego, pozostawiając je
+    ,,w tle''.
+  </p>
+  <p>
+    Mechanizm przekierowania i potoków pozwala z kolei na proste wykonywanie nawet dość złożonych operacji
+    przetwarzania danych poprzez łączenie w ,,łańcuszek'' szeregu prostych komend, z których każda wykona
+    jeden z etapów przetwarzania przekazując wynik następnej w celu wykonania koleknek operacji.  Korzysta
+    tu się z faktu, że z każdym procesem unixowym związane są trzy tzw. standardowe strumienie wejścia-wyjścia:
+    standardowe wejście (<code>stdin</code>), standardowe wyjście (<code>stdout</code>) i standardowy
+    strumień błędu (<code>stderr</code>).  Domyślnie, <code>stdin</code> utożsamiony jest z klawiaturą
+    terminala, a <code>stdout</code> i <code>stderr</code> -- z ekranem.  Tzn. np. że dane wyprowadzone
+    przez program na <code>stdout</code> pojawią się na ekranie użytkownika.  Większość standardowych
+    programów narzędziowych, stanowiących podstawowe wyposażenie systemu unixowego, potrafi czytać dane
+    wejściowe zarówno z plików (z dysku), jak i ze strumienia <code>stdin</code>, natomiast wyniki przetwarzania
+    wyprowadza domyślnie na strumień <code>stdout</code>.  Strumień <code>stderr</code> służy natomiast
+    do wypisywania komunikatów nie będących ,,normalnym'' wynikiem przetwarzania danych, tj. komunikatów
+    o błędach i ew. ostrzeżeń o sytuacjach mniej lub bardziej ,,anomalnych''.
+  </p>
+  <blockquote><font="-1">
+    Dla przykładu, komenda <code>sort</code> służy do sortowania (domyślnie: alfabetycznego) linijek tekstu
+    stanowiących dane wejściowe. Gdy się ją wywoła z argumentami będącymi nazwami plików, danymi do sortowania
+    będzie zawartość tychże; w przypadku wywołania bez argumentów (nie będących opcjami, za pomocą których
+    można zadać bardziej złożone kryteria sortowania), komenda <code>sort</code> oczekuje, że dane
+    do przetworzenia pojawią się w standardowym strumieniu wejściowym.  W obu tych przypadkach, wynik
+    sortowania pojawi się na <code>stdout</code>.
+  </font></blockquote>
+  <p>
+    Mechanizm o którym mowa polega na udostępnieniu możliwości przedefiniowania standardowych strumieni, na dwa
+    sposoby: bądź przez połączenie ich z plikami, bądź przez połączenie <code>stdout</code> jednego procesu
+    z <code>stdin</code> innego.  Konstrukcja <code>komenda ... > plik</code> powoduje, że zawartość
+    <code>stdout</code> wywołanej komendy, zamiast na ekranie, pojawi się w pliku o podanej nazwie (w miejscu
+    wielokropka umieścić można dowolne opcje i inne argumenty wywołania); podobnie <code>komenda ... &lt; plik</code>
+    spowoduje, że zawartość podanego pliku będzie stanowiła <code>stdin</code> wywołanej komendy.  Z kolei
+    pisząc <code>komenda1 ... | komenda2 ...</code> sprawimy, że dane wyprowadzone przez <code>komenda1</code>
+    na <em>jej</em> <code>stdout</code> staną się zawartością <code>stdin</code> dla <code>komenda2</code>.
+    Wszystkich tych rodzajów przekierowania można też użyć łącznie, np.:
+    <code>komenda1 &lt; plik1 | komenda2 > plik2</code>.
+  </p>
+    <strong>Uwagi:</strong>
+    <ul>
+    <li>
+      Jeśli zastosujemy przekierowanie <code>komenda .. > plik</code>, a <code>plik</code> już istnieje,
+      to jego wcześniejsza zawartość zostanie zastąpiona przez zawartość <code>stdout</code> wywołanej
+      komendy -- tj. utracona!  Istnieje druga postać przekierowania <code>stdout</code>:
+      <code>komenda ... >> plik</code>, przy której zawartość <code>stdout</code> wywołanej komendy nie
+      zastępuje ew. wcześniejszej zawartości podanego pliku, lecz zostanie dopisana do jej końca.
+    </li>
+    <li>
+      Przekierowanie <code>stdout</code> nie ma wpływu na powiązanie <code>stderr</code> z ekranem,
+      komunikaty o błędach pojawią się i tak na ekranie terminala użytkownika.  Większość narzędzi
+      unixowych nie wypisuje żadnych komunikatów w przypadku, gdy ich działanie przebiega zgodnie
+      z oczekiwaniami.
+    </li>
+    <li>
+      Przekierowanie potokowe może być również zastosowane wielokrotnie w ramach jednej komendy złożonej,
+      np. <code>komenda1 ... | komenda2 ... | komenda3 ...</code>.  Shell nie czeka z uruchomieniem
+      kolejnych poleceń występujących w potoku przetwarzania na zakończenie poprzednich, będą one
+      działały równolegle w miarę napływania danych.
+    </li>
+    </ul>
+  </div> <!-- subsection -->
+    <blockquote>Czytane <accessed type="number"/> razy.</blockquote>
+  </div> <!-- section -->
+  </body>
+</html>

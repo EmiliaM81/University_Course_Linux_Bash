@@ -1,0 +1,11 @@
+/home/staff/ewao/UNIX/kotek-v1: ASCII text
+/home/staff/ewao/UNIX/CFG/receiver.c: C source, ASCII text
+/home/staff/ewao/UNIX/CFG/main.c: C source, ASCII text
+/home/staff/ewao/UNIX/CFG/sender.c: C source, ASCII text
+/home/staff/ewao/UNIX/pliki/docs/kotek: ASCII text
+/home/staff/ewao/UNIX/pliki/sender.c: C source, ASCII text
+/home/staff/ewao/UNIX/pliki/receiver.c: C source, ASCII text
+/home/staff/ewao/UNIX/pliki/ala: ASCII text
+/home/staff/ewao/UNIX/pliki/main.c: C source, ASCII text
+/home/staff/ewao/UNIX/Tmp/test: ASCII text, with no line terminators
+/home/staff/ewao/UNIX/Tmp/.dmrc: ASCII text

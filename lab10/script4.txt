@@ -1,0 +1,473 @@
+Script started on 2024-12-15 17:30:55+01:00 [TERM="xterm" TTY="/dev/pts/32" COLUMNS="103" LINES="64"]
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ exittree./s4.sh a.ext btree[K
+[?2004l[01;34m.[0m
+├── a
+├── b.ext
+├── [01;31mc.ext.zip[0m
+├── p1-p2.txt
+├── p2-a.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ treeexittree./s4.sh a.ext b[C[1P b[1P b[1P b[1P b[C[C.ext
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 1
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 1
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree
+[?2004l[01;34m.[0m
+├── a.ext
+├── b.ext.ext
+├── [01;31mc.ext.zip[0m
+├── p1-p2.txt
+├── p2-a.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree./s4.sh a b.ext.ext. b.ext.extex b.ext.extt b.ext.ext
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 2
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 2
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree
+[?2004l[01;34m.[0m
+├── a
+├── b.ext
+├── [01;31mc.ext.zip[0m
+├── p1-p2.txt
+├── p2-a.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree./s4.sh a.ext b.ext.ext[K[K[K[K[K[K[K[K[K[K[K[K[K[K b.ext c.ext.zip
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 3
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 3
+mv: 'b.ext' and 'b.ext' are the same file
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 3
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree
+[?2004l[01;34m.[0m
+├── a.ext
+├── b.ext
+├── c.ext.ext
+├── p1-p2.txt
+├── p2-a.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree./s4.sh a b.ext c.ext.zip[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Kp1-p2.sh[K[K[K.txt p2-a.txt
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 4
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 4
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree
+[?2004l[01;34m.[0m
+├── a.ext
+├── a-p2.txt
+├── b.ext
+├── c.ext.ext
+├── p2-p1.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree./s4.sh p1-p2.txt p2-a.txt[K[K[K[K[K[K[K[K[K[K[K[K[K.txt [K[K[K[K[K[K[K[K[K2-p1.txt a-p2.txt
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? d 5
+Podaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 5
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree
+[?2004l[01;34m.[0m
+├── a.ext
+├── a.txt
+├── b.ext
+├── c.ext.ext
+├── p2.txt
+├── [01;32ms1.sh[0m
+├── [01;32ms1.txt[0m
+├── [01;32ms2.sh[0m
+├── [01;32ms2.txt[0m
+├── [01;32ms3.sh[0m
+├── [01;32ms3.txt[0m
+├── [01;32ms4.sh[0m
+├── [01;32ms4.txt[0m
+├── script1.txt
+├── script2.txt
+├── script3.txt
+├── script4.txt
+└── tototo.tototo
+
+1 directory, 18 files
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ tree./s4.sh p2-p1.txt a-p2.txt[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[K[Ka.ext
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 6
+	
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s4.sh a.ext
+[?2004lPodaj co chcesz zrobić.
+
+
+a - dodaj rozszerzenie ext
+
+b - usuń rozszerzenie
+
+e - zamień rozszerzenie na ext, dodaj rozszerzenie ext jeśli brak rozszerzenia
+
+c - zamień kolejność tego co jest przed myślnikiem z tym, co jest za myślnikiem
+
+d - obetnij nazwę pliku po pierwszym wystąpieniu znaku
+
+v - włącz tryb verbose
+h - podaj składnię polecenia i zakończ działanie skryptu
+
+
+1) a
+2) b
+3) e
+4) c
+5) d
+6) v
+7) h
+#? 7
+Koniec
+
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ exit
+[?2004lexit
+
+Script done on 2024-12-15 17:33:23+01:00 [COMMAND_EXIT_CODE="0"]

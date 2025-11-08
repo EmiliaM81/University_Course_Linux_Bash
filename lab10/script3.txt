@@ -1,0 +1,18 @@
+Script started on 2024-12-15 16:55:44+01:00 [TERM="xterm" TTY="/dev/pts/32" COLUMNS="103" LINES="64"]
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s3.sh "Hello"-"Hello"r"Hello" "Hello"l"Hello" "Hello"
+[?2004lPodaj znak, na jaki zamienić
+
+r
+Herro
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s3.sh -r l "Hello"[K[K[K[K[K[K[K[K[K[K[Ku "Hrl[K[Kello"
+[?2004lHELLO
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s3.sh -d "el" "Hello"
+[?2004lHlo
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s3.sh -d "el" "Hello"[K[K[K[K[K[K[K[K[K[K[K[K[K[Kp "l" "Hello"
+[?2004llo
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s3.sh -p "l" "Hello"[1P "Hello"[1P "Hello"[1P "Hello"[1P"Hello"[1P "Hello"l "Hello"
+[?2004l5
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ exit
+[?2004lexit
+
+Script done on 2024-12-15 16:57:18+01:00 [COMMAND_EXIT_CODE="0"]

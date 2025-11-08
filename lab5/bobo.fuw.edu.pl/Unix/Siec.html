@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <title>Sieć i praca zdalna</title>
+    <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+    <link rel="stylesheet" href="userguide.css" type="text/css" />
+
+  </head>
+  <body>
+  <div class="nav">
+  <table class="nav">
+  <tr>
+  <td><a href="index.html">Wstęp</a></td>
+  <td><a href="Hasla.html">Konta i hasła</a></td>
+  <td><a href="Pliki.html">Pliki i systemy plików</a></td>
+  <td><a href="Procesy.html">Programy i procesy</a></td>
+  <td>Sieć i praca zdalna</td>
+  <td><a href="Linki.html">Zobacz też...</a></td>
+  </tr>
+  </table>
+  </div> <!-- nav -->
+  <div class="section">
+  <h2>Sieć i praca zdalna</h2>
+  <div class="subsection">
+  <p>
+  Po podaniu identyfikatora użytkownika -- <em>login</em>, oraz hasła
+  na którymś z komputerów pracujących w sieci unixowej znajdujemy się
+  w sesji lokalnej, tj. uruchamiane przez użytkownika programy wykonują się
+  na tym komputerze, przy którym on siedzi -- niezależnie od tego, że funkcje
+  sieci umożliwiają mu dostęp do szeregu zasobów udostępnianych przez serwer
+  lub serwery sieciowe (głównie plików na dyskach sieciowych).  Ta forma
+  dostępu do zasobów sieci nie wymaga żadnych szczególnych zabiegów ze strony
+  użytkownika, praca na dysku sieciowym niczym się w zasadzie nie różni od
+  pracy na dysku podłączonym bezpośrednio do używanego w danej chwili
+  komputera.
+  </p>
+  <p>
+  Funkcje sieci unixowej pozwalają jednak również na bardziej ,,bezpośredni''
+  dostęp do komputera zdalnego, polegający na otwarciu zdalnej sesji np.
+  w jednym z okienek terminalowych uruchomionych w ramach systemu okienkowego.
+  Wiąże się to zazwyczaj z ponownym podaniem <em>loginu</em> i hasła
+  (przedstawiamy się innemu komputerowi); programy uruchomione w ramach
+  sesji zdalnej wykonują się na zdalnym komputerze i mają bezpośredni
+  dostęp do jego zasobów -- dysków itp., oczywiście w ramach uprawnień
+  przysługujących danemu użytkownikowi.  Zdalny komputer może znajdować
+  się w tej samej sieci lokalnej (tj. np. w OKWF) lub wręcz na drugim
+  końcu świata -- o ile jest dostępny poprzez łącza internetowe.  Oczywiście
+  w tym drugim przypadku konieczne jest posiadanie konta uprawniającego
+  do dostępu do tego właśnie komputera.
+  </p>
+  <p>
+  Poza programami terminalowymi, tj. komunikującymi się z użytkownikiem
+  poprzez terminal znakowy (jakim jest np. okienko <code>xterm</code>),
+  możliwe jest również zdalne uruchamianie programów okienkowych, pracujących
+  w standardzie <em>X Window System</em> --
+  komunikujących się z użytkownikiem poprzez swoje własne okna (jak np.
+  Netscape).  Z reguły możliwe jest to jednak jedynie w ramach sieci
+  lokalnej, odpowiednie kanały komunikacji sieciowej są zazwyczaj blokowane
+  na styku sieć lokalna -- ,,reszta świata'', ze względów bezpieczeństwa.
+  Zresztą komunikacja dalekiego zasięgu przez Internet jest zazwyczaj
+  zbyt powolna aby zapewnić wygodną pracę w zdalnie uruchamianym
+  programie okienkowym.
+  </p>
+  <p>
+  Omówimy tu również skrótowo inne możliwości wykorzystania sieci czy usługi
+  sieciowe, takie jak transfer plików z wykorzystaniem protokołu FTP,
+  korzystanie z WWW, Usenet, i pocztę elektroniczną.
+  </p>
+  </div> <!-- subsection -->
+  <h2>Praca zdalna: <code>telnet</code></h2>
+  <div class="subsection">
+  <p>
+  Najprostszym narzędziem do pracy zdalnej jest program <code>telnet</code>;
+  w dużym uproszczeniu, uruchomienie go zamienia aktualnie używany terminal
+  (okienko typu <code>xterm</code> lub konsolę znakową) w terminal ,,jakby''
+  bezpośrednio podłączony do komputera zdalnego.  Jako argument wywołania
+  <code>telnet</code> podajemy nazwę lub adres zdalnego komputera, z którym
+  chcemy się połączyć; w przypadku (najczęstszym) gdy jest to komputer z tej
+  samej sieci lokalnej (dokładniej: domeny DNS), wystarczy podać pierwszy
+  człon tej nazwy (np. <code>telnet tempac</code>, <code>telnet primus</code>).
+  Po (udanym) przedstawieniu się zdalnemu komputerowi (identyfikatorem
+  użytkownika oraz hasłem), uzyskujemy dostęp do wszelkich zasobów tego
+  komputera (do których dostęp przysługuje danemu użytkownikowi), a więc
+  dysków i zainstalowanych na nim programów.  Programy posługujące się
+  interfejsem znakowym możemy uruchamiać tak samo, jak byłoby to możliwe
+  na terminalu podłączonym bezpośrednio do zdalnego komputera.
+  </p>
+  <p>
+  Zakończenie sesji <code>telnet</code> i powrót do sesji lokalnej następuje
+  przez podanie komendy <code>logout</code> lub <code>exit</code>.  Wprowadzenie
+  z klawiatury sekwencji specjalnej (zazwyczaj <code>Ctrl-]</code>, oznaczane
+  również jako <code>^]</code>, co znaczy równoczesne wciśnięcie klawiszy
+  <code>Ctrl</code> i </code>]</code>) umożliwia skorzystanie z szeregu
+  wewnętrznych funkcji samego programu komunikacyjnego <code>telnet</code>,
+  takich jak: <code>close</code> (natychmiastowe zamknięcie sesji), czy
+  <code>z</code> (czasowe ,,zawieszenie'' sesji, powrót do sesji zdalnej
+  przez komendę <code>fg</code>).
+  </p>
+  <p>
+  Głównym niedostatkiem programu <code>telnet</code> jest fakt, że cała treść
+  komunikacji ze zdalnym komputerem przesyłana jest ,,otwartym tekstem'',
+  włącznie z hasłem użytkownika.  W dzisiejszych warunkach uznawane jest to
+  za poważne zagrożenie dla bezpieczeństwa i z tego powodu komunikacja w
+  protokole <code>telnet</code> jest zazwyczaj blokowana na styku sieć
+  lokalna -- reszta świata (<em>firewall</em>).  Również komputery OKWF
+  nie są dostępne poprzez <code>telnet</code> z zewnątrz sieci Wydziału
+  Fizyki.
+  </p>
+  </div> <!-- subsection -->
+  <h2>Praca zdalna: <code>ssh</code> i <code>slogin</code></h2>
+  <div class="subsection">
+  <p>
+  Nieco lepszą wersję pracy zdalnej umożliwia program <code>ssh</code>, różniący
+  się od <code>telnet</code> głównie tym, że strumień komunikacji pomiędzy
+  klientem a serwerem jest szyfrowany -- dość ,,silnym'', a więc trudnym do
+  złamania algorytmem (w każdym razie złamanie go wprost jest poza zasięgiem
+  możliwości domorosłych ,,hackerów'').  Z tego względu komunikacja przez
+  <code>ssh</code> częściej bywa dostępna w połączeniach dalekiego zasięgu
+  (poza siecią lokalną), np. komputer <code>tempac</code> dostępny jest spoza
+  Wydziału Fizyki przez połączenia <code>ssh</code>.  Dostępna jest również
+  opcjonalnie kompresja strumienia komunikacyjnego, co istotnie poprawia
+  współpracę z programami okienkowymi uruchomionymi w sesji <code>ssh</code>
+  na odległym komputerze.  Zarówno szyfrowanie jak i kompresja odbywają
+  się w sposób ,,przezroczysty'' dla użytkownika i nie wymagają od niego
+  specjalnych zabiegów, poza ew. poinformowaniem programu czy kompresja
+  ma być wykorzystywana czy wyrażeniem preferencji co do stosowanego
+  algorytmu szyfrowania.
+  </p>
+  <p>
+  Przy uruchamianiu zdalnej sesji w <code>ssh</code> może być konieczne
+  podanie w linii komend identyfikatora konta (<em>login</em>), z którego
+  zamierzamy korzystać na zdalnym komputerze, o ile nie brzmi on tak samo
+  jak <em>login</em> konta lokalnego.  Chcąc uruchomić sesję
+  interakcyjną, tj. o własnościach (dla użytkownika) najbardziej zbliżonych
+  do sesji <code>telnet</code>, wywołujemy program <code>slogin</code>,
+  w postaci np. <code>slogin <em>login</em>@tempac</code> (jest to program
+  pomocniczy dla programu <code>ssh</code>).
+  </p>
+  <p>
+  Aby mieć możliwość uruchamiania w sesji zdalnej programów okienkowych
+  (których okna będą wówczas pojawiały się na naszym aktualnym terminalu,
+  zakładając oczywiście, że pracuje on w trybie graficznym), może być
+  konieczne dodanie opcji <code>-X</code> (np. <code>slogin -X <em>login</em>@primus</code>).
+  Należy jednak wiedzieć, że administrator zdalnego komputera mógł mu ,,zabronić''
+  uruchamiania programów okienkowych dla sesji <code>ssh</code>.
+  </p>
+  <p>
+  Istnieje wiele możliwości zmodyfikowania sposobu działania <code>ssh</code>
+  i <code>slogin</code> dla danego użytkownika, poprzez zapisanie
+  odpowiednich opcji i informacji w plikach umieszczonych w katalogu <code>~/.ssh/</code>.
+  Możliwe jest m. in. zadanie różnych domyślnych identyfikatorów (<em>loginów</em>)
+  dla różnych zdalnych komputerów, kontrolowanie opcji dotyczących szyfrowania,
+  kompresji i możliwości uruchamiania programów okienkowych, oraz wykorzystanie
+  tzw. autoryzacji RSA (metodą klucza publicznego), co pozwala uniknąć każdorazowego
+  podawania hasła do zdalnego konta przy otwieraniu sesji.  Dociekliwi
+  znajdą odpowiednie szczegóły w dokumentacji (<code>man ssh</code>).
+  </p>
+  <p>
+  Program <code>ssh</code> posiada również możliwość wygodnego transferu plików
+  z i do zdalnych komputerów, w czym może często zastąpić <code>ftp</code> (w trybie
+  nieanonimowym, p. poniżej).  W tym celu wywołujemy go poleceniem postaci
+  <code>scp <em>[login@]</em>adres:ścieżka_do_pliku_zdalnego plik_lokalny</code>
+  (dla transferu z komputera zdalnego na lokalny), i z odwróceniem kolejności
+  argumentów dla transferu w kierunku odwrotnym. Ścieżka do pliku zdalnego
+  może być podana bądź w postaci bezwzględnej (zaczynając od <code>/</code>), bądź
+  względem katalogu ,,domowego'' dla zdalnego konta.
+  </p>
+  </div> <!-- subsection -->
+  <h2>Transfer plików: <code>ftp</code></h2>
+  <div class="subsection">
+  <p>
+  Protokół FTP i obsługujący go program (również o nazwie <code>ftp</code>) służy
+  do przesyłania plików siecią pomiędzy klientem (tj. komputerem z którego
+  inicjujemy połączenie) a serwerem, i to w obu kierunkach.  Nie jest on
+  potrzebny w przypadku, gdy chodzi o dwa komputery posiadające wspólny
+  dostęp do dysków sieciowych, natomiast często wykorzystywany jest do
+  udostępniania np. archiwów swobodnie dostępnego oprogramowania poprzez
+  Internet.
+  </p>
+  <p>
+  W najprostszym przypadku używamy FTP do przesyłania plików z i do komputera,
+  na którym również posiadamy własne konto. Wówczas, po uruchomieniu programu
+  <code>ftp</code> podajemy <em>login</em> i hasło do konta na zdalnym komputerze,
+  uzyskując w ten sposób dostęp do odczytu i zapisu plików w ramach uprawnień
+  danego konta.  Najważniejsze komendy dostępne w programie <code>ftp</code>
+  to:
+  </p>
+  <ul>
+  <li>
+  <code>dir</code> lub <code>ls</code>: lista zawartości aktualnego katalogu na zdalnym
+  komputerze;
+  </li>
+  <li>
+  <code>cd <em>katalog_zdalny</em></code>: zmiana katalogu aktualnego na zdalnym
+  komputerze;
+  </li>
+  <li>
+  <code>lcd <em>katalog_lokalny</em></code>: zmiana katalogu aktualnego na lokalnym
+  komputerze -- przetransferowane pliki będą domyślnie umieszczane w aktualnym
+  katalogu;
+  </li>
+  <li>
+  <code>get <em>plik_zdalny [plik_lokalny]</em></code>: sprowadzenie zdalnego pliku
+  na lokalny komputer i zapisanie jego zawartości w pliku lokalnym o podanej
+  (opcjonalnie) nazwie -- domyślnie, pod tą samą nazwą co na komputerze zdalnym;
+  </li>
+  <li>
+  <code>mget <em>wzorzec_pliku_zdalnego</em></code>: sprowadzenie na lokalny
+  komputer wszystkich plików z aktualnego katalogu zdalnego, których nazwy pasują
+  do podanego wzorca; budowa wzorców nazw jest analogiczna jak w linii komend
+  shella, tj. z wykorzystaniem znaków takich, jak <code>*, ?</code> ...
+  </li>
+  <li>
+  <code>put <em>plik_lokalny [plik_zdalny]</em></code>: przesłanie na zdalny
+  komputer pliku lokalnego i umieszczenie jego zawartości w pliku o opcjonalnie
+  podanej nazwie;
+  </li>
+  <li>
+  <code>mput <em>wzorzec_pliku_lokalnego</em></code>: przesłanie na zdalny komputer
+  wszystkich plików lokalnych z aktualnego katalogu, o nazwach pasujących do
+  podanego wzorca;
+  </li>
+  <li>
+  <code>prompt</code>: domyślnie, w trakcie wykonywania poleceń dotyczących wielu
+  plików (<code>mget, mput</code>) program zapytuje użytkownika o potwierdzenie
+  operacji dla każdego kolejnego pliku.  Polecenie <code>prompt</code> wyłącza
+  te zapytania, a więc operacje te będą przeprowadzane bez pytania o potwierdzenie.
+  Jeżeli zapytania wcześniej wyłączono, polecenie to włącza je z powrotem;
+  </li>
+  <li>
+  <code>binary</code>: transfer będzie wykonywany w trybie binarnym, zachowującym
+  ,,co do bitu'' zawartość przesyłanych plików.  Obecnie większość serwerów FTP
+  ustawia domyślnie tryb binarny przy otwarciu sesji, należy zwrócić uwagę
+  na pojawienie się odp. komunikatu na początku sesji -- jeżeli go nie było,
+  ustawić tryb binarny przed transferem, p. poniżej;
+  </li>
+  <li>
+  <code>ascii</code>: transfer będzie wykonywany w trybie ASCII.  Oznacza to
+  w praktyce, że ,,najstarszy'' z ośmiu bitów tworzących każdy bajt danych
+  ulegnie ,,zmasakrowaniu'', tak więc przesłane w ten sposób programy nie będą
+  działały, pliki graficzne nie dadzą się otworzyć, a pliki tekstowe zawierające
+  znaki spoza zakresu podstawowego (ą, ć, ę, ...) będą w ich miejsce zawierać
+  nie wiadomo co.  Tryb ASCII jest reliktem historycznym i nie należy go używać
+  w zasadzie nigdy;
+  </li>
+  <li>
+  <code>bye</code> lub <code>quit</code>: kończy sesję i działanie programu <code>ftp</code>.
+  </li>
+  </ul>
+  <p>
+  Drugi tryb FTP to tzw. tryb anonimowy.  Wykorzystywany on jest w kontaktowaniu się
+  z serwerami publicznymi, na których udostępnione są pliki które można pobrać bez
+  wykazania się jakimikolwiek uprawnieniami.  W trybie anonimowym w miejsce identyfikatora
+  konta podajemy <code>anonymous</code> lub (krócej) <code>ftp</code>, a w miejsce hasła
+  można podać cokolwiek, z tym że dobrym zwyczajem jest wpisanie swojego adresu poczty
+  elektronicznej (rzadko jest to jednak w jakikolwiek sposób egzekwowane, o ile w ogóle).
+  Poza tym praca w trybie anonimowym wygląda dokładnie tak samo, jak w ,,zwykłym'',
+  niemożliwe jest jednak na ogół umieszczanie swoich plików  na zdalnym serwerze.
+  Interesująca dla ,,gości'' zawartość zdalnego serwera znajduje się na ogół w katalogu
+  <code>/pub</code> i jego podkatalogach.
+  </p>
+  <p>
+  <strong>Uwaga:</strong> w wielu przypadkach zabezpieczenia stosowane na firewallach
+  uniemożliwiają transfery FTP spoza sieci lokalnej w domyślnym trybie programu.  W takiej
+  sytuacji należy wywoływać program jako <code>ftp -p</code> lub <code>pftp</code>; jeżeli
+  dostępna wersja <code>ftp</code> nie udostępnia żadnej z tych opcji, to może zadziałać
+  podanie na początku sesji FTP komendy <code>quote PASV</code>.
+  </p>
+  <p>
+  Obecnie przy przeglądaniu publicznych archiwów FTP wykorzystuje się zazwyczaj przeglądarkę
+  WWW (np. Netscape), która również potrafi posługiwać się protokołem FTP, przynajmniej
+  w trybie anonimowym.  Jest to wygodne gdy nie wiemy dokładnie, czego szukamy; natomiast
+  gdy znana jest nam lokalizacja plików do przetransferowania, użycie ,,klasycznego'' programu
+  FTP często pozwala wykonać zadanie szybciej i sprawniej.
+  </p>
+
+
+
+
+  </div> <!-- subsection -->
+  <blockquote>Czytane <accessed type="number"/> razy.</blockquote>
+  </div> <!-- section -->
+  </body>
+</html>

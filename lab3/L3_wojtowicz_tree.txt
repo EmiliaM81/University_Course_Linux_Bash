@@ -1,0 +1,28 @@
+..
+└── lab3
+    ├── 3_wojtowicz_tree.txt
+    ├── a
+    ├── a.sh
+    ├── a.sh~
+    ├── b.sh
+    ├── K1
+    │   ├── Fonts
+    │   │   ├── 45-latin.conf
+    │   │   ├── 51-local.conf -> /usr/share/fontconfig/conf.avail/51-local.conf
+    │   │   ├── 60-latin.conf -> /usr/share/fontconfig/conf.avail/60-latin.conf
+    │   │   └── 69-unifont.conf
+    │   └── K2
+    │       └── c
+    ├── L3_wojtowicz_tree.txt
+    ├── lab3.txt
+    ├── Linux
+    │   ├── A
+    │   │   └── B
+    │   └── Fonts
+    │       ├── 45-latin.conf
+    │       ├── 51-local.conf -> /usr/share/fontconfig/conf.avail/51-local.conf
+    │       ├── 60-latin.conf -> /usr/share/fontconfig/conf.avail/60-latin.conf
+    │       └── 69-unifont.conf
+    └── tree1
+
+8 directories, 17 files

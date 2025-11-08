@@ -1,0 +1,25 @@
+#!/usr/local/bin/pike
+// -*- mode: pike -*-
+// $Id: fibo.pike,v 1.2 2000/12/24 19:10:50 doug Exp $
+// http://www.bagley.org/~doug/shootout/
+//#pragma strict_types
+// "memoized" by rjb@bobo.fuw.edu.pl --> speedup by factor ~100 (!)
+
+object fib = class
+{
+    static mapping(int:int) cache = ([0:1,1:1]);
+    static int `()(int n)
+    {
+        return cache[n] || (cache[n]=fib(n-2)+fib(n-1));
+    }
+}();
+
+void
+main(int argc, array(string) argv) {
+    int n = max((int)argv[-1], 1);
+    int steps = n/9000;
+    for (int k=1; k<=steps;k++)
+        fib(9000*k);
+    write("%d\n", fib(n));
+}
+

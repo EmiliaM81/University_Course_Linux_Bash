@@ -1,0 +1,4 @@
+/home/staff/ewao/UNIX/kotek
+/home/staff/ewao/UNIX/A/b.sh
+/home/staff/ewao/UNIX/A/a.sh
+/home/staff/ewao/UNIX/ccc

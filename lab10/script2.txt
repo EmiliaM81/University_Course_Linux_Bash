@@ -1,0 +1,47 @@
+Script started on 2024-12-15 16:49:50+01:00 [TERM="xterm" TTY="/dev/pts/32" COLUMNS="103" LINES="64"]
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ ./s2.sh
+[?2004lPodaj plik: 
+
+a
+Wybierz opcję: 
+
+a - wyświetl min i max
+
+b - oblicz średnią
+
+c - zwiększ o indeks
+
+d - policz większe od podanej przez ciebie liczby
+
+e - posortuj
+
+f - zakończ
+
+1) a
+2) b
+3) c
+4) d
+5) e
+6) f
+#? 1
+Najmniejsza liczba: 3
+Największa liczba: 43322
+#? 2
+Średnia wartość: 3817.30
+#? 3
+Tablica po zwiekszeniu o wartości indeksów: 112 4 36 46 38 43327 451 12 12 5552 17 19 77
+
+#? 4
+Podaj najmniejszą wartość
+
+5
+Liczb większych od 5 jest 12
+
+#? 5
+Posortowane liczby: 4 12 12 17 19 36 38 46 77 112 451 5552 43327
+
+#? 6
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ exit
+[?2004lexit
+
+Script done on 2024-12-15 16:51:21+01:00 [COMMAND_EXIT_CODE="0"]

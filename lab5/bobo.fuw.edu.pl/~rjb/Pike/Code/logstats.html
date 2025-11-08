@@ -1,0 +1,78 @@
+<html><head><title>rjb's pike code: logstats</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#!/usr/local/bin/pike -w
+</font><font color="darkblue">#pragma strict_types
+</font>
+<font color="darkred"><b>typedef</b></font> <font color="darkred"><b>function</b></font><font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>int</b></font> | <font color="darkred"><b>string</b></font><font color="black">)</font>, <font color="darkred"><b>void</b></font> | <font color="darkred"><b>int</b></font> : <font color="darkred"><b>void</b></font><font color="black">)</font> 
+  CLcallback;                         <font color="#5555AA"><i>// just to show off ;-)</i></font>
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="darkred"><b>int</b></font> ac, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> av<font color="black">)</font>
+<font color="black">{</font>
+  Report rep = Report<font color="black">(</font><font color="black">)</font>;
+  <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> args;
+  CLcallback line_cb; 
+  <font color="darkred"><b>function</b></font><font color="black">(</font><font color="darkred"><b>string</b></font> : <font color="darkred"><b>void</b></font><font color="black">)</font> output;
+
+  <font color="darkblue">if</font><font color="black">(</font>  equal<font color="black">(</font>args = av - <font color="black">(</font><font color="black">{</font> <font color="green">"-d"</font>, <font color="green">"--debug"</font> <font color="black">}</font><font color="black">)</font>, av <font color="black">)</font> <font color="black">)</font>
+    <font color="black">{</font>
+      line_cb = rep-&gt;add;
+      output = rep-&gt;output;
+    <font color="black">}</font>
+  <font color="darkblue">else</font>
+    <font color="black">{</font>
+      line_cb = debug_cb;
+      output = <font color="darkblue">lambda</font><font color="black">(</font><font color="darkred"><b>string</b></font> s<font color="black">)</font> <font color="black">{</font> write<font color="black">(</font><font color="green">"DEBUG: logfile = %s\n"</font>, s<font color="black">)</font>; <font color="black">}</font>;
+    <font color="black">}</font>
+
+  <font color="darkblue">if</font><font color="black">(</font>sizeof<font color="black">(</font>args<font color="black">)</font>&lt;2<font color="black">)</font>
+    <font color="black">{</font>
+      werror<font color="black">(</font><font color="green">"Usage: %s [ --debug ] logfile1 [ logfile2 ... ]\n"</font>, basename<font color="black">(</font>args<font color="black">[</font>0<font color="black">]</font><font color="black">)</font><font color="black">)</font>;
+      <font color="darkblue">return</font> 1;
+    <font color="black">}</font>
+  <font color="darkred"><b>int</b></font> ret = 0;
+  <font color="darkblue">foreach</font><font color="black">(</font>args<font color="black">[</font>1..<font color="black">]</font>, <font color="darkred"><b>string</b></font> fname<font color="black">)</font>
+    <font color="black">{</font>
+      rep-&gt;clear<font color="black">(</font><font color="black">)</font>;
+      <font color="darkblue">if</font><font color="black">(</font>CommonLog.read<font color="black">(</font>line_cb, fname<font color="black">)</font> <font color="black">)</font>
+	output<font color="black">(</font>fname<font color="black">)</font>;
+      <font color="darkblue">else</font>
+	<font color="black">(</font>werror<font color="black">(</font><font color="green">"Failed to read logfile %s\n"</font>, fname<font color="black">)</font>, ret = 2<font color="black">)</font>;
+    <font color="black">}</font>
+  <font color="darkblue">return</font> ret;
+<font color="black">}</font>
+
+<font color="darkred"><b>void</b></font> debug_cb<font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>int</b></font> | <font color="darkred"><b>string</b></font><font color="black">)</font> data, <font color="darkred"><b>void</b></font> | <font color="darkred"><b>int</b></font> offset<font color="black">)</font>
+<font color="black">{</font>
+  write<font color="black">(</font><font color="green">"data = %O\noffset = %d\n======================\n"</font>, data, offset<font color="black">)</font>;
+<font color="black">}</font>
+
+<font color="darkblue">class</font> Report
+<font color="black">{</font>
+  <font color="darkred"><b>mapping</b></font><font color="black">(</font><font color="darkred"><b>int</b></font>:<font color="darkred"><b>int</b></font><font color="black">)</font> codes = <font color="black">(</font><font color="black">[</font><font color="black">]</font><font color="black">)</font>, four_o_fours = <font color="black">(</font><font color="black">[</font><font color="black">]</font><font color="black">)</font>;
+  <font color="darkred"><b>void</b></font> clear<font color="black">(</font><font color="black">)</font> <font color="black">{</font> codes = <font color="black">(</font><font color="black">[</font><font color="black">]</font><font color="black">)</font>, four_o_fours = <font color="black">(</font><font color="black">[</font><font color="black">]</font><font color="black">)</font>; <font color="black">}</font>
+  <font color="darkred"><b>void</b></font> add<font color="black">(</font><font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>int</b></font> | <font color="darkred"><b>string</b></font><font color="black">)</font> data, <font color="darkred"><b>void</b></font> | <font color="darkred"><b>int</b></font> offset<font color="black">)</font>
+  <font color="black">{</font>
+    codes<font color="black">[</font>data<font color="black">[</font>13<font color="black">]</font><font color="black">]</font>++;
+    <font color="darkblue">if</font><font color="black">(</font>data<font color="black">[</font>13<font color="black">]</font>==404<font color="black">)</font>
+      four_o_fours<font color="black">[</font>data<font color="black">[</font>11<font color="black">]</font><font color="black">]</font>++;
+  <font color="black">}</font>
+  <font color="darkred"><b>void</b></font> output<font color="black">(</font><font color="darkred"><b>string</b></font> file<font color="black">)</font>
+  <font color="black">{</font>
+    <font color="darkred"><b>int</b></font> total = <font color="black">(</font><font color="darkred"><b>int</b></font><font color="black">)</font>`+<font color="black">(</font>@values<font color="black">(</font>codes<font color="black">)</font><font color="black">)</font>;
+    write<font color="black">(</font><font color="green">"Reply status code frequencies in logfile %s :\n"</font>+
+	  <font color="green">"CODE\tHOWMANY\tPERCENTAGE\n"</font>+<font color="green">"="</font>*60+<font color="green">"\n"</font>, file<font color="black">)</font>;
+    <font color="darkblue">foreach</font><font color="black">(</font>sort<font color="black">(</font>indices<font color="black">(</font>codes<font color="black">)</font><font color="black">)</font>, <font color="darkred"><b>int</b></font> code<font color="black">)</font>
+      write<font color="black">(</font><font color="green">"%d :\t%d\t%f %%\n"</font>, code, codes<font color="black">[</font>code<font color="black">]</font>, <font color="black">(</font><font color="black">(</font><font color="black">(</font><font color="darkred"><b>float</b></font><font color="black">)</font>codes<font color="black">[</font>code<font color="black">]</font><font color="black">)</font>/total<font color="black">)</font>*100.0<font color="black">)</font>;
+    write<font color="black">(</font><font color="green">"TOTAL:\t%d\n\n"</font>, total<font color="black">)</font>;
+    write<font color="black">(</font><font color="green">"Top-10 \"404\" requests:\nTimes\tPath\n"</font>+<font color="green">"="</font>*60+<font color="green">"\n"</font><font color="black">)</font>;
+    <font color="darkred"><b>array</b></font> paths, tallies;
+    <font color="black">[</font> paths, tallies <font color="black">]</font> = <font color="black">(</font><font color="black">{</font> indices<font color="black">(</font>four_o_fours<font color="black">)</font>, values<font color="black">(</font>four_o_fours<font color="black">)</font> <font color="black">}</font><font color="black">)</font>;
+    sort<font color="black">(</font>tallies, paths<font color="black">)</font>;
+    <font color="black">[</font> paths, tallies <font color="black">]</font> = map<font color="black">(</font> <font color="black">(</font><font color="black">{</font> paths, tallies <font color="black">}</font><font color="black">)</font>, reverse <font color="black">)</font>;
+    <font color="darkblue">for</font><font color="black">(</font><font color="darkred"><b>int</b></font> i=0;i&lt;min<font color="black">(</font>10,sizeof<font color="black">(</font>tallies<font color="black">)</font><font color="black">)</font>;i++<font color="black">)</font>
+	write<font color="black">(</font><font color="green">"%d\t%s\n"</font>, tallies<font color="black">[</font>i<font color="black">]</font>, paths<font color="black">[</font>i<font color="black">]</font><font color="black">)</font>;
+    write<font color="black">(</font><font color="green">"="</font>*60+<font color="green">"\nFile %s : report complete\n\n"</font>, file<font color="black">)</font>;
+  <font color="black">}</font>
+<font color="black">}</font>
+
+
+</pre></body></html>

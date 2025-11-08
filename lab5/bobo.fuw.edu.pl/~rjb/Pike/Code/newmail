@@ -1,0 +1,191 @@
+#!/usr/local/bin/pike -w
+#pragma strict_types
+
+class Mbox_iterator
+{
+  static
+  {
+    constant BSIZE = 8192;
+    Stdio.Stream f;
+    int which;
+    string current;
+    string buf = ""; // read-ahead into the stream
+  }
+
+  static int(0..1) find_next()
+  {
+    int offset;
+
+    /* find the beginning, usually we're already there.. */
+    while((offset=search(buf, "\n\nFrom "))==-1)
+      {
+	string tmp = f->read(BSIZE);
+	if(!sizeof(tmp))
+	  {
+	    current = "";
+	    return 0;
+	  }
+	buf += tmp;
+      }
+
+    buf = buf[offset..];
+
+    /* ..then the end */
+    while((offset=search(buf, "\n\nFrom ", 7))==-1)
+      {
+	string tmp = f->read(BSIZE);
+	if(!sizeof(tmp))
+	  {
+	    current = buf[2..]; // snip leading newlines
+	    buf = "";
+	    return 1;
+	  }
+	else
+	  {
+	    buf += tmp;
+	  }
+      }
+
+    current = buf[2..offset-1]; // snip leading newlines
+    buf = buf[offset..];
+    return 1;
+  }
+
+  int index()
+  {
+    return which;
+  }
+
+  string value()
+  {
+    return current;
+  }
+
+  int(0..1) `!()  // return 1 if the iterator is 'done'
+  {
+    return !sizeof(current);
+  }
+
+#if 0
+  Mbox_iterator `+(int(0..) nsteps)
+  {
+    error("Mbox_iterator.`+(): not implemented.\n");
+  }
+#endif
+
+  Mbox_iterator `+=(int(0..) nsteps)
+  {
+    while(nsteps--)
+      next();
+    return this_object();
+  }
+
+  int(0..1) next()  // like `+=(1), but return 0 if the iterator is finished
+  {
+    return find_next() ? (++which, 1) : 0;
+  }
+
+  int(0..1) first()  // restart, return 0 if it fails
+  {
+    return 0;
+  }
+
+  static void create(Stdio.Stream _f)
+  {
+    f = _f;
+    buf = f->read(BSIZE);
+    if(buf[..4]!="From ")
+      {
+	find_next();
+	return;
+      }
+    else // beginning is OK, find end
+      {
+	int offset;
+
+	while((offset=search(buf,"\n\nFrom ", 5))==-1)
+	  {
+	    string tmp = f->read(BSIZE);
+	    if(!sizeof(tmp))
+	      {
+		current = buf; // no leading newlines here
+		buf = "";
+		return;
+	      }
+	    else
+	      {
+		buf += tmp;
+	      }
+	  }
+
+	current = buf[..offset-1]; // no leading newlines here
+	buf = buf[offset..];
+	return;
+      }
+  }
+}
+
+int main(int ac, array(string) av)
+{
+  Stdio.Stream mbox;
+  array(array(string)) header_data = ({});
+
+  if(ac>1)
+    {
+      if(av[1]=="-")
+	mbox = Stdio.stdin;
+      else
+	mbox = Stdio.File(av[1], "r");
+    }
+  else
+    {
+      string mpath = (string)(getenv("MAIL") || 
+			      ("/var/mail/" + ( getenv("USER") || getenv("LOGNAME"))));
+      mbox = Stdio.File(mpath, "r");
+    }
+
+  Mbox_iterator it = Mbox_iterator(mbox);
+  
+  while(!!it)
+    {
+      header_data += ({ ({ (string)(it->index()+1) }) + headers(it->value()) });
+      it->next();
+    }
+
+  int cols = [int](Stdio.stderr->tcgetattr()->columns) || 80;
+  string format = "%{%-3s %!-"+(string)((cols-6)*2/5)+"s  %!-"+(string)((cols-6)*3/5)+
+    "s\n%}";
+
+  write(format, header_data);
+  return 0;
+}
+
+array(string) headers(string current)
+{
+  array(string) res = ({"",""});
+  
+  array(string) tmp = current/"\n\n";
+  if(tmp[0] == "")
+    {
+      current=tmp[1];
+    }
+  else if(tmp[0][..4]=="From ")
+    {
+      current = tmp[0];
+    }
+  else
+    error("headers(): unexpected malformed argument.");
+
+  foreach(current/"\n", string line)
+    {
+      if(lower_case(line[..4])=="from:")
+	{
+	  res[0] = line[5..];
+	}
+      else if(lower_case(line[..7])=="subject:")
+	{
+	  res[1] = line[8..];
+	}
+    }
+  return res;
+}

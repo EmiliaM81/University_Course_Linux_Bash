@@ -1,0 +1,110 @@
+mkdir Linux-Wojtowicz/lab3
+mkdir Linux-Wojtowicz
+cd /Linux-Wojtowicz
+cd Linux-Wojtowicz
+mkdir lab3
+cd lab3
+mkdir K1/K2
+mkdir K1 K1/K2
+tree
+nano a
+touch K1/a
+cp a K1/b
+rm K1/b
+cp a K2/b
+touch K2/b
+touch K2 b
+cp a K2/b
+tree
+rm K1/K2
+touch K2 b
+cp a b
+tree
+rm -f K@
+tree
+rm -f K2
+tree
+mv b K2
+tree
+mv K2 b
+mv b K1/K2
+tree
+rm a
+tree
+touch -t 202409130900 a
+mkdir K3
+rmdir K3
+tree
+rm a
+tree
+mkdir K3
+cp K1 K3
+cp -r K1 K3
+tree
+rm K3
+rm -f K3
+rmdir K3
+rmdir -f K3
+rmdir --ignore-fail-on-non-empty K3
+mkdir K1
+mkdir K3
+cp -r K1/* K3
+tree
+rmdir --ignore-fail-on-non-empty K3
+tree
+mkdir K3
+tree
+rmdir --ignore-fail-on-non-empty K3
+tree
+cd K3
+rm a
+rmdir -K1
+rmdir K1
+rmdir --ignore-fail-on-non-empty K1
+tree
+cd ..
+mkdir K3
+tree
+rm -ri K3
+tree
+mkdir K3
+tree
+cp -r K1/* K3/
+tree
+ls K3
+ls -l K3
+ls -l K3/
+tree
+tree > tree1
+tree
+ls -al K3/
+ls -rl K3/
+ls -Rl K3/
+rm -r K1
+tree
+cp -r ~ewao/Linux-lab3/ K3
+tree
+cd K3
+mv Linux-lab3/ Linux
+tree
+cp -r Linux/Fonts K3
+tree
+ls -l
+cd ..
+tree
+rm -r K3/K3
+tree
+cp -r K3/Linux/Fonts K3
+tree
+cd K3/K2
+mv b c
+tree
+cd ..
+mv K3 K1
+tree
+mv K1/Linux 
+mv K1/Linux lab3
+tree
+mv lab3 Linux
+tree
+history -w lab3.txt

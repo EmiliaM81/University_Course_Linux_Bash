@@ -1,0 +1,55 @@
+#! /usr/local/bin/pike -rt
+#pragma strict_types
+
+import .PiXPull;
+
+int(0..1) use_next = 0;
+
+mapping( Event:int ) stats( Parser xpp )
+{
+    Event current = xpp->getEventType();
+    if ( current != START_DOCUMENT )
+        error( "Parser not at START_DOCUMENT.\n" );
+    mapping(Event:int) result = ([]);
+
+    result[current]++;
+    while ( current != END_DOCUMENT )
+    {
+        current = ( use_next ? xpp->next() : xpp->nextToken() );
+        result[current]++;
+    }
+    return result;
+}
+
+int main( int ac, array(string) av )
+{
+    Stdio.Stream stream;
+
+    if ( ac > sizeof( av -= ({ "-n" }) ) )
+    {
+        ac = sizeof( av );
+        use_next = 1;
+    }
+
+    switch ( ac )
+    {
+    case 1: stream = Stdio.stdin; break;
+    case 2: stream = Stdio.File( av[1], "r" ); break;
+    default: error( basename( __FILE__ ) + ": wrong arguments.\n" );
+    }
+
+    Parser xpp = Parser()->setInput( stream );
+
+    int tstart = gethrtime();
+    mapping( Event:int ) results = stats( xpp );
+    int tend = gethrtime();
+    stream->close();
+    write( "Input encoding used: %s\n", xpp->getInputEncoding() );
+    write( "Parsing time: %.4fs\n", (tend-tstart)/1000000.0 );
+    write ( "Characters read: %d\n", xpp->offset );
+    foreach ( [array(Event)]sort( indices( TYPES ) ), Event ev )
+    {
+        write( "%s : %d\n", TYPES[ev], results[ev] );
+    }
+    return 0;
+}

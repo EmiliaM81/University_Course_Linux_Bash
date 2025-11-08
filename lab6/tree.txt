@@ -1,0 +1,23 @@
+.
+├── error7.log
+├── find-3a.txt
+├── find-3b.txt
+├── find-3c.txt
+├── find-3d.txt
+├── find-3e.txt
+├── hop
+├── procesy1.txt
+├── procesy2.txt
+├── procesy3.txt
+├── tree.txt
+├── zad1.txt
+├── zad2.txt
+├── zad3.txt
+├── zad4.txt
+├── zad5.txt
+├── zad6.zipgiga
+├── zad7.txt
+├── ZAD8
+└── zad9.txt
+
+1 directory, 19 files

@@ -1,0 +1,134 @@
+<html>
+
+<head>
+<title>Konta i hasła</title>
+<meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+<link rel="stylesheet" href="userguide.css" type="text/css" />
+</head>
+
+<body>
+  <div class="nav">
+  <table class="nav">
+  <tr>
+  <td><a href="index.html">Wstęp</a></td>
+  <td>Konta i hasła</td>
+  <td><a href="Pliki.html">Pliki i systemy plików</a></td>
+  <td><a href="Procesy.html">Programy i procesy</a></td>
+  <td><a href="Siec.html">Sieć i praca zdalna</a></td>
+  <td><a href="Linki.html">Zobacz też...</a></td>
+  </tr>
+  </table>
+  </div> <!-- nav -->
+<div class="section">
+<h2>Konta i hasła</h2>
+<div class="subsection">
+<p>
+,,Zapomniałem swojego hasła, czy może Pan mi je podać?'' Stawianie
+takiego pytania administratorowi nie ma sensu.  Ani administrator, ani
+nikt inny nie ma możliwości odczytania hasła dostępu do konta.
+Właściwy tekst w takiej sytuacji brzmi: ,,Zapomniałem swojego hasła,
+proszę o założenie mi nowego'' -- uprawnienia administratora pozwalają
+na zmianę hasła dowolnego użytkownika, bez potrzeby znajomości hasła
+dotychczasowego.
+</p>
+<p>
+Natomiast każdy użytkownik może w dowolnej chwili zmienić swoje własne
+hasło (no, chyba że właśnie zapomniał jakie ono było).  Służy do tego
+komenda <code>yppasswd</code>.  Wywołuje się ją bez żadnych argumentów, wynikiem
+będzie zapytanie o stare hasło i, po jego weryfikacji, prośba o
+wprowadzenie (dwukrotne) nowego hasła.  W wypadku pomyłki (nie
+wprowadzono dwukrotnie tego samego hasła) operacja się nie powiedzie i
+należy zacząć od nowa (od komendy <code>yppasswd</code>).
+</p>
+<blockquote><strong>
+W sieci studenckiej OKWF korzystamy do zmiany haseł z nieco niestandardowego 
+polecenia <code>yppasswd</code> - a nie, jak by to miało miejsce na 
+komputerze domowym wyposażonym w Linuxa - z polecenia <code>passwd</code>. Ma to
+związek z korzystaniem z haseł wspólnych dla wszystkich komputerów w sieci - 
+p. poniżej. Reszta opisu stosuje się bez zmian, różnica jest tylko co do
+nazwy polecenia.
+</strong></blockquote>
+<p>
+Po co wogóle są hasła?  Oczywiście przede wszystkim po to, by dostęp
+do komputerów miały jedynie osoby uprawnione.  Są też jednak i inne
+powody, wśród nich:
+<ul>
+	<li>
+	miejsce na dysku dostępne użytkownikowi jest limitowane,
+	na ogół nie chcemy aby ktoś inny korzystał z naszego limitu;
+	</li>
+	<li>
+	nie chcemy również by ktoś -- czy to z niewiedzy, czy to ze
+	złośliwości -- kasował nasze pliki;
+	</li>
+	<li>
+	zazwyczaj nie chcielibyśmy by osoby postronne miały
+	możliwość swobodnego czytania adresowanych do nas listów
+	czy też wysyłania listów w naszym imieniu;
+	</li>
+	<li>
+	działalność koleżanki/kolegi na komputerze może czasami
+	naruszać regulamin pracowni lub tzw. ,,dobre obyczaje'' --
+	więc jeśli już musi, to niech lepiej to robi na własny a
+	nie cudzy rachunek (w 99% takich przypadków da się ustalić
+	z czyjego konta korzystano, trudniej jest ustalić jaka to
+	osoba fizycznie siedziała przy terminalu);
+	</li>
+</ul>
+itp.  Stąd prosty wniosek: hasło chroni nie tylko system komputerowy
+ale również interes samego użytkownika.  We własnym interesie należy
+więc unikać udostępniania hasła konta osobom postronnym, jak również
+stosowania haseł które łatwo odgadnąć (np. komuś kto wie jak się
+nazywa mój pies czy jak ma na imię moja dziewczyna/żona/narzeczony
+itd.).
+</p>
+<p>
+Jakie więc reguły należy stosować przy wyborze hasła, aby było ono
+względnie ,,bezpieczne''?  Po pierwsze, długość hasła ograniczona jest
+do ośmiu znaków.  Dłuższe hasła są akceptowane przez system bez
+sprzeciwu, ale dalszy ciąg jest ignorowany (tj. nie podlega
+sprawdzaniu).  Po drugie -- jak już wspomniano -- nie ma metody
+efektywnego ,,odszyfrowania'' haseł, istnieje jednak metoda ,,prób i
+błędów'' za pomocą której można próbować hasło ,,złamać'', czasami z
+powodzeniem.  Metoda ta jest (statystycznie) dość skuteczna po
+pierwsze dzięki temu, że realizuje się ją oczywiście za pomocą
+odpowiedniego programu komputerowego, a komputery to obecnie dość
+szybkie bestie; a po drugie, dzięki naturalnej skłonności użytkowników
+do wybierania haseł ,,łatwych do zapamiętania''.  Nieco upraszczając i
+nie wnikając w szczegóły techniczne: nieodporne na atak są hasła
+będące po prostu wyrazami występującymi w słownikach języka polskiego,
+angielskiego czy innych w miarę pospolitych; na pewno nie jest
+bezpieczne hasło identyczne z nazwą konta (loginem), czy będące
+np. tym samym loginem ale zapisanym wielkimi literami; itd.  Prosta
+reguła mówi że hasło jest tym ,,lepsze'', im bardziej przypomina czysto
+losowy ciąg znaków.  W osiągnięciu tego efektu pomaga np. mieszanie
+małych i wielkich liter, cyfr, czy wtrącenie znaków przestankowych.
+</p>
+</div> <!-- subsection -->
+<h3>Uwagi praktyczne</h3>
+<div class="subsection">
+<ul>
+<li>
+W OKWF hasła dla komputerów unixowych (Linux: komputery w salach ćwiczeń
+i salach pracy własnej, <em>primus</em>; Sun Solaris: <em>tempac</em>)
+są obsługiwane przez sieciową bazę danych (<em>NIS</em>), a zatem na
+wszystkich tych komputerach obowiązują <strong>te same</strong> konta i hasła.
+</li>
+<!--
+<li>
+Hasła w sieci unixowej OKWF i hasła w sieci Novell (tj. dla komputerów
+uruchamianych w trybie DOS/Windows) <strong>są niezależne</strong>, nawet
+jeżeli przy tworzeniu konta nadaje się im dla wygody te same wartości
+początkowe.  Zmiana jednego z tych haseł nie skutkuje więc automatycznie
+zmianą drugiego.
+</li>
+-->
+<li>
+W hasłach unixowych rozróżniane są wielkie i małe litery.
+</li>
+</ul>
+</div> <!-- subsection -->
+<blockquote>Czytane <accessed type="number"/> razy.</blockquote>
+</div> <!-- section -->
+</body>
+</html>

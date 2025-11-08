@@ -1,0 +1,18 @@
+Script started on 2024-12-15 16:45:13+01:00 [TERM="xterm" TTY="/dev/pts/32" COLUMNS="80" LINES="24"]
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ treecp s4.sh s4.txt3.sh s3.txt4.sh s4.txttree[K[Ktreecp s4.sh s4.txt3.sh s3.txt2.sh s2.txttree[Kcp s2.sh s2.txt3.sh s3.txt4.sh s4.txttree[K[K./s1.sh
+[?2004lPodaj słowo: 
+
+to
+Podane słowo: to
+
+Podaj katalog, w którym będziesz wyszukiwać plików zawierających podane słowo: 
+
+
+Podany katalog: 
+
+Liczba słow 7 
+
+[?2004h]0;4wojtowicze@taurus: ~/Linux-Wojtowicz/lab10[01;32m4wojtowicze@taurus[00m:[01;34m~/Linux-Wojtowicz/lab10[00m$ m[Kexit
+[?2004lexit
+
+Script done on 2024-12-15 16:45:57+01:00 [COMMAND_EXIT_CODE="0"]

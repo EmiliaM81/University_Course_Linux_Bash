@@ -1,0 +1,10 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+4wojtow+ 3046763  0.0  0.0  22352  6512 pts/291  Ss   15:13   0:00 -bash
+4wojtow+ 3049284  0.0  0.0   9480  3516 pts/291  S    15:22   0:00 /bin/bash ./hop
+4wojtow+ 3049714  0.0  0.0   8780  2668 pts/291  T    15:25   0:00 nano hop
+4wojtow+ 3049792  0.0  0.0  22352  6536 pts/279  Ss   15:26   0:00 -bash
+4wojtow+ 3050113  0.0  0.0  20716  4764 pts/291  T    15:27   0:00 nano hop
+4wojtow+ 3050176  0.0  0.0   9480  3468 pts/291  S+   15:28   0:00 /bin/bash ./hop
+4wojtow+ 3050723  0.0  0.0   7896   568 pts/291  S    15:31   0:00 sleep 4
+4wojtow+ 3050730  0.0  0.0   7896   504 pts/291  S+   15:31   0:00 sleep 4
+4wojtow+ 3050731  0.0  0.0  23320  5392 pts/279  R+   15:31   0:00 ps -u

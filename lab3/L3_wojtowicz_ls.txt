@@ -1,0 +1,12 @@
+total 51K
+-rw-r--r-- 1 4wojtowicze stud2024  937 Oct 24 16:55 3_wojtowicz_tree.txt
+-rw-r--r-- 1 4wojtowicze stud2024    0 Oct 21 11:03 a
+-rw-r--r-- 1 4wojtowicze stud2024   16 Oct 24 16:50 a.sh
+-rw-r--r-- 1 4wojtowicze stud2024    9 Oct 21 11:10 a.sh~
+-rw-r--r-- 1 4wojtowicze stud2024   16 Sep 12  2023 b.sh
+drwxr-xr-x 4 4wojtowicze stud2024    4 Oct 24 14:43 K1
+-rw-r--r-- 1 4wojtowicze stud2024    0 Oct 24 16:58 L3_wojtowicz_ls.txt
+-rw-r--r-- 1 4wojtowicze stud2024  973 Oct 24 16:56 L3_wojtowicz_tree.txt
+-rw------- 1 4wojtowicze stud2024 1.2K Oct 21 11:24 lab3.txt
+drwxr-xr-x 4 4wojtowicze stud2024    4 Oct 21 11:10 Linux
+-rw-r--r-- 1 4wojtowicze stud2024  198 Oct 21 11:05 tree1

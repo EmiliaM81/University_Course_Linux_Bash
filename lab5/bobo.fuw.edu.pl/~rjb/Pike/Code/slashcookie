@@ -1,0 +1,31 @@
+#! /usr/local/bin/pike
+#pragma strict_types
+
+int main()
+{
+  mapping(string:string) mh;
+  array err = [array]catch( mh = [mapping(string:string)](
+    Protocols.HTTP.do_method("HEAD","http://slashdot.org/")->headers ) );
+  if(err||!mh)
+    { 
+      werror("Failed!\n"); 
+      if(err) 
+	werror("%s\n", err[0]);
+      return 1; }
+  foreach(indices(mh), string idx)
+    { 
+      if( (idx[..1]!="x-")||(idx[..8]=="x-powered") )
+	mh -= ([ idx:mh[idx] ]); 
+    }
+  if(!sizeof(mh))
+    { werror("Nada!\n"); return 0; }
+  string res = "";
+  foreach(mh; string idx; string val)
+    {
+      res += String.capitalize(idx[2..]) + ": " + val + "\n";
+    }
+
+  int width = [int](Stdio.stdout->tcgetattr()->columns) || 80;
+  write("%-="+(string)width+"s", res);
+  return 0;
+}

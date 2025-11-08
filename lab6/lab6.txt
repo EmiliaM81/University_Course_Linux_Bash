@@ -1,0 +1,749 @@
+    1  passwd
+    2  exit
+    3  pluma
+    4  exit
+    5  ls
+    6  pwd
+    7  exit
+    8  mkdir Linux-Wojtowicz/lab3
+    9  mkdir Linux-Wojtowicz
+   10  cd /Linux-Wojtowicz
+   11  cd Linux-Wojtowicz
+   12  mkdir lab3
+   13  cd lab3
+   14  mkdir K1/K2
+   15  mkdir K1 K1/K2
+   16  tree
+   17  nano a
+   18  touch K1/a
+   19  cp a K1/b
+   20  rm K1/b
+   21  cp a K2/b
+   22  touch K2/b
+   23  touch K2 b
+   24  cp a K2/b
+   25  tree
+   26  rm K1/K2
+   27  touch K2 b
+   28  cp a b
+   29  tree
+   30  rm -f K@
+   31  tree
+   32  rm -f K2
+   33  tree
+   34  mv b K2
+   35  tree
+   36  mv K2 b
+   37  mv b K1/K2
+   38  tree
+   39  rm a
+   40  tree
+   41  touch -t 202409130900 a
+   42  mkdir K3
+   43  rmdir K3
+   44  tree
+   45  rm a
+   46  tree
+   47  mkdir K3
+   48  cp K1 K3
+   49  cp -r K1 K3
+   50  tree
+   51  rm K3
+   52  rm -f K3
+   53  rmdir K3
+   54  rmdir -f K3
+   55  rmdir --ignore-fail-on-non-empty K3
+   56  mkdir K1
+   57  mkdir K3
+   58  cp -r K1/* K3
+   59  tree
+   60  rmdir --ignore-fail-on-non-empty K3
+   61  tree
+   62  mkdir K3
+   63  tree
+   64  rmdir --ignore-fail-on-non-empty K3
+   65  tree
+   66  cd K3
+   67  rm a
+   68  rmdir -K1
+   69  rmdir K1
+   70  rmdir --ignore-fail-on-non-empty K1
+   71  tree
+   72  cd ..
+   73  mkdir K3
+   74  tree
+   75  rm -ri K3
+   76  tree
+   77  mkdir K3
+   78  tree
+   79  cp -r K1/* K3/
+   80  tree
+   81  ls K3
+   82  ls -l K3
+   83  ls -l K3/
+   84  tree
+   85  tree > tree1
+   86  tree
+   87  ls -al K3/
+   88  ls -rl K3/
+   89  ls -Rl K3/
+   90  rm -r K1
+   91  tree
+   92  cp -r ~ewao/Linux-lab3/ K3
+   93  tree
+   94  cd K3
+   95  mv Linux-lab3/ Linux
+   96  tree
+   97  cp -r Linux/Fonts K3
+   98  tree
+   99  ls -l
+  100  cd ..
+  101  tree
+  102  rm -r K3/K3
+  103  tree
+  104  cp -r K3/Linux/Fonts K3
+  105  tree
+  106  cd K3/K2
+  107  mv b c
+  108  tree
+  109  cd ..
+  110  mv K3 K1
+  111  tree
+  112  mv K1/Linux 
+  113  mv K1/Linux lab3
+  114  tree
+  115  mv lab3 Linux
+  116  tree
+  117  history -w lab3.txt
+  118  history
+  119  cd
+  120  cd /Linux-Wojtowicz
+  121  hisotry 10
+  122  history 10
+  123  hisotry -10
+  124  history -10
+  125  cd /Linux-Wojtowicz
+  126  pluma
+  127  cd /Linux-Wojtowicz
+  128  ssh 4wojtowicze@taurus.fis.agh.edu.pl
+  129  cp -r ~ewao/Linux-lab3/ K3
+  130  tree
+  131  hidtory
+  132  history
+  133  tree
+  134  cd Linux-Wojtowicz/
+  135  cd
+  136  mv /Linux-Wojtowicz/Linux/A/a.sh /Linux-Wojtowicz/lab3
+  137  mv /Linux-Wojtowicz/lab3/Linux/A/a.sh /Linux-Wojtowicz/lab3
+  138  cd /Linuz-Wojtowicz
+  139  cd /Linux-Wojtowicz
+  140  cd Linux-Wojtowicz/
+  141  mv lab3/Linux/A/a.sh lab3
+  142  mv lab3/Linux/A/b.sh lab3
+  143  mv lab3/K1/a lab3
+  144  tree
+  145  tree
+  146  cd Linux-Wojtowicz/lab3/
+  147  cp -b b.sh a.sh
+  148  tree
+  149  touch -t 202309121111 b.sh
+  150  tree .. > 3_wojtowicz_tree.txt
+  151  tree .. > L3_wojtowicz_tree.txt
+  152  cp L3_wojtowicz_tree.txt ~ewao/Stud2024
+  153  ls -lh > L3_wojtowicz_ls.txt
+  154  cp L3_wojtowicz_ls.txt ~ewao/Stud2024
+  155  tree
+  156  ls -lh
+  157  touch -t 202309121111 b.sh
+  158  ls -lh
+  159  [A
+  160  touch -t 202309131111 b.sh
+  161  ls -lh 
+  162  tree
+  163  cd Linux-Wojtowicz/
+  164  cat L3_wojtowicz_tree.txt
+  165  cat lab3/L3_wojtowicz_tree.txt
+  166  tree
+  167  rm 3_wojtowicz_tree.txt
+  168  rm Linux-Wojtowicz/lab3/3_wojtowicz_tree.txt
+  169  tree
+  170  cat Linux-Wojtowicz/lab3/L3_wojtowicz_tree.txt
+  171  tree
+  172  history -w lab3.txt
+  173  tree
+  174  vi lab3.txt
+  175  tree
+  176  r, ~ewao/bbb/b
+  177  rm ~ewao/bbb/b
+  178  mkdir ~ewao/bbb/Emilia
+  179  ls ~ewao/bbb
+  180  tree
+  181  cd lab4
+  182  cd Linux-Wojtowicz/lab4
+  183  tree
+  184  tree
+  185  cd lab4
+  186  mkdir K1 K2 LN
+  187  tree
+  188  cd K1/a
+  189  touch K1/a
+  190  umask K1 K2 LN
+  191  umask K!
+  192  umask K1
+  193  umask -S
+  194  cd K1
+  195  cat > a
+  196  cd ..
+  197  chmod 000 K1/a
+  198  chmod 000 *
+  199  ls -ld K1
+  200  ls -ld K1/a
+  201  chmod a+x K1
+  202  ls -ld K1/a
+  203  chmod u+r K1
+  204  chmod ug+r K1
+  205  chmod u+w K1
+  206  chmod u-w K1
+  207  chmod u+r K1/a
+  208  chmod u+r K1
+  209  chmod u+w K1/a
+  210  cat > K1/a
+  211  cat >> K1/a
+  212  chmod u+x K1 K1/a
+  213  ls -ld K1
+  214  chmod 100 K2
+  215  ls -ld K@
+  216  ls -ld K2
+  217  touch K2/K22
+  218  chmod 300 K2
+  219  touch K2/K22
+  220  chmod 200 K2
+  221  ls -ld K2
+  222  cp K1/a K2/a K1/aa
+  223  cp K1/a K2/a
+  224  chmod 300 K2
+  225  cp K1/a K2/a
+  226  cp K1/a K1/aa
+  227  chmod u+rwx K1
+  228  cp K1/a K1/aa
+  229  rm K1/a
+  230  ls -lR
+  231  chmod g+r K1
+  232  ls -lR
+  233  chmod a+r K1
+  234  ls -lR
+  235  chmod a-r K1
+  236  chmod u+r K1
+  237  ls -lR
+  238  chmod g+r K1/aa
+  239  ls -lR
+  240  chmod -R u+rwx lab4 K1 K2 LN
+  241  cd ..
+  242  chmod -R u+rwx lab4 lab4/K1 lab4/K2 lab4/LN
+  243  cd lab4
+  244  ls -lR
+  245  umask
+  246  umask 226
+  247  touch uneditable 
+  248  ls -lR uneditable
+  249  umask 022
+  250  ls -lR
+  251  chmod -R a+x K2
+  252  ls -lR
+  253  chmod -R a-x K2
+  254  chmod - a-x K2/a
+  255  cd K2
+  256  chmod u+x K2
+  257  cd K2
+  258  cd ..
+  259  ls -lR
+  260  chmod go-x K2/a 
+  261  tree
+  262  ls -lR
+  263  chmod g+r K2/a
+  264  ls -lR
+  265  ls -lR K2
+  266  ls -lR K2/K22
+  267  ls -lR 
+  268  ln K2/a a_hrd a_hrd -s a_lnk
+  269  ln K2/a a_hrd a_hrd -s K2/a a_lnk
+  270  ln K2/a a_hrd a_hrd
+  271  ln K2/a a_hrd a_hrd2
+  272  ln a_hrd K2/a
+  273  ln K2/a K2/a_hrd 
+  274  ln K2/a K2/a_hrd2
+  275  rm K2/a_hrd
+  276  rm K2/a_hrd2
+  277  tree
+  278  ln K2/a 
+  279  tree
+  280  rm ~/a_hrd
+  281  ln K2/a ~/a_hrd
+  282  ..
+  283  cd ..
+  284  tree
+  285  cd linux4
+  286  cd linux/4
+  287  cd linux4/
+  288  cd lab4
+  289  rm ~/a_hrd
+  290  cd ..
+  291  ln lab4/K2/a lab4/a_hrd
+  292  ln lab4/K2/a lab4/a_hrd2
+  293  ln -s lab4/K2/a lab4/a_lnk
+  294  ls -l
+  295  ls -l lab4/a_hrd
+  296  ls -l lab4/a_hrd2
+  297  cd lab4
+  298  cp a_hrd a_cp
+  299  ls -l a_hrd2
+  300  ls -l a_hrd
+  301  ls -l a_cp
+  302  cat > K2/a
+  303  cat a_hrd
+  304  cta K2/a
+  305  cat > K2/a
+  306  cat >> K2/a
+  307  cat >> a_hrd
+  308  cat K2/a
+  309  cat a_lnk
+  310  cat a_hrd
+  311  cat a_hrd2
+  312  touch ./a_hrd2
+  313  touch ./a_lnk
+  314  ln -s lab4/K2/a lab4/a_lnk
+  315  cd ..
+  316  ln -s lab4/K2/a lab4/a_lnk
+  317  cd lab4
+  318  touch ./a_lnk
+  319  ln -s K2/a a_lnk
+  320  rm ./a_hrd
+  321  rm ./a_hrd2
+  322  rm ./a_lnk
+  323  ./a_hrd2
+  324  ln -s K2/a a_lnk
+  325  ln K2/a a_hrd
+  326  ln K2/a a_hrd2
+  327  ./a_hrd2
+  328  ./a_lnk
+  329  cp a_lnk a_lnk2
+  330  cp -d a_lnk a_lnk2
+  331  mv K2/a K2/K22/
+  332  mv K2/a K2/K22
+  333  cat K2/K22/a
+  334  tree K2
+  335  tree
+  336  tree K2/K222
+  337  tree K2/K22
+  338  cat a_lnk
+  339  ls -l
+  340  cp a_lnk a_lnk2
+  341  cp -d a_lnk a_lnk3
+  342  ls -l
+  343  cd Linux-Wojtowicz/lab4
+  344  tree
+  345  cd Linux-Wojtowicz/
+  346  tree
+  347  cd lab4
+  348  ln -s K1/K22/a a_lnk
+  349  rm a_lnk
+  350  ln -s K1/K22/a a_lnk
+  351  tree
+  352  ln -sf K1/K22/a a_nlk
+  353  ln -sf K1/K22/a a_lnk
+  354  rm a_nlk
+  355  tree
+  356  ln -sf ~/K1/K22/a a_lnk3
+  357  tree
+  358  mv a_* LN
+  359  tree
+  360  ls -l LN
+  361  cp K2
+  362  cd K2
+  363  tree
+  364  cd K22
+  365  mkdir K22
+  366  ln -s 
+  367  cd K22
+  368  rm K22
+  369  mkdir K22
+  370  touch a
+  371  tree
+  372  rm a
+  373  touch K22/a
+  374  cd ..
+  375  tree
+  376  rm -r K2/K22
+  377  tree
+  378  mkdir K1/K22
+  379  touch K1/K22/a
+  380  tree
+  381  rm -r K1/K22
+  382  mkdir K2/K22
+  383  touch K2/K22/a
+  384  tree
+  385  ln -sf ~/K1/K22/a a_lnk3
+  386  touch K1/a
+  387  ln -sf ~/K1/K22/a a_lnk3
+  388  tree
+  389  rm a_lnk3
+  390  cd LN
+  391  ln -sf ~/K1/K22/a a_lnk3
+  392  tree
+  393  cd ..
+  394  tree
+  395  ln -s K2 Ka2
+  396  ln -l
+  397  ls -l
+  398  ls -lR
+  399  cd L
+  400  cd LN
+  401  ls -lR
+  402  cp ~ewao/Linux-lab4/kotek.lnk LN/mykotek.lnk
+  403  cp ~ewao/Linux-lab4/kotek.lnk mykotek.lnk
+  404  rm mykotek.lnk
+  405  ln -s ~ewao/Linux-lab4/kotek.lnk mykotek.lnk
+  406  ln -s ~ewao/Linux-lab4/kotek2.lnk mykotek2.lnk
+  407  ./mykotek2.lnk
+  408  ls -l
+  409  cp ~ewao/Linux-lab4/kotek/txt .
+  410  cp ~ewao/Linux-lab4/kotek.txt .
+  411  ./mykotek2.lnk
+  412  ./mykotek.lnk
+  413  cp ~ewao/Linux-lab4/kotek.lnk .
+  414  ./mykotek.lnk
+  415  tree
+  416  rm kotek.txt
+  417  rm kotek.lnk
+  418  cp ~ewao/Linux-lab4/kotek.txt .
+  419  ./mykotek.lnk
+  420  cat mykotet.lnk
+  421  cat mykotek.lnk
+  422  ln ~ewao/Linux-lab4/lista-l3 lista_hrd
+  423  echo "Emilia Wojtowicz" >> lista_hrd
+  424  ls -lR
+  425  ln /bin/zcat zcat
+  426  ln -s /bin/zcat zcat
+  427  cd ..
+  428  ls -lAhR > L3_Wojtowicz.txt
+  429  tree >> L3_Wojtowicz.txt
+  430  history > hisotry4.txt
+  431  cp L3_Wojtowicz.txt ~ewao/Stud2024/lab4
+  432  tree
+  433  cd Linux-Wojtowicz/lab4
+  434  tree
+  435  pwd
+  436  cd Linux-Wojtowicz/
+  437  cd lab4
+  438  tree
+  439  cd Linux-Wojtowicz/lab4
+  440  mv hisotry4.txt lab4.txt
+  441  tree
+  442  ssh taurus "users"
+  443  cd Linux-Wojtowicz/lab4
+  444  tree
+  445  cd ..
+  446  cd lab4
+  447  cd ..
+  448  cd lab5
+  449  tree
+  450  vi users
+  451  cd Linux-Wojtowicz/lab5
+  452  ping 5 stud101-10.fis.agh.edu.pl > ZIP/stud-ping
+  453  cd Linux-Wojtowicz/lab5
+  454  tree
+  455  nano ZIP/users
+  456  finger -s Ewa Olejarz
+  457  ssh 4wojtowicze@taurus.fis.agh.edu.pl "finger mindur" > ZIP/user-info
+  458  cat ********* >> ZIP/user-info
+  459  cd ZIP
+  460  cat ***** >> user-info
+  461  cat "*****" >> user-info
+  462  echo "********" >> user-info
+  463  finger -s Ewa Olejarz >> user-info
+  464  cd Linux-Wojtowicz/lab5
+  465  tree
+  466  wget -r http://boo.fuw.edu.pl/Unix/
+  467  wget -r /ZIP  http://boo.fuw.edu.pl/Unix/
+  468  wget -r /ZIP http://bobo.fuw.edu.pl/Unix/
+  469  wget . http://wms.mat.agh.edu.pl/~ewao/~ewao/HP.tar.gz
+  470  wget . http://wms.mat.agh.edu.pl/~ewao/HP.tar.gz
+  471  wget . http://wms.mat.agh.edu.pl/~ewao/TS.zip
+  472  tree
+  473  tar -x HP.tar.gz
+  474  gzip HP.tar.gz
+  475  gynzip HP.tar.gz
+  476  gunzip HP.tar.gz
+  477  gunzip TS.zip
+  478  tar -x TS.zip
+  479  tar -xf TS.zip
+  480  unzip TS.zip
+  481  tree
+  482  rm HP.tar
+  483  rm TS.zip
+  484  tree
+  485  mkdir L3_Wojtowicz
+  486  zip -r archiwum.zip lab5/
+  487  zip -r archiwum.zip lab5
+  488  cd L3_Wojtowicz/
+  489  zip -r archiwum.zip lab5
+  490  cd ..
+  491  rmdir L3_Wojtowicz
+  492  cd ..
+  493  zip -r L3_Wojtowicz.zip lab5/*
+  494  tree
+  495  tar cz lab4/ZIP
+  496  tar cz lab5/ZIP
+  497  rm L3_Wojtowicz.zip
+  498  cd lab4
+  499  zip -r L3_Wojtowicz.zip /*
+  500  10
+  501  cd Linux-Wojtowicz/lab5
+  502  tree
+  503  cd ..
+  504  tree
+  505  zip -r L3_Wojtowicz lab5/*
+  506  tree
+  507  cd lab5
+  508  wget http://wms.mat.agh.edu.pl/~ewao/HP.tar.gz
+  509  tar -xzvf HP.tar.gz
+  510  rm HP.tar.gz
+  511  tree
+  512  cd ..
+  513  mv L3_Wojtowicz.zip lab5/
+  514  cd
+  515  cd Linux-Wojtowicz/lab5
+  516  tree
+  517  tar czvf L3_Wojtowicz.tar.gz ZIP HP
+  518  tree
+  519  tar czvf L3_Wojtowicz.tar.gz -C ZIP HP/cw1
+  520  tar czvf L3_Wojtowicz.tar.gz -C ZIP HP/cw01
+  521  tar czvf L3_Wojtowicz.tar.gz -C HP/cw01 ZIP
+  522  tar rvf L3_Wojtowicz.tar.gz -C HP cw01
+  523  tar tf L3_Wojtowicz.tar.gz 
+  524  zipinfo L3_Wojtowicz.zip
+  525  mc L3_Wojtowicz.zip
+  526  cp L3_Wojtowicz.zip ~ewao/Stud204/lab5
+  527  cp L3_Wojtowicz.zip ~ewao/Stud2024/lab5
+  528  cp L3_Wojtowicz.tar.gz ~ewao/Stud2024/lab5
+  529  history -w lab5.txt
+  530  tree
+  531  cd Linux-Wojtowicz/;ab4
+  532  cd lab4
+  533  tree
+  534  ls -l
+  535  mask
+  536  umask
+  537  touch uneditable1
+  538  ls -l
+  539  umask 226
+  540  touch uneditable2
+  541  ls -l
+  542  rm uneditable 1
+  543  ls -l
+  544  umask
+  545  mv uneditable2 uneditable
+  546  rm uneditable1
+  547  ls -l
+  548  cd Linux-Wojtowicz/
+  549  rm -ri lab5
+  550  cd Linux-Wojtowicz/lab6
+  551  jobs
+  552  ps -ef
+  553  ps -ef > procesy1.txt
+  554  jobs
+  555  top
+  556  jobs
+  557  ps -ef
+  558  ps -ef > procesy2.txt 
+  559  ps
+  560  ps -ef
+  561  cat > plik
+  562  bg
+  563  jobs
+  564  ls -l
+  565  jobs -l
+  566  cat plik
+  567  rm plik
+  568  fg %1
+  569  cat plik
+  570  jobs -l
+  571  nano hop&
+  572  jobs -l
+  573  ps
+  574  ps -p
+  575  ps -p 2172808
+  576  jobs
+  577  bg %n
+  578  jobs
+  579  fg %1
+  580  chmod ax
+  581  chmod a-x
+  582  chmod a+x hop
+  583  ls -l
+  584  ./hop
+  585  bs
+  586  bg
+  587  jobs
+  588  bg
+  589  jobs
+  590  ./hop
+  591  bg
+  592  kill %1
+  593  jobs
+  594  fg
+  595  jobs
+  596  kill %2
+  597  jobs
+  598  ./hop
+  599  bg
+  600  jobs
+  601  fg ./hop
+  602  jobs
+  603  bs
+  604  bg
+  605  jobs
+  606  fg hop
+  607  fg %1
+  608  bg
+  609  jobs
+  610  ./hop &
+  611  jobs
+  612  ls -l
+  613  jobs -l
+  614  fg %2
+  615  ps
+  616  ps -f
+  617  nano hop&
+  618  jobs
+  619  fg %2
+  620  ./hop &
+  621  cd Linux-Wojtowicz/lab6
+  622  top
+  623  kill
+  624  kill ./hop
+  625  kill %2
+  626  top
+  627  cd Linux-Wojtowicz/lab6
+  628  tree
+  629  find ~ewao/UNIX -type f -mtime -14
+  630  find ~ewao/UNIX -type f -mtime -14 > zad1.txt
+  631  find ~ewao/UNIX -type f -size +100k
+  632  find ~ewao/UNIX -type f -size +100k > zad2.txt
+  633  find ~ewao/UNIX size +3k -10k 
+  634  find ~ewao/UNIX size +3k -size -10k
+  635  find ~ewao/UNIX -size +3k -size -10k
+  636  find ~ewao/UNIX -size +3k -size -10k | ls -lh
+  637  find ~ewao/UNIX -size +3k -size -10k | xargs ls -lh
+  638  find ~ewao/UNIX -size +3k -size -10k | xargs ls -lh > procesy3.txt
+  639  find ~ewao/UNIX -size +3k -size -10k | xargs ls -lh > zad3.txt
+  640  tree
+  641  nano procesy3.txt
+  642  ls -l 
+  643  ./hop
+  644  ./hop &
+  645  cd Linux-Wojtowicz/lab6
+  646  jobs -l
+  647  jobs
+  648  ps -ef
+  649  ps -ef > procesy1.txt
+  650  htop
+  651  ps
+  652  ps -e
+  653  ps -u
+  654  ps -u > procesy2.txt
+  655  kill
+  656  pkill hop
+  657  kill hop
+  658  jobs -l
+  659  ps -u
+  660  kill nano
+  661  jobs -l
+  662  ps
+  663  kill ps
+  664  jobs
+  665  jobs -l
+  666  ps
+  667  kill 3051924
+  668  ps -y
+  669  ps -u
+  670  kill 3052019
+  671  pkill 3052019
+  672  pkill 3050113
+  673  pkill 3049714
+  674  ps -u
+  675  jobs
+  676  jobs -l
+  677  ps
+  678  ps aux
+  679  ps -aux > procesy3.txt
+  680  ps
+  681  ps -ef
+  682  cat > plik
+  683  bg
+  684  jobs -l
+  685  cat plik
+  686  rm plik
+  687  fg
+  688  ls -l
+  689  jobs -l
+  690  nano hop&
+  691  jobs -l
+  692  fg
+  693  chmod a+x hop
+  694  ls -l
+  695  ./hop
+  696  bg
+  697  ./hop &
+  698  jobs -l
+  699  fg
+  700  ps
+  701  nano hop &
+  702  ps -ef >> procesy1.txt
+  703  nano hop
+  704  ./hop
+  705  cd Linux-Wojtowicz/lab6
+  706  tree
+  707  find ~/ewao/UNIX -type f -mtime -14
+  708  find ~ewao/UNIX -type f -mtime -14
+  709  find ~ewao/UNIX -type f -mtime -14 > zad1.txt
+  710  tree
+  711  find ~ewao/UNIX -type f -size +100k
+  712  find ~ewao/UNIX -type f -size +100k > zad2.txt
+  713  find ~ewao/UNIX -type f -size -10k -size +3k | xargs ls -lh
+  714  find ~ewao/UNIX -type f -size -10k -size +3k | xargs ls -lh > zad3.txt
+  715  find /etc -type f -name config ! -type d
+  716  find /etc -type f -name config ! -type d > zad4.txt
+  717  find ~ewao -type f -user
+  718  find ~ewao -type f -perm u
+  719  find ~ewao -type f -perm
+  720  find ~ewao -type f -perm u=rwx
+  721  find ~ewao -type f -perm u=rwx 2>/dev/null
+  722  find ~ewao -type f -perm u=rwx 2>/dev/null > zad5.txt
+  723  find ~ewao -type f -perm u=rwx 2>/dev/null | xargs zip zad6.zipgiga nagrywka
+  724  tree
+  725  find /bin -perm 777 | xargs ls -l 
+  726  find /bin -perm 777 | xargs ls -l > zad7.txt 2> error7.log
+  727  tree
+  728  mkdir ZAD8
+  729  find ~ewao -type f -name ".txt" -perm u=rwx -exec cp {} /ZAD8/ \; 2>/dev/null 
+  730  tree
+  731  whereis dict 
+  732  whereis dict > zad9.txt
+  733  tree
+  734  find /etc -type d -name '????' ! -name '[b-w]*' ! -name '[B-W]*'
+  735  find /etc -type d -name '????' ! -name '[b-w]*' ! -name '[B-W]*' > find-3a.txt
+  736  find /etc -type l -name '*[0-9]?'
+  737  find /etc -type l -name '*[0-9]?' > find-3b.txt
+  738  tree
+  739  find /etc -maxdepth 2 \( -type l -name '?????' -o -type d -name '??' \) > find-3c.txt
+  740  tree
+  741  find /etc -type f -name '[bc]*' ! -name '[._-]*' -name ????????*' > find-3d.txt
+
+  742  tree
+  743  find /etc -type f -name '[bc]*' ! -name '*[._-]*' -name '????????*' > find-3d.txt
+  744  tree
+  745  find /etc -type f -o -type d -name '[a-z]??[0-9]' -mtime +365 -exec ls -l {} \; > find-3e.txt
+  746  tree
+  747  tree > tree.txt
+  748  history > lab6.txt

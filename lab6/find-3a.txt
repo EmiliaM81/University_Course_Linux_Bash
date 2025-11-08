@@ -1,0 +1,6 @@
+/etc/alsa
+/etc/xrdp
+/etc/xrdb
+/etc/X11/xrdp
+/etc/acpi
+/etc/exim4/conf.d/auth

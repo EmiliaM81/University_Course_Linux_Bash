@@ -1,0 +1,107 @@
+#!/usr/local/bin/pike
+#pragma strict_types
+
+typedef int(1..12) Month;
+typedef int(1..31) Day;
+typedef int(1..) Year;
+
+constant weekdays = ({ "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" });
+
+string month_name( Month month )
+{
+	return ({ "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December" })[month-1];
+}
+
+int(28..31) month_length( Month month, Year year )
+{
+    switch (month)
+    {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            return 31;
+        case 4: case 6: case 9: case 11:
+            return 30;
+        case 2:
+            if( (year % 4) || (!(year % 100) && ((year/100) % 4)) )
+                return 28;
+            else
+                return 29;
+    }
+}
+
+int(0..6) weekday( Day day, Month month, Year year )
+{
+    int days = 365 * ( year - 1 ) + ( year - 1 ) / 4 - ( year - 1 ) / 100  + ( year - 1 ) / 400;  // from full years
+    for ( Month m = 1; m < month; m++ ) // complete months of current year
+        days += month_length( m, year );
+    days += day;
+    return  [int(0..6)](days % 7);
+}
+
+array(array(Day)) cal_month( Month month, Year year )
+{
+    int(0..6) k = weekday( 1, month, year );
+    array(array(Day)) cal_table;
+    array(Day) cal_row = [array(Day)]( ({ 0 }) * k +
+                                enumerate( month_length( month, year ), 1, 1 ) );
+    cal_table = cal_row / 7.0;
+    if ( sizeof( cal_table[-1] ) != 7 )
+        cal_table[-1] += ( ({ 0 }) * ( 7 - (sizeof( cal_row ) % 7 ) ) );
+    return cal_table;
+}
+
+string cal_txt( Month month, Year year )
+{
+    string res = sprintf ( "%|21s\n", month_name( month ) + " " + (string)year ) +
+        sprintf("%{%-!2s %}\n", weekdays);
+    foreach ((array(array(string)))cal_month( month, year), array(string) row)
+    {
+        row = [array(string)]map( row, lambda( string s ){ return (s=="0") ? "" : s; } );
+        res += sprintf("%{%2s %}\n", row);
+    }
+
+    return res;
+}
+
+int main( int ac, array(string) av )
+{
+    Month month;
+    Year year;
+
+    switch(ac-1)
+    {
+    case 0:
+        mapping m = localtime( time() );
+        month = [int(1..12)](m->mon + 1);
+        year = [int(1..)](m->year + 1900);
+        break;
+    case 1:
+        array(string) a;
+        for ( int k = 1; k <= 12 ; k++ )
+        {
+            a = av[0..0] + ({ (string)k }) + av[1..1];
+            int r = main( 3, a );
+            if ( r )
+            return r;
+        }
+            return 0;
+    case 2:
+        month = [int(1..12)](int)(av[1]);
+        year = [int(1..)](int)(av[2]);
+        break;
+    default:
+        werror( "%s: wrong number of arguments (should be 1 or 2: [month] year)\n",
+                basename(av[0]));
+        return 1;
+    }
+
+    if ( ( month < 1 ) || ( month > 12 ) || ( year < 1 ) )
+    {
+        werror( "%s: unsupported arguments: month = %d, year = %d\n",
+            basename(av[0]), month, year );
+        return 1;
+    }
+
+    write( cal_txt( month, year ) );
+    return 0;
+}

@@ -1,0 +1,4 @@
+/etc/subversion/config
+/etc/cxref/config
+/etc/w3m/config
+/etc/mono/config

@@ -1,0 +1,35 @@
+<html><head><title>rjb's pike code: slashcookie</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#! /usr/local/bin/pike
+</font><font color="darkblue">#pragma strict_types
+</font>
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>mapping</b></font><font color="black">(</font><font color="darkred"><b>string</b></font>:<font color="darkred"><b>string</b></font><font color="black">)</font> mh;
+  <font color="darkred"><b>array</b></font> err = <font color="black">[</font><font color="darkred"><b>array</b></font><font color="black">]</font><font color="darkblue">catch</font><font color="black">(</font> mh = <font color="black">[</font><font color="darkred"><b>mapping</b></font><font color="black">(</font><font color="darkred"><b>string</b></font>:<font color="darkred"><b>string</b></font><font color="black">)</font><font color="black">]</font><font color="black">(</font>
+    Protocols.HTTP.do_method<font color="black">(</font><font color="green">"HEAD"</font>,<font color="green">"http://slashdot.org/"</font><font color="black">)</font>-&gt;headers <font color="black">)</font> <font color="black">)</font>;
+  <font color="darkblue">if</font><font color="black">(</font>err||!mh<font color="black">)</font>
+    <font color="black">{</font> 
+      werror<font color="black">(</font><font color="green">"Failed!\n"</font><font color="black">)</font>; 
+      <font color="darkblue">if</font><font color="black">(</font>err<font color="black">)</font> 
+	werror<font color="black">(</font><font color="green">"%s\n"</font>, err<font color="black">[</font>0<font color="black">]</font><font color="black">)</font>;
+      <font color="darkblue">return</font> 1; <font color="black">}</font>
+  <font color="darkblue">foreach</font><font color="black">(</font>indices<font color="black">(</font>mh<font color="black">)</font>, <font color="darkred"><b>string</b></font> idx<font color="black">)</font>
+    <font color="black">{</font> 
+      <font color="darkblue">if</font><font color="black">(</font> <font color="black">(</font>idx<font color="black">[</font>..1<font color="black">]</font>!=<font color="green">"x-"</font><font color="black">)</font>||<font color="black">(</font>idx<font color="black">[</font>..8<font color="black">]</font>==<font color="green">"x-powered"</font><font color="black">)</font> <font color="black">)</font>
+	mh -= <font color="black">(</font><font color="black">[</font> idx:mh<font color="black">[</font>idx<font color="black">]</font> <font color="black">]</font><font color="black">)</font>; 
+    <font color="black">}</font>
+  <font color="darkblue">if</font><font color="black">(</font>!sizeof<font color="black">(</font>mh<font color="black">)</font><font color="black">)</font>
+    <font color="black">{</font> werror<font color="black">(</font><font color="green">"Nada!\n"</font><font color="black">)</font>; <font color="darkblue">return</font> 0; <font color="black">}</font>
+  <font color="darkred"><b>string</b></font> res = <font color="green">""</font>;
+  <font color="darkblue">foreach</font><font color="black">(</font>mh; <font color="darkred"><b>string</b></font> idx; <font color="darkred"><b>string</b></font> val<font color="black">)</font>
+    <font color="black">{</font>
+      res += String.capitalize<font color="black">(</font>idx<font color="black">[</font>2..<font color="black">]</font><font color="black">)</font> + <font color="green">": "</font> + val + <font color="green">"\n"</font>;
+    <font color="black">}</font>
+
+  <font color="darkred"><b>int</b></font> width = <font color="black">[</font><font color="darkred"><b>int</b></font><font color="black">]</font><font color="black">(</font>Stdio.stdout-&gt;tcgetattr<font color="black">(</font><font color="black">)</font>-&gt;columns<font color="black">)</font> || 80;
+  write<font color="black">(</font><font color="green">"%-="</font>+<font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font>width+<font color="green">"s"</font>, res<font color="black">)</font>;
+  <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+
+</pre></body></html>

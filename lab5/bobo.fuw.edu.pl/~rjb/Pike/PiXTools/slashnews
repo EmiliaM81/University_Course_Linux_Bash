@@ -1,0 +1,72 @@
+#! /usr/local/bin/pike -rt
+#pragma strict_types
+
+import .PiXPull;
+import Protocols.HTTP;
+
+int main()
+{
+    Query q =
+        [object(Query)]get_url( "http://slashdot.org/slashdot.xml" );
+    if ( !q )
+    {
+        werror( "HTTP connection to slashdot.org failed!\n" );
+        return 1;
+    }
+    if ( !( q->ok ) )
+    {
+        werror( "Server slashdot.org returned error code:\n%d %s\n",
+            q->status, q->status_desc );
+        return 2;
+    }
+    Stdio.Stream stream = [object(Stdio.Stream)]q->datafile();
+    Parser xpp = Parser()->setInput( stream );
+    xpp->next() == START_TAG ||
+        error( "failed to find start tag.\n" );
+    xpp->getName() == "backslash" ||
+        error( "expected <backslash> tag, got <%s>\n", xpp->getName() );
+
+    while ( xpp->next() != END_TAG || xpp->getName() != "backslash" )
+    {
+        switch( xpp->getEventType() )
+        {
+        case START_TAG:
+            if ( xpp->getName() == "story" )
+                pull_story( xpp );
+                break;
+            error( "expected <story> tag, got <%s>\n", xpp->getName() );
+        case TEXT:
+            xpp->isWhitespace() ||
+                error( "unexpected content:\n\t%s\n",
+                        xpp->getPositionDescription() );
+        }
+    }
+
+    stream->close();
+
+    return 0;
+}
+
+void pull_story( Parser xpp )
+{
+    mapping(string:string) story = ([]);
+
+    while( xpp->next() != END_TAG || xpp->getName() != "story" )
+    {
+        if ( xpp->getEventType() == START_TAG )
+        {
+            string tagname = xpp->getName();
+            xpp->next() == TEXT ||
+                error( "missing content?\n\t%s\n",
+                    xpp->getPositionDescription() );
+            story[tagname] = xpp->getText();
+        }
+    }
+
+    foreach ( ({ "title", "section", "author", "time", "url" }), string key )
+        story[key] || ( story[key] = key + ": MISSING!" );
+
+    write( "* %s (%s),\n\tby %s, %s,\n\t\t%s\n\n",
+        story->title, story->section, story->author,
+                        story->time, story->url );
+}

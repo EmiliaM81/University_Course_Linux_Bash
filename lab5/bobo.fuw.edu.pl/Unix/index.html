@@ -1,0 +1,310 @@
+<html>
+  <head>
+    <title>OKWF: miniprzewodnik unixowy</title>
+    <meta http-equiv="Content-type" content="text/html; charset=iso-8859-2" />
+    <link rel="stylesheet" href="userguide.css" type="text/css" />
+  </head>
+  <body>
+  <div class="nav">
+  <table class="nav">
+  <tr>
+  <td>Wstęp</td>
+  <td><a href="Hasla.html">Konta i hasła</a></td>
+  <td><a href="Pliki.html">Pliki i systemy plików</a></td>
+  <td><a href="Procesy.html">Programy i procesy</a></td>
+  <td><a href="Siec.html">Sieć i praca zdalna</a></td>
+  <td><a href="Linki.html">Zobacz też...</a></td>
+  </tr>
+  </table>
+  </div> <!-- nav -->
+  <div class="section">
+  <h1>OKWF: miniprzewodnik unixowy</h1>
+  <div class="subsection">
+  <h2>Nowości</h2>
+  <h3>Powiększona quota na folderach domowych użytkowników</h3>
+  <p>Z dniem 12 listopada 2008 tzw. <em>quota</em> czyli ograniczenie objętości danych, jakie użytkownik
+  może przechowywać w swoim folderze domowym, została podniesiona <em>dla wszystkich użytkowników sieci
+  studenckiej, którzy według naszej najlepszej wiedzy są aktywnymi studentami któregoś z programów
+  Wydz. Fizyki lub MISMaP</em>, z dotychczasowych 20 MB do 50 MB. Ograniczenie <em>twarde</em> zostało
+  równocześnie podniesione do 55 MB.</p>
+  <p>Przypominamy, że dane o sumarycznej objętości przekraczającej wartość <em>quota</em> (50 MB) użytkownik
+  może przechowywać na swoim folderze domowym przez nie dłużej niż tydzień - po upływie tego czasu, dalsze
+  operacje zapisu danych będą blokowane, uniemożliwiając w praktyce korzystanie z konta! Limit twardy (55 MB)
+  jest natomiast nieprzekraczalny.</em>
+  <p>Przypominamy również, że oprócz zasadniczego folderu domowego każdy użytkownik dysponuje też folderem
+  <tt>_work_</tt>, na którym stosują się odrębne, wyższe wartości <em>quota</em> i <em>limitu</em>: odpowiedno
+  200 MB i 220 MB. Więcej informacji można znaleźć poniżej.</p>
+  <h3>Dostęp bezprzewodowy do internetu w ramach projektu Eduroam</h3>
+  <p><a href="https://eduroam.uw.edu.pl/">Eduroam</a> umożliwia bezpłatny bezprzewodowy dostęp do internetu
+  z własnych laptopów czy innych urządzeń obsługujących sieć bezprzewodową. Do osób uprawnionych do korzystania
+  z Eduroam należą również studenci i pracownicy Uniwersytetu Warszawskiego. Punkty dostępowe Eduroam funkcjonują
+  w wielu lokalizacjach na UW, ale również na licznych innych uczelniach w Polsce i Europie.</p>
+  <p>Na Wydziale Fizyki dostęp Eduroam funkcjonuje na Hożej 69 (zasięg w rejonie hallu głównego i portierni),
+  oraz (od października 2008) w budynku Wydziału przy ul. Pasteura.</p>
+  <!--
+  <h3>Drukowanie w sieci studenckiej</h3>
+  <p>Istnieje możliwość zlecenia wydruku plików z komputerów sieci studenckiej. Wykonanie wydruku
+  odbywa się w punkcie xero na Hożej 69 (parter), wg. cennika dostępnego w tym punkcie. Pliki przeznaczone
+  do wydrukowania należy umieścić w folderze wskazanym przez dowiązanie o nazwie <tt>_print_</tt>,
+  znajdujące się w katalogu domowym użytkownika, a następnie - zgłosić się do punktu xero (tego samego dnia)
+  w celu zamówienia wydruku. Zlecając pracę należy podać identyfikator swojej grupy (np. <tt>fsl06</tt>), swoją
+  nazwę użytkownika (login) oraz nazwy plików do wydrukowania. Przyjmowane do wydruku są pliki typów PDF i PS.
+  </p>
+  -->
+  <h3>Zmiana serwera poczty studenckiej</h3>
+  <p><strong>
+    7 marca 2007 r. nastąpiła zmiana serwera poczty elektronicznej w sieci studenckiej Wydziału Fizyki UW.
+  </strong></p>
+  <p>
+    Adresy email, nazwy użytkowników i hasła pozostają bez zmiany.
+  </p>
+  <p>
+    Szczegółowe informacje o sposobach dostępu do poczty i konfiguracji programów pocztowych: <a
+    href="http://poczta.okwf.fuw.edu.pl/konfigokwf.html">tutaj</a>.
+  </p>
+  <h3>Nowy dysk udostępniony użytkownikom</h3>
+  <p>
+  Jako dodatkowy obszar roboczy dla użytkowników dostępny jest obecnie drugi dysk sieciowy,
+  na którym każdy z użytkowników dysponuje katalogiem o nazwie
+  <code>/work/<em>nazwa_grupy</em>/<em>login</em></code>. Użytkownik ma możliwość zapisu
+  w tym katalogu do 200 MB danych. Należy jednak pamiętać, że (w odróżnieniu od katalogów
+  znajdujących się w drzewie <code>/home</code>) dla katalogów poniżej <code>/work</code>
+  NIE będą regularnie wykonywane kopie zapasowe - np. pliki przypadkowo skasowane przez
+  użytkownika nie będą mogły zostać odzyskane!
+  </p>
+  <p>
+  W celu ustalenia nazwy grupy dla swojego konta można posłużyć się np. poleceniem
+  (w terminalu) <code>id -ng</code>.
+  </p>
+  <p><em>
+  Dla wygody, w katalogu domowym każdego użytkownika zostało stworzone dowiązanie symboliczne
+  o nazwie <code>_work_</code>, wskazujące na katalog danego użytkownika na dysku <code>/work</code>.
+  Można zatem przejść na własny katalog na nowym, obszernym dysku roboczym używając polecenia
+  <code>cd _work_</code> (gdy aktualnym jest katalog domowy użytkownika) lub, ogólniej -
+  <code>cd ~/_work_</code>. Naturalnie, można również użyć tego skrótu do otwarcia katalogu
+  roboczego w okienkowym menedżerze plików.
+  </em></p>
+  <h3>Poczta na okwf.fuw.edu.pl </h3>
+  <p>
+  Obecnie można już używać adresu <tt>....@okwf.fuw.edu.pl</tt> zamiast adresu z nazwą <ins>dawnego</ins>
+  serwera pocztowego
+  <tt>tempac.okwf.fuw.edu.pl</tt> - proszę przy okazji poprawić ten adres w używanym przez siebie
+  programie pocztowym.
+  </p>
+  <p>
+  <del>Poczta z naszego wydziałowego serwera pocztowego (np. z adresu <tt>iksinski@okwf.fuw.edu.pl</tt>)
+  jest automatycznie przesylana na inny adres używany przez użytkownika (np. <tt>iksinski@costam.pl</tt>),
+  jesli w katalogu <tt>/home/...</tt> użytkownika w sieci wydziałowej umieszczony jest plik tekstowy
+  <tt>.forward</tt>
+  zawierający
+  ten właśnie adres: <tt>iksinski@costam.pl</tt>. Zainteresowanych tą możliwością prosimy o stworzenie
+  sobie takiego pliku.</del>
+  </p>
+  <p><ins>
+  Obecnie funkcja automatycznego forwardowania (przekazywania na inny adres) poczty przychodzącej
+  nie korzysta już z pliku <tt>~/.forward</tt>,
+  można ją za to skonfigurować (wśrod innych możliwości filtrowania) korzystając z
+  <a href="https://poczta.okwf.fuw.edu.pl/webmail">interfejsu WWW do poczty studenckiej</a>.
+  Po zalogowaniu się do interfejsu WWW można definiować filtry
+  (pozycja "Filtry" albo "Filters" w głównym menu) umożliwiające umieszczanie poczty w różnych
+  folderach w zależności od nadawcy, tematu, zawartości itd, albo przekazywanie jej na inny adres
+  (forward) itd.
+  </ins></p>
+  <h3>Dostęp do internetu z własnego komputera</h3>
+  <p>
+  W holu przed Nową Aulą (s. 425/426) <ins>i w dawnej sali C (suterena s. 138)</ins>
+  uruchomiono dostęp do internetu dla
+  studentów używających własnych komputerów przenośnych (notebook, laptop):
+  <ul>
+    <li>z kartami sieciowymi Ethernet 10/100 Mbps (4 gniazdka),</li>
+    <li>lub kartami Wireless w standardzie 802.11B/G (sieć bezprzewodowa OKWF).</li>
+  </ul>
+  <ins>Dostęp do sieci bezprzewodowej jest również w bibliotece IFD i w budynku na ul. Smyczkowej.</ins>
+  Komputer automatycznie uzyskuje adresy IP i DNS.
+  </p>
+  <p>W październiku 2008 r. uruchomiono  w budynku przy ul. Pasteura dostęp do sieci bezprzewodowej
+  w ramach <a href="https://eduroam.uw.edu.pl/konfiguracja/wstep">Eduroam</a>.
+  </p>
+  <h3><em>UWAGA:</em> kurs <em>Wstęp do Unixa</em> (1102-214) już nie istnieje!</h3>
+  <!--
+  <p>
+  Program studiów przewiduje 10 godzin lekcyjnych zajęć, zatem -- podobnie jak
+  w poprzednich latach -- kurs rozpoczniemy nie od początku semestru, lecz
+  12 kwietnia br.
+  </p>
+  <p>
+  Zajęcia odbywać się będą w sali 17 (ul. Pasteura), we wtorki w godzinach
+  16:15 - 18:00. Zaliczenie na podstawie obecności na zajęciach.
+  </p>
+  <p>
+  Osoby, posiadające doświadczenie w pracy z Unixem/Linuxem i które na
+  podstawie materiałów do kursu uznają, że ich poziom przygotowania
+  przewyższa poziom tego kursu, mogą otrzymać zaliczenie bez uczęszczania
+  na zajęcia -- na podstawie odpowiedzi ustnej. Termin tego zaliczenia
+  zostanie ogłoszony oddzielnie.
+  </p>
+  -->
+  <p>Od roku akademickiego 2005/2006 dawniejszy <em>Wstęp do Unixa</em> nie jest
+  już prowadzony. Tematy tego kursu stanowią podzbiór programu <em>Pracowni
+  komputerowej</em> (1102-107L, 1102-107M).
+  </p>
+  </div> <!-- subsection -->
+  <div class="subsection">
+  <h2>Uwagi wstępne</h2>
+  <p>
+  Tekst ten ma w zamierzeniu stanowić <del>materiał uzupełniający do kursu
+  <em>Wstęp do UNIXa</em> oraz</del> podręczne kompendium dla użytkowników
+  studenckiej sieci unixowej w Ośrodku Komputerowym Wydziału Fizyki Uniwersytetu
+  Warszawskiego.  Nie stanowi on (ani nie będzie stanowić) wyczerpującego
+  podręcznika użytkownika UNIXa, jak również nie zastąpi posługiwania
+  się dokumentacją systemu (<code>man</code>, <code>info</code>).
+  </p>
+  <p>
+  Niniejszy miniprzewodnik jest obecnie w trakcie powstawania, uwzględnimy w nim
+  odpowiedzi na pytania najczęściej stawiane przez użytkowników.  Uwagi i sugestie
+  prosimy przesyłać pod adres
+  <a href="mailto:rjb@tempac.okwf.fuw.edu.pl">rjb@tempac.okwf.fuw.edu.pl</a>.
+  </p>
+  <p>
+  Ostatnia modyfikacja: <modified date type="iso" /><br />
+  <a href="/~rjb/">Robert J. Budzyński</a>
+  </p>
+  </div> <!-- subsection -->
+  <h2>Uwagi ogólne</h2>
+  <div class="subsection">
+  <p>
+  <!--W Ośrodku Komputerowym Wydziału Fizyki funkcjonują dwie, z grubsza niezależne,
+  sieci komputerowe: sieć oparta na standardzie <em>Novell Netware</em>, w której
+  terminale użytkowników pracują pod kontrolą systemu MS DOS/Windows, oraz sieć
+  unixowa, w której użytkownik pracuje pod systemem operacyjnym Linux.  Jako
+  terminale dla użytkowników służą komputery PC znajdujące się w salach A i B
+  (przeznaczonych do zajęć dydaktycznych) oraz C i D (sale pracy własnej).  Każdy
+  z tych komputerów może być uruchomiony zarówno w trybie Novell jak i w trybie
+  unixowym -- w zależności od wyboru dokonanego z menu pojawiającego się
+  bezpośrednio po włączeniu komputera (przed jakimkolwiek loginem).
+  -->
+  Ośrodek Komputerowy Wydziału Fizyki opiekuje się czterema pracowniami komputerowymi
+  zlokalizowanymi w budynku przy Hożej 69 (sale A, B, C i D), dwoma pracowniami
+  w budynku Nauczycielskiego Kolegium Fizyki przy ul. Smyczkowej (sale S1 i S5), oraz
+  dwoma pracowniami w budynku przy ul.  Pasteura (sale 106 i 112).
+  Sale A, B, S5, i 106 pełnią funkcję pracowni dydaktycznych, są więc dostępne tylko w czasie
+  zajęć i dla uczestników tych zajęć; sale C, D, S1 i 112 są salami pracy własnej, dostępnymi
+  dla wszystkich studentów Wydziału przez cały dzień.
+  </p>
+  <p style="font-weight:bold;">
+  Komputery z sali C zostaly  przeniesione 27 grudnia 2007 do czytelni
+  Biblioteki IFD i beda tam dostepne w godzinach otwarcia Biblioteki.
+  </p>
+  <p>
+  Pracownie OKWF <!-- (poza salą S5) --> wyposażone są w komputery typu PC, działające pod
+  kontrolą systemu operacyjnego Linux (aktualnie wykorzystywana dystrybucja to Fedora
+  Core <del>2</del> <ins>5</ins>). Są one skonfigurowane jako stacje bezdyskowe i pracują całkowicie w oparciu o dyski
+  sieciowe udostępniane przez centralny serwer. W sali S5 komputery typu PC mają dodatkowo lokalne
+  dyski pod kontrolą systemu operacyjnego MS Windows.
+  </p>
+  <p>
+  Z punktu widzenia użytkownika najważniejsze cechy pracy w sieci komputerowej OKWF
+  (w porównaniu z pracą na komputerze ,,wolnostojącym'' to:
+  </p>
+  <ul>
+  <li>
+  jednolity system kontroli dostępu, tzn. użytkownik otwierając sesję ,,przedstawia się''
+  systemowi tym samym identyfikatorem (nazwą konta, podawaną w odpowiedzi na zapytanie
+  o <em>login</em>) oraz hasłem (podawanym w odpowiedzi na zapytanie o <em>password</em>) --
+  niezależnie od tego, z którym z terminali (PC) ma w danej chwili do czynienia;
+  <!--
+  <blockquote><font="-1">
+  Obowiązuje zasada przydzielania tych samych identyfikatorów konta (<em>login</em>)
+  użytkownikowi do pracy zarówno w sieci Novell jak i unixowej; dla wygody przydziela
+  się zazwyczaj takie same hasła początkowe (przy utworzeniu konta) do obu sieci,
+  jednak są to hasła niezależne -- zmiana jednego z nich nie pociąga za sobą automatycznie
+  zmiany drugiego.
+  </font></blockquote>
+  -->
+  </li>
+  <li>
+  jednolite środowisko pracy, również niezależne od aktualnie używanego terminala --
+  dostęp do tych samych programów (zainstalowanych do wspólnego użytku) oraz
+  plików własnych użytkownika, z każdej stacji;
+  <blockquote><font="-1">
+  W sieci unixowej na pliki własne użytkownika przeznaczony jest katalog o nazwie
+  <code>/home/<em>nazwa_grupy</em>/<em>login</em></code>; aktualnie katalogi te znajdują się
+  na dysku sieciowym udostępnianym wszystkim terminalom przez serwer <code>tempuson</code>,
+  komputer <em>Sparc</em> pracujący w systemie <em>Sun Solaris 7</em>. Aktualne ograniczenie
+  przestrzeni dyskowej (quota) dostępnej dla pojedynczego użytkownika na tym dysku wynosi
+  20 MB.
+  <br>
+  Jako dodatkowy obszar roboczy dla użytkowników dostępny jest też drugi dysk sieciowy,
+  na którym każdy z użytkowników dysponuje katalogiem o nazwie
+  <code>/work/<em>nazwa_grupy</em>/<em>login</em></code>. Użytkownik ma możliwość zapisu
+  w tym katalogu do 200 MB danych. Należy jednak pamiętać, że (w odróżnieniu od katalogów
+  znajdujących się w drzewie <code>/home</code>) dla katalogów poniżej <code>/work</code>
+  NIE będą regularnie wykonywane kopie zapasowe - np. pliki przypadkowo skasowane przez
+  użytkownika nie będą mogły zostać odzyskane!
+  <br>
+  W celu ustalenia nazwy grupy dla swojego konta można posłużyć się np. poleceniem
+  (w terminalu) <code>id -ng</code>.
+  <!--
+  Zawartość tego samego katalogu użytkownika widziana jest również w sesji Novell,
+  jako zawartość dysku <code>H:</code>.  Dla kont utworzonych w latach poprzednich, gdy
+  dyski sieciowe widziane w sieci Novell były oddzielne od dysków udostępnianych w sieci
+  unixowej, dawna zawartość dysku użytkownika Novell znalazła się w podkatalogu
+  <code>_okwf1_</code> katalogu <code>/home/<em>nazwa_grupy</em>/<em>login</em></code>.
+  -->
+  </font></blockquote>
+  </li>
+  <li>
+  możliwość łączności z Internetem bez szczególnych zabiegów dodatkowych -- a więc
+  dostęp do usług takich, jak m. in. poczta elektroniczna i WWW.
+  <blockquote><font="-1">
+  Poczta elektroniczna dostępna jest spod sieci unixowej; dostępne programy pocztowe
+  to np. Evolution i Mozilla Mail.  Adres użytkownika sieci OKWF ma postać
+  <del><code><em>login</em>@tempac.okwf.fuw.edu.pl</code></del>
+  <ins><code><em>login</em>@okwf.fuw.edu.pl</code></ins>.  Aktualnie serwerem poczty
+  jest komputer <del><code>tempac</code></del> <ins><code>poczta.okwf.fuw.edu.pl</code></ins>,
+  zatem konfigurując program pocztowy do obsługi
+  konta w OKWF należy jako adres serwera (zarówno poczty przychodzącej - typu POP3, jak
+  i poczty wysyłanej - typu SMTP) podać <del><code>tempac.fuw.edu.pl</code></del>
+  <ins><code>poczta.okwf.fuw.edu.pl</code></ins> (<a
+  href="http://poczta.okwf.fuw.edu.pl/konfigokwf.html">szczegółowe informacje</a>).
+  </font></blockquote>
+  </li>
+  </ul>
+  <p>
+  Na komputerach w pracowniach OKWF możliwe jest korzystanie z dyskietek, oraz z urządzeń
+  pamięciowych wyposażonych w złącze USB (tzw. pamięci flash czy pen-drive'ów).
+  Po podłączeniu urządzenia (odp. wsunięciu dyskietki) jego zawartość będzie
+  widoczna jako zawartość foldera o ścieżce <code>/mnt/auto/flash</code> (w przypadku
+  urządzenia USB) lub <code>/mnt/auto/floppy</code> (w przypadku dyskietki). Foldery
+  te stają się widoczne dopiero po jawnym zażądaniu dostępu do ich zawartości - np.
+  poleceniem <code>cd /mnt/auto/flash</code>. Operacje
+  odczytu, kopiowania, zapisu itd. na plikach zawartych w tych folderach wykonuje
+  się w taki sam sposób jak na zawartości twardych dysków - z tym, że są one oczywiście
+  limitowane pojemnością danego urządzenia (odp. dyskietki). Po zakończeniu operacji
+  na zawartości urządzenia zewnętrznego należy opuścić odp. folder (ew. zamknąć
+  okna menedżera plików przedstawiające jego zawartość) aby odłączenie urządzenia
+  (wysunięcie dyskietki) było bezpieczne (nie groziło utratą zapisanych danych).
+  </p>
+  <p>
+  Dodatkowo w sieci OKWF dostępne są (dla pracy zdalnej) komputery <code>tempac</code>
+  (<em>Sparc, Sun Solaris 6</em>), służący jako serwer poczty studenckiej (p. powyżej),
+  oraz <code>primus</code> (Pentium III, Debian GNU/Linux)<!--, dostępny również z terminali
+  znakowych Wyse ustawionych na II piętrze budynku głównego (koło Nowej Auli)-->.  Różnią się
+  one nieco od pozostałych repertuarem dostępnego oprogramowania i są przeznaczone
+  (w sensie bezpośredniej pracy) raczej dla użytkowników zaawansowanych.
+  </p>
+  <p>
+  Na Wydziale Fizyki funkcjonuje również ogólnowydziałowa sieć pracownicza.  Konta i
+  dyski sieciowe w sieci pracowniczej są oddzielone od sieci studenckiej.  Konto
+  w sieci pracowniczej może uzyskać magistrant na wniosek opiekuna naukowego; w sprawach
+  z tym związanych należy zwracać się do administratorów sieci pracowniczej (pok. 231
+  na parterze).
+  </p>
+  </div> <!-- subsection -->
+  <blockquote>Czytane <accessed type="number"/> razy.<br>
+  Ostatnia zmiana: <modified date="date" type="iso" />
+  </blockquote>
+  </div> <!-- section -->
+
+  </body>
+</html>

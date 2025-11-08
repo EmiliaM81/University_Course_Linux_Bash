@@ -1,0 +1,253 @@
+Test
+Ilość rekordów: 10 000 rozmiar 1b
+Systemowe kopiowanie
+
+real	0m0,074s
+user	0m0,003s
+sys	0m0,070s
+Biblioteczne kopiowanie
+
+real	0m0,002s
+user	0m0,002s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m45,330s
+user	0m11,644s
+sys	0m33,494s
+Biblioteczne sortowanie
+
+real	1m29,908s
+user	0m27,453s
+sys	1m2,288s
+Ilość rekordów: 1000 rozmiar 1b
+Systemowe kopiowanie
+
+real	0m0,006s
+user	0m0,000s
+sys	0m0,006s
+Biblioteczne kopiowanie
+
+real	0m0,002s
+user	0m0,002s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m0,479s
+user	0m0,139s
+sys	0m0,338s
+Biblioteczne sortowanie
+
+real	0m0,947s
+user	0m0,283s
+sys	0m0,662s
+Ilość rekordów: 10 000 rozmiar 4b
+Systemowe kopiowanie
+
+real	0m0,044s
+user	0m0,006s
+sys	0m0,037s
+Biblioteczne kopiowanie
+
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m46,063s
+user	0m11,648s
+sys	0m34,238s
+Biblioteczne sortowanie
+
+real	1m27,127s
+user	0m27,256s
+sys	0m59,583s
+Ilość rekordów: 1000 rozmiar 4b
+Systemowe kopiowanie
+
+real	0m0,007s
+user	0m0,000s
+sys	0m0,007s
+Biblioteczne kopiowanie
+
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m0,465s
+user	0m0,100s
+sys	0m0,365s
+Biblioteczne sortowanie
+
+real	0m0,989s
+user	0m0,295s
+sys	0m0,690s
+Ilość rekordów: 10 000 rozmiar 512b
+Systemowe kopiowanie
+
+real	0m0,173s
+user	0m0,027s
+sys	0m0,145s
+Biblioteczne kopiowanie
+
+real	0m0,014s
+user	0m0,001s
+sys	0m0,013s
+Systemowe sortowananie
+
+real	0m49,456s
+user	0m11,857s
+sys	0m37,476s
+Biblioteczne sortowanie
+
+real	1m21,789s
+user	0m25,224s
+sys	0m56,480s
+Ilość rekordów: 1000 rozmiar 512b
+Systemowe kopiowanie
+
+real	0m0,008s
+user	0m0,000s
+sys	0m0,008s
+Biblioteczne kopiowanie
+
+real	0m0,001s
+user	0m0,000s
+sys	0m0,001s
+Systemowe sortowananie
+
+real	0m0,482s
+user	0m0,117s
+sys	0m0,364s
+Biblioteczne sortowanie
+
+real	0m0,847s
+user	0m0,283s
+sys	0m0,562s
+Ilość rekordów: 10 000 rozmiar 1024b
+Systemowe kopiowanie
+
+real	0m0,173s
+user	0m0,004s
+sys	0m0,168s
+Biblioteczne kopiowanie
+
+real	0m0,014s
+user	0m0,000s
+sys	0m0,013s
+Systemowe sortowananie
+
+real	0m48,902s
+user	0m11,349s
+sys	0m37,428s
+Biblioteczne sortowanie
+
+real	1m17,112s
+user	0m23,982s
+sys	0m53,050s
+Ilość rekordów: 1000 rozmiar 1024b
+Systemowe kopiowanie
+
+real	0m0,009s
+user	0m0,000s
+sys	0m0,008s
+Biblioteczne kopiowanie
+
+real	0m0,001s
+user	0m0,001s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m0,479s
+user	0m0,126s
+sys	0m0,352s
+Biblioteczne sortowanie
+
+real	0m0,796s
+user	0m0,236s
+sys	0m0,559s
+Ilość rekordów: 10 000 rozmiar 4096b
+Systemowe kopiowanie
+
+real	0m0,219s
+user	0m0,010s
+sys	0m0,196s
+Biblioteczne kopiowanie
+
+real	0m0,043s
+user	0m0,001s
+sys	0m0,043s
+Systemowe sortowananie
+
+real	0m51,076s
+user	0m11,639s
+sys	0m39,374s
+Biblioteczne sortowanie
+
+real	4m41,050s
+user	0m15,460s
+sys	0m34,327s
+Ilość rekordów: 1000 rozmiar 4096b
+Systemowe kopiowanie
+
+real	0m0,020s
+user	0m0,000s
+sys	0m0,019s
+Biblioteczne kopiowanie
+
+real	0m0,009s
+user	0m0,000s
+sys	0m0,003s
+Systemowe sortowananie
+
+real	0m0,560s
+user	0m0,117s
+sys	0m0,442s
+Biblioteczne sortowanie
+
+real	0m0,601s
+user	0m0,232s
+sys	0m0,363s
+Ilość rekordów: 10 000 rozmiar 8192b
+Systemowe kopiowanie
+
+real	0m0,283s
+user	0m0,014s
+sys	0m0,210s
+Biblioteczne kopiowanie
+
+real	0m0,092s
+user	0m0,000s
+sys	0m0,091s
+Systemowe sortowananie
+
+real	1m0,620s
+user	0m12,615s
+sys	0m47,812s
+Biblioteczne sortowanie
+
+real	0m49,763s
+user	0m15,984s
+sys	0m33,642s
+Ilość rekordów: 1000 rozmiar 8192b
+Systemowe kopiowanie
+
+real	0m0,027s
+user	0m0,003s
+sys	0m0,023s
+Biblioteczne kopiowanie
+
+real	0m0,004s
+user	0m0,003s
+sys	0m0,000s
+Systemowe sortowananie
+
+real	0m0,509s
+user	0m0,143s
+sys	0m0,365s
+Biblioteczne sortowanie
+
+real	0m0,544s
+user	0m0,183s
+sys	0m0,359s

@@ -1,0 +1,2 @@
+plik b.sh
+koniec

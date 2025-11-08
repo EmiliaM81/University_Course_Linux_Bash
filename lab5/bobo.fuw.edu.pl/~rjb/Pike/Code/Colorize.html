@@ -1,0 +1,191 @@
+<html><head><title>rjb's pike code: Colorize</title><style type="text/css">body{font-size:10pt;}</style></head><body bgcolor="#fffffa" text="#000000"><pre>
+<font color="darkblue">#! /usr/local/bin/pike
+</font><font color="#5555AA"><i>// stolen from cvsview_mk2~.pike, by jhs@roxen.com</i></font>
+<font color="#5555AA"><i>// mangled by rjb@bobo.fuw.edu.pl</i></font>
+<font color="darkblue">#pragma strict_types
+</font>
+<font color="darkred"><b>string</b></font> encode_c<font color="black">(</font><font color="darkred"><b>string</b></font> file<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>string</b></font> result = <font color="green">""</font>;
+  <font color="darkred"><b>array</b></font><font color="black">(</font>Parser.C.Token<font color="black">)</font> tokenized = Parser.C.tokenize<font color="black">(</font>Parser.C.split<font color="black">(</font>file<font color="black">)</font><font color="black">)</font>;
+  <font color="darkblue">foreach</font><font color="black">(</font>Parser.C.hide_whitespaces<font color="black">(</font>tokenized<font color="black">)</font>, Parser.C.Token token<font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkred"><b>string</b></font> color = 0;
+      <font color="darkred"><b>string</b></font> token_text = <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font>token;
+      <font color="darkblue">switch</font><font color="black">(</font>token_text<font color="black">)</font>
+	<font color="black">{</font>
+	<font color="darkblue">case</font> <font color="green">"char"</font>:	<font color="darkblue">case</font> <font color="green">"long"</font>:	<font color="darkblue">case</font> <font color="green">"union"</font>:
+	<font color="darkblue">case</font> <font color="green">"double"</font>:	<font color="darkblue">case</font> <font color="green">"short"</font>:	<font color="darkblue">case</font> <font color="green">"unsigned"</font>:
+	<font color="darkblue">case</font> <font color="green">"enum"</font>:	<font color="darkblue">case</font> <font color="green">"signed"</font>:	<font color="darkblue">case</font> <font color="green">"void"</font>:
+	<font color="darkblue">case</font> <font color="green">"float"</font>:	<font color="darkblue">case</font> <font color="green">"struct"</font>:
+	<font color="darkblue">case</font> <font color="green">"int"</font>:	<font color="darkblue">case</font> <font color="green">"typedef"</font>:
+	  color = <font color="green">"1"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"{"</font>: <font color="darkblue">case</font> <font color="green">"}"</font>: <font color="darkblue">case</font> <font color="green">"("</font>: <font color="darkblue">case</font> <font color="green">")"</font>: <font color="darkblue">case</font> <font color="green">"["</font>: <font color="darkblue">case</font> <font color="green">"]"</font>:
+	  color = <font color="green">"2"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"break"</font>:	<font color="darkblue">case</font> <font color="green">"default"</font>:	<font color="darkblue">case</font> <font color="green">"for"</font>:	<font color="darkblue">case</font> <font color="green">"return"</font>:
+	<font color="darkblue">case</font> <font color="green">"case"</font>:	<font color="darkblue">case</font> <font color="green">"do"</font>:	<font color="darkblue">case</font> <font color="green">"goto"</font>:	<font color="darkblue">case</font> <font color="green">"switch"</font>:
+	<font color="darkblue">case</font> <font color="green">"continue"</font>:<font color="darkblue">case</font> <font color="green">"else"</font>:	<font color="darkblue">case</font> <font color="green">"if"</font>:	<font color="darkblue">case</font> <font color="green">"while"</font>:
+	  color = <font color="green">"3"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"auto"</font>:	<font color="darkblue">case</font> <font color="green">"extern"</font>:	<font color="darkblue">case</font> <font color="green">"static"</font>:
+	<font color="darkblue">case</font> <font color="green">"const"</font>:	<font color="darkblue">case</font> <font color="green">"register"</font>:<font color="darkblue">case</font> <font color="green">"volatile"</font>:
+	  color = <font color="green">"4"</font>; <font color="darkblue">break</font>;
+	<font color="black">}</font>
+      <font color="darkblue">if</font><font color="black">(</font>token_text<font color="black">[</font>0<font color="black">]</font>=='#'<font color="black">)</font>
+	color = <font color="green">"5"</font>;
+      <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font><font color="black">(</font>&lt; <font color="green">"//"</font>, <font color="green">"/*"</font> &gt;<font color="black">)</font><font color="black">[</font>token_text<font color="black">[</font>0..1<font color="black">]</font><font color="black">]</font><font color="black">)</font>
+	color = <font color="green">"6"</font>;
+      <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font>token_text<font color="black">[</font>0<font color="black">]</font>=='"' &amp;&amp; token_text<font color="black">[</font>-1<font color="black">]</font>=='"'<font color="black">)</font>
+	color = <font color="green">"7"</font>;
+
+      <font color="darkblue">if</font><font color="black">(</font>color<font color="black">)</font>
+	result += sprintf<font color="black">(</font><font color="green">"\0%s%s\1%s"</font>, color, token-&gt;text, color<font color="black">)</font>;
+      <font color="darkblue">else</font>
+	result += token-&gt;text;
+      result += token-&gt;trailing_whitespaces;
+    <font color="black">}</font>
+  <font color="darkblue">return</font> result;
+<font color="black">}</font>
+
+<font color="darkred"><b>string</b></font> encode_pike<font color="black">(</font><font color="darkred"><b>string</b></font> file<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkred"><b>string</b></font> result = <font color="green">""</font>;
+  <font color="darkred"><b>array</b></font><font color="black">(</font>Parser.Pike.Token<font color="black">)</font> tokenized;
+  tokenized = Parser.Pike.tokenize<font color="black">(</font>Parser.Pike.split<font color="black">(</font>file<font color="black">)</font><font color="black">)</font>;
+  <font color="darkblue">foreach</font><font color="black">(</font>Parser.Pike.hide_whitespaces<font color="black">(</font>tokenized<font color="black">)</font>, Parser.Pike.Token token<font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkred"><b>string</b></font> color = 0;
+      <font color="darkred"><b>string</b></font> token_text = <font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font>token;
+      <font color="darkblue">switch</font><font color="black">(</font>token_text<font color="black">)</font>
+	<font color="black">{</font>
+	<font color="darkblue">case</font> <font color="green">"array"</font>:	<font color="darkblue">case</font> <font color="green">"function"</font>:<font color="darkblue">case</font> <font color="green">"multiset"</font>:<font color="darkblue">case</font> <font color="green">"typedef"</font>:
+	<font color="darkblue">case</font> <font color="green">"constant"</font>:<font color="darkblue">case</font> <font color="green">"int"</font>:	<font color="darkblue">case</font> <font color="green">"object"</font>:	<font color="darkblue">case</font> <font color="green">"void"</font>:
+	<font color="darkblue">case</font> <font color="green">"enum"</font>:	<font color="darkblue">case</font> <font color="green">"mapping"</font>:	<font color="darkblue">case</font> <font color="green">"program"</font>:
+	<font color="darkblue">case</font> <font color="green">"float"</font>:	<font color="darkblue">case</font> <font color="green">"mixed"</font>:	<font color="darkblue">case</font> <font color="green">"string"</font>:
+	  color = <font color="green">"1"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"{"</font>: <font color="darkblue">case</font> <font color="green">"}"</font>: <font color="darkblue">case</font> <font color="green">"("</font>: <font color="darkblue">case</font> <font color="green">")"</font>: <font color="darkblue">case</font> <font color="green">"["</font>: <font color="darkblue">case</font> <font color="green">"]"</font>:
+	  color = <font color="green">"2"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"break"</font>:	<font color="darkblue">case</font> <font color="green">"do"</font>:	<font color="darkblue">case</font> <font color="green">"if"</font>:	<font color="darkblue">case</font> <font color="green">"switch"</font>:
+	<font color="darkblue">case</font> <font color="green">"case"</font>:	<font color="darkblue">case</font> <font color="green">"else"</font>:	<font color="darkblue">case</font> <font color="green">"inherit"</font>:	<font color="darkblue">case</font> <font color="green">"typeof"</font>:
+	<font color="darkblue">case</font> <font color="green">"catch"</font>:	<font color="darkblue">case</font> <font color="green">"for"</font>:	<font color="darkblue">case</font> <font color="green">"lambda"</font>:	<font color="darkblue">case</font> <font color="green">"while"</font>:
+	<font color="darkblue">case</font> <font color="green">"class"</font>:	<font color="darkblue">case</font> <font color="green">"foreach"</font>:	<font color="darkblue">case</font> <font color="green">"predef"</font>:
+	<font color="darkblue">case</font> <font color="green">"continue"</font>:<font color="darkblue">case</font> <font color="green">"gauge"</font>:	<font color="darkblue">case</font> <font color="green">"return"</font>:
+	<font color="darkblue">case</font> <font color="green">"default"</font>:	<font color="darkblue">case</font> <font color="green">"import"</font>:	<font color="darkblue">case</font> <font color="green">"sscanf"</font>:
+	  color = <font color="green">"3"</font>; <font color="darkblue">break</font>;
+
+	<font color="darkblue">case</font> <font color="green">"inline"</font>:	<font color="darkblue">case</font> <font color="green">"private"</font>:	<font color="darkblue">case</font> <font color="green">"protected"</font>:
+	<font color="darkblue">case</font> <font color="green">"nomask"</font>:	<font color="darkblue">case</font> <font color="green">"public"</font>:	<font color="darkblue">case</font> <font color="green">"static"</font>:
+	  color = <font color="green">"4"</font>; <font color="darkblue">break</font>;
+	<font color="black">}</font>
+      <font color="darkblue">if</font><font color="black">(</font>token_text<font color="black">[</font>0<font color="black">]</font>=='#'<font color="black">)</font>
+	color = <font color="green">"5"</font>;
+      <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font><font color="black">(</font>&lt; <font color="green">"//"</font>, <font color="green">"/*"</font> &gt;<font color="black">)</font><font color="black">[</font>token_text<font color="black">[</font>0..1<font color="black">]</font><font color="black">]</font><font color="black">)</font>
+	color = <font color="green">"6"</font>;
+      <font color="darkblue">else</font> <font color="darkblue">if</font><font color="black">(</font>token_text<font color="black">[</font>0<font color="black">]</font>=='"' &amp;&amp; token_text<font color="black">[</font>-1<font color="black">]</font>=='"'<font color="black">)</font>
+	color = <font color="green">"7"</font>;
+
+      <font color="darkblue">if</font><font color="black">(</font>color<font color="black">)</font>
+	result += sprintf<font color="black">(</font><font color="green">"\0%s%s\1%s"</font>, color, token-&gt;text, color<font color="black">)</font>;
+      <font color="darkblue">else</font>
+	result += token-&gt;text;
+      result += token-&gt;trailing_whitespaces;
+    <font color="black">}</font>
+  <font color="darkblue">return</font> result;
+<font color="black">}</font>
+
+<font color="darkred"><b>string</b></font> encode_colors<font color="black">(</font><font color="darkred"><b>string</b></font> file, <font color="darkred"><b>string</b></font> filename<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkblue">if</font><font color="black">(</font><font color="black">(</font>has_suffix<font color="black">(</font>filename, <font color="green">".pike"</font><font color="black">)</font> ||
+      has_suffix<font color="black">(</font>filename, <font color="green">".pmod"</font><font color="black">)</font><font color="black">)</font><font color="black">)</font>	<font color="darkblue">return</font> encode_pike<font color="black">(</font>file<font color="black">)</font>;
+  <font color="darkblue">if</font><font color="black">(</font><font color="black">(</font>has_suffix<font color="black">(</font>filename, <font color="green">".c"</font><font color="black">)</font> ||
+      has_suffix<font color="black">(</font>filename, <font color="green">".h"</font><font color="black">)</font><font color="black">)</font><font color="black">)</font>	<font color="darkblue">return</font> encode_c<font color="black">(</font>file<font color="black">)</font>;
+  error<font color="black">(</font><font color="green">"Lack rule to colorize file "</font>+filename+<font color="green">"\n"</font><font color="black">)</font>;
+<font color="black">}</font>
+
+<font color="darkred"><b>string</b></font> font<font color="black">(</font><font color="darkred"><b>string</b></font> c<font color="black">)</font> <font color="black">{</font> <font color="darkblue">return</font> sprintf<font color="black">(</font><font color="green">"&lt;font color=\"%s\"&gt;"</font>, c<font color="black">)</font>; <font color="black">}</font>
+
+<font color="darkred"><b>string</b></font> decode_colors<font color="black">(</font><font color="darkred"><b>string</b></font> file<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkblue">return</font> replace<font color="black">(</font>file, <font color="black">(</font><font color="black">{</font> <font color="green">"\0"</font> + 1,		<font color="green">"\1"</font> + 1,
+			  <font color="green">"\0"</font> + 2,		<font color="green">"\1"</font> + 2,
+			  <font color="green">"\0"</font> + 3,		<font color="green">"\1"</font> + 3,
+			  <font color="green">"\0"</font> + 4,		<font color="green">"\1"</font> + 4,
+			  <font color="green">"\0"</font> + 5,		<font color="green">"\1"</font> + 5,
+			  <font color="green">"\0"</font> + 6,		<font color="green">"\1"</font> + 6,
+			  <font color="green">"\0"</font> + 7,		<font color="green">"\1"</font> + 7 <font color="black">}</font><font color="black">)</font>,
+		 <font color="#5555AA"><i>/* type */</i></font> <font color="black">(</font><font color="black">{</font> font<font color="black">(</font><font color="green">"darkred"</font><font color="black">)</font> + <font color="green">"&lt;b&gt;"</font>,	<font color="green">"&lt;/b&gt;&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* bracket */</i></font> font<font color="black">(</font><font color="green">"black"</font><font color="black">)</font>,		<font color="green">"&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* command */</i></font> font<font color="black">(</font><font color="green">"darkblue"</font><font color="black">)</font>,		<font color="green">"&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* modifier*/</i></font> font<font color="black">(</font><font color="green">"darkgreen"</font><font color="black">)</font>,	<font color="green">"&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* CPP     */</i></font> font<font color="black">(</font><font color="green">"darkblue"</font><font color="black">)</font>,		<font color="green">"&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* comment */</i></font> font<font color="black">(</font><font color="green">"#5555AA"</font><font color="black">)</font> + <font color="green">"&lt;i&gt;"</font>,	<font color="green">"&lt;/i&gt;&lt;/font&gt;"</font>,
+			       <font color="#5555AA"><i>/* string  */</i></font> font<font color="black">(</font><font color="green">"green"</font><font color="black">)</font>,		<font color="green">"&lt;/font&gt;"</font> <font color="black">}</font><font color="black">)</font><font color="black">)</font>;
+<font color="black">}</font>
+
+
+<font color="darkred"><b>string</b></font> qh<font color="black">(</font><font color="darkred"><b>string</b></font> text<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkblue">return</font> replace<font color="black">(</font>text, <font color="green">"&lt;&gt;&amp;"</font>/<font color="green">""</font>, <font color="green">"&amp;lt; &amp;gt; &amp;amp;"</font> / <font color="green">" "</font><font color="black">)</font>;
+<font color="black">}</font>
+ 
+<font color="darkred"><b>int</b></font> _test<font color="black">(</font><font color="black">)</font>
+<font color="black">{</font>
+  write<font color="black">(</font><font color="green">"&lt;html&gt;&lt;head&gt;&lt;title&gt;"</font> + basename<font color="black">(</font>__FILE__<font color="black">)</font> + <font color="green">"&lt;/title&gt;&lt;/head&gt;"</font> + 
+	<font color="green">"&lt;body bgcolor=\"#fffffa\" text=\"#000000\"&gt;&lt;pre&gt;\n"</font> + 
+	decode_colors<font color="black">(</font>encode_colors<font color="black">(</font>qh<font color="black">(</font>Stdio.read_file<font color="black">(</font>__FILE__<font color="black">)</font><font color="black">)</font>, __FILE__+<font color="green">".pike"</font><font color="black">)</font><font color="black">)</font> +
+	<font color="green">"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"</font><font color="black">)</font>;
+  <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+<font color="darkred"><b>int</b></font> main<font color="black">(</font><font color="darkred"><b>int</b></font> ac, <font color="darkred"><b>array</b></font><font color="black">(</font><font color="darkred"><b>string</b></font><font color="black">)</font> av<font color="black">)</font>
+<font color="black">{</font>
+  <font color="darkblue">if</font><font color="black">(</font>ac==1<font color="black">)</font>
+    <font color="darkblue">return</font> _test<font color="black">(</font><font color="black">)</font>;
+
+  <font color="darkblue">foreach</font><font color="black">(</font>av<font color="black">[</font>1..<font color="black">]</font>, <font color="darkred"><b>string</b></font> filename<font color="black">)</font>
+    <font color="black">{</font>
+      <font color="darkred"><b>string</b></font> tmp;
+      <font color="darkblue">if</font><font color="black">(</font>has_suffix<font color="black">(</font>filename, <font color="green">".html"</font><font color="black">)</font><font color="black">)</font>
+	<font color="darkblue">continue</font>;
+      <font color="darkblue">if</font><font color="black">(</font>!<font color="black">(</font>tmp=Stdio.read_file<font color="black">(</font>filename<font color="black">)</font><font color="black">)</font><font color="black">)</font>
+	<font color="black">{</font>
+	  werror<font color="black">(</font><font color="green">"Can't read file: "</font> + filename + <font color="green">" ... skipping\n"</font><font color="black">)</font>;
+	  <font color="darkblue">continue</font>;
+	<font color="black">}</font>
+      <font color="darkblue">if</font><font color="black">(</font>!has_suffix<font color="black">(</font>filename, <font color="green">".pike"</font><font color="black">)</font>&amp;&amp;!has_suffix<font color="black">(</font>filename, <font color="green">".pmod"</font><font color="black">)</font>
+	 &amp;&amp;!has_suffix<font color="black">(</font>filename, <font color="green">".c"</font><font color="black">)</font>&amp;&amp;!has_suffix<font color="black">(</font>filename, <font color="green">".h"</font><font color="black">)</font><font color="black">)</font>
+	<font color="black">{</font> <font color="#5555AA"><i>// make pike the default</i></font>
+	  tmp = decode_colors<font color="black">(</font>encode_colors<font color="black">(</font>qh<font color="black">(</font>tmp<font color="black">)</font>, filename+<font color="green">".pike"</font><font color="black">)</font><font color="black">)</font>;
+	<font color="black">}</font>
+      <font color="darkblue">else</font>
+	<font color="black">{</font>
+	  tmp = decode_colors<font color="black">(</font>encode_colors<font color="black">(</font>qh<font color="black">(</font>tmp<font color="black">)</font>, filename<font color="black">)</font><font color="black">)</font>;
+	<font color="black">}</font>
+
+      tmp = sprintf<font color="black">(</font>
+		    <font color="green">"&lt;html&gt;&lt;head&gt;&lt;title&gt;rjb's pike code: %s&lt;/title&gt;"</font>+
+            <font color="green">"&lt;style type=\"text/css\"&gt;body{font-size:10pt;}&lt;/style&gt;&lt;/head&gt;"</font> +
+		    <font color="green">"&lt;body bgcolor=\"#fffffa\" text=\"#000000\"&gt;&lt;pre&gt;\n"</font>+
+		    <font color="green">"%s\n&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"</font>,
+		    basename<font color="black">(</font>filename<font color="black">)</font>, tmp
+		    <font color="black">)</font>;
+
+      <font color="darkblue">if</font><font color="black">(</font>Stdio.write_file<font color="black">(</font>filename + <font color="green">".html"</font>, tmp<font color="black">)</font>!=sizeof<font color="black">(</font>tmp<font color="black">)</font><font color="black">)</font>
+	<font color="black">{</font>
+	  werror<font color="black">(</font><font color="green">"Error writing "</font> + filename + <font color="green">".html !\n"</font><font color="black">)</font>;
+	<font color="black">}</font>
+      <font color="darkblue">else</font>
+	<font color="black">{</font>
+	  werror<font color="black">(</font><font color="green">"File "</font> + filename + <font color="green">".html written.\n"</font><font color="black">)</font>;
+	<font color="black">}</font>
+    <font color="black">}</font>
+      
+  <font color="darkblue">return</font> 0;
+<font color="black">}</font>
+
+
+</pre></body></html>

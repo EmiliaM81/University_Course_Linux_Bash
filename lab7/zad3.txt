@@ -1,0 +1,3 @@
+   43  tail -3 history
+   44  history | tail -3
+   45  history | tail -3 > zad3.txt

@@ -1,0 +1,13 @@
+Imie	Nazwisko	Numer	Liczba znalezionych wyników	Wynik sumaryczny	Wynik sredni
+Imie1	Nazwisko1	13241	11	640	58.1818
+Imie2	Nazwisko2	13242	10	715	71.5
+Imie3	Nazwisko3	13243	11	468	42.5455
+Imie4	Nazwisko4	13244	11	748	68
+Imie5	Nazwisko5	13245	11	945	85.9091
+Imie6	Nazwisko6	13246	11	745	67.7273
+Imie7	Nazwisko7	13247	11	700	63.6364
+Imie8	Nazwisko8	13248	11	455	41.3636
+Imie9	Nazwisko9	13249	10	190	19
+Imie10	Nazwisko10	132410	11	703	63.9091
+Imie11	Nazwisko11	132410	11	415	37.7273
+Imie12	Nazwisko12	132412	10	813	81.3

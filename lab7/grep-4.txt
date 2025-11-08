@@ -1,0 +1,21 @@
+-rw-r--r--  1 root root    10593 Dec 19  2018 sensors3.conf
+-rw-r--r--  1 root root     5060 Oct 26  2018 hdparm.conf
+drwx------  2 root root     4096 Oct 13  2018 docker
+drwxr-xr-x  2 root root     4096 Feb 23  2018 usb_modeswitch.d
+drwxr-xr-x  2 root root     4096 Jul  9  2018 auto.master.d
+drwxr-xr-x  2 root root     4096 Oct 24  2018 python3.5
+drwxr-xr-x  2 root root     4096 Oct  7  2014 rsyslog.d
+drwxr-xr-x  3 root root     4096 Mar 26  2018 resolvconf
+-rw-r--r--  1 root root     2584 Feb  7  2014 gai.conf
+-rw-r--r--  1 root root     1523 Feb 23  2018 usb_modeswitch.conf
+-rw-r--r--  1 root root      449 Dec 21  2014 mailcap.order
+-rw-r--r--  1 root root      367 May 19  2014 bindresvport.blacklist
+-rw-r--r--  1 root root      312 Jul 21  2014 email-addresses
+-rw-r--r--  1 root root      286 Dec 24  2014 motd
+-rw-r--r--  1 root root      206 Aug 13  2014 idmapd.conf.ucf-dist
+-rw-r--r--  1 root root      191 Sep  7  2014 libaudit.conf
+-rw-r-----  1 root daemon    144 Oct  3  2014 at.deny
+-rw-r--r--  1 root root      125 Dec 15  2014 mail.rc
+-rw-r--r--  1 root root       51 Oct 20  2014 vdpau_wrapper.cfg
+lrwxrwxrwx  1 root root       29 Nov 27  2018 auto.cvmfs -> /usr/libexec/cvmfs/auto.cvmfs
+-rw-r--r--  1 root root       26 Jan 13  2018 libao.conf

@@ -1,0 +1,167 @@
+<html>
+  <head>
+    <title>Pike code samples by rjb</title>
+    <!-- Changed by: "Robert J. Budzynski", 23-May-2002 -->
+    <style type="text/css">
+        body {
+	background: #fffffa;
+	color: #000000;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	margin-left: 5%;
+	margin-right: 5%;
+	font-size: 12pt;
+          }
+      a:link { text-decoration: none; background: #fffffa; color: #0000ee; }
+      a:visited: { background: #fffffa; color: #0000ee; }
+      a:hover { background: #00eeff ; color: #000000; }
+      a:active { background: #00eeff ; color: #ffff00; }
+      h1 { font-size: 14pt; font-variant: small-caps; background: #00eeff; }
+      h2 { font-size: 13pt; font-variant: small-caps; background:
+      #00eeff; }
+      code { font-family: Courier, Courier New, monospace; }
+      .strong { text-decoration: underline; font-weight: bold; }
+      strong { text-decoration: underline; font-weight: bold; }</style>
+  </head>
+  <body>
+  <div align="right">
+    <a href="/~rjb/">About me</a><br />
+    Go to <a href="../index.html">index of my Pike pages</a></div>
+  <img src="../szczupak.jpg" />
+  <h1>Pike code samples by rjb</h1>
+  <p>
+  Not much here yet -- hopefully it will grow with time.
+  </p>
+  <p>
+  These are just silly scripts which may or may not be useful as illustration
+  of Pike coding, but not much use for anything else.  If and when I start
+  to believe this has changed, I'll be sure to mention it right here ;-)
+  </p>
+  <p>
+  <a href="http://pike.roxen.com/download/">Pike 7.2</a> is required to run these scripts.
+  You are of course free to try
+  to tweak them for older versions if you wish, it shouldn't be hard.
+  Some may even work without any tweaking (not tested).  Pike 7.3
+  should be OK too, but currently can be had only from <a
+  href="http://community.roxen.com/developers/cvs/anoncvs.html">RIS
+  CVS</a>. 
+  </p>
+  <p>
+  <strong>Update:</strong> <a href="http://pike.ida.liu.se/download/">Pike 7.4</a> has now been released
+  for a while, and there's a new official <a href="http://pike.ida.liu.se/">home</a> for
+  the Pike language.  I will be updating this stuff for Pike 7.4 shortly.
+  Currently all the scripts work with Pike 7.4 anyway, with barely a few
+  compile warnings between all of them, but do not demonstrate the newer features.
+  </p>
+  <p>
+  All this stuff is in the public domain unless <strong>boldly</strong>
+  stated otherwise in the individual descriptions.  No warranty, etc.
+  </p>
+  <h2>Contents</h2>
+  <ul>
+  <li>
+  <strong>boguslinks</strong> 
+  (<a href="boguslinks">plain</a>, <a
+				     href="boguslinks.html">html</a>): 
+  a script to hunt down dangling
+  symlinks in a directory tree.  Stolen from a sample in the Python
+  distribution. 
+  </li>
+  <li>
+  <strong>namestats</strong>
+  (<a href="namestats">plain</a>, <a href="namestats.html">html</a>): 
+  now, this is <em>silly</em>, it goes through
+  all the <code>passwd</code> records on your Unix box (by calling
+  <code>getpwent()</code>) and computes statistics of your users' first names.
+  A legit first name is defined as a leading piece of the <em>gecos</em> field
+  (before the first space) that begins with a capital letter (<code>[A-Z]</code>).
+  Otherwise, no serious attempt is made to filter out system accounts ;-)
+  </li>
+  <li>
+  <strong>stopwatch</strong>
+  (<a href="stopwatch">plain</a>, <a href="stopwatch.html">html</a>): 
+  uses GTK to put a stopwatch on your desktop.
+  Basically the simplest Pike-GTK thingy I could think of that actually does
+  something (marginally) useful.  Has only one-second resolution (because
+  that's what the GTK Clock widget supports), but I'll improve on that when
+  I feel inspired.
+  </li>
+  <li>
+  <strong>logstats</strong>
+  (<a href="logstats">plain</a>, <a href="logstats.html">html</a>): 
+  a sample usage of Pike's
+  <code>CommonLog</code> module.  Does nothing too smart other than
+  outputting a crude table of the frequencies of HTTP reply codes from
+  your access logfile, which must be in the "common log" format (as
+  used by default by Apache, Roxen, etc.).  
+  </li>
+  <li>
+  <strong>newmail</strong>
+  (<a href="newmail">plain</a>, <a href="newmail.html">html</a>): 
+  prints a summary of the stuff in your local unix mailbox
+  (assuming standard <em>mbox</em> format), or optionally, in a file
+  of the same format given as a command-line argument, or even from
+  standard input.  Output is a list of "From:" addresses and
+  subjects, with each item truncated to fit within the width of your
+  current terminal.  Note that it should adapt correctly to whatever
+  width you currently have.<br />
+  Defines a <code>Mbox_iterator</code> class that is designed for
+  reuse in more sophisticated settings (though it's not really
+  perfect yet).<br />
+  Could perhaps use some more error checking.
+  </li>
+  <li>
+  <strong>Colorize</strong>
+  (<a href="Colorize">plain</a>, <a href="Colorize.html">html</a>):
+  the script that generates the syntax-colorized versions of these
+  sample programs, i.e. those behind the <em>html</em> links in this
+  list. Could also be used to colorize C source.  A nice demo of the
+  tokenization capabilities of Pike's <code>Parser</code> module.
+  </li>
+  <li>
+  <strong>slashcookie</strong>
+  (<a href="slashcookie">plain</a>, <a href="slashcookie.html">html</a>):
+  fetches and writes a "cookie" (as in fortune-cookie, not HTTP-cookie) that
+  <a href="http://slashdot.org/">Slashdot</a> sends
+  with every response as the content of a <em>X-Fry:</em> (or <em>X-Bender:</em>, etc.) custom
+  HTTP header, by making a HEAD request for the site's top page.
+  </li>
+  <li>
+  <strong>cal</strong>
+  (<a href="cal">plain</a>, <a href="cal.html">html</a>):
+  a near-clone of the unix <code>cal(1)</code> command, and an attempt to
+  utilize the strong type-checking implemented in newer versions of Pike
+  (works with 7.2, but it's quite a chore to suppress all type-related
+  warnings from the 7.4 compiler).<br />
+  Does <em>not</em> make use of Pike's sophisticated <code>Calendar</code>
+  module, which takes a while to load and thus does not perform very well
+  for a quick one-shot command.  Therefore, it's quite simple-minded: no
+  support for B.C. years, locale, or the Julian/Gregorian transition.
+  </li>
+  <li>
+  <strong>fibo</strong>
+  (<a href="fibo">plain</a>, <a href="fibo.html">html</a>):
+  the classic recursive computation of the n'th Fibonacci number, with caching
+  ("memoizing") of intermediate results. On my vintage 350 MHz Pentium II workstation,
+  the 10451 decimal digits for n=50000 are computed and displayed in slightly
+  over 4 seconds of wall-clock time.  The caching is implemented by creating an
+  object that sort of simulates a closure -- which isn't really needed or useful here,
+  but hey, it's a demo.<br />
+  The kludge involving the variable <code>steps</code> is a workaround for a
+  C-stack overflow due to excessive recursion depth. Works For Me (TM), but YMMV.<br />
+  The memoizing speeds up the computation by a factor of about 100 (!) compared
+  with a naive version of the same algorithm, of course at the expense of some memory use.
+  </li>
+  </ul>
+  <p>
+  <a
+  href="mailto:Robert.Budzynski@fuw.edu.pl?subject=Pike%20Code%20Samples">Comments?</a> 
+  </p>
+  <hr />
+  <p>Accessed: by&nbsp;<accessed type="number" /> since <accessed
+  since />.</p>
+  <address><a href="mailto:Robert.Budzynski@fuw.edu.pl">Robert J. Budzynski</a></address>
+  <p>Last modified:
+  <modified date type="iso" />
+  </p>
+  </body>
+</html>

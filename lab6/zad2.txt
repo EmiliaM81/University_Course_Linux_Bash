@@ -1,0 +1,5 @@
+/home/staff/ewao/UNIX/dict
+/home/staff/ewao/UNIX/Obj/TestClass.o
+/home/staff/ewao/UNIX/Obj/SmartPointer.o
+/home/staff/ewao/UNIX/Obj/main.o
+/home/staff/ewao/UNIX/pliki/arch1.zip

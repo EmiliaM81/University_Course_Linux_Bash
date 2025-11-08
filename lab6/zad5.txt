@@ -1,0 +1,3 @@
+/home/staff/ewao/UNIX/kat/b/lop
+/home/staff/ewao/lab5/HP.tar.gz
+/home/staff/ewao/Stud2024/lab5/L1_Szumilas.zip

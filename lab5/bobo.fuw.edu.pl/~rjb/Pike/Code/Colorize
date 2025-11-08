@@ -1,0 +1,187 @@
+#! /usr/local/bin/pike
+// stolen from cvsview_mk2~.pike, by jhs@roxen.com
+// mangled by rjb@bobo.fuw.edu.pl
+#pragma strict_types
+
+string encode_c(string file)
+{
+  string result = "";
+  array(Parser.C.Token) tokenized = Parser.C.tokenize(Parser.C.split(file));
+  foreach(Parser.C.hide_whitespaces(tokenized), Parser.C.Token token)
+    {
+      string color = 0;
+      string token_text = (string)token;
+      switch(token_text)
+	{
+	case "char":	case "long":	case "union":
+	case "double":	case "short":	case "unsigned":
+	case "enum":	case "signed":	case "void":
+	case "float":	case "struct":
+	case "int":	case "typedef":
+	  color = "1"; break;
+
+	case "{": case "}": case "(": case ")": case "[": case "]":
+	  color = "2"; break;
+
+	case "break":	case "default":	case "for":	case "return":
+	case "case":	case "do":	case "goto":	case "switch":
+	case "continue":case "else":	case "if":	case "while":
+	  color = "3"; break;
+
+	case "auto":	case "extern":	case "static":
+	case "const":	case "register":case "volatile":
+	  color = "4"; break;
+	}
+      if(token_text[0]=='#')
+	color = "5";
+      else if((< "//", "/*" >)[token_text[0..1]])
+	color = "6";
+      else if(token_text[0]=='"' && token_text[-1]=='"')
+	color = "7";
+
+      if(color)
+	result += sprintf("\0%s%s\1%s", color, token->text, color);
+      else
+	result += token->text;
+      result += token->trailing_whitespaces;
+    }
+  return result;
+}
+
+string encode_pike(string file)
+{
+  string result = "";
+  array(Parser.Pike.Token) tokenized;
+  tokenized = Parser.Pike.tokenize(Parser.Pike.split(file));
+  foreach(Parser.Pike.hide_whitespaces(tokenized), Parser.Pike.Token token)
+    {
+      string color = 0;
+      string token_text = (string)token;
+      switch(token_text)
+	{
+	case "array":	case "function":case "multiset":case "typedef":
+	case "constant":case "int":	case "object":	case "void":
+	case "enum":	case "mapping":	case "program":
+	case "float":	case "mixed":	case "string":
+	  color = "1"; break;
+
+	case "{": case "}": case "(": case ")": case "[": case "]":
+	  color = "2"; break;
+
+	case "break":	case "do":	case "if":	case "switch":
+	case "case":	case "else":	case "inherit":	case "typeof":
+	case "catch":	case "for":	case "lambda":	case "while":
+	case "class":	case "foreach":	case "predef":
+	case "continue":case "gauge":	case "return":
+	case "default":	case "import":	case "sscanf":
+	  color = "3"; break;
+
+	case "inline":	case "private":	case "protected":
+	case "nomask":	case "public":	case "static":
+	  color = "4"; break;
+	}
+      if(token_text[0]=='#')
+	color = "5";
+      else if((< "//", "/*" >)[token_text[0..1]])
+	color = "6";
+      else if(token_text[0]=='"' && token_text[-1]=='"')
+	color = "7";
+
+      if(color)
+	result += sprintf("\0%s%s\1%s", color, token->text, color);
+      else
+	result += token->text;
+      result += token->trailing_whitespaces;
+    }
+  return result;
+}
+
+string encode_colors(string file, string filename)
+{
+  if((has_suffix(filename, ".pike") ||
+      has_suffix(filename, ".pmod")))	return encode_pike(file);
+  if((has_suffix(filename, ".c") ||
+      has_suffix(filename, ".h")))	return encode_c(file);
+  error("Lack rule to colorize file "+filename+"\n");
+}
+
+string font(string c) { return sprintf("<font color=\"%s\">", c); }
+
+string decode_colors(string file)
+{
+  return replace(file, ({ "\0" + 1,		"\1" + 1,
+			  "\0" + 2,		"\1" + 2,
+			  "\0" + 3,		"\1" + 3,
+			  "\0" + 4,		"\1" + 4,
+			  "\0" + 5,		"\1" + 5,
+			  "\0" + 6,		"\1" + 6,
+			  "\0" + 7,		"\1" + 7 }),
+		 /* type */ ({ font("darkred") + "<b>",	"</b></font>",
+			       /* bracket */ font("black"),		"</font>",
+			       /* command */ font("darkblue"),		"</font>",
+			       /* modifier*/ font("darkgreen"),	"</font>",
+			       /* CPP     */ font("darkblue"),		"</font>",
+			       /* comment */ font("#5555AA") + "<i>",	"</i></font>",
+			       /* string  */ font("green"),		"</font>" }));
+}
+
+
+string qh(string text)
+{
+  return replace(text, "<>&"/"", "&lt; &gt; &amp;" / " ");
+}
+ 
+int _test()
+{
+  write("<html><head><title>" + basename(__FILE__) + "</title></head>" + 
+	"<body bgcolor=\"#fffffa\" text=\"#000000\"><pre>\n" + 
+	decode_colors(encode_colors(qh(Stdio.read_file(__FILE__)), __FILE__+".pike")) +
+	"</pre></body></html>");
+  return 0;
+}
+
+int main(int ac, array(string) av)
+{
+  if(ac==1)
+    return _test();
+
+  foreach(av[1..], string filename)
+    {
+      string tmp;
+      if(has_suffix(filename, ".html"))
+	continue;
+      if(!(tmp=Stdio.read_file(filename)))
+	{
+	  werror("Can't read file: " + filename + " ... skipping\n");
+	  continue;
+	}
+      if(!has_suffix(filename, ".pike")&&!has_suffix(filename, ".pmod")
+	 &&!has_suffix(filename, ".c")&&!has_suffix(filename, ".h"))
+	{ // make pike the default
+	  tmp = decode_colors(encode_colors(qh(tmp), filename+".pike"));
+	}
+      else
+	{
+	  tmp = decode_colors(encode_colors(qh(tmp), filename));
+	}
+
+      tmp = sprintf(
+		    "<html><head><title>rjb's pike code: %s</title>"+
+            "<style type=\"text/css\">body{font-size:10pt;}</style></head>" +
+		    "<body bgcolor=\"#fffffa\" text=\"#000000\"><pre>\n"+
+		    "%s\n</pre></body></html>",
+		    basename(filename), tmp
+		    );
+
+      if(Stdio.write_file(filename + ".html", tmp)!=sizeof(tmp))
+	{
+	  werror("Error writing " + filename + ".html !\n");
+	}
+      else
+	{
+	  werror("File " + filename + ".html written.\n");
+	}
+    }
+      
+  return 0;
+}

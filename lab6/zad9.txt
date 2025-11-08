@@ -1,0 +1,1 @@
+dict: /usr/share/dict /usr/share/man/man3/dict.3erl.gz

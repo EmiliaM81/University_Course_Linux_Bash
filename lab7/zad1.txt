@@ -1,0 +1,23 @@
+dict: /usr/share/dict
+--first 5--
+A
+AA
+AAA
+AA's
+AB
+--last 6--
+zucchinis
+zwieback
+zwieback's
+zygote
+zygote's
+zygotes
+---------------
+  File: /usr/share/dict
+  Size: 4096      	Blocks: 8          IO Block: 4096   directory
+Device: 8,3	Inode: 3670459     Links: 2
+Access: (0755/drwxr-xr-x)  Uid: (    0/    root)   Gid: (    0/    root)
+Access: 2024-09-27 15:27:18.612845533 +0200
+Modify: 2023-09-28 21:20:37.240007574 +0200
+Change: 2023-09-28 21:20:37.240007574 +0200
+ Birth: 2023-09-28 21:08:48.181549419 +0200

@@ -1,0 +1,34 @@
+#! /usr/bin/env pike
+
+string name(array pwrec)
+{
+	if(stringp(pwrec[4]))
+	{
+		string name = (pwrec[4]/" ")[0];
+		if(sizeof(name)&&name[0]>='A'&&name[0]<='Z')
+			return name;
+	}
+	return 0;
+}
+
+int main(int argc, array(string) argv)
+{
+	mapping(string:int) stats = ([]);
+	int count, countall;
+
+	while(array tmp=getpwent())
+	{
+		countall++;
+		string s = name(tmp);
+		s && count++;
+		stats[s]++;
+	}
+	array(string) sorted_names = sort(indices(stats)) - ({0});
+	foreach(sorted_names, string name)
+	{
+		write("%s\:\t%d\n", name, stats[name]);
+	}
+	write("%d records processed, %d had (possible) names, %d unique\n",
+		countall, count, sizeof(sorted_names));
+	return 0;
+}

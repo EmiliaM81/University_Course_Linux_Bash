@@ -1,0 +1,3 @@
+duralex
+jukebox
+Liczba slow: 2
